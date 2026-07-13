@@ -4,9 +4,8 @@ node_modules/
 # Local environment
 .env
 .env.*
-!.env.example
 
-# Uploaded files
+# Legacy private data from the removed upload feature
 uploads/
 
 # Logs

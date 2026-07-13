@@ -1,47 +1,54 @@
 # Okami Portfolio
 
-A personal hobby developer portfolio for sharing projects, experiments, and YouTube videos about both gaming and project showcases. The site is built with plain HTML, CSS, and JavaScript, with no frontend build step required.
-
-## Highlights
-
-- Responsive purple editorial design
-- Dedicated project pages for Voidline and LunaEcho
-- Accessible navigation and reduced-motion support
-- Optional Node.js server and nginx deployment configuration
+A static personal portfolio for sharing hobby projects, experiments, gaming videos, and project showcases. The frontend uses plain HTML, CSS, and JavaScript with no runtime dependencies or upload API.
 
 ## Run Locally
 
-Install the Node.js dependencies:
+Start the dependency-free local preview server:
 
 ```powershell
-npm install
-```
-
-Start the standalone website server on a local port:
-
-```powershell
-$env:PORT = "8080"
 npm start
 ```
 
-Then open `http://localhost:8080`.
+Open `http://127.0.0.1:8080`. The server binds to the local machine only and serves just `index.html`, `pages/`, and `assets/`.
 
-## Optional Upload API
-
-The included upload endpoints are disabled until an `UPLOAD_PASSWORD` environment variable is configured. Upload requests must send the same password in the `X-Upload-Password` header.
+To use a different local port:
 
 ```powershell
-$env:UPLOAD_PASSWORD = "use-a-long-random-password"
-$env:PORT = "8080"
+$env:PORT = "3000"
 npm start
 ```
 
-Never commit a real password or a local `.env` file. Use `.env.example` only as a configuration reference.
+## Production HTTPS
+
+Production is served directly by nginx on HTTPS port `443`. Port `80` does not serve the website; it only redirects visitors to HTTPS and handles Let's Encrypt certificate renewal.
+
+Before deployment:
+
+- Point the domain's DNS records at the server.
+- Install `nginx` and `certbot`.
+- Clone the repository onto the server.
+
+Deploy from the repository directory:
+
+```bash
+sudo bash setup-nginx.sh example.com
+```
+
+The script copies only public static files to `/var/www/webportfolio`, obtains or reuses the domain's Let's Encrypt certificate, validates the nginx configuration, and reloads nginx. Run the same command after pulling future website updates.
+
+## Security Model
+
+- There is no upload endpoint, password endpoint, API server, or writable public directory.
+- The public web root contains only the homepage, project pages, and browser assets.
+- nginx accepts only `GET` and `HEAD`, uses TLS 1.2 or newer, and sends CSP, HSTS, framing, MIME-sniffing, referrer, permissions, and cross-origin headers.
+- The local Node server is for previewing only; nginx is the production server.
 
 ## Project Structure
 
 - `index.html` contains the portfolio homepage.
-- `pages/` contains the individual project pages.
+- `pages/` contains the Voidline and LunaEcho project pages.
 - `assets/` contains styles, scripts, and images.
-- `server.js` serves the complete site without nginx.
-- `api-server.js` provides the API when nginx serves the static files.
+- `server.js` is the dependency-free local preview server.
+- `nginx.conf` is the hardened production HTTPS template.
+- `setup-nginx.sh` deploys the static files and activates nginx.
