@@ -1,6 +1,6 @@
 # Okami Portfolio
 
-A personal hobby developer portfolio for sharing projects, experiments, and YouTube showcases. The site is built with plain HTML, CSS, and JavaScript, with no frontend build step required.
+A personal hobby developer portfolio for sharing projects, experiments, and YouTube videos about both gaming and project showcases. The site is built with plain HTML, CSS, and JavaScript, with no frontend build step required.
 
 ## Highlights
 
