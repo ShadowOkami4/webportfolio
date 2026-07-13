@@ -1,0 +1,17 @@
+{
+  "name": "okami-website",
+  "version": "1.0.0",
+  "description": "Personal hobby developer portfolio and project showcase",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:standalone": "node server.js",
+    "start:api": "node api-server.js"
+  },
+  "dependencies": {
+    "formidable": "^3.5.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
