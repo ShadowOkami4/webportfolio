@@ -1624,42 +1624,208 @@ svg {
     font-family: Consolas, monospace;
 }
 
-.command-groups {
+.plan-note {
+    max-width: 860px;
+    padding: 18px 22px;
+    margin: 24px auto 0;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(25, 17, 34, .42);
+    text-align: center;
+}
+
+.plan-note strong {
+    color: var(--paper-soft);
+}
+
+.availability-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
-.command-group {
-    padding: 30px;
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    background: rgba(23, 18, 32, .36);
-}
-
-.command-group h3 {
-    margin: 0 0 25px;
-    font-family: "Bahnschrift", sans-serif;
-    font-size: 1.25rem;
-}
-
-.command {
+.access-card {
+    position: relative;
     display: flex;
-    padding: 12px 0;
-    justify-content: space-between;
-    gap: 15px;
-    border-bottom: 1px solid var(--line);
-    font-family: Consolas, monospace;
-    font-size: 11px;
+    min-width: 0;
+    min-height: 430px;
+    overflow: hidden;
+    padding: 30px;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 32px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(150, 102, 242, .12), transparent 18rem),
+        linear-gradient(145deg, rgba(37, 24, 51, .58), rgba(18, 13, 26, .62));
 }
 
-.command code {
+.access-card::before {
+    position: absolute;
+    top: 0;
+    left: 42px;
+    width: 76px;
+    height: 3px;
+    content: "";
+    border-radius: 0 0 var(--pill) var(--pill);
+    background: linear-gradient(90deg, var(--violet), var(--violet-bright));
+}
+
+.access-card:nth-child(4n + 2),
+.access-card:nth-child(4n + 3) {
+    background:
+        radial-gradient(circle at 100% 0, rgba(255, 140, 166, .07), transparent 17rem),
+        linear-gradient(145deg, rgba(31, 22, 43, .62), rgba(18, 13, 26, .62));
+}
+
+.access-card-head {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.access-card-index {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
     color: var(--violet-bright);
+    border: 1px solid var(--line-strong);
+    border-radius: 16px;
+    background: rgba(103, 53, 197, .16);
+    font-family: Consolas, monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
 }
 
-.command span {
+.access-card h3 {
+    margin: 0 0 7px;
+    font-family: "Bahnschrift", sans-serif;
+    font-size: 1.55rem;
+    letter-spacing: -.035em;
+}
+
+.access-card-head p {
+    margin: 0;
     color: var(--muted);
-    text-align: right;
+    font-size: .94rem;
+}
+
+.access-levels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.access-level {
+    min-width: 0;
+    padding: 18px 16px;
+    border: 1px solid var(--line);
+    background: rgba(9, 7, 14, .34);
+}
+
+.access-level:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+.access-level + .access-level {
+    border-left: 0;
+}
+
+.access-level:last-child {
+    border-radius: 0 20px 20px 0;
+}
+
+.access-tier {
+    display: block;
+    color: var(--muted);
+    font-family: Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.access-status {
+    display: inline-flex;
+    min-height: 27px;
+    padding: 5px 10px;
+    margin: 11px 0 12px;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: var(--pill);
+    font-family: Consolas, monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.status-included,
+.status-full {
+    color: var(--violet-bright);
+    border-color: rgba(150, 102, 242, .26);
+    background: rgba(103, 53, 197, .18);
+}
+
+.status-limited {
+    color: var(--coral);
+    border-color: rgba(255, 140, 166, .24);
+    background: rgba(255, 140, 166, .08);
+}
+
+.status-unavailable {
+    color: var(--muted);
+    border-color: var(--line);
+    background: rgba(169, 157, 184, .07);
+}
+
+.access-level p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .79rem;
+    line-height: 1.5;
+}
+
+.resource-note {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 28px;
+    padding: 30px 34px;
+    margin-top: 18px;
+    align-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 30px;
+    background:
+        linear-gradient(120deg, rgba(103, 53, 197, .18), transparent 48%),
+        rgba(25, 17, 34, .52);
+}
+
+.resource-note > span {
+    padding: 9px 13px;
+    color: var(--violet-bright);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--pill);
+    font-family: Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.resource-note h3 {
+    margin: 0 0 5px;
+    font-family: "Bahnschrift", sans-serif;
+    font-size: 1.35rem;
+    letter-spacing: -.03em;
+}
+
+.resource-note p {
+    max-width: 900px;
+    margin: 0;
+    color: var(--muted);
 }
 
 .detail-cta {
@@ -1722,6 +1888,9 @@ svg {
     .detail-hero { gap: 50px; }
     .detail-section-head { grid-template-columns: .45fr 1fr; }
     .detail-section-head p { grid-column: 2; }
+    .availability-grid { grid-template-columns: 1fr; }
+    .access-card { min-height: 0; }
+    .access-levels { margin-top: 28px; }
 }
 
 @media (max-width: 820px) {
@@ -1773,7 +1942,6 @@ svg {
     .feature-grid article:nth-last-child(-n + 2) { border-bottom: 0; }
     .install-step { grid-template-columns: 55px 1fr; }
     .install-step .code-box { grid-column: 2; }
-    .command-groups { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
     .price-card { border-right: 0; border-bottom: 1px solid var(--line); }
     .price-card:last-child { border-bottom: 0; }
@@ -1817,6 +1985,19 @@ svg {
     .pricing-grid { grid-template-columns: 1fr; }
     .price-card { padding: 32px 25px; border-right: 0; border-bottom: 1px solid var(--line); }
     .price-card:last-child { border-bottom: 0; }
+    .plan-note { text-align: left; }
+    .access-card { padding: 24px; border-radius: 26px; }
+    .access-card::before { left: 28px; }
+    .access-card-head { grid-template-columns: 42px minmax(0, 1fr); gap: 13px; }
+    .access-card-index { width: 42px; height: 42px; border-radius: 14px; }
+    .access-card h3 { font-size: 1.35rem; }
+    .access-levels { grid-template-columns: 1fr; padding-top: 22px; }
+    .access-level { padding: 17px; }
+    .access-level:first-child { border-radius: 18px 18px 0 0; }
+    .access-level + .access-level { border-top: 0; border-left: 1px solid var(--line); }
+    .access-level:last-child { border-radius: 0 0 18px 18px; }
+    .resource-note { grid-template-columns: 1fr; gap: 16px; padding: 24px; border-radius: 26px; }
+    .resource-note > span { width: fit-content; }
     .detail-cta { padding: 90px 0; }
 }
 
