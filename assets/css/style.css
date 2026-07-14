@@ -793,6 +793,24 @@ svg {
     text-transform: uppercase;
 }
 
+.tag-list .credit-tag {
+    padding: 6px 10px;
+    color: #91cfc6;
+    border: 1px solid rgba(145, 207, 198, .3);
+    border-radius: var(--pill);
+    font-family: Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: color .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.tag-list .credit-tag:hover {
+    color: var(--paper);
+    border-color: rgba(145, 207, 198, .7);
+    background: rgba(145, 207, 198, .08);
+}
+
 .project-pair {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1464,6 +1482,35 @@ svg {
     font-family: Consolas, monospace;
     font-size: 9px;
     letter-spacing: .1em;
+}
+
+.wallpaper-credit-chip {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    padding: 9px 12px;
+    color: var(--paper);
+    border: 1px solid rgba(244, 241, 232, .2);
+    border-radius: var(--pill);
+    background: rgba(8, 7, 12, .78);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    backdrop-filter: blur(12px);
+    font-family: Consolas, monospace;
+    font-size: 8px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: color .25s ease, border-color .25s ease;
+}
+
+.wallpaper-credit-chip span {
+    margin-right: 6px;
+    color: #91cfc6;
+}
+
+.wallpaper-credit-chip:hover {
+    color: #91cfc6;
+    border-color: rgba(145, 207, 198, .62);
 }
 
 .bot-visual {
@@ -2327,10 +2374,84 @@ svg {
 }
 
 .gallery-frame img {
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: contain;
     background: #050407;
+}
+
+.wallpaper-attribution {
+    display: grid;
+    padding: clamp(28px, 4vw, 52px);
+    grid-template-columns: minmax(0, 1.15fr) minmax(250px, .55fr);
+    gap: clamp(28px, 5vw, 70px);
+    align-items: end;
+    border-top: 1px solid var(--line-strong);
+    background:
+        radial-gradient(circle at 90% 10%, rgba(145, 207, 198, .1), transparent 24rem),
+        rgba(15, 11, 21, .94);
+}
+
+.attribution-kicker {
+    margin: 0 0 14px;
+    color: #91cfc6;
+    font-family: Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.wallpaper-attribution h3 {
+    margin: 0 0 18px;
+    font-family: "Bahnschrift", sans-serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    letter-spacing: -.05em;
+    line-height: .9;
+    text-transform: uppercase;
+}
+
+.wallpaper-attribution h3 a {
+    color: var(--paper);
+}
+
+.wallpaper-attribution > div > p:last-child {
+    max-width: 700px;
+    margin: 0;
+    color: var(--muted);
+}
+
+.wallpaper-attribution > div > p a {
+    color: var(--paper-soft);
+    text-decoration: underline;
+    text-decoration-color: rgba(145, 207, 198, .5);
+    text-underline-offset: 3px;
+}
+
+.attribution-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.attribution-links a {
+    padding: 12px 14px;
+    color: var(--paper-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--pill);
+    font-family: Consolas, monospace;
+    font-size: 8px;
+    letter-spacing: .07em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: color .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.attribution-links a:hover {
+    color: var(--paper);
+    border-color: rgba(145, 207, 198, .5);
+    background: rgba(145, 207, 198, .07);
 }
 
 .pricing-grid {
@@ -2768,6 +2889,7 @@ svg {
     .detail-title { font-size: clamp(4.2rem, 20vw, 7rem); }
     .showcase-warning { grid-template-columns: 1fr; gap: 12px; padding: 15px; }
     .showcase-warning > span { width: fit-content; }
+    .wallpaper-credit-chip { top: 12px; left: 12px; padding: 7px 9px; font-size: 7px; }
     .detail-visual { width: calc(100% - 14px); }
     .detail-stats div { min-height: 115px; padding: 22px 16px; }
     .mirrorgate-page .detail-stats { grid-template-columns: 1fr; }
@@ -2794,6 +2916,8 @@ svg {
     .video-showcase { padding: 6px; gap: 0; border-radius: 30px; }
     .video-frame { border-radius: 24px; }
     .video-copy { padding: 32px 20px 28px; }
+    .wallpaper-attribution { grid-template-columns: 1fr; padding: 28px 22px; }
+    .attribution-links { align-items: stretch; }
     .feature-grid { grid-template-columns: 1fr; }
     .feature-grid article,
     .feature-grid article:nth-child(2n),
