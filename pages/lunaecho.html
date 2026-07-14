@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0c0912">
-    <title>LunaEcho | Okami</title>
-    <meta name="description" content="LunaEcho is an in-development all-in-one Discord bot planned with moderation, onboarding, music, tickets, leveling, automation, and three access tiers.">
+    <title>LunaEcho | Discord Community Platform Preview</title>
+    <meta name="description" content="LunaEcho is a planned Discord community platform with moderation, onboarding, music, tickets, leveling, automation, and clearly defined self-hosted and managed access models.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="LunaEcho | Discord Bot Preview">
+    <meta property="og:title" content="LunaEcho | Discord Community Platform Preview">
+    <meta property="og:description" content="Compare LunaEcho Self-Hosted, Managed Free, and Managed Complete while the platform is in development.">
     <meta property="og:image" content="../assets/images/LunaEcho_Logo_v2.png">
     <link rel="icon" type="image/webp" href="../assets/images/Profile25.webp?v=2">
-    <link rel="stylesheet" href="../assets/css/style.css?v=12">
+    <link rel="stylesheet" href="../assets/css/style.css?v=17">
     <script src="../assets/js/head.js?v=1"></script>
 </head>
 <body class="detail-page luna-page">
@@ -27,7 +28,7 @@
             <span>Menu</span><span class="menu-lines" aria-hidden="true"></span>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Project navigation">
-            <a href="#overview">Overview</a><a href="#hosting">Plans</a><a href="#availability">Features</a>
+            <a href="#overview">Overview</a><a href="#hosting">Access</a><a href="#availability">Features</a><a href="#roadmap">Roadmap</a>
             <span class="nav-out nav-status" aria-label="GitHub repository planned">GitHub planned</span>
         </nav>
     </header>
@@ -36,151 +37,225 @@
         <section class="detail-hero" id="overview" aria-labelledby="project-title">
             <div class="detail-copy">
                 <a class="detail-breadcrumb reveal" href="../index.html#work">← Back to my projects</a>
-                <p class="detail-badge reveal">Product preview / In development</p>
+                <p class="detail-badge reveal">Product direction / Pre-release</p>
                 <h1 class="detail-title reveal" id="project-title">Luna<span class="outline">Echo</span></h1>
-                <p class="detail-lead reveal">A large all-in-one Discord bot planned to bring moderation, community tools, music, automation, and flexible self-hosted or managed access into one place.</p>
+                <p class="detail-lead reveal">A modular Discord community platform planned to bring moderation, support, engagement, voice, music, and automation into one dependable system.</p>
                 <div class="detail-actions reveal">
-                    <a class="button" href="#hosting">Explore plans ↓</a>
-                    <span class="button button-ghost button-disabled" aria-disabled="true">GitHub coming later</span>
+                    <a class="button" href="#hosting">Compare access models ↓</a>
+                    <span class="button button-ghost button-disabled" aria-disabled="true">Public preview not open</span>
                 </div>
-                <div class="detail-tags reveal"><span>Node.js</span><span>Discord</span><span>Self-hosted + managed</span></div>
+                <div class="detail-tags reveal"><span>Discord</span><span>Community operations</span><span>Self-hosted or managed</span></div>
             </div>
             <figure class="detail-visual bot-visual reveal">
                 <img src="../assets/images/LunaEcho_Logo_v2.png" alt="LunaEcho cat bot logo" width="1537" height="1359">
-                <figcaption class="detail-visual-label">BOT / BUILDING</figcaption>
+                <figcaption class="detail-visual-label">PRE-RELEASE / DESIGN</figcaption>
             </figure>
         </section>
 
         <section class="detail-strip" aria-label="Project facts">
             <div class="detail-stats">
-                <div><strong>Self</strong><span>No managed limits</span></div>
-                <div><strong>Free</strong><span>Core tools included</span></div>
-                <div><strong>€3</strong><span>Full managed tier</span></div>
-                <div><strong>WIP</strong><span>Currently in development</span></div>
+                <div><strong>3</strong><span>Clearly defined access models</span></div>
+                <div><strong>8</strong><span>Planned feature areas</span></div>
+                <div><strong>€3</strong><span>Managed Complete / month</span></div>
+                <div><strong>WIP</strong><span>No public release yet</span></div>
             </div>
         </section>
 
         <section class="detail-section" id="hosting" aria-labelledby="hosting-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>01</span> Planned tiers</div>
-                <h2 id="hosting-title">Three ways to<br>run LunaEcho.</h2>
-                <p>This is a preview of the current plan. LunaEcho is still in development, so features and limits may be adjusted before release.</p>
+                <div class="section-label"><span>01</span> Access models</div>
+                <h2 id="hosting-title">Choose who hosts it.<br>Then choose the scope.</h2>
+                <p>Each name describes both the operating model and the included feature scope. Run the full platform yourself, or use a LunaEcho-managed service with Free or Complete access.</p>
             </div>
+
+            <div class="tier-definition-grid reveal" aria-label="LunaEcho hosting model explanation">
+                <article class="tier-definition">
+                    <span>You operate LunaEcho</span>
+                    <strong>Self-Hosted</strong>
+                    <p>Your infrastructure, your uptime, your data, and the complete planned feature set.</p>
+                </article>
+                <article class="tier-definition tier-definition-managed">
+                    <span>LunaEcho operates the service</span>
+                    <strong>Managed</strong>
+                    <p>Hosting and updates are handled for you. Choose Free for core access or Complete for the full managed feature set.</p>
+                </article>
+            </div>
+
             <div class="pricing-grid">
                 <article class="price-card reveal">
-                    <p class="detail-badge">Complete / Self-managed</p><h3>Self-hosted</h3><p>Run LunaEcho on your own infrastructure with the full feature set and full control.</p>
-                    <div class="price">€0 <small>/ software</small></div>
-                    <ul class="check-list"><li>Complete feature set</li><li>No LunaEcho-managed quotas</li><li>Music and automations included</li><li>Data stays on your infrastructure</li><li>You manage updates and uptime</li></ul>
-                    <span class="button button-ghost button-disabled" aria-disabled="true">Repository coming later</span>
+                    <div class="tier-card-head"><p class="tier-label">You host / Full access</p><h3>Self-Hosted</h3><p>Deploy the complete LunaEcho platform on infrastructure you control.</p></div>
+                    <div class="price">€0 <small>/ LunaEcho software</small></div>
+                    <div class="tier-responsibility"><span>Operated by</span><strong>You</strong></div>
+                    <ul class="check-list"><li>Complete planned feature set</li><li>No LunaEcho-managed quotas</li><li>Music and advanced automations included</li><li>Data remains on your infrastructure</li><li>You manage setup, updates, and uptime</li></ul>
+                    <span class="button button-ghost button-disabled" aria-disabled="true">Public repository planned</span>
                 </article>
                 <article class="price-card reveal">
-                    <p class="detail-badge">Core / Managed</p><h3>Hosted free</h3><p>Use the everyday community tools without running your own bot server.</p>
-                    <div class="price">€0 <small>/ forever</small></div>
+                    <div class="tier-card-head"><p class="tier-label">We host / Core access</p><h3>Managed Free</h3><p>Use essential community tools without operating a bot server yourself.</p></div>
+                    <div class="price">€0 <small>/ month</small></div>
+                    <div class="tier-responsibility"><span>Operated by</span><strong>LunaEcho</strong></div>
                     <ul class="check-list"><li>Core moderation and onboarding</li><li>Basic XP, ranks, and leaderboards</li><li>Up to 2 temporary voice creator hubs</li><li>Limited tickets and 7-day logging</li><li>No music or advanced automations</li></ul>
-                    <span class="button button-ghost button-disabled" aria-disabled="true">Available after release</span>
+                    <span class="button button-ghost button-disabled" aria-disabled="true">Planned managed option</span>
                 </article>
                 <article class="price-card featured-tier reveal">
-                    <p class="detail-badge">Complete / Managed</p><h3>Hosted premium</h3><p>The full managed LunaEcho experience for communities that need the larger toolset.</p>
+                    <div class="tier-card-head"><p class="tier-label">We host / Full access</p><h3>Managed Complete</h3><p>Use the complete managed platform with hosting, updates, and the larger toolset included.</p></div>
                     <div class="price">€3 <small>/ month</small></div>
+                    <div class="tier-responsibility"><span>Operated by</span><strong>LunaEcho</strong></div>
                     <ul class="check-list"><li>Complete managed feature set</li><li>Music and advanced automations</li><li>Expanded tickets and temporary voice</li><li>Advanced logs and longer retention</li><li>Hosting and updates included</li></ul>
-                    <span class="button button-disabled" aria-disabled="true">Planned premium tier</span>
+                    <span class="button button-disabled" aria-disabled="true">Planned complete option</span>
                 </article>
             </div>
-            <p class="plan-note reveal"><strong>Current plan:</strong> These tiers show the intended direction while LunaEcho is in development. Exact managed limits and fair-use details may be adjusted before release.</p>
+
+            <div class="tier-comparison reveal" aria-labelledby="comparison-title">
+                <div class="tier-comparison-head">
+                    <div><p class="detail-badge">At a glance</p><h3 id="comparison-title">Access model comparison</h3></div>
+                    <p>The names remain consistent throughout the feature breakdown below.</p>
+                </div>
+                <div class="tier-table-wrap">
+                    <table>
+                        <thead><tr><th scope="col">Decision</th><th scope="col">Self-Hosted</th><th scope="col">Managed Free</th><th scope="col">Managed Complete</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Who operates it?</th><td>You</td><td>LunaEcho</td><td>LunaEcho</td></tr>
+                            <tr><th scope="row">Planned price</th><td>€0 software</td><td>€0 / month</td><td>€3 / month</td></tr>
+                            <tr><th scope="row">Feature scope</th><td>Complete</td><td>Core with limits</td><td>Complete managed</td></tr>
+                            <tr><th scope="row">Updates &amp; uptime</th><td>Your responsibility</td><td>Included</td><td>Included</td></tr>
+                            <tr><th scope="row">Best fit</th><td>Technical operators</td><td>Everyday communities</td><td>Communities needing full access</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="plan-note reveal"><strong>Pre-release plan:</strong> Feature boundaries, fair-use limits, and the €3 managed price remain subject to validation before launch. Changes will be documented clearly.</p>
         </section>
 
         <section class="detail-section availability-section" id="availability" aria-labelledby="availability-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>02</span> Feature access</div>
-                <h2 id="availability-title">Useful free.<br>Powerful when needed.</h2>
-                <p>Lightweight everyday tools stay in the managed Free tier. Features that continuously use audio, storage, or background processing are limited or moved to Premium and Self-hosted.</p>
+                <div class="section-label"><span>02</span> Feature scope</div>
+                <h2 id="availability-title">A useful core.<br>A complete path forward.</h2>
+                <p>Managed Free covers practical everyday tools. Managed Complete adds resource-intensive and advanced features, while Self-Hosted provides the complete scope on infrastructure you operate.</p>
             </div>
 
             <div class="availability-grid">
                 <article class="access-card reveal">
                     <header class="access-card-head"><span class="access-card-index">01</span><div><h3>Moderation</h3><p>Core safety tools remain available to every server.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-included">Included</strong><p>Warnings, timeouts, kick, ban, and message cleanup.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Full suite</strong><p>Rule presets, repeat-offender actions, and deeper case tools.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Full suite</strong><p>All moderation features without managed quotas.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-included">Included</strong><p>Warnings, timeouts, kick, ban, and message cleanup.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Rule presets, repeat-offender actions, and deeper case tools.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>All moderation features without managed quotas.</p></div>
                     </div>
                 </article>
 
                 <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">02</span><div><h3>Onboarding &amp; roles</h3><p>Simple welcomes are free; larger flows unlock with the full tiers.</p></div></header>
+                    <header class="access-card-head"><span class="access-card-index">02</span><div><h3>Onboarding &amp; roles</h3><p>Managed Free covers simple welcomes; full-access models unlock larger flows.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-included">Included</strong><p>One welcome setup and one automatic role.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Full suite</strong><p>Multiple flows, role menus, templates, and conditions.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Full suite</strong><p>Complete onboarding configuration on your server.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-included">Included</strong><p>One welcome setup and one automatic role.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Multiple flows, role menus, templates, and conditions.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>Complete onboarding configuration on your server.</p></div>
                     </div>
                 </article>
 
                 <article class="access-card reveal">
                     <header class="access-card-head"><span class="access-card-index">03</span><div><h3>Ticket system</h3><p>Small communities get a practical starting point without storage growing unchecked.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-limited">Limited</strong><p>1 panel, up to 3 open tickets, and 7-day transcripts.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Full suite</strong><p>Multiple panels, higher limits, routing, and longer transcripts.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Full suite</strong><p>No managed limit; storage depends on your host.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-limited">Limited</strong><p>1 panel, up to 3 open tickets, and 7-day transcripts.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Multiple panels, higher limits, routing, and longer transcripts.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>No managed limit; storage depends on your host.</p></div>
                     </div>
                 </article>
 
                 <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">04</span><div><h3>Leveling &amp; rewards</h3><p>The social core stays free while deeper customization belongs to the full tiers.</p></div></header>
+                    <header class="access-card-head"><span class="access-card-index">04</span><div><h3>Leveling &amp; rewards</h3><p>The social core stays in Managed Free while deeper customization belongs to full access.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-included">Included</strong><p>XP, ranks, and a basic server leaderboard.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Full suite</strong><p>Role rewards, multipliers, exclusions, and seasons.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Full suite</strong><p>All progression and reward controls included.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-included">Included</strong><p>XP, ranks, and a basic server leaderboard.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Role rewards, multipliers, exclusions, and seasons.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>All progression and reward controls included.</p></div>
                     </div>
                 </article>
 
                 <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">05</span><div><h3>Temporary voice</h3><p>Free includes full room usage with a simple limit on creator hubs.</p></div></header>
+                    <header class="access-card-head"><span class="access-card-index">05</span><div><h3>Temporary voice</h3><p>Managed Free includes full room usage with a simple limit on creator hubs.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-limited">2 hubs</strong><p>Up to 2 creator hubs with no limit on active temporary rooms.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Full suite</strong><p>More creator hubs plus custom names and member permissions.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Full suite</strong><p>No LunaEcho-managed room limits.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-limited">2 hubs</strong><p>Up to 2 creator hubs with no limit on active temporary rooms.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>More creator hubs plus custom names and member permissions.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>No LunaEcho-managed room limits.</p></div>
                     </div>
                 </article>
 
                 <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">06</span><div><h3>Server logging</h3><p>Essential records are free; broader coverage and retention use more storage.</p></div></header>
+                    <header class="access-card-head"><span class="access-card-index">06</span><div><h3>Server logging</h3><p>Essential records are included in Managed Free; broader coverage and retention use more storage.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-limited">Limited</strong><p>Essential moderation and member logs kept for 7 days.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Full suite</strong><p>More event types, longer retention, and searchable summaries.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Full suite</strong><p>You choose the coverage and available storage.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-limited">Limited</strong><p>Essential moderation and member logs kept for 7 days.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>More event types, longer retention, and searchable summaries.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>You choose the coverage and available storage.</p></div>
                     </div>
                 </article>
 
                 <article class="access-card reveal">
                     <header class="access-card-head"><span class="access-card-index">07</span><div><h3>Music</h3><p>Continuous audio is one of the most resource-heavy managed features.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-unavailable">Not included</strong><p>Music is excluded to keep the managed Free tier sustainable.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Included</strong><p>Managed queue playback and complete member controls.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Included</strong><p>Music runs using your own infrastructure.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-unavailable">Not included</strong><p>Music is excluded to keep Managed Free sustainable.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Included</strong><p>Managed queue playback and complete member controls.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Included</strong><p>Music runs using your own infrastructure.</p></div>
                     </div>
                 </article>
 
                 <article class="access-card reveal">
                     <header class="access-card-head"><span class="access-card-index">08</span><div><h3>Automations &amp; insights</h3><p>Background workflows and stored activity analysis are reserved for full access.</p></div></header>
                     <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Free</span><strong class="access-status status-unavailable">Not included</strong><p>Advanced rules, schedules, and analytics are unavailable.</p></div>
-                        <div class="access-level"><span class="access-tier">Premium</span><strong class="access-status status-full">Included</strong><p>Advanced rules, scheduled actions, and community insights.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-hosted</span><strong class="access-status status-full">Included</strong><p>All workflows and insights run on your hardware.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-unavailable">Not included</strong><p>Advanced rules, schedules, and analytics are unavailable.</p></div>
+                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Included</strong><p>Advanced rules, scheduled actions, and community insights.</p></div>
+                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Included</strong><p>All workflows and insights run on your hardware.</p></div>
                     </div>
                 </article>
             </div>
 
-            <aside class="resource-note reveal" aria-label="Why the managed Free tier has limits">
+            <aside class="resource-note reveal" aria-label="Why Managed Free has limits">
                 <span>Why limits?</span>
-                <div><h3>Free should be useful, not overloaded.</h3><p>Everyday moderation, onboarding, and community basics remain free. Continuous audio, long-term storage, and background processing create ongoing hosting costs, so those features are limited or reserved for Premium and Self-hosted.</p></div>
+                <div><h3>Managed Free should be useful, not overloaded.</h3><p>Everyday moderation, onboarding, and community basics remain available at no cost. Continuous audio, long-term storage, and background processing create ongoing hosting costs, so those features move to Managed Complete or Self-Hosted.</p></div>
             </aside>
         </section>
 
+        <section class="detail-section luna-roadmap-section" id="roadmap" aria-labelledby="roadmap-title">
+            <div class="detail-section-head reveal">
+                <div class="section-label"><span>03</span> Release roadmap</div>
+                <h2 id="roadmap-title">Built in stages.<br>Released when ready.</h2>
+                <p>The roadmap describes the intended release sequence rather than promising dates. Reliability, documentation, and operational readiness come before opening LunaEcho to public servers.</p>
+            </div>
+
+            <div class="product-roadmap">
+                <article class="roadmap-card roadmap-current reveal">
+                    <div class="roadmap-card-top"><span>01 / Now</span><strong>In development</strong></div>
+                    <h3>Core platform</h3>
+                    <p>Build and connect the moderation, community, ticket, voice, music, and automation foundations.</p>
+                    <ul><li>Core feature architecture</li><li>Permissions and configuration model</li><li>Reliable Discord event handling</li></ul>
+                </article>
+                <article class="roadmap-card reveal">
+                    <div class="roadmap-card-top"><span>02 / Next</span><strong>Planned</strong></div>
+                    <h3>Controlled testing</h3>
+                    <p>Validate real server workflows before opening the project more widely.</p>
+                    <ul><li>Feature and limit validation</li><li>Reliability and recovery testing</li><li>Setup and operator documentation</li></ul>
+                </article>
+                <article class="roadmap-card reveal">
+                    <div class="roadmap-card-top"><span>03 / Then</span><strong>Planned</strong></div>
+                    <h3>Self-Hosted preview</h3>
+                    <p>Publish the repository when the self-hosted experience is understandable and supportable.</p>
+                    <ul><li>Public source repository</li><li>Installation and update guidance</li><li>Initial configuration reference</li></ul>
+                </article>
+                <article class="roadmap-card reveal">
+                    <div class="roadmap-card-top"><span>04 / Later</span><strong>Planned</strong></div>
+                    <h3>Managed launch</h3>
+                    <p>Introduce Managed Free and Managed Complete after hosting operations are ready.</p>
+                    <ul><li>Managed onboarding flow</li><li>Fair-use limits and monitoring</li><li>Clear upgrade and billing information</li></ul>
+                </article>
+            </div>
+
+            <p class="plan-note reveal"><strong>No release date yet:</strong> Milestones may change as LunaEcho is built and tested. Public availability will only be announced when the relevant stage is ready.</p>
+        </section>
+
         <section class="detail-cta">
-            <p class="detail-badge reveal">Product preview / In development</p>
-            <h2 class="reveal">More is<br>coming.</h2>
-            <p class="reveal">LunaEcho is actively being developed. A public GitHub repository and release details will be added when they are ready.</p>
-            <div class="detail-actions reveal"><span class="button button-disabled" aria-disabled="true">GitHub repository planned</span><a class="button button-ghost" href="../index.html#work">See my other projects</a></div>
+            <p class="detail-badge reveal">Pre-release product direction</p>
+            <h2 class="reveal">Clear plans.<br>Careful launch.</h2>
+            <p class="reveal">LunaEcho is not accepting public servers yet. The repository, managed access, final limits, and release documentation will be published when their roadmap stages are ready.</p>
+            <div class="detail-actions reveal"><a class="button" href="#roadmap">Review the roadmap ↑</a><a class="button button-ghost" href="../index.html#work">See my other projects</a></div>
         </section>
     </main>
 
