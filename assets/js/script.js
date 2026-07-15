@@ -1,16 +1,19 @@
 (() => {
     const isHomePage = document.body.classList.contains('home-page');
+    const isLegalPage = document.body.classList.contains('legal-page');
 
-    if (isHomePage) {
+    if (isHomePage || isLegalPage) {
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
 
-        // Prevent saved hashes and browser restoration from opening the homepage mid-page.
-        const resetHomeScroll = () => {
-            if (window.location.hash) {
+        // Keep entry pages at the top while preserving intentional legal-document anchors.
+        const resetInitialScroll = () => {
+            if (isHomePage && window.location.hash) {
                 history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
             }
+
+            if (isLegalPage && window.location.hash) return;
 
             const root = document.documentElement;
             const previousScrollBehavior = root.style.scrollBehavior;
@@ -24,11 +27,43 @@
             });
         };
 
-        resetHomeScroll();
-        window.addEventListener('load', resetHomeScroll, { once: true });
-        window.addEventListener('pageshow', (event) => {
-            if (event.persisted) resetHomeScroll();
-        });
+        const alignInitialLegalAnchor = () => {
+            if (!isLegalPage || !window.location.hash) return;
+
+            const target = document.getElementById(window.location.hash.slice(1));
+            if (!target) return;
+
+            const root = document.documentElement;
+            const previousScrollBehavior = root.style.scrollBehavior;
+            const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height ?? 0;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight - 18;
+
+            root.style.scrollBehavior = 'auto';
+            window.scrollTo(0, Math.max(0, targetTop));
+            window.requestAnimationFrame(() => {
+                root.style.scrollBehavior = previousScrollBehavior;
+            });
+        };
+
+        const settleInitialPosition = () => {
+            resetInitialScroll();
+            alignInitialLegalAnchor();
+            window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+                resetInitialScroll();
+                alignInitialLegalAnchor();
+            }));
+        };
+
+        settleInitialPosition();
+        window.addEventListener('load', () => {
+            settleInitialPosition();
+            window.setTimeout(alignInitialLegalAnchor, 300);
+        }, { once: true });
+        window.addEventListener('pageshow', settleInitialPosition);
+
+        if (isLegalPage && document.fonts?.ready) {
+            document.fonts.ready.then(alignInitialLegalAnchor).catch(() => {});
+        }
     }
 
     const menuButton = document.querySelector('.menu-toggle');
