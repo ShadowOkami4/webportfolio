@@ -139,11 +139,15 @@
 
             try {
                 await navigator.clipboard.writeText(code.trim());
-                const original = button.textContent;
-                button.textContent = 'Copied';
-                window.setTimeout(() => { button.textContent = original; }, 1400);
+                button.dataset.copyState = 'copied';
+                window.siteLanguage?.updateDynamicControls();
+                window.setTimeout(() => {
+                    button.dataset.copyState = 'copy';
+                    window.siteLanguage?.updateDynamicControls();
+                }, 1400);
             } catch {
-                button.textContent = 'Select text';
+                button.dataset.copyState = 'select';
+                window.siteLanguage?.updateDynamicControls();
             }
         });
     });

@@ -8,6 +8,14 @@ const ROOT = __dirname;
 const REAL_ROOT = fs.realpathSync(ROOT);
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = Number(process.env.PORT || 8080);
+const ROUTE_ALIASES = new Map([
+    ['/LunaEcho', 'pages/lunaecho.html'],
+    ['/LunaEcho/Privacy', 'pages/lunaecho-privacy.html'],
+    ['/LunaEcho/Terms', 'pages/lunaecho-terms.html'],
+    ['/MirrorGate', 'pages/mirrorgate.html'],
+    ['/MirrorGate/Logo', 'pages/mirrorgate-logo-code.html'],
+    ['/Voidline', 'pages/voidline.html']
+]);
 
 if (!Number.isInteger(PORT) || PORT < 1 || PORT > 65535) {
     throw new Error('PORT must be an integer between 1 and 65535');
@@ -59,16 +67,20 @@ async function findPublicFile(urlPath) {
         return { status: 400 };
     }
 
+    const normalizedPath = decodedPath.length > 1 ? decodedPath.replace(/\/+$/, '') : decodedPath;
+    const aliasedPath = ROUTE_ALIASES.get(normalizedPath);
     const segments = decodedPath.split('/').filter(Boolean);
     if (segments.some((segment) => segment.startsWith('.'))) {
         return { status: 403 };
     }
 
-    let relativePath = segments.join('/');
-    if (!relativePath) {
-        relativePath = 'index.html';
-    } else if (decodedPath.endsWith('/')) {
-        relativePath = `${relativePath}/index.html`;
+    let relativePath = aliasedPath || segments.join('/');
+    if (!aliasedPath) {
+        if (!relativePath) {
+            relativePath = 'index.html';
+        } else if (decodedPath.endsWith('/')) {
+            relativePath = `${relativePath}/index.html`;
+        }
     }
 
     const candidates = [relativePath];

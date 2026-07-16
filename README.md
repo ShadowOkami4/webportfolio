@@ -12,6 +12,15 @@ npm start
 
 Open `http://127.0.0.1:8080`. The server binds to the local machine only and serves just `index.html`, `pages/`, and `assets/`.
 
+The local and production servers expose the same clean public routes:
+
+- `/Voidline`
+- `/LunaEcho`
+- `/LunaEcho/Terms`
+- `/LunaEcho/Privacy`
+- `/MirrorGate`
+- `/MirrorGate/Logo`
+
 To use a different local port:
 
 ```powershell

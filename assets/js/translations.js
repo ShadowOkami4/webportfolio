@@ -1,0 +1,867 @@
+(() => {
+    const STORAGE_KEY = 'okami-language';
+
+    const common = {
+        'Skip to content': 'Zum Inhalt springen',
+        'Okami home': 'Okami Startseite',
+        'Menu': 'Menü',
+        'Primary navigation': 'Hauptnavigation',
+        'Project navigation': 'Projektnavigation',
+        'Project facts': 'Projektfakten',
+        'Overview': 'Überblick',
+        'Roadmap': 'Roadmap',
+        'Contact': 'Kontakt',
+        'Source ↗': 'Quellcode ↗',
+        '← Back to my projects': '← Zurück zu meinen Projekten',
+        'See my other projects': 'Meine anderen Projekte',
+        'Back to top ↑': 'Nach oben ↑',
+        'Copy': 'Kopieren',
+        'Copied': 'Kopiert',
+        'Select text': 'Text markieren',
+        'PROJECT / 01': 'PROJEKT / 01',
+        'PROJECT / 02': 'PROJEKT / 02',
+        'PROJECT / 04': 'PROJEKT / 04',
+        'PROJECT 01': 'PROJEKT 01',
+        'PROJECT 04': 'PROJEKT 04',
+        'Planned': 'Geplant',
+        'In development': 'In Entwicklung',
+        'Open source': 'Open Source',
+        'Privacy Policy': 'Datenschutzerklärung',
+        'Terms of Service': 'Nutzungsbedingungen',
+        'Terms': 'Bedingungen',
+        'Privacy': 'Datenschutz',
+        'Data request': 'Datenanfrage',
+        'Automation': 'Automatisierung',
+        'Worldbuilding': 'Weltenbau',
+        'The Mirrored Realms': 'Die Spiegelreiche',
+        'LunaEcho cat bot logo': 'LunaEcho-Katzenbot-Logo',
+        'Voidline shell concept around Hyprland using Arch Linux-chan wallpaper artwork by RealShovelKun': 'Voidline-Shell-Konzept rund um Hyprland mit dem Arch-Linux-chan-Wallpaper von RealShovelKun',
+        'Effective': 'Gültig ab',
+        'Last updated': 'Zuletzt aktualisiert',
+        'Service status': 'Dienststatus',
+        'Pre-release': 'Vorabversion',
+        '16 July 2026': '16. Juli 2026',
+        'On this page': 'Auf dieser Seite',
+        'Summary': 'Zusammenfassung',
+        'Rules': 'Regeln',
+        'Your rights': 'Deine Rechte',
+        'Data': 'Daten',
+        'and': 'und',
+        'Email': 'E-Mail',
+        'with the subject': 'mit dem Betreff'
+    };
+
+    const home = {
+        'Okami | Hobby Developer & Creator': 'Okami | Hobbyentwickler & Creator',
+        'Okami is a beginner hobby developer and creator sharing personal Linux, Discord, automation, and tabletop worldbuilding projects.': 'Okami ist ein Hobbyentwickler und Creator am Anfang seiner Reise und teilt persönliche Projekte rund um Linux, Discord, Automatisierung und Tabletop-Weltenbau.',
+        'Personal projects made for fun, learning, and anyone who wants to try them.': 'Persönliche Projekte aus Spaß am Entwickeln, Lernen und Teilen.',
+        'PERSONAL PROJECTS': 'PERSÖNLICHE PROJEKTE',
+        'About': 'Über mich',
+        'Work': 'Projekte',
+        'Creating at my own pace': 'Ich entwickle in meinem eigenen Tempo',
+        'GERMANY / UTC +02': 'DEUTSCHLAND / UTC +02',
+        'EST. 2026': 'SEIT 2026',
+        'Hobby developer / curious creator': 'Hobbyentwickler / neugieriger Creator',
+        'Personal ideas,': 'Persönliche Ideen,',
+        'made real.': 'werden Wirklichkeit.',
+        'I make tools and experiments for myself first, then share the useful and interesting ones for everyone to explore.': 'Ich entwickle Werkzeuge und Experimente zuerst für mich selbst und teile die nützlichen oder interessanten anschließend mit allen, die sie entdecken möchten.',
+        'See my projects': 'Meine Projekte ansehen',
+        'Okami wolf logo': 'Okami-Wolfslogo',
+        'Interests: hobby projects, learning by doing, open source, worldbuilding, YouTube and gaming': 'Interessen: Hobbyprojekte, Learning by Doing, Open Source, Weltenbau, YouTube und Gaming',
+        'HOBBY PROJECTS': 'HOBBYPROJEKTE',
+        'LEARNING BY DOING': 'LEARNING BY DOING',
+        'WORLDBUILDING': 'WELTENBAU',
+        'YOUTUBE & GAMING': 'YOUTUBE & GAMING',
+        'Built for myself.': 'Für mich selbst entwickelt.',
+        'Shared with everyone.': 'Mit allen geteilt.',
+        'I’m Okami, a beginner hobby developer who enjoys turning personal ideas into small working projects. I’m still learning, and every project is a chance to discover something new at my own pace.': 'Ich bin Okami, ein Hobbyentwickler am Anfang seiner Reise, der gerne persönliche Ideen in kleine funktionierende Projekte verwandelt. Ich lerne noch, und jedes Projekt ist eine Gelegenheit, in meinem eigenen Tempo etwas Neues zu entdecken.',
+        'I build for my own use first, then make the results public so anyone can try, learn from, or adapt them. On YouTube, I share a mix of gaming videos and showcases of project features and progress. My Twitch streams are a separate hobby and are not about coding.': 'Ich entwickle zuerst für meinen eigenen Gebrauch und veröffentliche die Ergebnisse anschließend, damit andere sie ausprobieren, daraus lernen oder anpassen können. Auf YouTube teile ich Gaming-Videos sowie Einblicke in Funktionen und Fortschritte meiner Projekte. Meine Twitch-Streams sind ein separates Hobby und haben nichts mit Programmieren zu tun.',
+        'WHERE PROJECTS BEGIN': 'WO PROJEKTE BEGINNEN',
+        'Usually with a personal idea that sounds fun or useful to explore. I take it at my own pace, shape it around how I would use it, and share it when it becomes something worth showing.': 'Meist mit einer persönlichen Idee, die spannend oder nützlich klingt. Ich verfolge sie in meinem eigenen Tempo, richte sie an meiner Nutzung aus und teile sie, sobald daraus etwas Zeigenswertes geworden ist.',
+        'My projects': 'Meine Projekte',
+        'Personal projects.': 'Persönliche Projekte.',
+        'Things I started for my own setup, interests, or curiosity and decided to make public.': 'Dinge, die aus meinem eigenen Setup, meinen Interessen oder meiner Neugier entstanden sind und die ich öffentlich gemacht habe.',
+        'View the Voidline project': 'Das Voidline-Projekt ansehen',
+        'Voidline shell concept around Hyprland using Arch Linux-chan wallpaper artwork by RealShovelKun': 'Voidline-Shell-Konzept rund um Hyprland mit dem Arch-Linux-chan-Wallpaper von RealShovelKun',
+        'AI-GENERATED SHOWCASE': 'KI-GENERIERTER SHOWCASE',
+        'Take a look': 'Ansehen',
+        'LINUX / EXPERIMENTAL SHELL': 'LINUX / EXPERIMENTELLE SHELL',
+        'An AI-generated showcase for a cohesive Material-inspired desktop experience and shell around Hyprland, planned across Quickshell, Python, Lua, and Rust.': 'Ein KI-generierter Showcase für eine zusammenhängende, von Material inspirierte Desktop-Erfahrung und Shell rund um Hyprland, geplant mit Quickshell, Python, Lua und Rust.',
+        'Multi-language': 'Mehrere Sprachen',
+        'Wallpaper: RealShovelKun ↗': 'Wallpaper: RealShovelKun ↗',
+        'View the LunaEcho project': 'Das LunaEcho-Projekt ansehen',
+        'LunaEcho cat bot logo': 'LunaEcho-Katzenbot-Logo',
+        'IN DEVELOPMENT': 'IN ENTWICKLUNG',
+        'DISCORD / IN DEVELOPMENT': 'DISCORD / IN ENTWICKLUNG',
+        'An in-development Discord bot planned around moderation, tickets, music, leveling, temporary voice channels, and flexible hosting options.': 'Ein Discord-Bot in Entwicklung, geplant mit Moderation, Tickets, Musik, Levelsystem, temporären Sprachkanälen und flexiblen Hosting-Optionen.',
+        'Repository planned': 'Repository geplant',
+        'View StreamNotifier on GitHub': 'StreamNotifier auf GitHub ansehen',
+        'View source': 'Quellcode ansehen',
+        'PERSONAL UTILITY / AUTOMATION': 'PERSÖNLICHES TOOL / AUTOMATISIERUNG',
+        'A small utility I made for my own setup to send a Discord notification when a stream goes live, then shared for anyone else who finds it useful.': 'Ein kleines Tool für mein eigenes Setup, das bei einem Livestream eine Discord-Benachrichtigung sendet und das ich anschließend für alle veröffentlicht habe, die es nützlich finden.',
+        'Enter the MirrorGate project': 'Das MirrorGate-Projekt betreten',
+        'The Mirrored Realms': 'Die Spiegelreiche',
+        'Enter the vault': 'Das Archiv betreten',
+        'TABLETOP / OPEN-SOURCE SETTING': 'TABLETOP / OPEN-SOURCE-SETTING',
+        'A door disguised as an Obsidian vault: an evolving D&D 5.5e setting of broken time, folded roads, royal lies, and reflections that remember more than they should.': 'Eine als Obsidian-Vault getarnte Tür: ein wachsendes D&D-5.5e-Setting aus gebrochener Zeit, gefalteten Wegen, königlichen Lügen und Spiegelbildern, die sich an mehr erinnern, als sie sollten.',
+        "LET'S TALK ABOUT": 'LASS UNS ÜBER',
+        'SOMETHING FUN.': 'ETWAS SPANNENDES REDEN.',
+        'Have feedback, a question about one of my projects, or want to compare Linux setups or campaign ideas? My inbox is open.': 'Du hast Feedback, eine Frage zu einem meiner Projekte oder möchtest Linux-Setups beziehungsweise Kampagnenideen vergleichen? Mein Postfach ist offen.',
+        'EMAIL / BEST WAY TO REACH ME': 'E-MAIL / SO ERREICHST DU MICH AM BESTEN',
+        'Say hello.': 'Sag Hallo.',
+        'Questions, feedback, and friendly messages are all welcome.': 'Fragen, Feedback und freundliche Nachrichten sind jederzeit willkommen.',
+        'Find Okami online': 'Okami online finden',
+        'Videos and showcases': 'Videos und Showcases',
+        'Gaming videos alongside project previews, demos, and progress.': 'Gaming-Videos neben Projektvorschauen, Demos und Fortschritten.',
+        'Public project source': 'Öffentlicher Projektcode',
+        'Browse the projects that already have public code.': 'Entdecke die Projekte, deren Code bereits öffentlich ist.',
+        'Casual streams': 'Entspannte Streams',
+        'Gaming and relaxed streams, separate from my coding projects.': 'Gaming und entspannte Streams, getrennt von meinen Coding-Projekten.',
+        'BUILT FOR FUN / SHARED WITH EVERYONE': 'AUS SPASS ENTWICKELT / MIT ALLEN GETEILT'
+    };
+
+    const voidline = {
+        'Voidline | Okami': 'Voidline | Okami',
+        'Voidline | AI-Generated Shell Showcase': 'Voidline | KI-generierter Shell-Showcase',
+        'Voidline is an AI-generated showcase for a Material-inspired Linux desktop experience and shell around Hyprland, planned across Quickshell, Python, Lua, and Rust.': 'Voidline ist ein KI-generierter Showcase für eine von Material inspirierte Linux-Desktop-Erfahrung und Shell rund um Hyprland, geplant mit Quickshell, Python, Lua und Rust.',
+        'Context': 'Kontext',
+        'Showcase': 'Showcase',
+        'Install': 'Installation',
+        'Important AI-generated showcase notice': 'Wichtiger Hinweis zum KI-generierten Showcase',
+        'Important': 'Wichtig',
+        'AI-generated showcase': 'KI-generierter Showcase',
+        'The Voidline interface shown here is currently an AI-generated concept and demonstration, not a finished Hyprland shell. The wallpaper artwork is by RealShovelKun and is credited below.': 'Die hier gezeigte Voidline-Oberfläche ist derzeit ein KI-generiertes Konzept und eine Demonstration, keine fertige Hyprland-Shell. Das Wallpaper stammt von RealShovelKun und wird weiter unten genannt.',
+        'Experimental shell / Hyprland': 'Experimentelle Shell / Hyprland',
+        'A Material-inspired desktop experience and shell around Hyprland, planned as a layered project using Quickshell, Python, Lua, and Rust.': 'Eine von Material inspirierte Desktop-Erfahrung und Shell rund um Hyprland, geplant als mehrschichtiges Projekt mit Quickshell, Python, Lua und Rust.',
+        'Watch showcase ↓': 'Showcase ansehen ↓',
+        'View on GitHub ↗': 'Auf GitHub ansehen ↗',
+        'AI showcase': 'KI-Showcase',
+        'SHELL / PREVIEW': 'SHELL / VORSCHAU',
+        'Wallpaper art': 'Wallpaper-Artwork',
+        'Generated showcase': 'Generierter Showcase',
+        'Planned technology stack': 'Geplanter Technologie-Stack',
+        'Design language': 'Designsprache',
+        'Experimental state': 'Experimenteller Stand',
+        'A showcase,': 'Ein Showcase,',
+        'not the finish line.': 'nicht das Endergebnis.',
+        'Voidline and the public showcase are connected, but they are not the same thing. This page separates the long-term project direction from the current experimental demonstration.': 'Voidline und der öffentliche Showcase gehören zusammen, sind aber nicht dasselbe. Diese Seite trennt die langfristige Projektrichtung von der aktuellen experimentellen Demonstration.',
+        'Showcase / Context': 'Showcase / Kontext',
+        'The showcase is a snapshot of an idea.': 'Der Showcase ist eine Momentaufnahme einer Idee.',
+        'The public repository is an AI-generated concept and experimental demonstration of a possible Voidline experience. It communicates layout, atmosphere, and direction, but it does not represent a finished or production-ready shell.': 'Das öffentliche Repository ist ein KI-generiertes Konzept und eine experimentelle Demonstration einer möglichen Voidline-Erfahrung. Es vermittelt Layout, Atmosphäre und Richtung, stellt aber keine fertige oder produktionsreife Shell dar.',
+        'The project': 'Das Projekt',
+        'The real direction': 'Die eigentliche Richtung',
+        'Voidline is intended as a cohesive shell and desktop experience around Hyprland, with Quickshell, Python, Lua, and Rust handling the parts they suit best.': 'Voidline ist als zusammenhängende Shell und Desktop-Erfahrung rund um Hyprland gedacht, wobei Quickshell, Python, Lua und Rust jeweils die Aufgaben übernehmen, für die sie am besten geeignet sind.',
+        'The current state': 'Der aktuelle Stand',
+        'Experimental and visible': 'Experimentell und sichtbar',
+        'The repository and the video below document the showcase as it currently exists. Features, visuals, and setup steps may still change as the real project develops.': 'Das Repository und das folgende Video dokumentieren den Showcase in seinem aktuellen Zustand. Funktionen, Optik und Einrichtungsschritte können sich während der Entwicklung des eigentlichen Projekts noch ändern.',
+        'Current showcase': 'Aktueller Showcase',
+        'See the shell': 'Sieh die Shell',
+        'in motion.': 'in Bewegung.',
+        'This video was recorded by me and shows the shell showcase in its current experimental state. It provides a more honest view of the working experience than the generated concept image alone.': 'Dieses Video wurde von mir aufgenommen und zeigt den Shell-Showcase in seinem aktuellen experimentellen Zustand. Es vermittelt einen ehrlicheren Eindruck der funktionierenden Erfahrung als das generierte Konzeptbild allein.',
+        'Voidline shell showcase by Okami on YouTube': 'Voidline-Shell-Showcase von Okami auf YouTube',
+        'Creator showcase / YouTube': 'Creator-Showcase / YouTube',
+        'The current showcase state': 'Der aktuelle Showcase-Stand',
+        'The recording demonstrates the shell as it can actually be explored today. It complements the AI-generated concept instead of presenting that concept as a completed implementation.': 'Die Aufnahme zeigt die Shell so, wie sie heute tatsächlich erkundet werden kann. Sie ergänzt das KI-generierte Konzept, statt es als fertige Umsetzung darzustellen.',
+        'Recorded and presented by me': 'Von mir aufgenommen und präsentiert',
+        'Shows the experimental showcase state': 'Zeigt den experimentellen Showcase-Stand',
+        'Not a production-ready Voidline release': 'Keine produktionsreife Voidline-Version',
+        'Open on YouTube ↗': 'Auf YouTube öffnen ↗',
+        'Installation': 'Installation',
+        'From blank': 'Von Null',
+        'to Voidline.': 'zu Voidline.',
+        'Because this is an AI-generated experimental showcase, the commands and configuration may be incomplete or change without notice. Review the repository and back up your config first.': 'Da dies ein KI-generierter experimenteller Showcase ist, können Befehle und Konfiguration unvollständig sein oder sich ohne Ankündigung ändern. Prüfe zuerst das Repository und sichere deine Konfiguration.',
+        'Install Hyprland': 'Hyprland installieren',
+        'Install Quickshell': 'Quickshell installieren',
+        'Clone Voidline': 'Voidline klonen',
+        'Copy the config': 'Konfiguration kopieren',
+        'Start Hyprland': 'Hyprland starten',
+        'Generated concept': 'Generiertes Konzept',
+        'The visual': 'Die visuelle',
+        'direction.': 'Richtung.',
+        'The shell interface around the wallpaper is an AI-generated concept. It represents the intended atmosphere and design direction, not proof that every visible element is already implemented. The wallpaper itself is original artwork by RealShovelKun.': 'Die Shell-Oberfläche rund um das Wallpaper ist ein KI-generiertes Konzept. Sie zeigt die beabsichtigte Atmosphäre und Designrichtung, ist aber kein Beweis dafür, dass jedes sichtbare Element bereits umgesetzt wurde. Das Wallpaper selbst ist ein Originalwerk von RealShovelKun.',
+        'Wide Voidline shell concept using Arch Linux-chan wallpaper artwork by RealShovelKun': 'Breites Voidline-Shell-Konzept mit dem Arch-Linux-chan-Wallpaper von RealShovelKun',
+        'Wallpaper artwork': 'Wallpaper-Artwork',
+        'The wallpaper visible inside the Voidline showcase was created by': 'Das im Voidline-Showcase sichtbare Wallpaper wurde erstellt von',
+        '. The surrounding shell interface and presentation belong to the separate Voidline concept.': '. Die umgebende Shell-Oberfläche und Präsentation gehören zum separaten Voidline-Konzept.',
+        'RealShovelKun links': 'Links zu RealShovelKun',
+        'Original Reddit post ↗': 'Originaler Reddit-Beitrag ↗',
+        'AI-generated / Experimental': 'KI-generiert / Experimentell',
+        'Explore the': 'Erkunde den',
+        'showcase.': 'Showcase.',
+        'Start with the recorded state, inspect the generated showcase source, and follow Voidline as the real project develops beyond the concept.': 'Beginne mit dem aufgenommenen Stand, sieh dir den Quellcode des generierten Showcases an und begleite Voidline, während sich das eigentliche Projekt über das Konzept hinaus entwickelt.',
+        'Visit the showcase repository ↗': 'Showcase-Repository besuchen ↗',
+        'VOIDLINE / PROJECT 01': 'VOIDLINE / PROJEKT 01'
+    };
+
+    const mirrorgate = {
+        'MirrorGate | The Mirrored Realms': 'MirrorGate | Die Spiegelreiche',
+        'MirrorGate is an open-source D&D 5.5e world setting built as an interconnected Obsidian vault of broken time, folded space, dangerous reflections, and unfinished histories.': 'MirrorGate ist ein Open-Source-Weltensetting für D&D 5.5e, aufgebaut als vernetzter Obsidian-Vault aus gebrochener Zeit, gefaltetem Raum, gefährlichen Spiegelbildern und unvollendeten Geschichten.',
+        'Enter an evolving open-source D&D 5.5e setting where mirrors remember other lives and roads lose track of centuries.': 'Betritt ein wachsendes Open-Source-Setting für D&D 5.5e, in dem Spiegel sich an andere Leben erinnern und Wege ganze Jahrhunderte verlieren.',
+        'Vault': 'Archiv',
+        'Contents': 'Inhalte',
+        'Open source / D&D 5.5e': 'Open Source / D&D 5.5e',
+        'Somewhere inside an Obsidian vault waits a world that was never meant to stay still. Its records speak of Zerkalo, where mirrors remember other lives, roads misplace entire centuries, and the wounds of an ancient divine war have begun to dream again.': 'Irgendwo in einem Obsidian-Vault wartet eine Welt, die niemals stillstehen sollte. Ihre Aufzeichnungen erzählen von Zerkalo, wo Spiegel sich an andere Leben erinnern, Wege ganze Jahrhunderte verlegen und die Wunden eines uralten Götterkriegs wieder zu träumen beginnen.',
+        'Enter the vault ↗': 'Das Archiv betreten ↗',
+        'Read the records ↓': 'Die Aufzeichnungen lesen ↓',
+        'Obsidian vault': 'Obsidian-Vault',
+        'An abstract mirror doorway leading into the Library of Kagami': 'Ein abstraktes Spiegeltor, das in die Bibliothek von Kagami führt',
+        '“A mirror is a door pretending to be furniture.”': '„Ein Spiegel ist eine Tür, die vorgibt, ein Möbelstück zu sein.“',
+        'ARCHIVE / UNSEALED': 'ARCHIV / ENTSIEGELT',
+        'Ruleset in design': 'Regelwerk in Arbeit',
+        'Journeys foretold': 'Vorhergesagte Reisen',
+        'The archive is still forming': 'Das Archiv nimmt noch Gestalt an',
+        'Inside the vault': 'Im Archiv',
+        'Every shelf': 'Jedes Regal',
+        'points elsewhere.': 'weist woandershin.',
+        'Nothing in the vault stands alone. A royal name opens onto an old war, a creature points toward a broken age, and every unfinished story leaves another door ajar. All paths begin in the Library of Kagami.': 'Nichts im Archiv steht für sich allein. Ein königlicher Name führt zu einem alten Krieg, eine Kreatur weist auf ein zerbrochenes Zeitalter, und jede unvollendete Geschichte lässt eine weitere Tür offen. Alle Wege beginnen in der Bibliothek von Kagami.',
+        'The archive': 'Das Archiv',
+        'Professor Phineas Phantomhive II keeps watch over field notes, disputed maps, recovered testimony, and chapters that may describe moments which never happened. He insists the catalogue is reliable.': 'Professor Phineas Phantomhive II wacht über Feldnotizen, umstrittene Karten, geborgene Zeugenaussagen und Kapitel, die möglicherweise Momente beschreiben, die nie geschehen sind. Er besteht darauf, dass der Katalog verlässlich ist.',
+        'The world': 'Die Welt',
+        'A realm built over wounds no kingdom can truly claim. Beneath palaces and borders lie the remains of the Primordial War, still waiting to reveal whether they hold salvation or the shape of the next catastrophe.': 'Ein Reich, errichtet über Wunden, die kein Königreich wirklich beanspruchen kann. Unter Palästen und Grenzen liegen die Überreste des Primordial War und warten darauf zu offenbaren, ob sie Erlösung oder die Gestalt der nächsten Katastrophe bergen.',
+        'The threshold': 'Die Schwelle',
+        'Not a road or conventional plane, but a distorted passage through reflection, memory, folded distance, and broken chronology. Some mirrors show a face. Others wait for an invitation.': 'Keine Straße und keine gewöhnliche Ebene, sondern ein verzerrter Durchgang durch Spiegelung, Erinnerung, gefaltete Entfernung und gebrochene Chronologie. Manche Spiegel zeigen ein Gesicht. Andere warten auf eine Einladung.',
+        'Current MirrorGate vault subjects': 'Aktuelle Themen im MirrorGate-Archiv',
+        'Shard Monsters': 'Splittermonster',
+        'Planned journeys': 'Geplante Reisen',
+        'Eighteen ways': 'Achtzehn Wege,',
+        'to get lost.': 'sich zu verirren.',
+        'Every planned adventure belongs to the same setting. A single night beside the wrong mirror may end at dawn, or return much later as the first thread of a history the players have already changed.': 'Jedes geplante Abenteuer gehört zum selben Setting. Eine einzelne Nacht neben dem falschen Spiegel kann im Morgengrauen enden oder viel später als erster Faden einer Geschichte zurückkehren, die die Spielenden bereits verändert haben.',
+        'Planned / Standalone': 'Geplant / Eigenständig',
+        'One-shots': 'One-Shots',
+        'Ten doors into cursed estates, forbidden archives, unstable scars, and mirrors that promise to open only once.': 'Zehn Türen zu verfluchten Anwesen, verbotenen Archiven, instabilen Narben und Spiegeln, die versprechen, sich nur einmal zu öffnen.',
+        'Planned / Short arcs': 'Geplant / Kurze Handlungsbögen',
+        'Short adventures': 'Kurze Abenteuer',
+        'Five deeper trails where local conflicts expose recurring faces, dangerous relics, and consequences that refuse to remain where they began.': 'Fünf tiefere Pfade, auf denen lokale Konflikte wiederkehrende Gesichter, gefährliche Relikte und Folgen offenbaren, die nicht dort bleiben wollen, wo sie begonnen haben.',
+        'Planned / Long term': 'Geplant / Langfristig',
+        'Campaign frameworks': 'Kampagnenrahmen',
+        'Three long shadows cast across the Shattered Hope Era, where crowns, divine wounds, and the Mirrorgate can reshape an entire table’s version of Zerkalo.': 'Drei lange Schatten über der Shattered Hope Era, in der Kronen, göttliche Wunden und das Mirrorgate die gesamte Version von Zerkalo einer Spielrunde neu formen können.',
+        'Roadmap:': 'Roadmap:',
+        'These numbers describe the intended complete collection. MirrorGate is still in early development, so individual stories and their order may change as the setting grows.': 'Diese Zahlen beschreiben die geplante vollständige Sammlung. MirrorGate befindet sich noch in einer frühen Entwicklungsphase, daher können sich einzelne Geschichten und ihre Reihenfolge mit dem Wachstum des Settings ändern.',
+        'Beyond adventures': 'Mehr als Abenteuer',
+        'The vault': 'Das Archiv',
+        'keeps growing.': 'wächst weiter.',
+        'Some records are meant to be read. Others are meant to be carried into a campaign, worn by a character, awakened beneath a ruin, or encountered when the party realizes it is no longer alone.': 'Manche Aufzeichnungen sind zum Lesen bestimmt. Andere sollen in eine Kampagne getragen, von einem Charakter getragen, unter einer Ruine erweckt oder entdeckt werden, wenn die Gruppe erkennt, dass sie nicht mehr allein ist.',
+        'In the vault': 'Im Archiv',
+        'World & history': 'Welt & Geschichte',
+        'The oldest records disagree about Zerkalo, the Primordial War, and what truly began the Shattered Hope Era.': 'Die ältesten Aufzeichnungen widersprechen sich über Zerkalo, den Primordial War und darüber, was die Shattered Hope Era wirklich auslöste.',
+        'People & powers': 'Menschen & Mächte',
+        'Royal bloodlines, veiled factions, watchful gods, divided cultures, and names that appear more often than coincidence allows.': 'Königliche Blutlinien, verschleierte Fraktionen, wachsame Götter, gespaltene Kulturen und Namen, die häufiger auftauchen, als es der Zufall erlauben sollte.',
+        'In progress': 'In Arbeit',
+        'Monsters': 'Monster',
+        'Shard-born things already haunt the records. More wait beyond the pages that have been safely catalogued.': 'Splittergeborene Wesen suchen die Aufzeichnungen bereits heim. Weitere warten jenseits der Seiten, die sicher katalogisiert werden konnten.',
+        'Adventures & fiction': 'Abenteuer & Fiktion',
+        'The Pack in the Twilight and the Shattered Hope campaign frame are among the first threads pulled from the dark.': 'The Pack in the Twilight und der Kampagnenrahmen Shattered Hope gehören zu den ersten Fäden, die aus der Dunkelheit gezogen wurden.',
+        'Subclasses & feats': 'Unterklassen & Talente',
+        'Character options marked by old blood, living reflections, divine echoes, and time that no longer moves in a straight line.': 'Charakteroptionen, geprägt von altem Blut, lebenden Spiegelbildern, göttlichen Echos und einer Zeit, die sich nicht länger geradlinig bewegt.',
+        'Magic items & more': 'Magische Gegenstände & mehr',
+        'Relics, tools, hazards, and other objects whose histories may be more dangerous than their powers.': 'Relikte, Werkzeuge, Gefahren und andere Gegenstände, deren Geschichten gefährlicher sein könnten als ihre Kräfte.',
+        'Open the archive': 'Das Archiv öffnen',
+        'Enter through': 'Betritt es durch',
+        'Obsidian.': 'Obsidian.',
+        'MirrorGate does not expect to be read from beginning to end. It expects curiosity. Open the repository as an Obsidian vault, find the welcome record, and follow whichever name first feels familiar.': 'MirrorGate erwartet nicht, von Anfang bis Ende gelesen zu werden. Es erwartet Neugier. Öffne das Repository als Obsidian-Vault, finde die Willkommensaufzeichnung und folge dem ersten Namen, der dir vertraut erscheint.',
+        'Open source / Explore freely': 'Open Source / Frei erkunden',
+        'The door was never locked.': 'Die Tür war nie verschlossen.',
+        'Take what your table needs, change what the records got wrong, and follow the wiki-links until the vault begins answering questions you never asked.': 'Nimm, was deine Spielrunde braucht, ändere, was die Aufzeichnungen falsch festgehalten haben, und folge den Wiki-Links, bis das Archiv Fragen beantwortet, die du nie gestellt hast.',
+        'Clone or download': 'Klonen oder herunterladen',
+        'Get the complete repository from GitHub.': 'Hole dir das vollständige Repository von GitHub.',
+        'Open as a vault': 'Als Vault öffnen',
+        'Select the repository folder inside Obsidian.': 'Wähle den Repository-Ordner in Obsidian aus.',
+        'Find the entrance': 'Den Eingang finden',
+        'Open': 'Öffne',
+        'and meet the library’s custodian.': 'und triff den Hüter der Bibliothek.',
+        'Artwork note': 'Hinweis zu Bildern',
+        'Most images currently inside the vault are AI-generated visual aids and temporary representations. Original artist contributions are welcome, and accepted work will be clearly credited.': 'Die meisten Bilder im Archiv sind derzeit KI-generierte visuelle Hilfen und vorläufige Darstellungen. Beiträge von Künstlerinnen und Künstlern sind willkommen, und angenommene Werke werden deutlich gekennzeichnet.',
+        'The Library of Kagami awaits': 'Die Bibliothek von Kagami wartet',
+        'The realm is': 'Das Reich ist',
+        'unfinished.': 'unvollendet.',
+        'That may be the first thing inside it that tells the truth. Read the records, borrow what your table needs, and leave behind a version of the Mirrored Realms that did not exist before you entered.': 'Das könnte das Erste darin sein, das die Wahrheit sagt. Lies die Aufzeichnungen, nimm, was deine Spielrunde braucht, und hinterlasse eine Version der Spiegelreiche, die vor deinem Eintritt nicht existierte.',
+        'Open MirrorGate on GitHub ↗': 'MirrorGate auf GitHub öffnen ↗',
+        'MIRRORGATE / PROJECT 04': 'MIRRORGATE / PROJEKT 04',
+        'MirrorGate CSS Logo': 'MirrorGate-CSS-Logo',
+        'MirrorGate logo: a luminous mirrored doorway': 'MirrorGate-Logo: ein leuchtendes Spiegeltor'
+    };
+
+    const lunaecho = {
+        'LunaEcho | Discord Community Platform Preview': 'LunaEcho | Vorschau der Discord-Community-Plattform',
+        'LunaEcho is a planned Discord community platform with moderation, onboarding, music, tickets, leveling, automation, and clearly defined self-hosted and managed access models.': 'LunaEcho ist eine geplante Discord-Community-Plattform mit Moderation, Onboarding, Musik, Tickets, Levelsystem, Automatisierung und klar definierten selbst gehosteten sowie verwalteten Zugangsmodellen.',
+        'Compare LunaEcho Self-Hosted, Managed Free, and Managed Complete while the platform is in development.': 'Vergleiche LunaEcho Self-Hosted, Managed Free und Managed Complete, während sich die Plattform in Entwicklung befindet.',
+        'Access': 'Zugang',
+        'Features': 'Funktionen',
+        'Legal': 'Rechtliches',
+        'GitHub repository planned': 'GitHub-Repository geplant',
+        'GitHub planned': 'GitHub geplant',
+        'Product direction / Pre-release': 'Produktausrichtung / Vorabversion',
+        'A modular Discord community platform planned to bring moderation, support, engagement, voice, music, and automation into one dependable system.': 'Eine modulare Discord-Community-Plattform, die Moderation, Support, Interaktion, Sprache, Musik und Automatisierung in einem verlässlichen System vereinen soll.',
+        'Compare access models ↓': 'Zugangsmodelle vergleichen ↓',
+        'Public preview not open': 'Öffentliche Vorschau noch geschlossen',
+        'Community operations': 'Community-Verwaltung',
+        'Self-hosted or managed': 'Selbst gehostet oder verwaltet',
+        'PRE-RELEASE / DESIGN': 'VORABVERSION / DESIGN',
+        'Clearly defined access models': 'Klar definierte Zugangsmodelle',
+        'Planned feature areas': 'Geplante Funktionsbereiche',
+        'Managed Complete / month': 'Managed Complete / Monat',
+        'No public release yet': 'Noch keine öffentliche Veröffentlichung',
+        '€0 software': '0 € Software',
+        '€0 / month': '0 € / Monat',
+        '€3 / month': '3 € / Monat',
+        'Access models': 'Zugangsmodelle',
+        'Choose who hosts it.': 'Entscheide, wer hostet.',
+        'Then choose the scope.': 'Dann wähle den Umfang.',
+        'Each name describes both the operating model and the included feature scope. Run the full platform yourself, or use a LunaEcho-managed service with Free or Complete access.': 'Jeder Name beschreibt sowohl das Betriebsmodell als auch den enthaltenen Funktionsumfang. Betreibe die vollständige Plattform selbst oder nutze einen von LunaEcho verwalteten Dienst mit Free- oder Complete-Zugang.',
+        'LunaEcho hosting model explanation': 'Erklärung der LunaEcho-Hostingmodelle',
+        'You operate LunaEcho': 'Du betreibst LunaEcho',
+        'Your infrastructure, your uptime, your data, and the complete planned feature set.': 'Deine Infrastruktur, deine Verfügbarkeit, deine Daten und der vollständige geplante Funktionsumfang.',
+        'LunaEcho operates the service': 'LunaEcho betreibt den Dienst',
+        'Hosting and updates are handled for you. Choose Free for core access or Complete for the full managed feature set.': 'Hosting und Updates werden für dich übernommen. Wähle Free für den Kernzugang oder Complete für den vollständigen verwalteten Funktionsumfang.',
+        'You host / Full access': 'Du hostest / Voller Zugang',
+        'Deploy the complete LunaEcho platform on infrastructure you control.': 'Betreibe die vollständige LunaEcho-Plattform auf deiner eigenen Infrastruktur.',
+        '/ LunaEcho software': '/ LunaEcho-Software',
+        'Operated by': 'Betrieben von',
+        'You': 'Dir',
+        'Complete planned feature set': 'Vollständiger geplanter Funktionsumfang',
+        'No LunaEcho-managed quotas': 'Keine von LunaEcho verwalteten Kontingente',
+        'Music and advanced automations included': 'Musik und erweiterte Automatisierungen enthalten',
+        'Data remains on your infrastructure': 'Daten bleiben auf deiner Infrastruktur',
+        'You manage setup, updates, and uptime': 'Du verwaltest Einrichtung, Updates und Verfügbarkeit',
+        'Public repository planned': 'Öffentliches Repository geplant',
+        'We host / Core access': 'Wir hosten / Kernzugang',
+        'Use essential community tools without operating a bot server yourself.': 'Nutze wichtige Community-Werkzeuge, ohne selbst einen Bot-Server zu betreiben.',
+        '/ month': '/ Monat',
+        'Core moderation and onboarding': 'Grundlegende Moderation und Onboarding',
+        'Basic XP, ranks, and leaderboards': 'Grundlegende XP, Ränge und Bestenlisten',
+        'Up to 2 temporary voice creator hubs': 'Bis zu 2 Hubs für temporäre Sprachkanäle',
+        'Limited tickets and 7-day logging': 'Begrenzte Tickets und 7 Tage Protokollierung',
+        'No music or advanced automations': 'Keine Musik oder erweiterten Automatisierungen',
+        'Planned managed option': 'Geplante verwaltete Option',
+        'We host / Full access': 'Wir hosten / Voller Zugang',
+        'Use the complete managed platform with hosting, updates, and the larger toolset included.': 'Nutze die vollständige verwaltete Plattform inklusive Hosting, Updates und erweitertem Werkzeugsatz.',
+        'Complete managed feature set': 'Vollständiger verwalteter Funktionsumfang',
+        'Music and advanced automations': 'Musik und erweiterte Automatisierungen',
+        'Expanded tickets and temporary voice': 'Erweiterte Tickets und temporäre Sprachkanäle',
+        'Advanced logs and longer retention': 'Erweiterte Protokolle und längere Aufbewahrung',
+        'Hosting and updates included': 'Hosting und Updates enthalten',
+        'Planned complete option': 'Geplante Complete-Option',
+        'At a glance': 'Auf einen Blick',
+        'Access model comparison': 'Vergleich der Zugangsmodelle',
+        'The names remain consistent throughout the feature breakdown below.': 'Die Bezeichnungen bleiben in der folgenden Funktionsübersicht einheitlich.',
+        'Decision': 'Entscheidung',
+        'Who operates it?': 'Wer betreibt es?',
+        'Planned price': 'Geplanter Preis',
+        'Feature scope': 'Funktionsumfang',
+        'Complete': 'Vollständig',
+        'Core with limits': 'Kernfunktionen mit Limits',
+        'Complete managed': 'Vollständig verwaltet',
+        'Updates & uptime': 'Updates & Verfügbarkeit',
+        'Your responsibility': 'Deine Verantwortung',
+        'Included': 'Enthalten',
+        'Best fit': 'Am besten geeignet für',
+        'Technical operators': 'Technische Betreiber',
+        'Everyday communities': 'Alltägliche Communitys',
+        'Communities needing full access': 'Communitys mit Bedarf an vollem Zugang',
+        'Pre-release plan:': 'Plan der Vorabversion:',
+        'Feature boundaries, fair-use limits, and the €3 managed price remain subject to validation before launch. Changes will be documented clearly.': 'Funktionsgrenzen, Fair-Use-Limits und der verwaltete Preis von 3 € müssen vor dem Start noch bestätigt werden. Änderungen werden klar dokumentiert.',
+        'Feature scope': 'Funktionsumfang',
+        'A useful core.': 'Ein nützlicher Kern.',
+        'A complete path forward.': 'Ein vollständiger Weg nach vorn.',
+        'Managed Free covers practical everyday tools. Managed Complete adds resource-intensive and advanced features, while Self-Hosted provides the complete scope on infrastructure you operate.': 'Managed Free deckt praktische Werkzeuge für den Alltag ab. Managed Complete ergänzt ressourcenintensive und erweiterte Funktionen, während Self-Hosted den vollständigen Umfang auf deiner eigenen Infrastruktur bietet.',
+        'Moderation': 'Moderation',
+        'Core safety tools remain available to every server.': 'Grundlegende Sicherheitswerkzeuge bleiben für jeden Server verfügbar.',
+        'Full suite': 'Voller Umfang',
+        'Warnings, timeouts, kick, ban, and message cleanup.': 'Warnungen, Timeouts, Kick, Bann und Nachrichtenbereinigung.',
+        'Rule presets, repeat-offender actions, and deeper case tools.': 'Regelvorlagen, Maßnahmen bei Wiederholungstätern und erweiterte Fallwerkzeuge.',
+        'All moderation features without managed quotas.': 'Alle Moderationsfunktionen ohne verwaltete Kontingente.',
+        'Onboarding & roles': 'Onboarding & Rollen',
+        'Managed Free covers simple welcomes; full-access models unlock larger flows.': 'Managed Free deckt einfache Begrüßungen ab; Modelle mit vollem Zugang ermöglichen umfangreichere Abläufe.',
+        'One welcome setup and one automatic role.': 'Eine Begrüßungseinrichtung und eine automatische Rolle.',
+        'Multiple flows, role menus, templates, and conditions.': 'Mehrere Abläufe, Rollenmenüs, Vorlagen und Bedingungen.',
+        'Complete onboarding configuration on your server.': 'Vollständige Onboarding-Konfiguration auf deinem Server.',
+        'Ticket system': 'Ticketsystem',
+        'Small communities get a practical starting point without storage growing unchecked.': 'Kleine Communitys erhalten einen praktischen Einstieg, ohne dass der Speicher unbegrenzt wächst.',
+        'Limited': 'Begrenzt',
+        '1 panel, up to 3 open tickets, and 7-day transcripts.': '1 Panel, bis zu 3 offene Tickets und Transkripte für 7 Tage.',
+        'Multiple panels, higher limits, routing, and longer transcripts.': 'Mehrere Panels, höhere Limits, Weiterleitung und längere Transkriptaufbewahrung.',
+        'No managed limit; storage depends on your host.': 'Kein verwaltetes Limit; der Speicher hängt von deinem Host ab.',
+        'Leveling & rewards': 'Levelsystem & Belohnungen',
+        'The social core stays in Managed Free while deeper customization belongs to full access.': 'Der soziale Kern bleibt in Managed Free, während tiefere Anpassungen zum vollen Zugang gehören.',
+        'XP, ranks, and a basic server leaderboard.': 'XP, Ränge und eine grundlegende Server-Bestenliste.',
+        'Role rewards, multipliers, exclusions, and seasons.': 'Rollenbelohnungen, Multiplikatoren, Ausschlüsse und Saisons.',
+        'All progression and reward controls included.': 'Alle Fortschritts- und Belohnungssteuerungen enthalten.',
+        'Temporary voice': 'Temporäre Sprachkanäle',
+        'Managed Free includes full room usage with a simple limit on creator hubs.': 'Managed Free umfasst die vollständige Raumnutzung mit einem einfachen Limit für Creator-Hubs.',
+        '2 hubs': '2 Hubs',
+        'Up to 2 creator hubs with no limit on active temporary rooms.': 'Bis zu 2 Creator-Hubs ohne Limit für aktive temporäre Räume.',
+        'More creator hubs plus custom names and member permissions.': 'Mehr Creator-Hubs sowie benutzerdefinierte Namen und Mitgliederberechtigungen.',
+        'No LunaEcho-managed room limits.': 'Keine von LunaEcho verwalteten Raumlimits.',
+        'Server logging': 'Server-Protokollierung',
+        'Essential records are included in Managed Free; broader coverage and retention use more storage.': 'Wichtige Aufzeichnungen sind in Managed Free enthalten; umfassendere Abdeckung und Aufbewahrung benötigen mehr Speicher.',
+        'Essential moderation and member logs kept for 7 days.': 'Wichtige Moderations- und Mitgliederprotokolle werden 7 Tage aufbewahrt.',
+        'More event types, longer retention, and searchable summaries.': 'Mehr Ereignistypen, längere Aufbewahrung und durchsuchbare Zusammenfassungen.',
+        'You choose the coverage and available storage.': 'Du bestimmst den Umfang und verfügbaren Speicher.',
+        'Music': 'Musik',
+        'Continuous audio is one of the most resource-heavy managed features.': 'Kontinuierliches Audio gehört zu den ressourcenintensivsten verwalteten Funktionen.',
+        'Not included': 'Nicht enthalten',
+        'Music is excluded to keep Managed Free sustainable.': 'Musik ist ausgeschlossen, damit Managed Free nachhaltig betrieben werden kann.',
+        'Managed queue playback and complete member controls.': 'Verwaltete Warteschlangenwiedergabe und vollständige Mitgliedersteuerung.',
+        'Music runs using your own infrastructure.': 'Musik läuft über deine eigene Infrastruktur.',
+        'Automations & insights': 'Automatisierungen & Einblicke',
+        'Background workflows and stored activity analysis are reserved for full access.': 'Hintergrundabläufe und gespeicherte Aktivitätsanalysen sind dem vollen Zugang vorbehalten.',
+        'Advanced rules, schedules, and analytics are unavailable.': 'Erweiterte Regeln, Zeitpläne und Analysen sind nicht verfügbar.',
+        'Advanced rules, scheduled actions, and community insights.': 'Erweiterte Regeln, geplante Aktionen und Community-Einblicke.',
+        'All workflows and insights run on your hardware.': 'Alle Abläufe und Einblicke laufen auf deiner Hardware.',
+        'Why Managed Free has limits': 'Warum Managed Free Limits hat',
+        'Why limits?': 'Warum Limits?',
+        'Managed Free should be useful, not overloaded.': 'Managed Free soll nützlich und nicht überladen sein.',
+        'Everyday moderation, onboarding, and community basics remain available at no cost. Continuous audio, long-term storage, and background processing create ongoing hosting costs, so those features move to Managed Complete or Self-Hosted.': 'Alltägliche Moderation, Onboarding und Community-Grundlagen bleiben kostenlos verfügbar. Kontinuierliches Audio, langfristiger Speicher und Hintergrundverarbeitung verursachen laufende Hostingkosten, daher gehören diese Funktionen zu Managed Complete oder Self-Hosted.',
+        'Release roadmap': 'Veröffentlichungs-Roadmap',
+        'Built in stages.': 'In Etappen entwickelt.',
+        'Released when ready.': 'Veröffentlicht, wenn es bereit ist.',
+        'The roadmap describes the intended release sequence rather than promising dates. Reliability, documentation, and operational readiness come before opening LunaEcho to public servers.': 'Die Roadmap beschreibt die beabsichtigte Veröffentlichungsreihenfolge und verspricht keine Termine. Zuverlässigkeit, Dokumentation und Betriebsbereitschaft haben Vorrang vor der Öffnung von LunaEcho für öffentliche Server.',
+        '01 / Now': '01 / Jetzt',
+        'Core platform': 'Kernplattform',
+        'Build and connect the moderation, community, ticket, voice, music, and automation foundations.': 'Grundlagen für Moderation, Community, Tickets, Sprache, Musik und Automatisierung entwickeln und verbinden.',
+        'Core feature architecture': 'Architektur der Kernfunktionen',
+        'Permissions and configuration model': 'Berechtigungs- und Konfigurationsmodell',
+        'Reliable Discord event handling': 'Zuverlässige Verarbeitung von Discord-Ereignissen',
+        '02 / Next': '02 / Als Nächstes',
+        'Controlled testing': 'Kontrollierte Tests',
+        'Validate real server workflows before opening the project more widely.': 'Echte Serverabläufe prüfen, bevor das Projekt breiter geöffnet wird.',
+        'Feature and limit validation': 'Prüfung von Funktionen und Limits',
+        'Reliability and recovery testing': 'Zuverlässigkeits- und Wiederherstellungstests',
+        'Setup and operator documentation': 'Einrichtungs- und Betreiberdokumentation',
+        '03 / Then': '03 / Danach',
+        'Self-Hosted preview': 'Self-Hosted-Vorschau',
+        'Publish the repository when the self-hosted experience is understandable and supportable.': 'Das Repository veröffentlichen, sobald die selbst gehostete Nutzung verständlich und unterstützbar ist.',
+        'Public source repository': 'Öffentliches Quellcode-Repository',
+        'Installation and update guidance': 'Installations- und Aktualisierungsanleitung',
+        'Initial configuration reference': 'Erste Konfigurationsreferenz',
+        '04 / Later': '04 / Später',
+        'Managed launch': 'Start der verwalteten Version',
+        'Introduce Managed Free and Managed Complete after hosting operations are ready.': 'Managed Free und Managed Complete einführen, sobald der Hostingbetrieb bereit ist.',
+        'Managed onboarding flow': 'Verwalteter Onboarding-Ablauf',
+        'Fair-use limits and monitoring': 'Fair-Use-Limits und Überwachung',
+        'Clear upgrade and billing information': 'Klare Upgrade- und Abrechnungsinformationen',
+        'No release date yet:': 'Noch kein Veröffentlichungsdatum:',
+        'Milestones may change as LunaEcho is built and tested. Public availability will only be announced when the relevant stage is ready.': 'Meilensteine können sich während Entwicklung und Tests von LunaEcho ändern. Die öffentliche Verfügbarkeit wird erst angekündigt, wenn die jeweilige Phase bereit ist.',
+        'Legal & privacy': 'Rechtliches & Datenschutz',
+        'Clear rules.': 'Klare Regeln.',
+        'Transparent data use.': 'Transparente Datennutzung.',
+        'LunaEcho publishes permanent, English-language legal documents for Discord users, server administrators, and application review.': 'LunaEcho veröffentlicht dauerhafte Rechtsdokumente auf Englisch und Deutsch für Discord-Nutzer, Serveradministratoren und die Anwendungsprüfung.',
+        'Document / 01': 'Dokument / 01',
+        'Document / 02': 'Dokument / 02',
+        'Effective 16 July 2026': 'Gültig ab 16. Juli 2026',
+        'Service rules': 'Dienstregeln',
+        'Acceptable use, hosting responsibilities, service availability, and pre-release conditions.': 'Zulässige Nutzung, Hosting-Verantwortung, Dienstverfügbarkeit und Bedingungen der Vorabversion.',
+        'Read the Terms': 'Bedingungen lesen',
+        'Data transparency': 'Datentransparenz',
+        'Data categories, purposes, retention, service providers, security, and deletion requests.': 'Datenkategorien, Zwecke, Aufbewahrung, Dienstleister, Sicherheit und Löschanfragen.',
+        'Read the Policy': 'Erklärung lesen',
+        'Data requests': 'Datenanfragen',
+        'Access, correction, or deletion.': 'Auskunft, Berichtigung oder Löschung.',
+        'Discord users and authorized server administrators can follow the published request process or contact': 'Discord-Nutzer und autorisierte Serveradministratoren können dem veröffentlichten Anfrageverfahren folgen oder sich an',
+        '.': '.',
+        'View instructions →': 'Anleitung ansehen →',
+        'Pre-release product direction': 'Produktausrichtung der Vorabversion',
+        'Clear plans.': 'Klare Pläne.',
+        'Careful launch.': 'Sorgfältiger Start.',
+        'LunaEcho is not accepting public servers yet. The repository, managed access, final limits, and release documentation will be published when their roadmap stages are ready.': 'LunaEcho nimmt noch keine öffentlichen Server an. Repository, verwalteter Zugang, endgültige Limits und Veröffentlichungsdokumentation werden publiziert, sobald ihre Roadmap-Phasen bereit sind.',
+        'Review the roadmap ↑': 'Roadmap ansehen ↑'
+    };
+
+    const legalCommon = {
+        'Back to LunaEcho': 'Zurück zu LunaEcho',
+        '← Back to LunaEcho': '← Zurück zu LunaEcho',
+        'Official LunaEcho document': 'Offizielles LunaEcho-Dokument',
+        'LEGAL / TERMS': 'RECHTLICHES / BEDINGUNGEN',
+        'LEGAL / PRIVACY': 'RECHTLICHES / DATENSCHUTZ',
+        'Contact the LunaEcho operator.': 'Kontaktiere den LunaEcho-Betreiber.',
+        'Please do not send Discord passwords, bot tokens, backup codes, or other authentication secrets.': 'Bitte sende keine Discord-Passwörter, Bot-Tokens, Backup-Codes oder andere Authentifizierungsgeheimnisse.',
+        'Never send your Discord password, authentication token, bot token, or backup codes.': 'Sende niemals dein Discord-Passwort, Authentifizierungs-Token, Bot-Token oder Backup-Codes.'
+    };
+
+    const terms = {
+        'LunaEcho Terms of Service': 'LunaEcho-Nutzungsbedingungen',
+        'The official Terms of Service for the LunaEcho Discord application and managed service.': 'Die offiziellen Nutzungsbedingungen für die LunaEcho-Discord-Anwendung und den verwalteten Dienst.',
+        'Rules and conditions for using the LunaEcho Discord application and managed service.': 'Regeln und Bedingungen für die Nutzung der LunaEcho-Discord-Anwendung und des verwalteten Dienstes.',
+        'Terms navigation': 'Navigation der Nutzungsbedingungen',
+        'Terms of': 'Nutzungs-',
+        'Service.': 'bedingungen.',
+        'These Terms explain the rules for using the LunaEcho Discord application, authorized pre-release testing, and future managed services.': 'Diese Bedingungen erklären die Regeln für die Nutzung der LunaEcho-Discord-Anwendung, autorisierte Tests der Vorabversion und zukünftige verwaltete Dienste.',
+        'Plain-language summary': 'Kurz zusammengefasst',
+        'Use LunaEcho lawfully, respect Discord and other people, only install it where you have permission, and do not abuse or interfere with the service. LunaEcho is still in development, so features may change and availability is not guaranteed.': 'Nutze LunaEcho rechtmäßig, respektiere Discord und andere Menschen, installiere die Anwendung nur mit entsprechender Berechtigung und missbrauche oder störe den Dienst nicht. LunaEcho befindet sich noch in Entwicklung, daher können sich Funktionen ändern und die Verfügbarkeit ist nicht garantiert.',
+        'Terms contents': 'Inhalt der Nutzungsbedingungen',
+        'Acceptance': 'Zustimmung',
+        'The service': 'Der Dienst',
+        'Acceptable use': 'Zulässige Nutzung',
+        'Content and data': 'Inhalte und Daten',
+        'Hosting models': 'Hostingmodelle',
+        'Availability': 'Verfügbarkeit',
+        'Responsibility': 'Verantwortung',
+        '01 / Acceptance and eligibility': '01 / Zustimmung und Berechtigung',
+        'Using LunaEcho means accepting these Terms.': 'Die Nutzung von LunaEcho bedeutet, diesen Bedingungen zuzustimmen.',
+        'These Terms of Service ("Terms") are an agreement between you and ShadowOkami, the operator of the LunaEcho managed service ("LunaEcho", "we", "us", or "our"). They apply when you install, access, test, or use LunaEcho.': 'Diese Nutzungsbedingungen ("Bedingungen") sind eine Vereinbarung zwischen dir und ShadowOkami, dem Betreiber des verwalteten LunaEcho-Dienstes ("LunaEcho", "wir", "uns" oder "unser"). Sie gelten, wenn du LunaEcho installierst, darauf zugreifst, es testest oder nutzt.',
+        'You must be legally able to accept these Terms and meet Discord’s minimum age requirements. If you use LunaEcho for an organization or community, you confirm that you are authorized to act for it.': 'Du musst rechtlich in der Lage sein, diesen Bedingungen zuzustimmen, und die Mindestalteranforderungen von Discord erfüllen. Wenn du LunaEcho für eine Organisation oder Community nutzt, bestätigst du, dass du berechtigt bist, für sie zu handeln.',
+        "You must be legally able to accept these Terms and meet Discord's minimum age requirements. If you use LunaEcho for an organization or community, you confirm that you are authorized to act for it.": 'Du musst rechtlich in der Lage sein, diesen Bedingungen zuzustimmen, und die Mindestalteranforderungen von Discord erfüllen. Wenn du LunaEcho für eine Organisation oder Community nutzt, bestätigst du, dass du berechtigt bist, für sie zu handeln.',
+        'Your use of Discord remains subject to the': 'Deine Nutzung von Discord unterliegt weiterhin den',
+        'Discord Terms of Service': 'Discord-Nutzungsbedingungen',
+        'Community Guidelines': 'Community-Richtlinien',
+        '. If these Terms conflict with Discord’s rules, Discord’s rules control your use of Discord.': '. Falls diese Bedingungen den Regeln von Discord widersprechen, gelten für deine Discord-Nutzung die Regeln von Discord.',
+        ". If these Terms conflict with Discord's rules, Discord's rules control your use of Discord.": '. Falls diese Bedingungen den Regeln von Discord widersprechen, gelten für deine Discord-Nutzung die Regeln von Discord.',
+        '02 / The service': '02 / Der Dienst',
+        'A modular Discord community platform.': 'Eine modulare Discord-Community-Plattform.',
+        'LunaEcho is designed to provide community tools such as moderation, onboarding, tickets, leveling, temporary voice channels, server logging, music, and automation. Features are introduced in stages and may not all be available.': 'LunaEcho soll Community-Werkzeuge wie Moderation, Onboarding, Tickets, Levelsystem, temporäre Sprachkanäle, Server-Protokollierung, Musik und Automatisierung bereitstellen. Funktionen werden schrittweise eingeführt und sind möglicherweise nicht alle verfügbar.',
+        'LunaEcho is currently in pre-release. Access may be limited to approved test servers, and public managed plans are not yet offered. Plan names, limits, prices, and features shown on the project page describe the current product direction and may be updated before launch.': 'LunaEcho befindet sich derzeit in der Vorabversion. Der Zugang kann auf genehmigte Testserver beschränkt sein, und öffentliche verwaltete Tarife werden noch nicht angeboten. Tarifnamen, Limits, Preise und Funktionen auf der Projektseite beschreiben die aktuelle Produktausrichtung und können vor dem Start geändert werden.',
+        'Installation authority': 'Installationsberechtigung',
+        'You may only add or configure LunaEcho in a Discord server when you have permission from the server owner or an authorized administrator. You are responsible for selecting appropriate bot permissions and configuring features for your community.': 'Du darfst LunaEcho nur zu einem Discord-Server hinzufügen oder dort konfigurieren, wenn du die Erlaubnis des Serverbesitzers oder eines autorisierten Administrators hast. Du bist für die Auswahl geeigneter Bot-Berechtigungen und die Konfiguration der Funktionen für deine Community verantwortlich.',
+        '03 / Acceptable use': '03 / Zulässige Nutzung',
+        'Do not use LunaEcho to harm people or systems.': 'Nutze LunaEcho nicht, um Menschen oder Systeme zu schädigen.',
+        'You must comply with applicable law, these Terms, Discord’s rules, and the rights of others. In particular, you must not:': 'Du musst geltendes Recht, diese Bedingungen, die Regeln von Discord und die Rechte anderer einhalten. Insbesondere darfst du nicht:',
+        "You must comply with applicable law, these Terms, Discord's rules, and the rights of others. In particular, you must not:": 'Du musst geltendes Recht, diese Bedingungen, die Regeln von Discord und die Rechte anderer einhalten. Insbesondere darfst du nicht:',
+        'Use LunaEcho for harassment, abuse, fraud, spam, illegal activity, or rights violations.': 'LunaEcho für Belästigung, Missbrauch, Betrug, Spam, illegale Aktivitäten oder Rechtsverletzungen nutzen.',
+        'Collect, expose, or request passwords, authentication tokens, financial data, health data, or other sensitive information through LunaEcho.': 'Über LunaEcho Passwörter, Authentifizierungs-Tokens, Finanzdaten, Gesundheitsdaten oder andere sensible Informationen sammeln, offenlegen oder anfordern.',
+        'Attempt to bypass plan limits, access controls, rate limits, or security measures.': 'Versuchen, Tariflimits, Zugriffskontrollen, Ratenbegrenzungen oder Sicherheitsmaßnahmen zu umgehen.',
+        'Probe, disrupt, overload, reverse engineer, or interfere with the managed service except where applicable law expressly permits it.': 'Den verwalteten Dienst untersuchen, stören, überlasten, zurückentwickeln oder beeinträchtigen, außer wenn geltendes Recht dies ausdrücklich erlaubt.',
+        'Misrepresent LunaEcho, its operator, or your authority to use it in a server.': 'LunaEcho, seinen Betreiber oder deine Berechtigung zur Nutzung auf einem Server falsch darstellen.',
+        'Use automated access outside the documented Discord interactions or supported interfaces.': 'Automatisierten Zugriff außerhalb der dokumentierten Discord-Interaktionen oder unterstützten Schnittstellen verwenden.',
+        'Server administrators are responsible for informing members about enabled logging, ticket, moderation, or analytics features where required by law or community rules.': 'Serveradministratoren sind dafür verantwortlich, Mitglieder über aktivierte Protokollierungs-, Ticket-, Moderations- oder Analysefunktionen zu informieren, sofern dies gesetzlich oder durch Community-Regeln erforderlich ist.',
+        '04 / Content and data': '04 / Inhalte und Daten',
+        'Your content remains yours.': 'Deine Inhalte bleiben deine.',
+        'You retain your rights in content submitted through Discord and processed by LunaEcho. You grant us only the limited permission needed to receive, process, store, display, and delete that content to operate, secure, and support the features you choose.': 'Du behältst deine Rechte an Inhalten, die über Discord übermittelt und von LunaEcho verarbeitet werden. Du erteilst uns nur die begrenzte Erlaubnis, die erforderlich ist, um diese Inhalte zum Betrieb, zur Absicherung und zur Unterstützung der von dir gewählten Funktionen zu empfangen, zu verarbeiten, zu speichern, anzuzeigen und zu löschen.',
+        'You confirm that you have the rights and permissions needed for content you direct LunaEcho to process. Details about data categories, retention, sharing, and deletion requests are provided in the': 'Du bestätigst, dass du über die erforderlichen Rechte und Berechtigungen für Inhalte verfügst, die LunaEcho in deinem Auftrag verarbeitet. Einzelheiten zu Datenkategorien, Aufbewahrung, Weitergabe und Löschanfragen findest du in der',
+        'LunaEcho Privacy Policy': 'LunaEcho-Datenschutzerklärung',
+        '05 / Managed and Self-Hosted': '05 / Managed und Self-Hosted',
+        'Responsibilities depend on who operates the service.': 'Die Verantwortlichkeiten hängen davon ab, wer den Dienst betreibt.',
+        'Managed LunaEcho': 'Verwaltetes LunaEcho',
+        'For managed access, we operate the application infrastructure and apply the managed plan limits. If paid access is introduced, price, billing cycle, cancellation, and refund information will be shown before a purchase. No paid managed plan is available at the date of these Terms.': 'Beim verwalteten Zugang betreiben wir die Anwendungsinfrastruktur und setzen die Limits des verwalteten Tarifs um. Falls ein kostenpflichtiger Zugang eingeführt wird, werden Preis, Abrechnungszyklus, Kündigung und Erstattungsinformationen vor dem Kauf angezeigt. Zum Datum dieser Bedingungen ist kein kostenpflichtiger verwalteter Tarif verfügbar.',
+        'Self-Hosted LunaEcho': 'Selbst gehostetes LunaEcho',
+        'When the public repository becomes available, a self-hosted operator controls their own deployment, data, security, updates, and legal compliance. The repository’s software license will govern use of the source code. We are not the controller of data processed solely by an independent self-hosted installation.': 'Sobald das öffentliche Repository verfügbar ist, kontrolliert ein selbst hostender Betreiber seine eigene Bereitstellung, Daten, Sicherheit, Updates und rechtliche Konformität. Die Softwarelizenz des Repositorys regelt die Nutzung des Quellcodes. Wir sind nicht Verantwortlicher für Daten, die ausschließlich von einer unabhängigen selbst gehosteten Installation verarbeitet werden.',
+        "When the public repository becomes available, a self-hosted operator controls their own deployment, data, security, updates, and legal compliance. The repository's software license will govern use of the source code. We are not the controller of data processed solely by an independent self-hosted installation.": 'Sobald das öffentliche Repository verfügbar ist, kontrolliert ein selbst hostender Betreiber seine eigene Bereitstellung, Daten, Sicherheit, Updates und rechtliche Konformität. Die Softwarelizenz des Repositorys regelt die Nutzung des Quellcodes. Wir sind nicht Verantwortlicher für Daten, die ausschließlich von einer unabhängigen selbst gehosteten Installation verarbeitet werden.',
+        '06 / Availability, changes, and termination': '06 / Verfügbarkeit, Änderungen und Beendigung',
+        'Pre-release access can change.': 'Der Zugang zur Vorabversion kann sich ändern.',
+        'We may change, pause, restrict, or discontinue features to improve reliability, respond to security or legal concerns, comply with Discord requirements, or develop the product. We will try to communicate material managed-service changes clearly, but we do not promise uninterrupted or error-free availability.': 'Wir können Funktionen ändern, pausieren, einschränken oder einstellen, um die Zuverlässigkeit zu verbessern, auf Sicherheits- oder Rechtsfragen zu reagieren, Discord-Anforderungen einzuhalten oder das Produkt weiterzuentwickeln. Wir versuchen, wesentliche Änderungen am verwalteten Dienst klar zu kommunizieren, garantieren jedoch keine unterbrechungs- oder fehlerfreie Verfügbarkeit.',
+        'You may stop using LunaEcho at any time by removing it from your server. We may suspend or end access when we reasonably believe these Terms, Discord’s rules, applicable law, security, or service stability are at risk. Where appropriate, we will provide notice and an opportunity to correct the issue.': 'Du kannst die Nutzung von LunaEcho jederzeit beenden, indem du es von deinem Server entfernst. Wir können den Zugang aussetzen oder beenden, wenn wir vernünftigerweise davon ausgehen, dass diese Bedingungen, Discords Regeln, geltendes Recht, Sicherheit oder Dienststabilität gefährdet sind. Soweit angemessen, informieren wir dich und geben dir Gelegenheit, das Problem zu beheben.',
+        "You may stop using LunaEcho at any time by removing it from your server. We may suspend or end access when we reasonably believe these Terms, Discord's rules, applicable law, security, or service stability are at risk. Where appropriate, we will provide notice and an opportunity to correct the issue.": 'Du kannst die Nutzung von LunaEcho jederzeit beenden, indem du es von deinem Server entfernst. Wir können den Zugang aussetzen oder beenden, wenn wir vernünftigerweise davon ausgehen, dass diese Bedingungen, Discords Regeln, geltendes Recht, Sicherheit oder Dienststabilität gefährdet sind. Soweit angemessen, informieren wir dich und geben dir Gelegenheit, das Problem zu beheben.',
+        '07 / Warranties, responsibility, and law': '07 / Gewährleistung, Verantwortung und Recht',
+        'Use a pre-release service with appropriate care.': 'Nutze einen Dienst in der Vorabversion mit angemessener Sorgfalt.',
+        'LunaEcho is provided on an "as available" basis during development. To the extent permitted by law, we do not make implied promises about fitness for a particular purpose, uninterrupted operation, or preservation of content.': 'LunaEcho wird während der Entwicklung auf Basis der jeweiligen Verfügbarkeit bereitgestellt. Soweit gesetzlich zulässig, geben wir keine stillschweigenden Zusagen zur Eignung für einen bestimmten Zweck, zum unterbrechungsfreien Betrieb oder zum Erhalt von Inhalten.',
+        'Nothing in these Terms excludes liability that cannot legally be excluded, including liability for intent, gross negligence, injury to life, body, or health, or mandatory consumer rights. For other claims, liability is limited to the extent permitted by applicable law.': 'Nichts in diesen Bedingungen schließt eine Haftung aus, die gesetzlich nicht ausgeschlossen werden kann, einschließlich Haftung für Vorsatz, grobe Fahrlässigkeit, Verletzung von Leben, Körper oder Gesundheit sowie zwingende Verbraucherrechte. Für andere Ansprüche ist die Haftung im gesetzlich zulässigen Umfang begrenzt.',
+        'German law applies, without limiting mandatory protections or jurisdiction rights available to consumers in their country of residence.': 'Es gilt deutsches Recht, ohne zwingende Schutzvorschriften oder Gerichtsstandsrechte einzuschränken, die Verbrauchern in ihrem Wohnsitzland zustehen.',
+        'Changes to these Terms': 'Änderungen dieser Bedingungen',
+        'We may update these Terms as LunaEcho develops. The current version and effective date will remain published on this page. If a material change affects an available managed service, we will provide reasonable notice through the service or project website where practical.': 'Wir können diese Bedingungen mit der Weiterentwicklung von LunaEcho aktualisieren. Die aktuelle Fassung und das Gültigkeitsdatum bleiben auf dieser Seite veröffentlicht. Wenn eine wesentliche Änderung einen verfügbaren verwalteten Dienst betrifft, informieren wir soweit praktikabel angemessen über den Dienst oder die Projektwebsite.',
+        '08 / Contact': '08 / Kontakt',
+        'Questions are welcome.': 'Fragen sind willkommen.',
+        'LunaEcho is operated by ShadowOkami in Germany. For questions about these Terms, service access, or a legal concern, contact:': 'LunaEcho wird von ShadowOkami in Deutschland betrieben. Bei Fragen zu diesen Bedingungen, zum Dienstzugang oder zu einem rechtlichen Anliegen kontaktiere:'
+    };
+
+    const privacy = {
+        'LunaEcho Privacy Policy': 'LunaEcho-Datenschutzerklärung',
+        'The official Privacy Policy for the LunaEcho Discord application and managed service.': 'Die offizielle Datenschutzerklärung für die LunaEcho-Discord-Anwendung und den verwalteten Dienst.',
+        'How LunaEcho processes, protects, retains, and deletes Discord application data.': 'Wie LunaEcho Daten der Discord-Anwendung verarbeitet, schützt, aufbewahrt und löscht.',
+        'Privacy navigation': 'Datenschutz-Navigation',
+        'Privacy': 'Datenschutz',
+        'Policy.': 'erklärung.',
+        'This Policy explains what LunaEcho processes, why it is needed, how long it is kept, and how Discord users and server administrators can request deletion.': 'Diese Erklärung erläutert, was LunaEcho verarbeitet, warum dies erforderlich ist, wie lange Daten aufbewahrt werden und wie Discord-Nutzer sowie Serveradministratoren eine Löschung beantragen können.',
+        'Privacy at a glance': 'Datenschutz auf einen Blick',
+        'LunaEcho does not sell personal data, run targeted advertising, or ask for Discord passwords or tokens. During pre-release testing, it processes only the Discord identifiers, interaction details, and technical logs needed to operate and secure the test service. Additional feature data is processed only when the relevant feature is enabled.': 'LunaEcho verkauft keine personenbezogenen Daten, betreibt keine zielgerichtete Werbung und fragt nicht nach Discord-Passwörtern oder Tokens. Während der Tests der Vorabversion werden nur die Discord-Kennungen, Interaktionsdetails und technischen Protokolle verarbeitet, die zum Betrieb und zur Absicherung des Testdienstes erforderlich sind. Zusätzliche Funktionsdaten werden nur verarbeitet, wenn die jeweilige Funktion aktiviert ist.',
+        'Privacy Policy contents': 'Inhalt der Datenschutzerklärung',
+        'Scope': 'Geltungsbereich',
+        'Controller': 'Verantwortlicher',
+        'Data processed': 'Verarbeitete Daten',
+        'Purposes': 'Zwecke',
+        'Sharing': 'Weitergabe',
+        'Retention': 'Aufbewahrung',
+        'Self-hosting': 'Selbst-Hosting',
+        '01 / Scope and current status': '01 / Geltungsbereich und aktueller Stand',
+        'This Policy covers managed LunaEcho and its website.': 'Diese Erklärung gilt für das verwaltete LunaEcho und seine Website.',
+        'This Privacy Policy applies to the LunaEcho Discord application operated by ShadowOkami, authorized pre-release testing, future managed LunaEcho services, and the LunaEcho pages on shadowokami.com.': 'Diese Datenschutzerklärung gilt für die von ShadowOkami betriebene LunaEcho-Discord-Anwendung, autorisierte Tests der Vorabversion, zukünftige verwaltete LunaEcho-Dienste und die LunaEcho-Seiten auf shadowokami.com.',
+        'LunaEcho is currently in pre-release and is not accepting public servers. Features not yet enabled do not collect their planned feature data. This Policy will be reviewed as features and managed access become available.': 'LunaEcho befindet sich derzeit in der Vorabversion und nimmt keine öffentlichen Server an. Noch nicht aktivierte Funktionen erfassen ihre geplanten Funktionsdaten nicht. Diese Erklärung wird überprüft, sobald Funktionen und verwalteter Zugang verfügbar werden.',
+        'Discord separately processes information under the': 'Discord verarbeitet Informationen separat gemäß der',
+        'Discord Privacy Policy': 'Discord-Datenschutzerklärung',
+        '. This Policy does not replace Discord’s policy.': '. Diese Erklärung ersetzt nicht die Datenschutzerklärung von Discord.',
+        ". This Policy does not replace Discord's policy.": '. Diese Erklärung ersetzt nicht die Datenschutzerklärung von Discord.',
+        '02 / Controller and contact': '02 / Verantwortlicher und Kontakt',
+        'Who is responsible for managed-service data?': 'Wer ist für Daten des verwalteten Dienstes verantwortlich?',
+        'ShadowOkami, based in Germany, is the operator and data controller for personal data processed by the managed LunaEcho service and LunaEcho website.': 'ShadowOkami mit Sitz in Deutschland ist Betreiber und Verantwortlicher für personenbezogene Daten, die durch den verwalteten LunaEcho-Dienst und die LunaEcho-Website verarbeitet werden.',
+        'Privacy contact': 'Datenschutzkontakt',
+        '03 / Data we process': '03 / Daten, die wir verarbeiten',
+        'Only data needed for enabled functions.': 'Nur Daten, die für aktivierte Funktionen erforderlich sind.',
+        'Current pre-release operation': 'Aktueller Betrieb der Vorabversion',
+        'During authorized testing, LunaEcho may process and record:': 'Während autorisierter Tests kann LunaEcho folgende Daten verarbeiten und protokollieren:',
+        'Discord user ID, server (guild) ID, interaction ID, and command name.': 'Discord-Nutzer-ID, Server- beziehungsweise Guild-ID, Interaktions-ID und Befehlsname.',
+        'Command options supplied to an enabled command when needed to perform the requested action.': 'Befehlsoptionen, die einem aktivierten Befehl übergeben werden, wenn sie für die angeforderte Aktion erforderlich sind.',
+        'Command timing, success or failure, entitlement result, and technical error details.': 'Befehlsdauer, Erfolg oder Fehlschlag, Berechtigungsergebnis und technische Fehlerdetails.',
+        'Basic bot startup information such as connected server count and the LunaEcho bot account ID.': 'Grundlegende Startinformationen des Bots, etwa die Anzahl verbundener Server und die Konto-ID des LunaEcho-Bots.',
+        'The current application uses Discord’s non-privileged Guilds intent. It does not receive Discord account passwords, authentication tokens, private direct-message history, or user IP addresses from Discord.': 'Die aktuelle Anwendung verwendet Discords nicht privilegierten Guilds-Intent. Sie erhält von Discord keine Kontopasswörter, Authentifizierungs-Tokens, privaten Direktnachrichtenverläufe oder IP-Adressen der Nutzer.',
+        "The current application uses Discord's non-privileged Guilds intent. It does not receive Discord account passwords, authentication tokens, private direct-message history, or user IP addresses from Discord.": 'Die aktuelle Anwendung verwendet Discords nicht privilegierten Guilds-Intent. Sie erhält von Discord keine Kontopasswörter, Authentifizierungs-Tokens, privaten Direktnachrichtenverläufe oder IP-Adressen der Nutzer.',
+        'Data used by planned features': 'Daten geplanter Funktionen',
+        'When a feature becomes available and is enabled by a server administrator, LunaEcho may process the following feature-specific records:': 'Wenn eine Funktion verfügbar wird und von einem Serveradministrator aktiviert wird, kann LunaEcho folgende funktionsspezifische Datensätze verarbeiten:',
+        'Server configuration:': 'Serverkonfiguration:',
+        'server, channel, role, and permission identifiers; selected settings; language; and plan assignment.': 'Server-, Kanal-, Rollen- und Berechtigungskennungen; ausgewählte Einstellungen; Sprache und Tarifzuordnung.',
+        'Moderation:': 'Moderation:',
+        'affected user ID, moderator ID, reason, action type, timestamps, and case references.': 'betroffene Nutzer-ID, Moderator-ID, Grund, Aktionstyp, Zeitstempel und Fallreferenzen.',
+        'Tickets:': 'Tickets:',
+        'ticket participants, channel identifiers, messages or transcripts intentionally included in a ticket, and ticket status.': 'Ticket-Teilnehmende, Kanalkennungen, absichtlich in ein Ticket aufgenommene Nachrichten oder Transkripte und Ticketstatus.',
+        'Leveling and rewards:': 'Levelsystem und Belohnungen:',
+        'user ID, activity-derived XP, rank, reward roles, and exclusions. Message content is not required merely to count eligible activity.': 'Nutzer-ID, aus Aktivität abgeleitete XP, Rang, Belohnungsrollen und Ausschlüsse. Nachrichteninhalte sind nicht erforderlich, nur um berechtigte Aktivität zu zählen.',
+        'Temporary voice:': 'Temporäre Sprachkanäle:',
+        'creator-hub, temporary-channel, owner, and permission identifiers needed to create and remove rooms.': 'Kennungen für Creator-Hub, temporären Kanal, Eigentümer und Berechtigungen, die zum Erstellen und Entfernen von Räumen erforderlich sind.',
+        'Server logging:': 'Server-Protokollierung:',
+        'selected Discord event metadata and identifiers for the event categories enabled by administrators.': 'ausgewählte Metadaten und Kennungen von Discord-Ereignissen für die von Administratoren aktivierten Ereigniskategorien.',
+        'Music and automation:': 'Musik und Automatisierung:',
+        'requested media metadata, queue state, automation rules, schedules, and execution results.': 'angeforderte Medienmetadaten, Warteschlangenstatus, Automatisierungsregeln, Zeitpläne und Ausführungsergebnisse.',
+        'LunaEcho is not intended for sensitive personal data. Do not submit passwords, tokens, payment card details, health data, government identifiers, or other confidential information through bot commands, tickets, or configuration fields.': 'LunaEcho ist nicht für sensible personenbezogene Daten vorgesehen. Übermittle keine Passwörter, Tokens, Zahlungskartendaten, Gesundheitsdaten, amtlichen Kennungen oder andere vertrauliche Informationen über Bot-Befehle, Tickets oder Konfigurationsfelder.',
+        'Website delivery data': 'Daten zur Website-Auslieferung',
+        'When you visit the LunaEcho website, the server may process IP address, user agent, requested URL, response status, and timestamp to deliver the page, prevent abuse, and diagnose errors. The website does not intentionally use advertising trackers, analytics profiles, or marketing cookies.': 'Wenn du die LunaEcho-Website besuchst, kann der Server IP-Adresse, User-Agent, angeforderte URL, Antwortstatus und Zeitstempel verarbeiten, um die Seite auszuliefern, Missbrauch zu verhindern und Fehler zu diagnostizieren. Die Website verwendet bewusst keine Werbetracker, Analyseprofile oder Marketing-Cookies.',
+        '04 / Why we process data': '04 / Warum wir Daten verarbeiten',
+        'Operation, safety, support, and improvement.': 'Betrieb, Sicherheit, Support und Verbesserung.',
+        'We process data to:': 'Wir verarbeiten Daten, um:',
+        'Respond to Discord commands and provide features selected by server administrators.': 'auf Discord-Befehle zu reagieren und von Serveradministratoren ausgewählte Funktionen bereitzustellen.',
+        'Apply permissions, plan capabilities, quotas, and server configuration.': 'Berechtigungen, Tarifleistungen, Kontingente und Serverkonfiguration anzuwenden.',
+        'Prevent abuse, investigate errors, secure the service, and maintain reliability.': 'Missbrauch zu verhindern, Fehler zu untersuchen, den Dienst abzusichern und die Zuverlässigkeit aufrechtzuerhalten.',
+        'Provide support, handle privacy requests, and communicate material service changes.': 'Support bereitzustellen, Datenschutzanfragen zu bearbeiten und wesentliche Dienständerungen zu kommunizieren.',
+        'Meet legal obligations and enforce the': 'rechtliche Pflichten zu erfüllen und die',
+        'LunaEcho Terms of Service': 'LunaEcho-Nutzungsbedingungen',
+        'Where the GDPR applies, processing is based as appropriate on performing the requested service or taking steps before providing it, our legitimate interests in operating and securing LunaEcho, compliance with legal obligations, and consent where consent is specifically requested.': 'Soweit die DSGVO gilt, beruht die Verarbeitung je nach Fall auf der Erbringung des angeforderten Dienstes oder vorvertraglichen Maßnahmen, unseren berechtigten Interessen am Betrieb und an der Absicherung von LunaEcho, der Erfüllung rechtlicher Pflichten sowie auf einer Einwilligung, wenn diese ausdrücklich eingeholt wird.',
+        '05 / Sharing and service providers': '05 / Weitergabe und Dienstleister',
+        'We do not sell personal data.': 'Wir verkaufen keine personenbezogenen Daten.',
+        'We may share or make data available only as needed to:': 'Wir geben Daten nur weiter oder machen sie verfügbar, soweit dies erforderlich ist für:',
+        'Discord:': 'Discord:',
+        'commands, responses, and app activity pass through Discord’s platform.': 'Befehle, Antworten und App-Aktivitäten laufen über die Plattform von Discord.',
+        "commands, responses, and app activity pass through Discord's platform.": 'Befehle, Antworten und App-Aktivitäten laufen über die Plattform von Discord.',
+        'Infrastructure providers:': 'Infrastrukturanbieter:',
+        'hosting, storage, backup, security, and email providers may process data under appropriate contractual and confidentiality obligations.': 'Hosting-, Speicher-, Backup-, Sicherheits- und E-Mail-Anbieter können Daten unter angemessenen vertraglichen und vertraulichkeitsbezogenen Pflichten verarbeiten.',
+        'Payment providers:': 'Zahlungsanbieter:',
+        'if paid managed access launches, a disclosed payment provider may process billing details. LunaEcho will not store full payment card numbers.': 'wenn ein kostenpflichtiger verwalteter Zugang startet, kann ein offengelegter Zahlungsanbieter Abrechnungsdaten verarbeiten. LunaEcho speichert keine vollständigen Zahlungskartennummern.',
+        'Authorities or affected parties:': 'Behörden oder betroffene Parteien:',
+        'when required by law or reasonably necessary to protect users, rights, safety, or service security.': 'wenn dies gesetzlich vorgeschrieben oder vernünftigerweise erforderlich ist, um Nutzer, Rechte, Sicherheit oder die Dienstsicherheit zu schützen.',
+        'LunaEcho does not sell personal data, build advertising profiles, or share Discord API data for targeted advertising.': 'LunaEcho verkauft keine personenbezogenen Daten, erstellt keine Werbeprofile und teilt keine Discord-API-Daten für zielgerichtete Werbung.',
+        '06 / Retention and deletion': '06 / Aufbewahrung und Löschung',
+        'Data is kept only for a defined purpose.': 'Daten werden nur für einen festgelegten Zweck aufbewahrt.',
+        'Pre-release operational interaction and error logs are retained for up to 30 days, unless a longer period is needed to investigate a security incident or meet a legal obligation.': 'Betriebliche Interaktions- und Fehlerprotokolle der Vorabversion werden bis zu 30 Tage aufbewahrt, sofern kein längerer Zeitraum zur Untersuchung eines Sicherheitsvorfalls oder zur Erfüllung einer rechtlichen Pflicht erforderlich ist.',
+        'Managed Free server-log records are planned for a maximum of 7 days. Managed Complete server-log records are planned for a maximum of 90 days. Administrators may choose shorter periods where controls allow it.': 'Server-Protokolle von Managed Free sind für maximal 7 Tage vorgesehen. Server-Protokolle von Managed Complete sind für maximal 90 Tage vorgesehen. Administratoren können kürzere Zeiträume wählen, sofern die Einstellungen dies erlauben.',
+        'Ticket transcripts follow the applicable managed plan and administrator actions. Managed Free transcripts are planned for up to 7 days after closure.': 'Ticket-Transkripte richten sich nach dem jeweiligen verwalteten Tarif und den Aktionen der Administratoren. Transkripte von Managed Free sind für bis zu 7 Tage nach Schließung vorgesehen.',
+        'Server configuration, active moderation records, progression data, and automation settings are retained while the feature is active. After LunaEcho is removed, managed-service records are deleted or anonymized within 30 days unless earlier deletion is requested or retention is legally required.': 'Serverkonfiguration, aktive Moderationsdatensätze, Fortschrittsdaten und Automatisierungseinstellungen werden aufbewahrt, solange die Funktion aktiv ist. Nach dem Entfernen von LunaEcho werden Datensätze des verwalteten Dienstes innerhalb von 30 Tagen gelöscht oder anonymisiert, sofern keine frühere Löschung beantragt wurde oder eine gesetzliche Aufbewahrungspflicht besteht.',
+        'Website security logs are normally retained for up to 30 days.': 'Sicherheitsprotokolle der Website werden normalerweise bis zu 30 Tage aufbewahrt.',
+        'Backups, if used, may retain deleted records for a limited recovery cycle and are protected from ordinary use until overwritten. Data may be retained longer only when necessary for legal claims, abuse prevention, or a binding legal obligation.': 'Backups können gelöschte Datensätze für einen begrenzten Wiederherstellungszyklus enthalten und sind bis zum Überschreiben vor gewöhnlicher Nutzung geschützt. Daten dürfen nur länger aufbewahrt werden, wenn dies für Rechtsansprüche, Missbrauchsprävention oder eine bindende rechtliche Pflicht erforderlich ist.',
+        'Security and international processing': 'Sicherheit und internationale Verarbeitung',
+        'Practical safeguards, without impossible promises.': 'Praktische Schutzmaßnahmen ohne unmögliche Versprechen.',
+        'We use measures appropriate to the service stage, including restricted credentials, secret redaction in structured logs, least-privilege Discord access, access controls, updates, and encrypted HTTPS connections for the website. No online system can guarantee absolute security.': 'Wir verwenden dem Dienststadium angemessene Maßnahmen, darunter eingeschränkte Zugangsdaten, das Entfernen von Geheimnissen aus strukturierten Protokollen, Discord-Zugriff nach dem Prinzip der geringsten Rechte, Zugriffskontrollen, Updates und verschlüsselte HTTPS-Verbindungen für die Website. Kein Onlinesystem kann absolute Sicherheit garantieren.',
+        'Discord and infrastructure providers may process data in countries outside your own. Where required, we rely on lawful transfer mechanisms and provider safeguards. Discord’s own transfers are described in its privacy documentation.': 'Discord und Infrastrukturanbieter können Daten in Ländern außerhalb deines eigenen Landes verarbeiten. Soweit erforderlich, stützen wir uns auf rechtmäßige Übermittlungsmechanismen und Schutzmaßnahmen der Anbieter. Discord beschreibt seine eigenen Übermittlungen in seiner Datenschutzdokumentation.',
+        "Discord and infrastructure providers may process data in countries outside your own. Where required, we rely on lawful transfer mechanisms and provider safeguards. Discord's own transfers are described in its privacy documentation.": 'Discord und Infrastrukturanbieter können Daten in Ländern außerhalb deines eigenen Landes verarbeiten. Soweit erforderlich, stützen wir uns auf rechtmäßige Übermittlungsmechanismen und Schutzmaßnahmen der Anbieter. Discord beschreibt seine eigenen Übermittlungen in seiner Datenschutzdokumentation.',
+        '07 / Your rights and deletion requests': '07 / Deine Rechte und Löschanfragen',
+        'You can ask about or delete your data.': 'Du kannst Auskunft oder die Löschung deiner Daten verlangen.',
+        'Depending on applicable law, you may have rights to access, correct, delete, restrict, or receive a copy of personal data, and to object to certain processing or withdraw consent. You may also lodge a complaint with your local data-protection authority.': 'Je nach geltendem Recht kannst du Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung oder Erhalt einer Kopie personenbezogener Daten haben sowie bestimmten Verarbeitungen widersprechen oder eine Einwilligung widerrufen. Du kannst außerdem Beschwerde bei deiner zuständigen Datenschutzbehörde einlegen.',
+        'How to submit a LunaEcho data request': 'So stellst du eine LunaEcho-Datenanfrage',
+        'LunaEcho Data Request': 'LunaEcho-Datenanfrage',
+        'Include your Discord User ID and, for server-level records, the relevant Server ID. Do not send your password or token.': 'Gib deine Discord-Nutzer-ID und bei serverbezogenen Datensätzen die betreffende Server-ID an. Sende niemals dein Passwort oder Token.',
+        'State whether you want access, correction, deletion, restriction, or another privacy action.': 'Gib an, ob du Auskunft, Berichtigung, Löschung, Einschränkung oder eine andere Datenschutzmaßnahme wünschst.',
+        'Complete a reasonable ownership or administrator verification if needed to protect other users and server data.': 'Führe bei Bedarf eine angemessene Eigentümer- oder Administratorprüfung durch, um andere Nutzer und Serverdaten zu schützen.',
+        'Server owners and authorized administrators may request deletion of managed guild configuration and feature records. Individual users may request deletion of records linked to their Discord User ID where we control that data. We will respond within the timeframe required by applicable law and explain if a lawful exception applies.': 'Serverbesitzer und autorisierte Administratoren können die Löschung verwalteter Guild-Konfigurationen und Funktionsdatensätze beantragen. Einzelne Nutzer können die Löschung von Datensätzen verlangen, die mit ihrer Discord-Nutzer-ID verknüpft sind, soweit wir diese Daten kontrollieren. Wir antworten innerhalb der gesetzlich vorgeschriebenen Frist und erläutern, falls eine rechtmäßige Ausnahme gilt.',
+        '08 / Self-hosted installations': '08 / Selbst gehostete Installationen',
+        'The self-hosted operator controls its data.': 'Der selbst hostende Betreiber kontrolliert seine Daten.',
+        'This Policy does not govern data processed only by an independent self-hosted LunaEcho installation. The person or organization running that installation decides its configuration, storage, retention, security, and legal basis and is responsible for providing its own privacy information where required.': 'Diese Erklärung gilt nicht für Daten, die ausschließlich von einer unabhängigen selbst gehosteten LunaEcho-Installation verarbeitet werden. Die Person oder Organisation, die diese Installation betreibt, entscheidet über Konfiguration, Speicherung, Aufbewahrung, Sicherheit und Rechtsgrundlage und ist dafür verantwortlich, soweit erforderlich eigene Datenschutzinformationen bereitzustellen.',
+        'If you are unsure whether you use managed or self-hosted LunaEcho, ask the administrator of the Discord server where the app is installed.': 'Wenn du nicht sicher bist, ob du ein verwaltetes oder selbst gehostetes LunaEcho verwendest, frage den Administrator des Discord-Servers, auf dem die App installiert ist.',
+        'Children': 'Kinder',
+        'LunaEcho is not directed to anyone below the minimum age required to use Discord in their country. If you believe data relating to an underage user has been processed, contact us so it can be reviewed and deleted where appropriate.': 'LunaEcho richtet sich nicht an Personen unter dem in ihrem Land für Discord geltenden Mindestalter. Wenn du glaubst, dass Daten eines minderjährigen Nutzers verarbeitet wurden, kontaktiere uns, damit diese geprüft und gegebenenfalls gelöscht werden können.',
+        'Policy updates': 'Änderungen dieser Erklärung',
+        'We may update this Policy as LunaEcho develops, providers change, or legal requirements evolve. The current version and effective date will remain available at this URL. Material changes affecting an available managed service will be communicated where practical.': 'Wir können diese Erklärung aktualisieren, wenn sich LunaEcho weiterentwickelt, Anbieter wechseln oder rechtliche Anforderungen ändern. Die aktuelle Fassung und das Gültigkeitsdatum bleiben unter dieser URL verfügbar. Wesentliche Änderungen, die einen verfügbaren verwalteten Dienst betreffen, werden soweit praktikabel kommuniziert.',
+        '09 / Privacy contact': '09 / Datenschutzkontakt',
+        'For privacy questions, data requests, or concerns about how managed LunaEcho processes information, contact ShadowOkami:': 'Bei Datenschutzfragen, Datenanfragen oder Bedenken zur Informationsverarbeitung durch das verwaltete LunaEcho kontaktiere ShadowOkami:'
+    };
+
+    const pageTranslations = {
+        'index.html': home,
+        'voidline.html': voidline,
+        'mirrorgate.html': mirrorgate,
+        'mirrorgate-logo-code.html': mirrorgate,
+        'lunaecho.html': lunaecho,
+        'lunaecho-terms.html': { ...legalCommon, ...terms },
+        'lunaecho-privacy.html': { ...legalCommon, ...privacy }
+    };
+
+    const cleanPath = window.location.pathname.replace(/\/+$/, '') || '/';
+    const cleanRoutePages = {
+        '/': 'index.html',
+        '/LunaEcho': 'lunaecho.html',
+        '/LunaEcho/Privacy': 'lunaecho-privacy.html',
+        '/LunaEcho/Terms': 'lunaecho-terms.html',
+        '/MirrorGate': 'mirrorgate.html',
+        '/MirrorGate/Logo': 'mirrorgate-logo-code.html',
+        '/Voidline': 'voidline.html'
+    };
+    const fileName = cleanRoutePages[cleanPath] || window.location.pathname.split('/').pop() || 'index.html';
+    const translations = { ...common, ...(pageTranslations[fileName] || {}) };
+    const originalText = new WeakMap();
+    const originalAttributes = new WeakMap();
+    const originalTitle = document.title;
+    let language = document.documentElement.dataset.language === 'de' ? 'de' : 'en';
+    let languageSwitch;
+
+    const translate = (value, targetLanguage = language) => {
+        if (targetLanguage !== 'de') return value;
+        return translations[value] || value;
+    };
+
+    const preserveWhitespace = (source, translated) => {
+        const leading = source.match(/^\s*/)?.[0] || '';
+        const trailing = source.match(/\s*$/)?.[0] || '';
+        return `${leading}${translated}${trailing}`;
+    };
+
+    const shouldSkipText = (node) => {
+        const parent = node.parentElement;
+        return !parent || parent.closest('script, style, code, pre, .copy-code, [data-language-switch]');
+    };
+
+    const translateTextNodes = () => {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let node = walker.nextNode();
+
+        while (node) {
+            if (!shouldSkipText(node)) {
+                if (!originalText.has(node)) originalText.set(node, node.nodeValue);
+                const source = originalText.get(node);
+                const key = source.trim();
+                node.nodeValue = language === 'de' && translations[key]
+                    ? preserveWhitespace(source, translations[key])
+                    : source;
+            }
+            node = walker.nextNode();
+        }
+    };
+
+    const translateAttributes = () => {
+        document.querySelectorAll('[aria-label], [alt], [title]').forEach((element) => {
+            if (element.closest('[data-language-switch]')) return;
+            if (!originalAttributes.has(element)) originalAttributes.set(element, {});
+            const stored = originalAttributes.get(element);
+
+            ['aria-label', 'alt', 'title'].forEach((attribute) => {
+                if (!element.hasAttribute(attribute)) return;
+                if (!(attribute in stored)) stored[attribute] = element.getAttribute(attribute);
+                element.setAttribute(attribute, translate(stored[attribute]));
+            });
+        });
+
+        document.querySelectorAll('meta[name="description"], meta[property="og:title"], meta[property="og:description"]').forEach((element) => {
+            if (!originalAttributes.has(element)) originalAttributes.set(element, {});
+            const stored = originalAttributes.get(element);
+            if (!('content' in stored)) stored.content = element.getAttribute('content');
+            element.setAttribute('content', translate(stored.content));
+        });
+    };
+
+    const updateDynamicControls = () => {
+        document.querySelectorAll('.copy-code').forEach((button) => {
+            const state = button.dataset.copyState || 'copy';
+            const key = state === 'copied' ? 'Copied' : state === 'select' ? 'Select text' : 'Copy';
+            button.textContent = translate(key);
+        });
+    };
+
+    const updateSwitch = () => {
+        if (!languageSwitch) return;
+        const button = languageSwitch.querySelector('button');
+        const isGerman = language === 'de';
+        button.setAttribute('aria-checked', String(isGerman));
+        button.setAttribute('aria-label', isGerman ? 'Zur englischen Version wechseln' : 'Switch to the German version');
+        button.title = isGerman ? 'English' : 'Deutsch';
+        languageSwitch.dataset.activeLanguage = language;
+    };
+
+    const applyLanguage = (nextLanguage, persist = true) => {
+        language = nextLanguage === 'de' ? 'de' : 'en';
+        document.documentElement.lang = language;
+        document.documentElement.dataset.language = language;
+        document.title = translate(originalTitle);
+        translateTextNodes();
+        translateAttributes();
+        updateDynamicControls();
+        updateSwitch();
+
+        if (persist) {
+            try {
+                window.localStorage.setItem(STORAGE_KEY, language);
+            } catch {
+                // The switch still works for this page when storage is unavailable.
+            }
+        }
+
+        window.dispatchEvent(new CustomEvent('site-language-change', { detail: { language } }));
+    };
+
+    const createSwitch = () => {
+        languageSwitch = document.createElement('div');
+        languageSwitch.className = 'language-switch';
+        languageSwitch.dataset.languageSwitch = '';
+        languageSwitch.innerHTML = `
+            <span class="language-code" aria-hidden="true">EN</span>
+            <button class="language-switch-button" type="button" role="switch" aria-checked="false">
+                <span class="language-switch-track" aria-hidden="true"><i></i></span>
+            </button>
+            <span class="language-code" aria-hidden="true">DE</span>
+        `;
+
+        const header = document.querySelector('.site-header');
+        const menuButton = header?.querySelector('.menu-toggle');
+        if (header) {
+            header.insertBefore(languageSwitch, menuButton || header.querySelector('.site-nav'));
+        } else {
+            languageSwitch.classList.add('language-switch-standalone');
+            document.body.append(languageSwitch);
+        }
+
+        languageSwitch.querySelector('button').addEventListener('click', () => {
+            applyLanguage(language === 'de' ? 'en' : 'de');
+        });
+    };
+
+    const audit = () => {
+        const missing = new Set();
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let node = walker.nextNode();
+
+        while (node) {
+            if (!shouldSkipText(node)) {
+                const source = (originalText.get(node) || node.nodeValue).trim();
+                if (source && /[A-Za-z]/.test(source) && !translations[source]) missing.add(source);
+            }
+            node = walker.nextNode();
+        }
+
+        document.querySelectorAll('[aria-label], [alt], [title]').forEach((element) => {
+            if (element.closest('[data-language-switch]')) return;
+            ['aria-label', 'alt', 'title'].forEach((attribute) => {
+                const source = originalAttributes.get(element)?.[attribute] || element.getAttribute(attribute);
+                if (source && /[A-Za-z]/.test(source) && !translations[source]) missing.add(source);
+            });
+        });
+
+        document.querySelectorAll('meta[name="description"], meta[property="og:title"], meta[property="og:description"]').forEach((element) => {
+            const source = originalAttributes.get(element)?.content || element.getAttribute('content');
+            if (source && /[A-Za-z]/.test(source) && !translations[source]) missing.add(source);
+        });
+
+        if (/[A-Za-z]/.test(originalTitle) && !translations[originalTitle]) missing.add(originalTitle);
+        return [...missing].sort((a, b) => a.localeCompare(b));
+    };
+
+    createSwitch();
+    applyLanguage(language, false);
+    document.documentElement.classList.add('language-ready');
+
+    if (new URLSearchParams(window.location.search).has('i18n-audit')) {
+        const auditOutput = document.createElement('script');
+        auditOutput.id = 'translation-audit';
+        auditOutput.type = 'application/json';
+        auditOutput.textContent = JSON.stringify(audit());
+        document.body.append(auditOutput);
+    }
+
+    window.siteLanguage = {
+        get language() { return language; },
+        apply: applyLanguage,
+        translate,
+        updateDynamicControls,
+        audit
+    };
+})();
