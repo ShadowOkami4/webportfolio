@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0c0912">
     <title>Voidline | Okami</title>
-    <meta name="description" content="Voidline is an AI-generated showcase for a Material-inspired Linux desktop experience and shell around Hyprland, planned across Quickshell, Python, Lua, and Rust.">
+    <meta name="description" content="Voidline is an experimental open-source desktop shell and connected experience around Hyprland, currently available as the 0.3.0dev development release.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Voidline | AI-Generated Shell Showcase">
-    <meta property="og:image" content="../assets/images/voidline-screenshot.webp">
+    <meta property="og:title" content="Voidline | Hyprland Desktop Shell">
+    <meta property="og:image" content="../assets/images/voidline-banner.webp">
     <link rel="canonical" href="https://shadowokami.com/Voidline">
-    <link rel="icon" type="image/webp" href="../assets/images/Profile25.webp?v=2">
-    <link rel="stylesheet" href="../assets/css/style.css?v=19">
-    <link rel="stylesheet" href="../assets/css/language.css?v=1">
+    <link rel="icon" type="image/webp" href="../assets/images/voidline-logo-v4.webp?v=1">
+    <link rel="stylesheet" href="../assets/css/style.css?v=20">
+    <link rel="stylesheet" href="../assets/css/language.css?v=2">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
 <body class="detail-page voidline-page">
@@ -22,7 +22,7 @@
 
     <header class="site-header">
         <a class="brand" href="/" aria-label="Okami home">
-            <span class="brand-mark"><img src="../assets/images/Profile25.webp?v=2" alt="" width="48" height="48"></span>
+            <span class="brand-mark"><img src="../assets/images/okami-logo-v4.webp?v=1" alt="" width="48" height="48"></span>
             <span class="brand-copy"><strong>OKAMI</strong><small>PROJECT / 01</small></span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -30,10 +30,10 @@
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Project navigation">
             <a href="#overview">Overview</a>
-            <a href="#context">Context</a>
-            <a href="#showcase">Showcase</a>
+            <a href="#features">Features</a>
+            <a href="#screenshots">Screenshots</a>
             <a href="#install">Install</a>
-            <a class="nav-out" href="https://github.com/ShadowOkami4/Voidline_Showcase" target="_blank" rel="noopener noreferrer">Source ↗</a>
+            <a class="nav-out" href="https://github.com/ShadowOkami4/voidline" target="_blank" rel="noopener noreferrer">Source ↗</a>
         </nav>
     </header>
 
@@ -41,79 +41,108 @@
         <section class="detail-hero" id="overview" aria-labelledby="project-title">
             <div class="detail-copy">
                 <a class="detail-breadcrumb reveal" href="/#work">← Back to my projects</a>
-                <aside class="showcase-warning reveal" aria-label="Important AI-generated showcase notice">
-                    <span>Important</span>
-                    <div><strong>AI-generated showcase</strong><p>The Voidline interface shown here is currently an AI-generated concept and demonstration, not a finished Hyprland shell. The wallpaper artwork is by RealShovelKun and is credited below.</p></div>
+                <aside class="showcase-warning development-notice reveal" aria-label="Development release notice">
+                    <span>Development</span>
+                    <div><strong>Public preview, not production stable</strong><p>Voidline 0.3.0dev is available for testing on Arch Linux with Hyprland. Features, installation steps, and compatibility can still change.</p></div>
                 </aside>
-                <p class="detail-badge reveal">Experimental shell / Hyprland</p>
+                <p class="detail-badge reveal">Linux desktop shell / Hyprland</p>
                 <h1 class="detail-title reveal" id="project-title">Void<span class="outline">line</span></h1>
-                <p class="detail-lead reveal">A Material-inspired desktop experience and shell around Hyprland, planned as a layered project using Quickshell, Python, Lua, and Rust.</p>
+                <p class="detail-lead reveal">An experimental open-source desktop shell that brings panels, settings, notifications, native tools, and daily controls into one connected experience around Hyprland.</p>
                 <div class="detail-actions reveal">
-                    <a class="button" href="#showcase">Watch showcase ↓</a>
-                    <a class="button button-ghost" href="https://github.com/ShadowOkami4/Voidline_Showcase" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                    <a class="button" href="#screenshots">See the current build ↓</a>
+                    <a class="button button-ghost" href="https://github.com/ShadowOkami4/voidline" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
                 </div>
-                <div class="detail-tags reveal"><span>AI showcase</span><span>Hyprland</span><span>Quickshell</span><span>Python</span><span>Lua</span><span>Rust</span></div>
+                <div class="detail-tags reveal"><span>0.3.0dev</span><span>Hyprland</span><span>Quickshell</span><span>Rust</span><span>Open source</span></div>
             </div>
-            <figure class="detail-visual voidline-visual reveal">
-                <img src="../assets/images/voidline-screenshot.webp" alt="Voidline shell concept around Hyprland using Arch Linux-chan wallpaper artwork by RealShovelKun" width="1920" height="1080">
-                <figcaption class="detail-visual-label">SHELL / PREVIEW</figcaption>
-                <a class="wallpaper-credit-chip" href="https://www.reddit.com/r/MoeMorphism/comments/umjhgw/oc_arch_linuxchan_by_myself/" target="_blank" rel="noopener noreferrer"><span>Wallpaper art</span> RealShovelKun ↗</a>
+            <figure class="detail-visual voidline-brand-visual reveal">
+                <img src="../assets/images/voidline-banner-transparent.webp" alt="Voidline, a Linux Hyprland desktop shell" width="1950" height="750">
+                <figcaption class="detail-visual-label">VOIDLINE / 0.3.0DEV</figcaption>
             </figure>
         </section>
 
         <section class="detail-strip" aria-label="Project facts">
             <div class="detail-stats">
-                <div><strong>AI</strong><span>Generated showcase</span></div>
-                <div><strong>MIX</strong><span>Planned technology stack</span></div>
-                <div><strong>M3</strong><span>Design language</span></div>
-                <div><strong>WIP</strong><span>Experimental state</span></div>
+                <div><strong>0.3</strong><span>Development release</span></div>
+                <div><strong>3</strong><span>Included locales</span></div>
+                <div><strong>QS</strong><span>Quickshell interface</span></div>
+                <div><strong>WIP</strong><span>Not production stable</span></div>
             </div>
         </section>
 
-        <section class="detail-section" id="context" aria-labelledby="context-title">
+        <section class="detail-section" id="features" aria-labelledby="features-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>01</span> Context</div>
-                <h2 id="context-title">A showcase,<br>not the finish line.</h2>
-                <p>Voidline and the public showcase are connected, but they are not the same thing. This page separates the long-term project direction from the current experimental demonstration.</p>
+                <div class="section-label"><span>01</span> Current features</div>
+                <h2 id="features-title">One connected<br>desktop experience.</h2>
+                <p>Voidline sits around Hyprland rather than replacing it. The goal is to make everyday desktop controls feel consistent while keeping the setup open, inspectable, and adaptable.</p>
             </div>
-            <div class="context-grid">
-                <article class="context-card context-card-primary reveal">
-                    <p class="context-kicker">Showcase / Context</p>
-                    <h3>The showcase is a snapshot of an idea.</h3>
-                    <p>The public repository is an AI-generated concept and experimental demonstration of a possible Voidline experience. It communicates layout, atmosphere, and direction, but it does not represent a finished or production-ready shell.</p>
+            <div class="feature-grid voidline-feature-grid">
+                <article class="reveal">
+                    <span class="feature-icon">01</span>
+                    <h3>Connected panels</h3>
+                    <p>A desktop bar and orientation-aware panels that share one visual language.</p>
                 </article>
-                <article class="context-card reveal">
-                    <p class="context-kicker">The project</p>
-                    <h3>The real direction</h3>
-                    <p>Voidline is intended as a cohesive shell and desktop experience around Hyprland, with Quickshell, Python, Lua, and Rust handling the parts they suit best.</p>
+                <article class="reveal">
+                    <span class="feature-icon">02</span>
+                    <h3>Action Center</h3>
+                    <p>Quick settings for network, Bluetooth, audio, power, display, and session actions.</p>
                 </article>
-                <article class="context-card reveal">
-                    <p class="context-kicker">The current state</p>
-                    <h3>Experimental and visible</h3>
-                    <p>The repository and the video below document the showcase as it currently exists. Features, visuals, and setup steps may still change as the real project develops.</p>
+                <article class="reveal">
+                    <span class="feature-icon">03</span>
+                    <h3>Settings</h3>
+                    <p>A unified settings surface for personal, display, connection, and system options.</p>
+                </article>
+                <article class="reveal">
+                    <span class="feature-icon">04</span>
+                    <h3>Notifications and tray</h3>
+                    <p>Integrated notifications and system tray behavior designed to feel part of the shell.</p>
+                </article>
+                <article class="reveal">
+                    <span class="feature-icon">05</span>
+                    <h3>Lock and login</h3>
+                    <p>A matching lock screen and SDDM theme for a more continuous experience.</p>
+                </article>
+                <article class="reveal">
+                    <span class="feature-icon">06</span>
+                    <h3>Native tools</h3>
+                    <p>A Rust backend, the voidlinectl CLI, and a native terminal support the interface.</p>
                 </article>
             </div>
+        </section>
+
+        <section class="detail-section" id="screenshots" aria-labelledby="screenshots-title">
+            <div class="detail-section-head reveal">
+                <div class="section-label"><span>02</span> Current interface</div>
+                <h2 id="screenshots-title">See the build<br>as it is today.</h2>
+                <p>These screenshots come from the current development build and show how Voidline brings system controls and settings into the same visual system.</p>
+            </div>
+            <div class="voidline-screenshot-grid">
+                <figure class="interface-shot reveal">
+                    <img src="../assets/images/voidline-action-center.webp" alt="Voidline desktop with the Action Center open" width="1920" height="1200">
+                    <figcaption><span>01 / Action Center</span><strong>Daily controls without leaving the desktop.</strong></figcaption>
+                </figure>
+                <figure class="interface-shot reveal">
+                    <img src="../assets/images/voidline-settings.webp" alt="Voidline desktop showing the About this Computer settings page" width="1920" height="1200">
+                    <figcaption><span>02 / Settings</span><strong>System information inside the same shell language.</strong></figcaption>
+                </figure>
+            </div>
+            <aside class="artwork-note voidline-artwork-note reveal">
+                <span>Wallpaper note</span>
+                <p>The interface shown here is the current Voidline development build. The purple wallpaper was AI-generated for the project and belongs to Voidline.</p>
+            </aside>
         </section>
 
         <section class="detail-section" id="showcase" aria-labelledby="showcase-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>02</span> Current showcase</div>
-                <h2 id="showcase-title">See the shell<br>in motion.</h2>
-                <p>This video was recorded by me and shows the shell showcase in its current experimental state. It provides a more honest view of the working experience than the generated concept image alone.</p>
+                <div class="section-label"><span>03</span> Earlier showcase</div>
+                <h2 id="showcase-title">A look back<br>at the direction.</h2>
+                <p>This video records an earlier showcase state. It remains useful as project history, but the screenshots above and the GitHub repository represent the newer build.</p>
             </div>
             <div class="video-showcase reveal">
-                <div class="video-frame">
-                    <iframe src="https://www.youtube-nocookie.com/embed/NpsBowYa60I" title="Voidline shell showcase by Okami on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/NpsBowYa60I" title="Earlier Voidline shell showcase by Okami on YouTube" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                 <div class="video-copy">
-                    <p class="detail-badge">Creator showcase / YouTube</p>
-                    <h3>The current showcase state</h3>
-                    <p>The recording demonstrates the shell as it can actually be explored today. It complements the AI-generated concept instead of presenting that concept as a completed implementation.</p>
-                    <ul class="context-points">
-                        <li>Recorded and presented by me</li>
-                        <li>Shows the experimental showcase state</li>
-                        <li>Not a production-ready Voidline release</li>
-                    </ul>
+                    <p class="detail-badge">Project history / YouTube</p>
+                    <h3>Earlier development showcase</h3>
+                    <p>A recorded look at how the shell’s visual direction and interactions were being explored before the current 0.3.0dev build.</p>
                     <a class="button button-ghost" href="https://www.youtube.com/watch?v=NpsBowYa60I" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
                 </div>
             </div>
@@ -121,69 +150,38 @@
 
         <section class="detail-section" id="install" aria-labelledby="install-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>03</span> Installation</div>
-                <h2 id="install-title">From blank<br>to Voidline.</h2>
-                <p>Because this is an AI-generated experimental showcase, the commands and configuration may be incomplete or change without notice. Review the repository and back up your config first.</p>
+                <div class="section-label"><span>04</span> Installation</div>
+                <h2 id="install-title">Try the current<br>development release.</h2>
+                <p>Voidline currently targets Arch Linux with Hyprland. Review the repository requirements, back up existing configuration, and run the installer as your regular user rather than with sudo.</p>
             </div>
             <div class="install-list">
                 <article class="install-step reveal">
-                    <span class="step-number">01 / 05</span><h3>Install Hyprland</h3>
-                    <div class="code-box"><code>sudo pacman -S hyprland kitty</code><button class="copy-code" type="button">Copy</button></div>
+                    <span class="step-number">01 / 03</span><h3>Clone the development release</h3>
+                    <div class="code-box"><code>git clone --branch v0.3.0dev --depth 1 https://github.com/ShadowOkami4/voidline.git</code><button class="copy-code" type="button">Copy</button></div>
                 </article>
                 <article class="install-step reveal">
-                    <span class="step-number">02 / 05</span><h3>Install Quickshell</h3>
-                    <div class="code-box"><code>yay -S quickshell-git</code><button class="copy-code" type="button">Copy</button></div>
+                    <span class="step-number">02 / 03</span><h3>Open the project folder</h3>
+                    <div class="code-box"><code>cd voidline</code><button class="copy-code" type="button">Copy</button></div>
                 </article>
                 <article class="install-step reveal">
-                    <span class="step-number">03 / 05</span><h3>Clone Voidline</h3>
-                    <div class="code-box"><code>git clone https://github.com/ShadowOkami4/Voidline_Showcase ~/.config/quickshell</code><button class="copy-code" type="button">Copy</button></div>
-                </article>
-                <article class="install-step reveal">
-                    <span class="step-number">04 / 05</span><h3>Copy the config</h3>
-                    <div class="code-box"><code>cp -r ~/.config/quickshell/hypr ~/.config/</code><button class="copy-code" type="button">Copy</button></div>
-                </article>
-                <article class="install-step reveal">
-                    <span class="step-number">05 / 05</span><h3>Start Hyprland</h3>
-                    <div class="code-box"><code>start-hyprland</code><button class="copy-code" type="button">Copy</button></div>
+                    <span class="step-number">03 / 03</span><h3>Run the installer</h3>
+                    <div class="code-box"><code>./install.sh --install-deps</code><button class="copy-code" type="button">Copy</button></div>
                 </article>
             </div>
-        </section>
-
-        <section class="detail-section" aria-labelledby="gallery-title">
-            <div class="detail-section-head reveal">
-                <div class="section-label"><span>04</span> Generated concept</div>
-                <h2 id="gallery-title">The visual<br>direction.</h2>
-                <p>The shell interface around the wallpaper is an AI-generated concept. It represents the intended atmosphere and design direction, not proof that every visible element is already implemented. The wallpaper itself is original artwork by RealShovelKun.</p>
-            </div>
-            <figure class="gallery-frame reveal">
-                <img src="../assets/images/voidline-screenshot.webp" alt="Wide Voidline shell concept using Arch Linux-chan wallpaper artwork by RealShovelKun" width="1920" height="1080">
-                <figcaption class="wallpaper-attribution" id="wallpaper-credit">
-                    <div>
-                        <p class="attribution-kicker">Wallpaper artwork</p>
-                        <h3><a href="https://www.reddit.com/r/MoeMorphism/comments/umjhgw/oc_arch_linuxchan_by_myself/" target="_blank" rel="noopener noreferrer">Arch Linux-chan ↗</a></h3>
-                        <p>The wallpaper visible inside the Voidline showcase was created by <a href="https://www.reddit.com/user/RealShovelKun/" target="_blank" rel="noopener noreferrer">RealShovelKun</a>. The surrounding shell interface and presentation belong to the separate Voidline concept.</p>
-                    </div>
-                    <div class="attribution-links" aria-label="RealShovelKun links">
-                        <a href="https://www.reddit.com/r/MoeMorphism/comments/umjhgw/oc_arch_linuxchan_by_myself/" target="_blank" rel="noopener noreferrer">Original Reddit post ↗</a>
-                        <a href="https://x.com/shovelkun_" target="_blank" rel="noopener noreferrer">Twitter / X: @shovelkun_ ↗</a>
-                        <a href="https://www.instagram.com/shovelkun_/" target="_blank" rel="noopener noreferrer">Instagram: @shovelkun_ ↗</a>
-                    </div>
-                </figcaption>
-            </figure>
         </section>
 
         <section class="detail-cta">
-            <p class="detail-badge reveal">AI-generated / Experimental</p>
-            <h2 class="reveal">Explore the<br>showcase.</h2>
-            <p class="reveal">Start with the recorded state, inspect the generated showcase source, and follow Voidline as the real project develops beyond the concept.</p>
-            <div class="detail-actions reveal"><a class="button" href="https://github.com/ShadowOkami4/Voidline_Showcase" target="_blank" rel="noopener noreferrer">Visit the showcase repository ↗</a><a class="button button-ghost" href="/#work">See my other projects</a></div>
+            <p class="detail-badge reveal">Open source / In development</p>
+            <h2 class="reveal">Follow Voidline<br>as it grows.</h2>
+            <p class="reveal">Explore the current source, report what you find, or join the Discord community to follow development and share feedback.</p>
+            <div class="detail-actions reveal"><a class="button" href="https://github.com/ShadowOkami4/voidline" target="_blank" rel="noopener noreferrer">Open the Voidline repository ↗</a><a class="button button-ghost" href="https://discord.com/invite/g4xSv7VTAm" target="_blank" rel="noopener noreferrer">Join the Discord ↗</a><a class="button button-ghost" href="/#work">See my other projects</a></div>
         </section>
     </main>
 
     <footer class="site-footer">
         <span>© <span data-year>2026</span> OKAMI</span><span>VOIDLINE / PROJECT 01</span><a href="#overview">Back to top ↑</a>
     </footer>
-    <script src="../assets/js/translations.js?v=1"></script>
+    <script src="../assets/js/translations.js?v=2"></script>
     <script src="../assets/js/script.js?v=7"></script>
 </body>
 </html>
