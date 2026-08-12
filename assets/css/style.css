@@ -4343,26 +4343,6 @@ li {
     background: #f9f9f9;
 }
 
-.voidline-brand-visual {
-    display: grid;
-    overflow: hidden;
-    aspect-ratio: 13 / 5;
-    padding: clamp(20px, 3vw, 42px);
-    place-items: center;
-    border: 1px solid var(--line-strong);
-    border-radius: var(--radius-card);
-    background:
-        radial-gradient(circle at 50% 38%, rgba(150, 102, 242, .18), transparent 42%),
-        linear-gradient(145deg, #100b19, #08060c);
-    box-shadow: 24px 30px 70px rgba(103, 53, 197, .18);
-}
-
-.voidline-brand-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 .voidline-feature-grid .feature-icon {
     font-size: .75rem;
 }
@@ -4447,17 +4427,729 @@ li {
         border-radius: 26px;
     }
 
-    .voidline-brand-visual {
-        aspect-ratio: 4 / 3;
-        padding: 18px;
-        border-radius: 28px;
-    }
-
     .interface-shot {
         border-radius: 26px;
     }
 
     .interface-shot img {
         border-radius: 20px;
+    }
+}
+
+/* Voidline page rebuild: content first, with screenshots at readable sizes. */
+.project-featured .voidline-media {
+    aspect-ratio: 16 / 9;
+    background: #09060f;
+}
+
+.voidline-media .voidline-card-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background: #09060f;
+}
+
+.voidline-media::after {
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(8, 5, 13, .05) 42%, rgba(8, 5, 13, .88) 100%);
+    mix-blend-mode: normal;
+}
+
+.voidline-card-identity {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    z-index: 2;
+    display: flex;
+    padding: 10px 15px 10px 10px;
+    gap: 11px;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: var(--pill);
+    background: rgba(10, 7, 15, .76);
+    backdrop-filter: blur(16px);
+}
+
+.voidline-media .voidline-card-identity img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #050407;
+}
+
+.voidline-card-identity > span {
+    display: grid;
+    gap: 2px;
+}
+
+.voidline-card-identity strong {
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.voidline-card-identity small {
+    color: var(--paper-soft);
+    font-size: .72rem;
+}
+
+.voidline-page main {
+    overflow: hidden;
+}
+
+.voidline-hero {
+    display: grid;
+    width: var(--page);
+    margin: 0 auto;
+    padding: 148px 0 80px;
+    gap: 48px;
+}
+
+.voidline-hero-copy {
+    max-width: 980px;
+}
+
+.voidline-title-lockup {
+    display: flex;
+    margin-top: 24px;
+    gap: clamp(20px, 3vw, 36px);
+    align-items: center;
+}
+
+.voidline-title-lockup > img {
+    width: clamp(96px, 11vw, 150px);
+    height: clamp(96px, 11vw, 150px);
+    flex: 0 0 auto;
+    object-fit: contain;
+    border: 1px solid var(--line-strong);
+    border-radius: 34px;
+    background: #050407;
+}
+
+.voidline-title-lockup h1 {
+    margin: 5px 0 0;
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: clamp(4.5rem, 10vw, 9.2rem);
+    font-weight: 800;
+    letter-spacing: -.07em;
+    line-height: .82;
+    text-transform: uppercase;
+}
+
+.voidline-hero-lead {
+    max-width: 880px;
+    margin: 34px 0 0;
+    color: var(--paper-soft);
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
+    line-height: 1.42;
+}
+
+.voidline-release-note {
+    display: flex;
+    max-width: 820px;
+    margin-top: 28px;
+    padding: 18px 20px;
+    gap: 18px;
+    align-items: center;
+    border: 1px solid rgba(150, 102, 242, .36);
+    border-radius: 22px;
+    background: rgba(150, 102, 242, .075);
+}
+
+.voidline-release-note > span {
+    padding: 7px 11px;
+    flex: 0 0 auto;
+    color: var(--ink);
+    border-radius: var(--pill);
+    background: var(--violet-bright);
+    font-family: Consolas, monospace;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.voidline-release-note p {
+    margin: 0;
+    color: var(--paper-soft);
+    font-size: .95rem;
+    line-height: 1.55;
+}
+
+.voidline-release-note strong {
+    color: var(--paper);
+}
+
+.voidline-hero-shot {
+    overflow: hidden;
+    margin: 12px 0 0;
+    padding: 8px;
+    border: 1px solid var(--line-strong);
+    border-radius: 40px;
+    background: rgba(18, 13, 26, .82);
+    box-shadow: 0 34px 90px rgba(4, 2, 8, .32);
+}
+
+.voidline-hero-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 32px;
+}
+
+.voidline-hero-shot figcaption {
+    display: flex;
+    min-height: 72px;
+    padding: 16px 18px 8px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    color: var(--muted);
+    font-family: Consolas, monospace;
+    font-size: .72rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.voidline-hero-shot figcaption span:first-child {
+    display: grid;
+    gap: 2px;
+}
+
+.voidline-hero-shot figcaption strong {
+    color: var(--paper);
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.voidline-facts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.voidline-facts > div {
+    display: grid;
+    min-height: 106px;
+    padding: 20px 22px;
+    align-content: center;
+    gap: 5px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(18, 13, 26, .55);
+}
+
+.voidline-facts span,
+.voidline-purpose-card > span,
+.voidline-requirements > span {
+    color: var(--violet-bright);
+    font-family: Consolas, monospace;
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.voidline-facts strong {
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: 1.15rem;
+}
+
+.voidline-section {
+    width: var(--page);
+    margin: 0 auto;
+    padding: 105px 0;
+    border-top: 1px solid var(--line);
+}
+
+.voidline-section-intro {
+    display: grid;
+    grid-template-columns: minmax(150px, .35fr) minmax(0, 1.05fr) minmax(260px, .6fr);
+    gap: 42px;
+    margin-bottom: 54px;
+    align-items: end;
+}
+
+.voidline-section-intro h2,
+.voidline-history-copy h2 {
+    margin: 0;
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: clamp(2.8rem, 5.5vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -.06em;
+    line-height: .94;
+    text-transform: uppercase;
+}
+
+.voidline-section-intro h2 em {
+    color: var(--violet-bright);
+    font-family: Georgia, serif;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.voidline-section-intro > p,
+.voidline-history-copy > p {
+    margin: 0;
+    color: var(--paper-soft);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.voidline-purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.voidline-purpose-card {
+    display: flex;
+    min-height: 260px;
+    padding: clamp(28px, 3.5vw, 46px);
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    background: rgba(18, 13, 26, .6);
+}
+
+.voidline-purpose-primary {
+    min-height: 340px;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(150, 102, 242, .23), transparent 25rem),
+        linear-gradient(145deg, rgba(37, 24, 51, .88), rgba(18, 13, 26, .78));
+}
+
+.voidline-purpose-card h3 {
+    max-width: 720px;
+    margin: 18px 0 12px;
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: clamp(1.7rem, 3vw, 3.8rem);
+    letter-spacing: -.045em;
+    line-height: 1.03;
+}
+
+.voidline-purpose-card:not(.voidline-purpose-primary) h3 {
+    font-size: clamp(1.45rem, 2vw, 2.2rem);
+}
+
+.voidline-purpose-card p {
+    max-width: 680px;
+    margin: 0;
+    color: var(--paper-soft);
+}
+
+.voidline-feature-groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.voidline-feature-group {
+    min-height: 420px;
+    padding: 34px;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    background: linear-gradient(155deg, rgba(37, 24, 51, .62), rgba(18, 13, 26, .58));
+}
+
+.voidline-feature-number {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    color: var(--ink);
+    border-radius: 15px;
+    background: var(--violet-bright);
+    font-family: Consolas, monospace;
+    font-size: .72rem;
+    font-weight: 700;
+}
+
+.voidline-feature-group h3 {
+    margin: 72px 0 10px;
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: clamp(1.7rem, 2.5vw, 2.8rem);
+    letter-spacing: -.04em;
+}
+
+.voidline-feature-group > p {
+    min-height: 58px;
+    margin: 0;
+    color: var(--muted);
+}
+
+.voidline-feature-group ul,
+.voidline-requirements ul {
+    padding: 0;
+    margin: 28px 0 0;
+    list-style: none;
+}
+
+.voidline-feature-group li,
+.voidline-requirements li {
+    position: relative;
+    padding: 12px 0 12px 20px;
+    color: var(--paper-soft);
+    border-top: 1px solid var(--line);
+}
+
+.voidline-feature-group li::before,
+.voidline-requirements li::before {
+    position: absolute;
+    top: 1.22em;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    content: "";
+    border-radius: 50%;
+    background: var(--violet-bright);
+}
+
+.voidline-settings-shot {
+    overflow: hidden;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid var(--line-strong);
+    border-radius: 38px;
+    background: rgba(18, 13, 26, .72);
+}
+
+.voidline-settings-shot > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.voidline-settings-shot figcaption {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding: 8px 0 0;
+}
+
+.voidline-settings-shot figcaption > div {
+    padding: 22px;
+    border-radius: 22px;
+    background: rgba(12, 9, 18, .58);
+}
+
+.voidline-settings-shot figcaption span {
+    color: var(--violet-bright);
+    font-family: Consolas, monospace;
+    font-size: .7rem;
+}
+
+.voidline-settings-shot figcaption strong {
+    display: block;
+    margin: 12px 0 5px;
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: 1.15rem;
+}
+
+.voidline-settings-shot figcaption p,
+.voidline-wallpaper-note p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.voidline-wallpaper-note {
+    display: grid;
+    margin-top: 14px;
+    padding: 22px 26px;
+    grid-template-columns: minmax(160px, .35fr) 1fr;
+    gap: 24px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: rgba(18, 13, 26, .44);
+}
+
+.voidline-wallpaper-note strong {
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+}
+
+.voidline-history-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, .62fr) minmax(0, 1.38fr);
+    gap: clamp(40px, 7vw, 100px);
+    align-items: center;
+}
+
+.voidline-history-copy h2 {
+    margin: 28px 0 24px;
+}
+
+.voidline-history-copy .button {
+    margin-top: 30px;
+}
+
+.voidline-history .video-frame {
+    overflow: hidden;
+    border: 7px solid rgba(18, 13, 26, .72);
+    border-radius: 32px;
+    box-shadow: 0 24px 70px rgba(4, 2, 8, .3);
+}
+
+.voidline-install-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, .38fr) minmax(0, .62fr);
+    gap: 16px;
+    align-items: start;
+}
+
+.voidline-requirements {
+    position: sticky;
+    top: 110px;
+    padding: 32px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: rgba(18, 13, 26, .64);
+}
+
+.voidline-requirements h3 {
+    margin: 18px 0 0;
+    font-family: "Bahnschrift", "Trebuchet MS", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: -.035em;
+}
+
+.voidline-requirements > p {
+    margin: 24px 0 0;
+    padding: 16px;
+    color: var(--paper-soft);
+    border-radius: 18px;
+    background: rgba(150, 102, 242, .1);
+    font-size: .9rem;
+}
+
+.voidline-install .install-list {
+    display: grid;
+    gap: 12px;
+}
+
+.voidline-install .install-step {
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    background: rgba(18, 13, 26, .52);
+}
+
+.voidline-page .detail-cta {
+    width: var(--page);
+    margin: 30px auto 50px;
+    padding: clamp(60px, 8vw, 100px);
+    border: 1px solid var(--line);
+    border-radius: 40px;
+    background:
+        radial-gradient(circle at 80% 15%, rgba(150, 102, 242, .2), transparent 28rem),
+        rgba(18, 13, 26, .7);
+}
+
+@media (max-width: 980px) {
+    .voidline-section-intro {
+        grid-template-columns: minmax(130px, .3fr) 1fr;
+    }
+
+    .voidline-section-intro > p {
+        grid-column: 2;
+    }
+
+    .voidline-feature-groups {
+        grid-template-columns: 1fr;
+    }
+
+    .voidline-feature-group {
+        min-height: 0;
+    }
+
+    .voidline-feature-group h3 {
+        margin-top: 38px;
+    }
+
+    .voidline-feature-group > p {
+        min-height: 0;
+    }
+
+    .voidline-history-layout,
+    .voidline-install-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .voidline-requirements {
+        position: static;
+    }
+}
+
+@media (max-width: 720px) {
+    .voidline-card-identity {
+        bottom: 14px;
+        left: 14px;
+    }
+
+    .voidline-media .voidline-card-identity img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .voidline-card-identity small {
+        display: none;
+    }
+
+    .voidline-hero {
+        padding: 72px 0 62px;
+        gap: 32px;
+    }
+
+    .voidline-title-lockup > img {
+        width: 86px;
+        height: 86px;
+        border-radius: 24px;
+    }
+
+    .voidline-title-lockup h1 {
+        font-size: clamp(3.6rem, 18vw, 5.8rem);
+    }
+
+    .voidline-hero-lead {
+        margin-top: 26px;
+        font-size: 1.2rem;
+    }
+
+    .voidline-release-note {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .voidline-hero-shot {
+        padding: 5px;
+        border-radius: 28px;
+    }
+
+    .voidline-hero-shot img {
+        border-radius: 23px;
+    }
+
+    .voidline-hero-shot figcaption {
+        min-height: 64px;
+        padding: 13px 12px 7px;
+    }
+
+    .voidline-hero-shot figcaption > span:last-child {
+        display: none;
+    }
+
+    .voidline-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .voidline-facts > div {
+        min-height: 92px;
+        padding: 16px;
+    }
+
+    .voidline-facts strong {
+        font-size: 1rem;
+    }
+
+    .voidline-section {
+        padding: 76px 0;
+    }
+
+    .voidline-section-intro {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-bottom: 38px;
+    }
+
+    .voidline-section-intro > p {
+        grid-column: auto;
+    }
+
+    .voidline-purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .voidline-purpose-card,
+    .voidline-purpose-primary {
+        min-height: 0;
+        grid-row: auto;
+    }
+
+    .voidline-purpose-primary {
+        padding-block: 52px;
+    }
+
+    .voidline-feature-group {
+        padding: 27px;
+        border-radius: 26px;
+    }
+
+    .voidline-settings-shot {
+        padding: 5px;
+        border-radius: 28px;
+    }
+
+    .voidline-settings-shot > img {
+        border-radius: 23px;
+    }
+
+    .voidline-settings-shot figcaption {
+        grid-template-columns: 1fr;
+    }
+
+    .voidline-settings-shot figcaption > div {
+        padding: 18px;
+    }
+
+    .voidline-wallpaper-note {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .voidline-page .detail-cta {
+        margin-bottom: 28px;
+        padding: 52px 24px;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 460px) {
+    .project-featured .voidline-media {
+        aspect-ratio: 4 / 3;
+    }
+
+    .voidline-media .voidline-card-screenshot {
+        object-position: 72% center;
+    }
+
+    .voidline-card-identity {
+        display: none;
+    }
+
+    .voidline-media .project-open {
+        display: none;
+    }
+
+    .voidline-title-lockup {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .voidline-title-lockup h1 {
+        font-size: clamp(3.5rem, 21vw, 5rem);
+    }
+
+    .voidline-hero-shot figcaption strong {
+        font-size: .9rem;
     }
 }
