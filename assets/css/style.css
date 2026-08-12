@@ -1110,9 +1110,10 @@ p {
 .support {
     display: grid;
     padding-top: 72px;
-    grid-template-columns: minmax(300px, .75fr) minmax(0, 1.25fr);
+    grid-template-columns: minmax(340px, 430px) minmax(460px, 560px);
     gap: 28px;
     align-items: start;
+    justify-content: center;
 }
 
 .support-copy,
@@ -1134,16 +1135,55 @@ p {
 
 .support-widget {
     overflow: hidden;
-    padding: 10px;
+    padding: 0;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(160, 88, 242, .16), transparent 38%),
+        var(--surface);
 }
 
-.support-widget iframe {
+.support-widget-bar {
+    display: flex;
+    min-height: 54px;
+    padding: 14px 18px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-family: "Bahnschrift", "Franklin Gothic Medium", sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.support-widget-bar span {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.support-widget-bar i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff5f5f;
+    box-shadow: 0 0 0 4px rgba(255, 95, 95, .12);
+}
+
+.support-widget-frame {
+    overflow: hidden;
+    margin: 10px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 18px 40px rgba(6, 3, 12, .26);
+}
+
+.support-widget-frame iframe {
     display: block;
     width: 100%;
-    height: 620px;
+    height: 712px;
     border: 0;
-    border-radius: 20px;
-    background: #fff;
+    background: #f9f9f9;
 }
 
 .site-footer {
@@ -2522,6 +2562,11 @@ p {
     .support-copy,
     .voidline-requirements,
     .legal-toc { position: static; }
+    .support-copy,
+    .support-widget {
+        width: min(100%, 560px);
+        justify-self: center;
+    }
     .legal-toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .legal-toc > p { grid-column: 1 / -1; }
 
@@ -2605,7 +2650,7 @@ p {
     .contact-channel { min-height: 165px; }
     .support { padding-top: 50px; }
     .support-copy { padding: 27px; }
-    .support-widget iframe { height: 600px; }
+    .support-widget-frame iframe { height: 712px; }
 
     .site-footer { align-items: flex-start; flex-direction: column; }
 
