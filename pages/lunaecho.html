@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#080a17">
-    <title>LunaEcho | Discord Community Platform Preview</title>
-    <meta name="description" content="LunaEcho is a planned Discord community platform with moderation, onboarding, music, tickets, leveling, automation, and clearly defined self-hosted and managed access models.">
+    <title>LunaEcho | Modular Open-Source Discord Platform</title>
+    <meta name="description" content="LunaEcho is a planned modular, all-in-one, open-source Discord community platform available as Self-Hosted, Cloud, or Custom.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="LunaEcho | Discord Community Platform Preview">
-    <meta property="og:description" content="Compare LunaEcho Self-Hosted, Managed Free, and Managed Complete while the platform is in development.">
+    <meta property="og:title" content="LunaEcho | Modular Open-Source Discord Platform">
+    <meta property="og:description" content="One bot. Every community tool. Your way. Explore LunaEcho Self-Hosted, Cloud, and Custom.">
     <meta property="og:image" content="../assets/images/LunaEcho_Logo_v2.png">
     <link rel="canonical" href="https://shadowokami.com/LunaEcho">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png?v=1">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png?v=1">
     <link rel="icon" type="image/webp" href="../assets/images/okami-logo-v4.webp?v=1">
-    <link rel="stylesheet" href="../assets/css/style.css?v=45">
+    <link rel="stylesheet" href="../assets/css/style.css?v=46">
     <link rel="stylesheet" href="../assets/css/language.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -28,11 +28,9 @@
             <span class="brand-mark"><img src="../assets/images/okami-logo-v4.webp?v=1" alt="" width="48" height="48"></span>
             <span class="brand-copy"><strong>OKAMI</strong><small>PROJECT / 02</small></span>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-            <span>Menu</span><span class="menu-lines" aria-hidden="true"></span>
-        </button>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
         <nav class="site-nav" id="site-nav" aria-label="Project navigation">
-            <a href="#overview">Overview</a><a href="#hosting">Access</a><a href="#availability">Features</a><a href="#roadmap">Roadmap</a><a href="#legal">Legal</a>
+            <a href="#overview">Overview</a><a href="#hosting">Hosting</a><a href="#modules">Modules</a><a href="#architecture">Architecture</a><a href="#roadmap">Roadmap</a>
             <span class="nav-out nav-status" aria-label="GitHub repository planned">GitHub planned</span>
         </nav>
     </header>
@@ -40,260 +38,125 @@
     <main id="main">
         <section class="detail-hero" id="overview" aria-labelledby="project-title">
             <div class="detail-copy">
-                <a class="detail-breadcrumb reveal" href="/#work">← Back to my projects</a>
-                <p class="detail-badge reveal">Product direction / Pre-release</p>
+                <a class="detail-breadcrumb reveal" href="/#work">&larr; Back to my projects</a>
+                <p class="detail-badge reveal">Product plan v0.1 / Pre-release</p>
                 <h1 class="detail-title reveal" id="project-title">Luna<span class="outline">Echo</span></h1>
-                <p class="detail-lead reveal">One modular Discord platform for the work behind a community: safety, support, roles, progression, voice, music, and automation, with a clear choice between running it yourself or using a managed service.</p>
-                <div class="detail-actions reveal">
-                    <a class="button" href="#hosting">Compare access models ↓</a>
-                    <span class="button button-ghost button-disabled" aria-disabled="true">Public preview not open</span>
-                </div>
-                <div class="detail-tags reveal"><span>Discord</span><span>Community operations</span><span>Self-hosted or managed</span></div>
+                <p class="luna-hero-kicker reveal">One bot. Every community tool. Your way.</p>
+                <p class="detail-lead reveal">A modular, all-in-one, open-source Discord community platform. Enable only the tools your server needs, host it yourself, or let LunaEcho handle the infrastructure.</p>
+                <div class="detail-actions reveal"><a class="button" href="#hosting">Choose how to run it &darr;</a><a class="button button-ghost" href="#modules">Explore the modules</a></div>
+                <div class="detail-tags reveal"><span>Open source first</span><span>Modular by design</span><span>One shared codebase</span></div>
             </div>
             <figure class="detail-visual bot-visual reveal">
                 <img src="../assets/images/LunaEcho_Logo_v2.png" alt="LunaEcho cat bot logo" width="1537" height="1359">
-                <figcaption class="detail-visual-label">PRE-RELEASE / DESIGN</figcaption>
+                <figcaption class="detail-visual-label">PRE-RELEASE / PRODUCT PLAN 0.1</figcaption>
             </figure>
         </section>
 
-        <section class="detail-strip" aria-label="Project facts">
-            <div class="detail-stats">
-                <div><strong>3</strong><span>Clearly defined access models</span></div>
-                <div><strong>8</strong><span>Planned feature areas</span></div>
-                <div><strong>€3</strong><span>Managed Complete / month</span></div>
-                <div><strong>WIP</strong><span>No public release yet</span></div>
-            </div>
-        </section>
+        <section class="detail-strip" aria-label="Project facts"><div class="detail-stats">
+            <div><strong>3</strong><span>Ways to run LunaEcho</span></div><div><strong>11</strong><span>Planned version 1 modules</span></div><div><strong>1</strong><span>Shared modular codebase</span></div><div><strong>WIP</strong><span>No public release yet</span></div>
+        </div></section>
 
-        <section class="detail-section" id="hosting" aria-labelledby="hosting-title">
-            <div class="detail-section-head reveal">
-                <div class="section-label"><span>01</span> Access models</div>
-                <h2 id="hosting-title">Pick the operator.<br>See exactly what changes.</h2>
-                <p>Run the complete platform on your own infrastructure, or let LunaEcho handle hosting through a Free or Complete managed plan. The names describe both responsibility and feature scope.</p>
+        <section class="detail-section luna-hosting-section" id="hosting" aria-labelledby="hosting-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>01</span> Three ways to run it</div><h2 id="hosting-title">Same LunaEcho.<br>Different responsibility.</h2><p>The product stays the same. What changes is who hosts it, which Discord bot identity it uses, and which operational limits apply.</p></div>
+
+            <div class="luna-product-grid" aria-label="LunaEcho deployment options">
+                <article class="luna-product-card reveal">
+                    <header><span>01 / Your infrastructure</span><strong class="luna-price">Free, always</strong></header>
+                    <div><p class="tier-label">Open source</p><h3>Self-Hosted</h3><p>Run the complete LunaEcho platform on hardware you control, using your own Discord application and bot token.</p></div>
+                    <div class="luna-path" aria-label="Self-Hosted architecture"><span>Your hardware</span><b>&rarr;</b><span>Your bot</span><b>&rarr;</b><span>Your server</span></div>
+                    <ul class="check-list"><li>Complete open-source feature set</li><li>No artificial LunaEcho feature restrictions</li><li>Your data, branding, bot identity, and infrastructure</li><li>You handle setup, updates, backups, and uptime</li></ul>
+                    <p class="luna-card-fit"><span>Best for</span><strong>Technical users who want full control</strong></p>
+                </article>
+                <article class="luna-product-card luna-product-cloud reveal">
+                    <header><span>02 / Shared managed service</span><strong class="luna-price">Free</strong></header>
+                    <div><p class="tier-label">Invite and start</p><h3>Cloud</h3><p>Invite the official LunaEcho bot and use the platform without maintaining a VPS, Docker setup, database, or bot application.</p></div>
+                    <div class="luna-path" aria-label="Cloud architecture"><span>LunaEcho hardware</span><b>&rarr;</b><span>LunaEcho bot</span><b>&rarr;</b><span>Your server</span></div>
+                    <ul class="check-list"><li>Hosting, maintenance, and updates included</li><li>Official shared LunaEcho bot identity</li><li>Useful core modules with reasonable service limits</li><li>No hardware or bot token required from you</li></ul>
+                    <p class="luna-card-fit"><span>Best for</span><strong>Most small communities</strong></p>
+                </article>
+                <article class="luna-product-card luna-product-custom reveal">
+                    <header><span>03 / Managed custom identity</span><strong class="luna-price">Paid / size-based</strong></header>
+                    <div><p class="tier-label">Your bot, managed by us</p><h3>Custom</h3><p>Use your own Discord application and bot identity while LunaEcho manages the deployment, database, updates, backups, and monitoring.</p></div>
+                    <div class="luna-path" aria-label="Custom architecture"><span>LunaEcho hardware</span><b>&rarr;</b><span>Your bot</span><b>&rarr;</b><span>Your server</span></div>
+                    <ul class="check-list"><li>Your bot name, avatar, profile, and application</li><li>Complete LunaEcho functionality</li><li>No normal Cloud feature restrictions</li><li>Managed infrastructure and customer support</li></ul>
+                    <p class="luna-card-fit"><span>Best for</span><strong>Established communities wanting their own identity</strong></p>
+                </article>
             </div>
 
-            <div class="tier-definition-grid reveal" aria-label="LunaEcho hosting model explanation">
-                <article class="tier-definition">
-                    <span>You operate LunaEcho</span>
-                    <strong>Self-Hosted</strong>
-                    <p>Your infrastructure, your uptime, your data, and the complete planned feature set.</p>
-                </article>
-                <article class="tier-definition tier-definition-managed">
-                    <span>LunaEcho operates the service</span>
-                    <strong>Managed</strong>
-                    <p>Hosting and updates are handled for you. Choose Free for core access or Complete for the full managed feature set.</p>
-                </article>
-            </div>
-
-            <div class="pricing-grid">
-                <article class="price-card reveal">
-                    <div class="tier-card-head"><p class="tier-label">You host / Full access</p><h3>Self-Hosted</h3><p>Deploy the complete LunaEcho platform on infrastructure you control.</p></div>
-                    <div class="price">€0 <small>/ LunaEcho software</small></div>
-                    <div class="tier-responsibility"><span>Operated by</span><strong>You</strong></div>
-                    <ul class="check-list"><li>Complete planned feature set</li><li>No LunaEcho-managed quotas</li><li>Music and advanced automations included</li><li>Data remains on your infrastructure</li><li>You manage setup, updates, and uptime</li></ul>
-                    <span class="button button-ghost button-disabled" aria-disabled="true">Public repository planned</span>
-                </article>
-                <article class="price-card reveal">
-                    <div class="tier-card-head"><p class="tier-label">We host / Core access</p><h3>Managed Free</h3><p>Use essential community tools without operating a bot server yourself.</p></div>
-                    <div class="price">€0 <small>/ month</small></div>
-                    <div class="tier-responsibility"><span>Operated by</span><strong>LunaEcho</strong></div>
-                    <ul class="check-list"><li>Core moderation and onboarding</li><li>Basic XP, ranks, and leaderboards</li><li>Up to 2 temporary voice creator hubs</li><li>Limited tickets and 7-day logging</li><li>No music or advanced automations</li></ul>
-                    <span class="button button-ghost button-disabled" aria-disabled="true">Planned managed option</span>
-                </article>
-                <article class="price-card featured-tier reveal">
-                    <div class="tier-card-head"><p class="tier-label">We host / Full access</p><h3>Managed Complete</h3><p>Use the complete managed platform with hosting, updates, and the larger toolset included.</p></div>
-                    <div class="price">€3 <small>/ month</small></div>
-                    <div class="tier-responsibility"><span>Operated by</span><strong>LunaEcho</strong></div>
-                    <ul class="check-list"><li>Complete managed feature set</li><li>Music and advanced automations</li><li>Expanded tickets and temporary voice</li><li>Advanced logs and longer retention</li><li>Hosting and updates included</li></ul>
-                    <span class="button button-disabled" aria-disabled="true">Planned complete option</span>
-                </article>
-            </div>
+            <blockquote class="luna-product-statement reveal"><span>LunaEcho Custom</span><p>Your bot. Powered by LunaEcho. Hosted by us.</p></blockquote>
 
             <div class="tier-comparison reveal" aria-labelledby="comparison-title">
-                <div class="tier-comparison-head">
-                    <div><p class="detail-badge">At a glance</p><h3 id="comparison-title">Access model comparison</h3></div>
-                    <p>The names remain consistent throughout the feature breakdown below.</p>
-                </div>
-                <div class="tier-table-wrap">
-                    <table>
-                        <thead><tr><th scope="col">Decision</th><th scope="col">Self-Hosted</th><th scope="col">Managed Free</th><th scope="col">Managed Complete</th></tr></thead>
-                        <tbody>
-                            <tr><th scope="row">Who operates it?</th><td>You</td><td>LunaEcho</td><td>LunaEcho</td></tr>
-                            <tr><th scope="row">Planned price</th><td>€0 software</td><td>€0 / month</td><td>€3 / month</td></tr>
-                            <tr><th scope="row">Feature scope</th><td>Complete</td><td>Core with limits</td><td>Complete managed</td></tr>
-                            <tr><th scope="row">Updates &amp; uptime</th><td>Your responsibility</td><td>Included</td><td>Included</td></tr>
-                            <tr><th scope="row">Best fit</th><td>Technical operators</td><td>Everyday communities</td><td>Communities needing full access</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="tier-comparison-head"><div><p class="detail-badge">At a glance</p><h3 id="comparison-title">What actually changes?</h3></div><p>Custom server-size brackets belong inside billing. They are not separate products.</p></div>
+                <div class="tier-table-wrap"><table>
+                    <thead><tr><th scope="col">Decision</th><th scope="col">Self-Hosted</th><th scope="col">Cloud</th><th scope="col">Custom</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Price</th><td>Free</td><td>Free</td><td>Paid, based on server size</td></tr><tr><th scope="row">Hosted by</th><td>You</td><td>LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Bot application</th><td>Yours</td><td>LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Bot token</th><td>Yours</td><td>LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Feature restrictions</th><td>None*</td><td>Reasonable service limits</td><td>No normal Cloud restrictions*</td></tr><tr><th scope="row">Updates &amp; maintenance</th><td>You</td><td>LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Branding</th><td>Yours</td><td>LunaEcho</td><td>Yours</td></tr>
+                    </tbody>
+                </table></div>
+                <p class="comparison-footnote">* Subject to technical, Discord API, third-party API, and fair-use constraints rather than artificial feature locks.</p>
             </div>
 
-            <p class="plan-note reveal"><strong>Pre-release plan:</strong> Feature boundaries, fair-use limits, and the €3 managed price remain subject to validation before launch. Changes will be documented clearly.</p>
+            <aside class="decision-note reveal"><span>Intentionally undecided</span><div><h3>No made-up prices or limits.</h3><p>Exact Custom prices, member brackets, and Cloud limits will be set only after real measurements of music, database, storage, bandwidth, backup, and support costs.</p></div></aside>
         </section>
 
-        <section class="detail-section availability-section" id="availability" aria-labelledby="availability-title">
-            <div class="detail-section-head reveal">
-                <div class="section-label"><span>02</span> Feature scope</div>
-                <h2 id="availability-title">Useful without payment.<br>Clear when resources cost more.</h2>
-                <p>Managed Free keeps practical everyday community tools available. Managed Complete adds resource-heavy and advanced features, while Self-Hosted keeps the complete scope on infrastructure you control.</p>
+        <section class="detail-section luna-modules-section" id="modules" aria-labelledby="modules-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>02</span> Version 1 modules</div><h2 id="modules-title">Enable what matters.<br>Leave the rest quiet.</h2><p>A server should not receive a hundred commands simply because LunaEcho supports them. Every major capability is planned as an individually configurable module.</p></div>
+            <div class="luna-module-grid">
+                <article class="luna-module-card reveal"><span>01</span><h3>Moderation &amp; Safety</h3><p>Warnings, timeouts, kicks, bans, cleanup, moderation cases, AutoMod, and anti-spam.</p></article>
+                <article class="luna-module-card reveal"><span>02</span><h3>Welcome &amp; Onboarding</h3><p>Welcome and goodbye messages, autoroles, verification, and onboarding flows.</p></article>
+                <article class="luna-module-card reveal"><span>03</span><h3>Roles</h3><p>Reaction, button, select, persistent, and self-service role menus.</p></article>
+                <article class="luna-module-card reveal"><span>04</span><h3>Support &amp; Tickets</h3><p>Panels, categories, staff assignment, transcripts, claims, and ticket logs.</p></article>
+                <article class="luna-module-card reveal"><span>05</span><h3>Levels &amp; Rewards</h3><p>XP, ranks, leaderboards, rewards, voice XP, and exclusions.</p></article>
+                <article class="luna-module-card reveal"><span>06</span><h3>Voice Rooms</h3><p>Join-to-create rooms, ownership, limits, locking, names, and permissions.</p></article>
+                <article class="luna-module-card reveal"><span>07</span><h3>Logs</h3><p>Moderation, member, message, channel, role, voice, and configuration events.</p></article>
+                <article class="luna-module-card reveal"><span>08</span><h3>Music</h3><p>Playback, queues, permissions, playlists, and voice controls.</p></article>
+                <article class="luna-module-card reveal"><span>09</span><h3>Automation</h3><p>Flexible trigger, condition, and action workflows.</p></article>
+                <article class="luna-module-card reveal"><span>10</span><h3>Social Notifications</h3><p>YouTube, Twitch, and potentially other service notifications.</p></article>
+                <article class="luna-module-card reveal"><span>11</span><h3>Utilities</h3><p>Server and user information, polls, reminders, and general Discord tools.</p></article>
+                <article class="luna-module-card luna-module-card-future reveal"><span>+</span><h3>Built to expand</h3><p>New modules can be added later without turning LunaEcho into separate bots.</p></article>
             </div>
+            <aside class="module-control-note reveal"><div class="module-toggle-demo" aria-hidden="true"><span>Tickets</span><i></i><strong>Enabled</strong></div><div><h3>Configuration stays yours.</h3><p>Disabling a module should stop its commands, events, and workers without immediately destroying its settings. Turn it back on when your community needs it again.</p></div></aside>
+        </section>
 
-            <div class="availability-grid">
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">01</span><div><h3>Moderation</h3><p>Core safety tools remain available to every server.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-included">Included</strong><p>Warnings, timeouts, kick, ban, and message cleanup.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Rule presets, repeat-offender actions, and deeper case tools.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>All moderation features without managed quotas.</p></div>
-                    </div>
-                </article>
-
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">02</span><div><h3>Onboarding &amp; roles</h3><p>Managed Free covers simple welcomes; full-access models unlock larger flows.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-included">Included</strong><p>One welcome setup and one automatic role.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Multiple flows, role menus, templates, and conditions.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>Complete onboarding configuration on your server.</p></div>
-                    </div>
-                </article>
-
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">03</span><div><h3>Ticket system</h3><p>Small communities get a practical starting point without storage growing unchecked.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-limited">Limited</strong><p>1 panel, up to 3 open tickets, and 7-day transcripts.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Multiple panels, higher limits, routing, and longer transcripts.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>No managed limit; storage depends on your host.</p></div>
-                    </div>
-                </article>
-
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">04</span><div><h3>Leveling &amp; rewards</h3><p>The social core stays in Managed Free while deeper customization belongs to full access.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-included">Included</strong><p>XP, ranks, and a basic server leaderboard.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>Role rewards, multipliers, exclusions, and seasons.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>All progression and reward controls included.</p></div>
-                    </div>
-                </article>
-
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">05</span><div><h3>Temporary voice</h3><p>Managed Free includes full room usage with a simple limit on creator hubs.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-limited">2 hubs</strong><p>Up to 2 creator hubs with no limit on active temporary rooms.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>More creator hubs plus custom names and member permissions.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>No LunaEcho-managed room limits.</p></div>
-                    </div>
-                </article>
-
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">06</span><div><h3>Server logging</h3><p>Essential records are included in Managed Free; broader coverage and retention use more storage.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-limited">Limited</strong><p>Essential moderation and member logs kept for 7 days.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Full suite</strong><p>More event types, longer retention, and searchable summaries.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Full suite</strong><p>You choose the coverage and available storage.</p></div>
-                    </div>
-                </article>
-
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">07</span><div><h3>Music</h3><p>Continuous audio is one of the most resource-heavy managed features.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-unavailable">Not included</strong><p>Music is excluded to keep Managed Free sustainable.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Included</strong><p>Managed queue playback and complete member controls.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Included</strong><p>Music runs using your own infrastructure.</p></div>
-                    </div>
-                </article>
-
-                <article class="access-card reveal">
-                    <header class="access-card-head"><span class="access-card-index">08</span><div><h3>Automations &amp; insights</h3><p>Background workflows and stored activity analysis are reserved for full access.</p></div></header>
-                    <div class="access-levels">
-                        <div class="access-level"><span class="access-tier">Managed Free</span><strong class="access-status status-unavailable">Not included</strong><p>Advanced rules, schedules, and analytics are unavailable.</p></div>
-                        <div class="access-level"><span class="access-tier">Managed Complete</span><strong class="access-status status-full">Included</strong><p>Advanced rules, scheduled actions, and community insights.</p></div>
-                        <div class="access-level"><span class="access-tier">Self-Hosted</span><strong class="access-status status-full">Included</strong><p>All workflows and insights run on your hardware.</p></div>
-                    </div>
-                </article>
+        <section class="detail-section luna-architecture-section" id="architecture" aria-labelledby="architecture-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>03</span> Platform foundation</div><h2 id="architecture-title">One codebase.<br>Three runtime modes.</h2><p>Self-Hosted, Cloud, and Custom are deployment choices, not separate bots. A fix in a module should improve LunaEcho for everyone.</p></div>
+            <div class="runtime-rail reveal" aria-label="LunaEcho runtime modes"><span>SELF_HOSTED</span><i></i><span>CLOUD_SHARED</span><i></i><span>CLOUD_CUSTOM</span></div>
+            <div class="luna-architecture-grid">
+                <article class="luna-architecture-card reveal"><p class="tier-label">Planned foundation</p><h3>TypeScript throughout</h3><p>Node.js, TypeScript, and discord.js connect the bot, API, dashboard, workers, and modules through shared types.</p><ul><li>Next.js + React dashboard</li><li>PostgreSQL + Redis + BullMQ</li><li>Docker Compose for self-hosting</li><li>S3-compatible object storage</li><li>Prisma or Drizzle still to be evaluated</li></ul></article>
+                <article class="luna-architecture-card luna-security-card reveal"><p class="tier-label">Custom token security</p><h3>A bot token is a password.</h3><p>Custom requires a real secrets system from day one. Customer bot tokens must be encrypted at rest and exposed only to the service that establishes the Discord connection.</p><ul><li>Never included in logs, analytics, or support tickets</li><li>Never returned to the browser after submission</li><li>Excluded from normal database exports</li><li>Masked in the dashboard and replaced, never revealed</li></ul></article>
+                <article class="luna-architecture-card reveal"><p class="tier-label">Two permission layers</p><h3>Discord access is not billing access.</h3><p>Discord permissions control what the bot can do. LunaEcho dashboard permissions control what staff can configure, inspect, or purchase.</p><ul><li>Manage moderation or tickets</li><li>View logs and analytics</li><li>Edit automations and modules</li><li>Manage hosting, billing, and support access</li></ul></article>
+                <article class="luna-architecture-card reveal"><p class="tier-label">Support boundaries</p><h3>Responsibility follows hosting.</h3><p>Self-Hosted receives documentation and community support. Cloud receives best-effort support. Custom adds managed support for LunaEcho infrastructure, deployment, updates, and billing.</p><ul><li>No promise of 24/7 support at launch</li><li>No promise to repair third-party VPS setups</li><li>Third-party and Discord configuration remain separate</li></ul></article>
             </div>
-
-            <aside class="resource-note reveal" aria-label="Why Managed Free has limits">
-                <span>Why limits?</span>
-                <div><h3>Managed Free should be useful, not overloaded.</h3><p>Everyday moderation, onboarding, and community basics remain available at no cost. Continuous audio, long-term storage, and background processing create ongoing hosting costs, so those features move to Managed Complete or Self-Hosted.</p></div>
-            </aside>
+            <div class="custom-flow reveal" aria-labelledby="custom-flow-title"><div><p class="detail-badge">Planned Custom onboarding</p><h3 id="custom-flow-title">From product choice to your own managed bot.</h3></div><ol><li><span>01</span>Choose Custom</li><li><span>02</span>Sign in with Discord</li><li><span>03</span>Select your server</li><li><span>04</span>Create an application</li><li><span>05</span>Submit and verify the bot token</li><li><span>06</span>Invite your custom bot</li><li><span>07</span>Configure modules</li><li><span>08</span>Start the managed instance</li></ol></div>
         </section>
 
         <section class="detail-section luna-roadmap-section" id="roadmap" aria-labelledby="roadmap-title">
-            <div class="detail-section-head reveal">
-                <div class="section-label"><span>03</span> Release roadmap</div>
-                <h2 id="roadmap-title">Prove the foundation.<br>Then open the doors.</h2>
-                <p>The roadmap describes the intended release sequence rather than promising dates. Reliability, documentation, and operational readiness come before opening LunaEcho to public servers.</p>
+            <div class="detail-section-head reveal"><div class="section-label"><span>04</span> Development roadmap</div><h2 id="roadmap-title">Build the platform.<br>Validate before selling.</h2><p>The roadmap describes order, not dates. Billing comes late, after the core community tools and managed infrastructure prove themselves.</p></div>
+            <div class="product-roadmap luna-phase-roadmap">
+                <article class="roadmap-card roadmap-current reveal"><div class="roadmap-card-top"><span>Phases 0-4</span><strong>Foundation</strong></div><h3>Specify and build</h3><ul><li>0 / Specification</li><li>1 / Core platform</li><li>2 / Moderation and logging</li><li>3 / Roles, onboarding, and tickets</li><li>4 / Levels and voice rooms</li></ul></article>
+                <article class="roadmap-card reveal"><div class="roadmap-card-top"><span>Phases 5-7</span><strong>Product</strong></div><h3>Connect the experience</h3><ul><li>5 / Dashboard</li><li>6 / Automation engine</li><li>7 / Isolated music service</li></ul></article>
+                <article class="roadmap-card reveal"><div class="roadmap-card-top"><span>Phases 8-10</span><strong>Release paths</strong></div><h3>Test every deployment</h3><ul><li>8 / Self-Hosted Alpha</li><li>9 / Cloud Alpha</li><li>10 / Custom Alpha</li></ul></article>
+                <article class="roadmap-card reveal"><div class="roadmap-card-top"><span>Phases 11-12</span><strong>Validation</strong></div><h3>Earn version 1.0</h3><ul><li>11 / Public Beta</li><li>12 / Stable public release</li><li>Semantic versioning from 0.1.0 onward</li></ul></article>
             </div>
-
-            <div class="product-roadmap">
-                <article class="roadmap-card roadmap-current reveal">
-                    <div class="roadmap-card-top"><span>01 / Now</span><strong>In development</strong></div>
-                    <h3>Core platform</h3>
-                    <p>Build and connect the moderation, community, ticket, voice, music, and automation foundations.</p>
-                    <ul><li>Core feature architecture</li><li>Permissions and configuration model</li><li>Reliable Discord event handling</li></ul>
-                </article>
-                <article class="roadmap-card reveal">
-                    <div class="roadmap-card-top"><span>02 / Next</span><strong>Planned</strong></div>
-                    <h3>Controlled testing</h3>
-                    <p>Validate real server workflows before opening the project more widely.</p>
-                    <ul><li>Feature and limit validation</li><li>Reliability and recovery testing</li><li>Setup and operator documentation</li></ul>
-                </article>
-                <article class="roadmap-card reveal">
-                    <div class="roadmap-card-top"><span>03 / Then</span><strong>Planned</strong></div>
-                    <h3>Self-Hosted preview</h3>
-                    <p>Publish the repository when the self-hosted experience is understandable and supportable.</p>
-                    <ul><li>Public source repository</li><li>Installation and update guidance</li><li>Initial configuration reference</li></ul>
-                </article>
-                <article class="roadmap-card reveal">
-                    <div class="roadmap-card-top"><span>04 / Later</span><strong>Planned</strong></div>
-                    <h3>Managed launch</h3>
-                    <p>Introduce Managed Free and Managed Complete after hosting operations are ready.</p>
-                    <ul><li>Managed onboarding flow</li><li>Fair-use limits and monitoring</li><li>Clear upgrade and billing information</li></ul>
-                </article>
-            </div>
-
-            <p class="plan-note reveal"><strong>No release date yet:</strong> Milestones may change as LunaEcho is built and tested. Public availability will only be announced when the relevant stage is ready.</p>
+            <aside class="decision-note reveal"><span>Not locked yet</span><div><h3>Measure first. Decide second.</h3><p>Exact pricing, member brackets, Cloud limits, large-scale orchestration, AI features, and enterprise features remain intentionally open until the platform provides evidence for those decisions.</p></div></aside>
         </section>
 
         <section class="detail-section luna-legal-section" id="legal" aria-labelledby="legal-title">
-            <div class="detail-section-head reveal">
-                <div class="section-label"><span>04</span> Legal &amp; privacy</div>
-                <h2 id="legal-title">Clear rules.<br>Transparent data use.</h2>
-                <p>LunaEcho publishes permanent, English-language legal documents for Discord users, server administrators, and application review.</p>
-            </div>
-
+            <div class="detail-section-head reveal"><div class="section-label"><span>05</span> Legal &amp; privacy</div><h2 id="legal-title">Clear rules.<br>Transparent data use.</h2><p>LunaEcho publishes permanent, English-language legal documents for Discord users, server administrators, and application review.</p></div>
             <div class="legal-doc-grid">
-                <a class="legal-doc-card reveal" href="/LunaEcho/Terms">
-                    <div class="legal-doc-card-top"><span>Document / 01</span><strong>Effective 16 July 2026</strong></div>
-                    <div><p>Service rules</p><h3>Terms of Service</h3><span>Acceptable use, hosting responsibilities, service availability, and pre-release conditions.</span></div>
-                    <b>Read the Terms <span aria-hidden="true">&nearr;</span></b>
-                </a>
-                <a class="legal-doc-card legal-doc-card-privacy reveal" href="/LunaEcho/Privacy">
-                    <div class="legal-doc-card-top"><span>Document / 02</span><strong>Effective 16 July 2026</strong></div>
-                    <div><p>Data transparency</p><h3>Privacy Policy</h3><span>Data categories, purposes, retention, service providers, security, and deletion requests.</span></div>
-                    <b>Read the Policy <span aria-hidden="true">&nearr;</span></b>
-                </a>
+                <a class="legal-doc-card reveal" href="/LunaEcho/Terms"><div class="legal-doc-card-top"><span>Document / 01</span><strong>Effective 27 August 2026</strong></div><div><p>Service rules</p><h3>Terms of Service</h3><span>Acceptable use, deployment responsibilities, service availability, and pre-release conditions.</span></div><b>Read the Terms <span aria-hidden="true">&nearr;</span></b></a>
+                <a class="legal-doc-card legal-doc-card-privacy reveal" href="/LunaEcho/Privacy"><div class="legal-doc-card-top"><span>Document / 02</span><strong>Effective 27 August 2026</strong></div><div><p>Data transparency</p><h3>Privacy Policy</h3><span>Data categories, token safeguards, retention, service providers, security, and deletion requests.</span></div><b>Read the Policy <span aria-hidden="true">&nearr;</span></b></a>
             </div>
-
-            <aside class="legal-support-strip reveal">
-                <span>Data requests</span>
-                <div><h3>Access, correction, or deletion.</h3><p>Discord users and authorized server administrators can follow the published request process or contact <a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">service@shadowokami.de</a>.</p></div>
-                <a href="/LunaEcho/Privacy#your-rights">View instructions &rarr;</a>
-            </aside>
+            <aside class="legal-support-strip reveal"><span>Data requests</span><div><h3>Access, correction, or deletion.</h3><p>Discord users and authorized server administrators can follow the published request process or contact <a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">service@shadowokami.de</a>.</p></div><a href="/LunaEcho/Privacy#your-rights">View instructions &rarr;</a></aside>
         </section>
 
         <section class="detail-cta">
-            <p class="detail-badge reveal">Pre-release product direction</p>
-            <h2 class="reveal">Nothing public<br>before it is ready.</h2>
-            <p class="reveal">LunaEcho is not accepting public servers yet. The repository, managed access, final limits, and release documentation will appear only when their roadmap stages are ready.</p>
-            <div class="detail-actions reveal"><a class="button" href="#roadmap">Review the roadmap ↑</a><a class="button button-ghost" href="/#work">See my other projects</a></div>
+            <p class="detail-badge reveal">Pre-release product plan v0.1</p><h2 class="reveal">Open source first.<br>Public only when ready.</h2><p class="reveal">LunaEcho is not accepting public servers yet. The repository, Cloud, Custom, final limits, and release documentation will appear only when their roadmap stages are ready.</p><div class="detail-actions reveal"><a class="button" href="#roadmap">Review the roadmap &uarr;</a><a class="button button-ghost" href="/#work">See my other projects</a></div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <span>© <span data-year>2026</span> OKAMI</span><span class="footer-links"><a href="/LunaEcho/Terms">Terms</a><a href="/LunaEcho/Privacy">Privacy</a><a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">Data request</a></span><a href="#overview">Back to top ↑</a>
-    </footer>
-    <script src="../assets/js/translations.js?v=7"></script>
+    <footer class="site-footer"><span>&copy; <span data-year>2026</span> OKAMI</span><span class="footer-links"><a href="/LunaEcho/Terms">Terms</a><a href="/LunaEcho/Privacy">Privacy</a><a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">Data request</a></span><a href="#overview">Back to top &uarr;</a></footer>
+    <script src="../assets/js/translations.js?v=8"></script>
     <script src="../assets/js/script.js?v=8"></script>
 </body>
 </html>

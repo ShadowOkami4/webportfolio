@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png?v=1">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png?v=1">
     <link rel="icon" type="image/webp" href="../assets/images/okami-logo-v4.webp?v=1">
-    <link rel="stylesheet" href="../assets/css/style.css?v=45">
+    <link rel="stylesheet" href="../assets/css/style.css?v=46">
     <link rel="stylesheet" href="../assets/css/language.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -47,8 +47,8 @@
             <div class="legal-hero-copy reveal">
                 <p>This Policy explains what LunaEcho processes, why it is needed, how long it is kept, and how Discord users and server administrators can request deletion.</p>
                 <dl class="legal-meta">
-                    <div><dt>Effective</dt><dd>16 July 2026</dd></div>
-                    <div><dt>Last updated</dt><dd>16 July 2026</dd></div>
+                    <div><dt>Effective</dt><dd>27 August 2026</dd></div>
+                    <div><dt>Last updated</dt><dd>27 August 2026</dd></div>
                     <div><dt>Service status</dt><dd>Pre-release</dd></div>
                 </dl>
             </div>
@@ -56,7 +56,7 @@
 
         <aside class="legal-status reveal" id="summary">
             <span>Privacy at a glance</span>
-            <p>LunaEcho does not sell personal data, run targeted advertising, or ask for Discord passwords or tokens. During pre-release testing, it processes only the Discord identifiers, interaction details, and technical logs needed to operate and secure the test service. Additional feature data is processed only when the relevant feature is enabled.</p>
+            <p>LunaEcho does not sell personal data, run targeted advertising, or ask for Discord account passwords or user tokens. During pre-release testing, it processes only the Discord identifiers, interaction details, and technical logs needed to operate and secure the test service. A Custom bot token will be accepted only through the dedicated secure setup flow when that service becomes available.</p>
         </aside>
 
         <div class="legal-layout">
@@ -76,8 +76,8 @@
             <article class="legal-document">
                 <section class="legal-section" id="scope">
                     <p class="legal-section-number">01 / Scope and current status</p>
-                    <h2>This Policy covers managed LunaEcho and its website.</h2>
-                    <p>This Privacy Policy applies to the LunaEcho Discord application operated by ShadowOkami, authorized pre-release testing, future managed LunaEcho services, and the LunaEcho pages on shadowokami.com.</p>
+                    <h2>This Policy covers LunaEcho Cloud, Custom, and its website.</h2>
+                    <p>This Privacy Policy applies to the LunaEcho Discord application operated by ShadowOkami, authorized pre-release testing, future LunaEcho Cloud and Custom services, and the LunaEcho pages on shadowokami.com.</p>
                     <p>LunaEcho is currently in pre-release and is not accepting public servers. Features not yet enabled do not collect their planned feature data. This Policy will be reviewed as features and managed access become available.</p>
                     <p>Discord separately processes information under the <a href="https://discord.com/privacy" target="_blank" rel="noopener noreferrer">Discord Privacy Policy</a>. This Policy does not replace Discord's policy.</p>
                 </section>
@@ -85,7 +85,7 @@
                 <section class="legal-section" id="controller">
                     <p class="legal-section-number">02 / Controller and contact</p>
                     <h2>Who is responsible for managed-service data?</h2>
-                    <p>ShadowOkami, based in Germany, is the operator and data controller for personal data processed by the managed LunaEcho service and LunaEcho website.</p>
+                    <p>ShadowOkami, based in Germany, is the operator and data controller for personal data processed by LunaEcho Cloud, LunaEcho Custom, and the LunaEcho website.</p>
                     <div class="legal-inline-contact">
                         <span>Privacy contact</span>
                         <a href="mailto:service@shadowokami.de?subject=LunaEcho%20Privacy%20Question">service@shadowokami.de</a>
@@ -108,7 +108,7 @@
                     <h3>Data used by planned features</h3>
                     <p>When a feature becomes available and is enabled by a server administrator, LunaEcho may process the following feature-specific records:</p>
                     <ul>
-                        <li><strong>Server configuration:</strong> server, channel, role, and permission identifiers; selected settings; language; and plan assignment.</li>
+                        <li><strong>Server configuration:</strong> server, channel, role, and permission identifiers; selected settings; language; deployment type; and enabled modules.</li>
                         <li><strong>Moderation:</strong> affected user ID, moderator ID, reason, action type, timestamps, and case references.</li>
                         <li><strong>Tickets:</strong> ticket participants, channel identifiers, messages or transcripts intentionally included in a ticket, and ticket status.</li>
                         <li><strong>Leveling and rewards:</strong> user ID, activity-derived XP, rank, reward roles, and exclusions. Message content is not required merely to count eligible activity.</li>
@@ -116,7 +116,10 @@
                         <li><strong>Server logging:</strong> selected Discord event metadata and identifiers for the event categories enabled by administrators.</li>
                         <li><strong>Music and automation:</strong> requested media metadata, queue state, automation rules, schedules, and execution results.</li>
                     </ul>
-                    <p>LunaEcho is not intended for sensitive personal data. Do not submit passwords, tokens, payment card details, health data, government identifiers, or other confidential information through bot commands, tickets, or configuration fields.</p>
+
+                    <h3>Custom bot credentials</h3>
+                    <p>When LunaEcho Custom becomes available, an authorized administrator will submit the bot token for a Discord application they control through a dedicated setup flow. The token will be treated as an authentication secret: encrypted at rest, excluded from application logs, analytics, support tickets, and normal database exports, and never returned to the browser after submission. It will be decrypted only by the service that needs to establish the Discord connection.</p>
+                    <p>LunaEcho is not intended for sensitive personal data. Do not submit passwords, user tokens, payment card details, health data, government identifiers, or other confidential information through bot commands, tickets, or ordinary configuration fields. A Custom bot token may be submitted only through the dedicated secure setup flow by an authorized administrator.</p>
 
                     <h3>Website delivery data</h3>
                     <p>When you visit the LunaEcho website, the server may process IP address, user agent, requested URL, response status, and timestamp to deliver the page, prevent abuse, and diagnose errors. The website does not intentionally use advertising trackers, analytics profiles, or marketing cookies.</p>
@@ -128,7 +131,7 @@
                     <p>We process data to:</p>
                     <ul>
                         <li>Respond to Discord commands and provide features selected by server administrators.</li>
-                        <li>Apply permissions, plan capabilities, quotas, and server configuration.</li>
+                        <li>Apply permissions, deployment capabilities, service limits, and server configuration.</li>
                         <li>Prevent abuse, investigate errors, secure the service, and maintain reliability.</li>
                         <li>Provide support, handle privacy requests, and communicate material service changes.</li>
                         <li>Meet legal obligations and enforce the <a href="/LunaEcho/Terms">LunaEcho Terms of Service</a>.</li>
@@ -143,7 +146,7 @@
                     <ul>
                         <li><strong>Discord:</strong> commands, responses, and app activity pass through Discord's platform.</li>
                         <li><strong>Infrastructure providers:</strong> hosting, storage, backup, security, and email providers may process data under appropriate contractual and confidentiality obligations.</li>
-                        <li><strong>Payment providers:</strong> if paid managed access launches, a disclosed payment provider may process billing details. LunaEcho will not store full payment card numbers.</li>
+                        <li><strong>Payment providers:</strong> if LunaEcho Custom launches, a disclosed payment provider may process billing details. LunaEcho will not store full payment card numbers.</li>
                         <li><strong>Authorities or affected parties:</strong> when required by law or reasonably necessary to protect users, rights, safety, or service security.</li>
                     </ul>
                     <p>LunaEcho does not sell personal data, build advertising profiles, or share Discord API data for targeted advertising.</p>
@@ -154,8 +157,9 @@
                     <h2>Data is kept only for a defined purpose.</h2>
                     <ul>
                         <li>Pre-release operational interaction and error logs are retained for up to 30 days, unless a longer period is needed to investigate a security incident or meet a legal obligation.</li>
-                        <li>Managed Free server-log records are planned for a maximum of 7 days. Managed Complete server-log records are planned for a maximum of 90 days. Administrators may choose shorter periods where controls allow it.</li>
-                        <li>Ticket transcripts follow the applicable managed plan and administrator actions. Managed Free transcripts are planned for up to 7 days after closure.</li>
+                        <li>Cloud and Custom log-retention periods are not yet final. The applicable periods and administrator controls will be published before those services launch.</li>
+                        <li>Ticket-transcript retention will follow the selected managed service, configured administrator controls, operational needs, and published limits.</li>
+                        <li>Custom bot tokens are retained only while needed to operate the customer's managed bot, subject to protected backup and recovery cycles, and are removed when replaced or when the Custom deployment ends unless retention is legally required.</li>
                         <li>Server configuration, active moderation records, progression data, and automation settings are retained while the feature is active. After LunaEcho is removed, managed-service records are deleted or anonymized within 30 days unless earlier deletion is requested or retention is legally required.</li>
                         <li>Website security logs are normally retained for up to 30 days.</li>
                     </ul>
@@ -165,7 +169,7 @@
                 <section class="legal-section" id="security">
                     <p class="legal-section-number">Security and international processing</p>
                     <h2>Practical safeguards, without impossible promises.</h2>
-                    <p>We use measures appropriate to the service stage, including restricted credentials, secret redaction in structured logs, least-privilege Discord access, access controls, updates, and encrypted HTTPS connections for the website. No online system can guarantee absolute security.</p>
+                    <p>We use measures appropriate to the service stage, including encrypted secret storage, restricted credential access, secret redaction in structured logs, least-privilege Discord access, access controls, updates, and encrypted HTTPS connections for the website. No online system can guarantee absolute security.</p>
                     <p>Discord and infrastructure providers may process data in countries outside your own. Where required, we rely on lawful transfer mechanisms and provider safeguards. Discord's own transfers are described in its privacy documentation.</p>
                 </section>
 
@@ -186,7 +190,7 @@
                     <p class="legal-section-number">08 / Self-hosted installations</p>
                     <h2>The self-hosted operator controls its data.</h2>
                     <p>This Policy does not govern data processed only by an independent self-hosted LunaEcho installation. The person or organization running that installation decides its configuration, storage, retention, security, and legal basis and is responsible for providing its own privacy information where required.</p>
-                    <p>If you are unsure whether you use managed or self-hosted LunaEcho, ask the administrator of the Discord server where the app is installed.</p>
+                    <p>If you are unsure whether you use Self-Hosted, Cloud, or Custom LunaEcho, ask the administrator of the Discord server where the app is installed.</p>
                     <h3>Children</h3>
                     <p>LunaEcho is not directed to anyone below the minimum age required to use Discord in their country. If you believe data relating to an underage user has been processed, contact us so it can be reviewed and deleted where appropriate.</p>
                     <h3>Policy updates</h3>
@@ -196,7 +200,7 @@
                 <section class="legal-section legal-contact-section" id="contact">
                     <p class="legal-section-number">09 / Privacy contact</p>
                     <h2>Contact the LunaEcho operator.</h2>
-                    <p>For privacy questions, data requests, or concerns about how managed LunaEcho processes information, contact ShadowOkami:</p>
+                    <p>For privacy questions, data requests, or concerns about how LunaEcho Cloud or Custom processes information, contact ShadowOkami:</p>
                     <a class="legal-email" href="mailto:service@shadowokami.de?subject=LunaEcho%20Privacy%20Question">service@shadowokami.de <span aria-hidden="true">&nearr;</span></a>
                     <p class="legal-response-note">Never send your Discord password, authentication token, bot token, or backup codes.</p>
                 </section>
@@ -209,7 +213,7 @@
         <span class="footer-links"><a href="/LunaEcho">LunaEcho</a><a href="/LunaEcho/Terms">Terms of Service</a></span>
         <a href="#main">Back to top &uarr;</a>
     </footer>
-    <script src="../assets/js/translations.js?v=7"></script>
+    <script src="../assets/js/translations.js?v=8"></script>
     <script src="../assets/js/script.js?v=8"></script>
 </body>
 </html>

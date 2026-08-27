@@ -1423,6 +1423,109 @@ tbody tr:last-child > * { border-bottom: 0; }
     .legal-title { font-size: clamp(3rem, 15vw, 4.2rem); }
 }
 
+/* LunaEcho v0.1 presents one platform with three deployment paths. */
+.luna-hero-kicker { max-width: 720px; margin: -8px 0 18px; color: var(--accent-strong); font: 700 clamp(1.05rem, 1.8vw, 1.35rem) "Okami Display", sans-serif; letter-spacing: .01em; }
+.luna-hosting-section { position: relative; }
+.luna-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.luna-product-card { position: relative; display: flex; min-width: 0; min-height: 680px; padding: 28px; flex-direction: column; gap: 27px; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(155deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .012)); box-shadow: 0 24px 62px rgba(0, 0, 0, .22); }
+.luna-product-card::before { position: absolute; top: -90px; right: -70px; width: 230px; height: 230px; border-radius: 50%; content: ""; background: radial-gradient(circle, rgba(var(--accent-rgb), .18), transparent 67%); pointer-events: none; }
+.luna-product-card > header { display: flex; min-height: 38px; align-items: center; justify-content: space-between; gap: 12px; color: var(--muted); font: 700 .58rem Consolas, monospace; letter-spacing: .11em; text-transform: uppercase; }
+.luna-product-card h3 { margin: 5px 0 13px; font-family: "Okami Display", sans-serif; font-size: clamp(2.25rem, 4vw, 3.7rem); letter-spacing: -.045em; line-height: .95; }
+.luna-product-card > div > p:last-child { min-height: 88px; margin: 0; color: var(--ink-soft); line-height: 1.65; }
+.luna-product-card .check-list { margin: 0; }
+.luna-product-card .check-list li { padding-block: 9px; }
+.luna-price { padding: 8px 11px; border: 1px solid rgba(var(--accent-rgb), .25); border-radius: 999px; color: var(--ink); background: rgba(var(--accent-rgb), .08); white-space: nowrap; }
+.luna-product-cloud { border-color: rgba(151, 183, 255, .26); }
+.luna-product-custom { border-color: rgba(var(--accent-rgb), .6); background: linear-gradient(155deg, rgba(var(--accent-rgb), .13), rgba(255, 255, 255, .018) 62%); box-shadow: 0 28px 75px rgba(var(--accent-rgb), .1); }
+.luna-product-custom::after { position: absolute; top: 0; right: 28px; left: 28px; height: 2px; content: ""; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+.luna-path { display: grid; min-height: 82px; padding: 14px; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 18px; background: rgba(0, 0, 0, .16); text-align: center; }
+.luna-path span { color: var(--ink-soft); font-size: .68rem; font-weight: 700; line-height: 1.25; }
+.luna-path b { color: var(--accent); font-size: .8rem; }
+.luna-card-fit { display: flex; margin: auto 0 0; padding-top: 18px; flex-direction: column; gap: 5px; border-top: 1px solid var(--line); }
+.luna-card-fit span { color: var(--muted); font: 700 .58rem Consolas, monospace; letter-spacing: .12em; text-transform: uppercase; }
+.luna-card-fit strong { color: var(--ink); font-size: .9rem; }
+.luna-product-statement { display: grid; margin: 28px 0 0; padding: 34px 38px; grid-template-columns: minmax(180px, .3fr) minmax(0, 1fr); align-items: center; gap: 26px; border: 1px solid rgba(var(--accent-rgb), .35); border-radius: 24px; background: linear-gradient(90deg, rgba(var(--accent-rgb), .13), rgba(var(--accent-rgb), .025)); }
+.luna-product-statement span { color: var(--accent-strong); font: 700 .66rem Consolas, monospace; letter-spacing: .14em; text-transform: uppercase; }
+.luna-product-statement p { margin: 0; font-family: "Okami Display", sans-serif; font-size: clamp(1.65rem, 3vw, 3rem); letter-spacing: -.035em; line-height: 1.05; }
+.luna-page .tier-comparison { margin-top: 28px; }
+.comparison-footnote { margin: 0; padding: 18px 22px 22px; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+.decision-note { display: grid; margin-top: 28px; padding: 30px 34px; grid-template-columns: minmax(170px, .3fr) minmax(0, 1fr); gap: 28px; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 22px; background: rgba(255, 255, 255, .018); }
+.decision-note > span { padding-top: 4px; color: var(--accent-strong); font: 700 .62rem Consolas, monospace; letter-spacing: .13em; text-transform: uppercase; }
+.decision-note h3 { margin: 0 0 8px; font-family: "Okami Display", sans-serif; font-size: clamp(1.45rem, 2.4vw, 2.2rem); letter-spacing: -.03em; }
+.decision-note p { max-width: 830px; margin: 0; color: var(--ink-soft); }
+
+.luna-modules-section { background: linear-gradient(180deg, transparent, rgba(var(--accent-rgb), .035) 48%, transparent); }
+.luna-module-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.luna-module-card { min-height: 260px; padding: 26px 28px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(8, 6, 12, .34); transition: background .25s ease, border-color .25s ease; }
+.luna-module-card:hover { background: rgba(var(--accent-rgb), .065); }
+.luna-module-card > span { display: block; margin-bottom: 42px; color: var(--accent-strong); font: 700 .62rem Consolas, monospace; letter-spacing: .13em; }
+.luna-module-card h3 { margin: 0 0 10px; font-family: "Okami Display", sans-serif; font-size: clamp(1.45rem, 2.3vw, 2.15rem); letter-spacing: -.03em; line-height: 1.04; }
+.luna-module-card p { margin: 0; color: var(--ink-soft); font-size: .9rem; line-height: 1.65; }
+.luna-module-card-future { background: linear-gradient(145deg, rgba(var(--accent-rgb), .12), rgba(var(--accent-rgb), .025)); }
+.module-control-note { display: grid; margin-top: 28px; padding: 30px 34px; grid-template-columns: minmax(240px, .45fr) minmax(0, 1fr); align-items: center; gap: 34px; border: 1px solid rgba(var(--accent-rgb), .25); border-radius: 24px; background: rgba(var(--accent-rgb), .045); }
+.module-control-note h3 { margin: 0 0 8px; font-family: "Okami Display", sans-serif; font-size: clamp(1.5rem, 2.5vw, 2.3rem); letter-spacing: -.035em; }
+.module-control-note p { margin: 0; color: var(--ink-soft); }
+.module-toggle-demo { display: grid; min-height: 70px; padding: 15px 17px; grid-template-columns: 1fr auto auto; align-items: center; gap: 12px; border: 1px solid var(--line-strong); border-radius: 18px; background: #0b0910; }
+.module-toggle-demo span { font-weight: 800; }
+.module-toggle-demo i { position: relative; display: block; width: 52px; height: 30px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 24px rgba(var(--accent-rgb), .25); }
+.module-toggle-demo i::after { position: absolute; top: 4px; right: 4px; width: 22px; height: 22px; border-radius: 50%; content: ""; background: #fff; }
+.module-toggle-demo strong { color: var(--accent-strong); font: 700 .6rem Consolas, monospace; letter-spacing: .1em; text-transform: uppercase; }
+
+.runtime-rail { display: flex; min-height: 76px; margin-bottom: 24px; padding: 18px 26px; align-items: center; justify-content: space-between; gap: 18px; border: 1px solid rgba(var(--accent-rgb), .28); border-radius: 999px; background: rgba(var(--accent-rgb), .045); }
+.runtime-rail span { color: var(--ink); font: 700 clamp(.58rem, 1vw, .72rem) Consolas, monospace; letter-spacing: .11em; }
+.runtime-rail i { height: 1px; flex: 1; background: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), .12)); }
+.luna-architecture-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.luna-architecture-card { min-height: 440px; padding: clamp(28px, 4vw, 42px); border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(145deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .008)); }
+.luna-architecture-card h3 { margin: 7px 0 14px; font-family: "Okami Display", sans-serif; font-size: clamp(2rem, 3.8vw, 3.35rem); letter-spacing: -.045em; line-height: .98; }
+.luna-architecture-card > p:not(.tier-label) { color: var(--ink-soft); }
+.luna-architecture-card ul { margin: 28px 0 0; padding: 0; list-style: none; }
+.luna-architecture-card li { position: relative; padding: 10px 0 10px 22px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .9rem; }
+.luna-architecture-card li::before { position: absolute; top: 14px; left: 2px; width: 7px; height: 7px; border: 1px solid var(--accent); border-radius: 50%; content: ""; }
+.luna-security-card { border-color: rgba(var(--accent-rgb), .38); background: linear-gradient(145deg, rgba(var(--accent-rgb), .095), rgba(255, 255, 255, .01)); }
+.custom-flow { display: grid; margin-top: 24px; padding: 38px; grid-template-columns: minmax(230px, .38fr) minmax(0, 1fr); gap: 40px; border: 1px solid var(--line-strong); border-radius: 26px; background: #0a080d; }
+.custom-flow h3 { margin: 8px 0 0; font-family: "Okami Display", sans-serif; font-size: clamp(1.8rem, 3.4vw, 3rem); letter-spacing: -.04em; line-height: 1; }
+.custom-flow ol { display: grid; margin: 0; padding: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; list-style: none; }
+.custom-flow li { display: flex; min-height: 54px; padding: 12px 0; align-items: center; gap: 13px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: .88rem; }
+.custom-flow li span { color: var(--accent-strong); font: 700 .58rem Consolas, monospace; letter-spacing: .1em; }
+.luna-phase-roadmap .roadmap-card { min-height: 420px; }
+
+@media (max-width: 1080px) {
+    .luna-product-grid { grid-template-columns: 1fr; }
+    .luna-product-card { min-height: 0; }
+    .luna-product-card > div > p:last-child { min-height: 0; }
+    .luna-card-fit { margin-top: 4px; }
+    .luna-module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+    .luna-product-statement,
+    .decision-note,
+    .module-control-note,
+    .custom-flow { grid-template-columns: 1fr; }
+    .luna-architecture-grid { grid-template-columns: 1fr; }
+    .runtime-rail { padding: 20px; flex-direction: column; border-radius: 24px; }
+    .runtime-rail i { width: 1px; height: 22px; flex: none; background: linear-gradient(var(--accent), rgba(var(--accent-rgb), .12)); }
+}
+
+@media (max-width: 560px) {
+    .luna-product-card { padding: 22px 20px; border-radius: 22px; }
+    .luna-product-card > header { align-items: flex-start; flex-direction: column; }
+    .luna-path { grid-template-columns: 1fr; padding: 16px; }
+    .luna-path b { transform: rotate(90deg); }
+    .luna-product-statement,
+    .decision-note,
+    .module-control-note,
+    .custom-flow { padding: 24px 20px; border-radius: 20px; }
+    .luna-module-grid { grid-template-columns: 1fr; }
+    .luna-module-card { min-height: 220px; padding: 23px 21px; }
+    .luna-module-card > span { margin-bottom: 32px; }
+    .module-toggle-demo { grid-template-columns: 1fr auto; }
+    .module-toggle-demo strong { grid-column: 1 / -1; }
+    .luna-architecture-card { min-height: 0; padding: 25px 21px; border-radius: 21px; }
+    .custom-flow ol { grid-template-columns: 1fr; }
+    .luna-page .tier-comparison-head { padding-inline: 20px; }
+}
+
 @media print {
     body { color: #111; background: #fff; }
     body::before, body::after, .site-grid, .cursor-glow, .site-header, .skip-link, .detail-actions, .site-footer, .legal-toc { display: none !important; }
