@@ -3,36 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071011">
     <title>MirrorGate CSS Logo</title>
+    <meta name="description" content="The code-made MirrorGate logo, built entirely with HTML and CSS.">
     <link rel="canonical" href="https://shadowokami.com/MirrorGate/Logo">
-    <link rel="stylesheet" href="../assets/css/language.css?v=4">
+    <link rel="icon" type="image/webp" href="../assets/images/okami-logo-v4.webp?v=1">
+    <link rel="stylesheet" href="../assets/css/style.css?v=43">
+    <link rel="stylesheet" href="../assets/css/language.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
     <style>
-        * {
-            box-sizing: border-box;
+        .logo-lab {
+            width: var(--page);
+            margin-inline: auto;
+            padding: 74px 0 100px;
         }
 
-        body {
+        .logo-lab-intro {
             display: grid;
-            min-height: 100vh;
+            margin-bottom: 44px;
+            grid-template-columns: minmax(0, 1fr) minmax(280px, .42fr);
+            align-items: end;
+            gap: 44px;
+        }
+
+        .logo-lab-intro h1 {
+            margin: 18px 0 0;
+            font-size: clamp(4rem, 9vw, 8rem);
+            letter-spacing: -.06em;
+            line-height: .78;
+        }
+
+        .logo-lab-copy p {
             margin: 0;
-            padding: 24px;
-            place-items: center;
-            background: #070a0e;
+            color: var(--ink-soft);
+        }
+
+        .logo-lab-copy .detail-actions {
+            margin-top: 24px;
         }
 
         .mirrorgate-logo {
             isolation: isolate;
             position: relative;
-            width: min(1100px, 100%);
+            width: 100%;
             overflow: hidden;
-            aspect-ratio: 16 / 10;
-            border: 1px solid rgba(157, 225, 216, .18);
-            border-radius: 38px;
+            aspect-ratio: 16 / 9;
+            border: 1px solid var(--line-strong);
+            border-radius: var(--radius-xl);
             background:
                 radial-gradient(circle at 68% 48%, rgba(116, 210, 199, .2), transparent 16rem),
                 radial-gradient(circle at 18% 82%, rgba(202, 177, 119, .14), transparent 20rem),
                 linear-gradient(135deg, #0c151b, #11101a 62%, #080c11);
+            box-shadow: var(--shadow);
         }
 
         .mirrorgate-logo::before {
@@ -48,7 +70,7 @@
             mask-image: radial-gradient(circle at 66% 48%, #000, transparent 62%);
         }
 
-        .mirror-orbit {
+        .logo-orbit {
             position: absolute;
             top: 50%;
             left: 63%;
@@ -60,7 +82,7 @@
             transform: translate(-50%, -50%) rotate(-16deg) scaleY(.38);
         }
 
-        .mirror-door {
+        .logo-door {
             position: absolute;
             top: 50%;
             left: 63%;
@@ -80,7 +102,7 @@
             transition: border-color .7s ease, box-shadow .7s ease, transform .7s ease;
         }
 
-        .mirrorgate-logo:hover .mirror-door {
+        .mirrorgate-logo:hover .logo-door {
             border-color: rgba(216, 244, 239, .82);
             box-shadow:
                 0 0 0 13px rgba(202, 177, 119, .06),
@@ -90,96 +112,72 @@
             transform: translate(-50%, -50%) scale(1.025);
         }
 
-        .mirror-door::before,
-        .mirror-door::after {
-            position: absolute;
-            content: "";
-        }
+        .logo-door::before,
+        .logo-door::after { position: absolute; content: ""; }
+        .logo-door::before { inset: 8%; border: 1px solid rgba(157, 225, 216, .24); border-radius: inherit; }
+        .logo-door::after { top: 15%; right: 18%; width: 18%; height: 64%; border-radius: 50%; background: rgba(225, 248, 244, .1); filter: blur(7px); transform: rotate(-12deg); }
+        .logo-handle { position: absolute; top: 48%; left: 50%; width: 6px; height: 6px; border-radius: 50%; background: #d6bd83; box-shadow: 0 0 18px rgba(214, 189, 131, .78); }
+        .logo-wordmark { position: absolute; bottom: 10%; left: 6%; z-index: 2; }
+        .logo-wordmark small,
+        .logo-wordmark strong { display: block; }
+        .logo-wordmark small { margin-bottom: 8px; color: #91cfc6; font: 700 clamp(8px, .8vw, 11px) Consolas, monospace; letter-spacing: .18em; text-transform: uppercase; }
+        .logo-wordmark strong { color: #f4f1e8; font: 400 clamp(3rem, 8vw, 8rem) "Palatino Linotype", Georgia, serif; letter-spacing: -.075em; line-height: .8; text-shadow: 0 18px 50px rgba(0, 0, 0, .45); }
+        .logo-note { display: flex; margin-top: 18px; padding: 18px 22px; justify-content: space-between; gap: 24px; border: 1px dashed var(--line-strong); border-radius: var(--radius-sm); color: var(--muted); font: 700 .64rem Consolas, monospace; letter-spacing: .08em; text-transform: uppercase; }
 
-        .mirror-door::before {
-            inset: 8%;
-            border: 1px solid rgba(157, 225, 216, .24);
-            border-radius: inherit;
-        }
-
-        .mirror-door::after {
-            top: 15%;
-            right: 18%;
-            width: 18%;
-            height: 64%;
-            border-radius: 50%;
-            background: rgba(225, 248, 244, .1);
-            filter: blur(7px);
-            transform: rotate(-12deg);
-        }
-
-        .mirror-handle {
-            position: absolute;
-            top: 48%;
-            left: 50%;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #d6bd83;
-            box-shadow: 0 0 18px rgba(214, 189, 131, .78);
-        }
-
-        .mirror-wordmark {
-            position: absolute;
-            bottom: 10%;
-            left: 6%;
-            z-index: 2;
-        }
-
-        .mirror-wordmark small,
-        .mirror-wordmark strong {
-            display: block;
-        }
-
-        .mirror-wordmark small {
-            margin-bottom: 8px;
-            color: #91cfc6;
-            font: 700 clamp(8px, .8vw, 11px) Consolas, monospace;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-        }
-
-        .mirror-wordmark strong {
-            color: #f4f1e8;
-            font: 700 clamp(3rem, 8vw, 8rem) "Bahnschrift", sans-serif;
-            letter-spacing: -.075em;
-            line-height: .8;
-            text-shadow: 0 18px 50px rgba(0, 0, 0, .45);
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 560px) {
-            .mirrorgate-logo {
-                aspect-ratio: 4 / 5;
-                border-radius: 28px;
-            }
-
-            .mirror-door,
-            .mirror-orbit {
-                left: 70%;
-            }
-
-            .mirror-wordmark {
-                top: 14%;
-                bottom: auto;
-            }
+        @media (max-width: 760px) {
+            .logo-lab-intro { grid-template-columns: 1fr; }
+            .mirrorgate-logo { aspect-ratio: 4 / 5; }
+            .logo-door,
+            .logo-orbit { left: 70%; }
+            .logo-wordmark { top: 14%; bottom: auto; }
+            .logo-note { align-items: flex-start; flex-direction: column; }
         }
     </style>
 </head>
-<body>
-    <div class="mirrorgate-logo" role="img" aria-label="MirrorGate logo: a luminous mirrored doorway">
-        <span class="mirror-orbit" aria-hidden="true"></span>
-        <span class="mirror-door" aria-hidden="true"><i class="mirror-handle"></i></span>
-        <span class="mirror-wordmark">
-            <small>The Mirrored Realms</small>
-            <strong>MirrorGate</strong>
-        </span>
-    </div>
-    <script src="../assets/js/translations.js?v=4"></script>
+<body class="detail-page mirrorgate-page logo-code-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-grid" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="/" aria-label="Okami home">
+            <span class="brand-mark"><img src="../assets/images/okami-logo-v4.webp?v=1" alt="" width="48" height="48"></span>
+            <span class="brand-copy"><strong>OKAMI</strong><small>PROJECT / 04</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            <span>Menu</span><span class="menu-lines" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Project navigation">
+            <a href="/MirrorGate">MirrorGate</a>
+            <a class="nav-out" href="https://github.com/ShadowOkami4/Mirrorgate" target="_blank" rel="noopener noreferrer">Source ↗</a>
+        </nav>
+    </header>
+
+    <main class="logo-lab" id="main">
+        <section class="logo-lab-intro" aria-labelledby="logo-title">
+            <div>
+                <a class="detail-breadcrumb reveal" href="/MirrorGate">← Back to MirrorGate</a>
+                <p class="detail-badge reveal">HTML / CSS / No image asset</p>
+                <h1 class="reveal" id="logo-title">A door made<br>from code.</h1>
+            </div>
+            <div class="logo-lab-copy reveal">
+                <p>This MirrorGate mark is assembled entirely from layered HTML elements, borders, gradients, shadows, and motion. The page itself is the working source.</p>
+                <div class="detail-actions"><a class="button button-ghost" href="/MirrorGate">Return to the archive</a></div>
+            </div>
+        </section>
+
+        <div class="mirrorgate-logo reveal" role="img" aria-label="MirrorGate logo: a luminous mirrored doorway">
+            <span class="logo-orbit" aria-hidden="true"></span>
+            <span class="logo-door" aria-hidden="true"><i class="logo-handle"></i></span>
+            <span class="logo-wordmark"><small>The Mirrored Realms</small><strong>MirrorGate</strong></span>
+        </div>
+        <div class="logo-note reveal"><span>Rendered by the browser</span><span>Responsive at every size</span><span>Hover to wake the mirror</span></div>
+    </main>
+
+    <footer class="site-footer">
+        <span>© <span data-year>2026</span> OKAMI</span><span>MIRRORGATE / CSS MARK</span><a href="#main">Back to top ↑</a>
+    </footer>
+    <script src="../assets/js/translations.js?v=6"></script>
+    <script src="../assets/js/script.js?v=8"></script>
 </body>
 </html>

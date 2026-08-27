@@ -120,6 +120,23 @@
         linkedSections.forEach((section) => sectionObserver.observe(section));
     }
 
+    const root = document.documentElement;
+    const header = document.querySelector('.site-header');
+    let scrollFrame = 0;
+
+    const updateScrollState = () => {
+        scrollFrame = 0;
+        const scrollRange = Math.max(1, root.scrollHeight - window.innerHeight);
+        root.style.setProperty('--scroll-progress', String(Math.min(1, window.scrollY / scrollRange)));
+        header?.classList.toggle('is-scrolled', window.scrollY > 40);
+    };
+
+    window.addEventListener('scroll', () => {
+        if (scrollFrame) return;
+        scrollFrame = window.requestAnimationFrame(updateScrollState);
+    }, { passive: true });
+    updateScrollState();
+
     const canTrackPointer = window.matchMedia('(pointer: fine)').matches;
     if (canTrackPointer) {
         window.addEventListener('pointermove', (event) => {
