@@ -1287,6 +1287,10 @@ tbody tr:last-child > * { border-bottom: 0; }
 /* The lower homepage continues the editorial system instead of returning to cards. */
 .about-layout { padding-top: 48px; border-top: 1px solid var(--line); }
 .about-aside { padding: 8px 0 8px 28px; border: 0; border-left: 1px solid rgba(var(--accent-rgb), .42); border-radius: 0; background: transparent; }
+.ai-disclosure { display: grid; grid-column: 1 / -1; margin-top: 14px; padding: 30px 0; grid-template-columns: minmax(170px, .32fr) minmax(0, 1fr); gap: 28px 54px; border-block: 1px solid var(--line); }
+.ai-disclosure .aside-label { margin: 5px 0 0; }
+.ai-disclosure h3 { margin: 0 0 8px; font-family: "Okami Display", sans-serif; font-size: clamp(1.65rem, 3vw, 2.7rem); letter-spacing: -.035em; }
+.ai-disclosure p:last-child { max-width: 820px; margin: 0; color: var(--ink-soft); }
 .contact-layout { grid-template-columns: 1fr; gap: 0; }
 .contact-primary { min-height: 300px; padding: 42px 0; border: 0; border-block: 1px solid var(--line-strong); border-radius: 0; background: linear-gradient(90deg, rgba(var(--accent-rgb), .12), transparent 72%); box-shadow: none; }
 .contact-primary:hover { border-color: rgba(var(--accent-rgb), .55); transform: none; }
@@ -1312,6 +1316,7 @@ tbody tr:last-child > * { border-bottom: 0; }
 @media (max-width: 560px) {
     .about-layout { padding-top: 34px; }
     .about-aside { padding-left: 20px; }
+    .ai-disclosure { padding-block: 24px; grid-template-columns: 1fr; gap: 12px; }
     .contact-primary { min-height: 330px; padding-block: 34px; }
     .contact-channels { grid-template-columns: 1fr; }
     .contact-channel,
