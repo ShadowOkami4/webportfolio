@@ -1325,6 +1325,104 @@ tbody tr:last-child > * { border-bottom: 0; }
     .support { padding-top: 80px; }
 }
 
+/* Phones use a dedicated reading-first composition, not the desktop aperture. */
+@media (max-width: 680px) {
+    :root { --page: calc(100% - 30px); --radius-xl: 26px; --radius: 20px; --radius-sm: 14px; }
+    body { font-size: 16px; line-height: 1.62; }
+    html { scroll-padding-top: 76px; }
+    .site-grid { opacity: .18; background-size: 48px 48px; }
+    .site-header { padding-inline: 10px; }
+    .brand-mark { width: 40px; height: 40px; border-radius: 12px; }
+    .menu-toggle { width: 44px; min-height: 44px; padding: 0; justify-content: center; border-radius: 14px; }
+
+    .hero-aperture-scene { min-height: auto; padding: 22px 0 64px; }
+    .hero-aperture-scene .hero-kicker { margin: 0; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .aperture-stage { display: block; min-height: 0; padding: 54px 0 0; }
+    .aperture-stage::before,
+    .aperture-stage::after,
+    .aperture-mark { display: none; }
+    .aperture-wordmark { top: 14px; right: -4px; left: auto; z-index: -1; font-size: clamp(4.8rem, 25vw, 7rem); line-height: 1; opacity: .55; transform: none; }
+    .hero-manifesto { position: relative; right: auto; bottom: auto; left: auto; width: 100%; padding: 28px 0 0; border-top: 1px solid rgba(var(--accent-rgb), .34); border-left: 0; background: transparent; backdrop-filter: none; }
+    .hero-manifesto .eyebrow { max-width: 75%; }
+    .hero-manifesto h1 { margin-bottom: 20px; font-size: clamp(2.5rem, 11.5vw, 3.5rem); line-height: .94; }
+    .hero-manifesto > p:not(.eyebrow) { max-width: none; font-size: 1rem; }
+    .hero-manifesto .round-link { width: 100%; }
+    .marquee { padding-block: 13px; }
+    .marquee-track { font-size: .64rem; }
+
+    .section,
+    .detail-section,
+    .voidline-section { padding-block: 74px; }
+    .display-copy,
+    .section-heading h2,
+    .contact-title,
+    .detail-section-head h2,
+    .voidline-section-intro h2,
+    .detail-cta h2 { font-size: clamp(2.55rem, 12vw, 3.7rem); line-height: .94; }
+    .about-layout { margin-top: 30px; gap: 28px; }
+    .about-copy p { font-size: 1rem; }
+
+    .work { padding-top: 64px; }
+    .section-heading { margin-bottom: 38px; }
+    .project,
+    .project-featured,
+    .project-compact,
+    .project-mirrorgate,
+    .project-stream { padding: 24px 0 46px; gap: 24px; }
+    .project::before { display: none; }
+    .project-media,
+    .project-featured .project-media,
+    .project-compact .project-media,
+    .project-mirrorgate .project-media,
+    .project-stream .project-media { min-height: 245px; border-radius: 18px; }
+    .project-number,
+    .project-status,
+    .project-open { min-height: 30px; padding: 6px 9px; font-size: .55rem; }
+    .project-number { top: 12px; left: 12px; }
+    .project-status { top: 12px; right: 12px; max-width: 64%; white-space: normal; text-align: right; }
+    .project-open { right: 12px; bottom: 12px; }
+    .voidline-card-identity { bottom: 14px; left: 14px; }
+    .voidline-card-identity img { width: 44px; height: 44px; }
+    .project-info h3,
+    .project-compact .project-info h3 { margin-bottom: 16px; font-size: clamp(2.5rem, 13vw, 3.8rem); }
+    .mirror-card-wordmark strong { font-size: 2.25rem; }
+
+    .detail-hero,
+    .luna-page .detail-hero,
+    .mirrorgate-page .detail-hero { padding: 38px 0 62px; gap: 32px; }
+    .detail-breadcrumb { margin-bottom: 18px; }
+    .detail-actions { width: 100%; }
+    .detail-actions .button,
+    .detail-actions .button-ghost { width: 100%; }
+    .detail-tags { margin-top: 22px; }
+    .detail-stats > div { min-height: 88px; padding: 18px 20px; }
+
+    .luna-page .detail-title { margin-block: 12px 22px; font-size: clamp(3rem, 15vw, 4rem); }
+    .luna-page .bot-visual { min-height: 300px; padding: 16px; border-radius: 32px; }
+    .luna-page .bot-visual img { width: min(58%, 220px); }
+    .luna-page .bot-visual::after { inset: 13%; }
+
+    .voidline-hero { padding: 38px 0 62px; }
+    .voidline-title-lockup { display: grid; margin-bottom: 18px; grid-template-columns: 64px minmax(0, 1fr); align-items: center; gap: 14px; }
+    .voidline-title-lockup > img { width: 64px; height: 64px; }
+    .voidline-title-lockup h1 { font-size: clamp(3rem, 15vw, 4.1rem); }
+    .voidline-release-note { margin-block: 20px; }
+    .voidline-hero-shot { margin-top: 30px; border-radius: 18px; }
+    .voidline-hero-shot img { border-radius: 18px; }
+    .voidline-facts { margin-top: 24px; }
+
+    .mirrorgate-page .detail-copy { align-items: flex-start; text-align: left; }
+    .mirrorgate-page .detail-title { font-size: clamp(3.7rem, 18vw, 5rem); }
+    .mirrorgate-page .detail-lead { font-size: 1.08rem; }
+    .mirrorgate-page .mirrorgate-visual { min-height: 410px; border-radius: 38% 38% 24px 24px; }
+    .mirror-portal { width: min(58%, 230px); }
+    .mirror-quote { right: 18px; bottom: 48px; left: 18px; font-size: .9rem; }
+
+    .contact-primary-copy strong { font-size: clamp(2.5rem, 13vw, 3.8rem); }
+    .support-widget-frame { margin: 6px; border-radius: 20px; }
+    .legal-title { font-size: clamp(3rem, 15vw, 4.2rem); }
+}
+
 @media print {
     body { color: #111; background: #fff; }
     body::before, body::after, .site-grid, .cursor-glow, .site-header, .skip-link, .detail-actions, .site-footer, .legal-toc { display: none !important; }
