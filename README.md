@@ -19,7 +19,6 @@ The local and production servers expose the same clean public routes:
 - `/LunaEcho/Terms`
 - `/LunaEcho/Privacy`
 - `/Mirrored_Realms`
-- `/Mirrored_Realms/Logo`
 
 To use a different local port:
 

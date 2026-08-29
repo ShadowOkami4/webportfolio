@@ -686,10 +686,18 @@ tbody tr:last-child > * { border-bottom: 0; }
     right: -4%;
     width: min(45vw, 600px);
     aspect-ratio: 1;
-    border: 1px solid rgba(121, 201, 191, .12);
     border-radius: 50%;
     content: "";
-    box-shadow: 0 0 0 54px rgba(208, 174, 103, .018), 0 0 0 108px rgba(121, 201, 191, .012);
+    background:
+        repeating-conic-gradient(from 9deg, rgba(121, 201, 191, .45) 0deg 1.2deg, transparent 1.2deg 40deg),
+        conic-gradient(from 24deg, transparent 0 15%, rgba(234, 214, 158, .5) 18%, transparent 22% 48%, rgba(121, 201, 191, .38) 52%, transparent 57% 82%, rgba(234, 214, 158, .34) 86%, transparent 91%);
+    filter: drop-shadow(0 0 24px rgba(121, 201, 191, .14));
+    opacity: .64;
+    pointer-events: none;
+    transform-origin: center;
+    -webkit-mask: radial-gradient(circle, transparent 0 55%, #000 55.4% 56%, transparent 56.5% 68%, #000 68.5% 69.2%, transparent 69.7% 79%, #000 79.4% 80%, transparent 80.5%);
+    mask: radial-gradient(circle, transparent 0 55%, #000 55.4% 56%, transparent 56.5% 68%, #000 68.5% 69.2%, transparent 69.7% 79%, #000 79.4% 80%, transparent 80.5%);
+    will-change: transform, opacity;
 }
 .mirrorgate-page .detail-title { display: grid; justify-items: center; font-size: clamp(5.2rem, 11vw, 10rem); line-height: .72; }
 .mirrorgate-page .mirrored-title-prefix { font-size: .52em; letter-spacing: .015em; line-height: .92; }
@@ -879,7 +887,19 @@ tbody tr:last-child > * { border-bottom: 0; }
 @keyframes signal { to { transform: scaleY(.55); opacity: .5; } }
 @keyframes float { 50% { transform: translateY(-12px) rotate(1deg); } }
 @keyframes rotate { to { transform: rotate(360deg); } }
-@keyframes mirror-sheen { 0%, 30% { transform: translateX(-80%); } 70%, 100% { transform: translateX(80%); } }
+@keyframes mirror-sheen {
+    0%, 24% { opacity: 0; transform: translateX(-90%); }
+    30% { opacity: 1; }
+    68% { opacity: 1; transform: translateX(90%); }
+    74%, 100% { opacity: 0; transform: translateX(90%); }
+}
+@keyframes mirrored-seal-orbit {
+    0% { opacity: .45; transform: translateX(50%) rotate(-8deg) scale(.96); }
+    42% { opacity: .72; }
+    50% { opacity: .78; transform: translateX(50%) rotate(172deg) scale(1.025); }
+    92% { opacity: .54; }
+    100% { opacity: .45; transform: translateX(50%) rotate(352deg) scale(.96); }
+}
 
 @media (hover: hover) and (pointer: fine) {
     .project,
@@ -1179,7 +1199,7 @@ tbody tr:last-child > * { border-bottom: 0; }
 
 /* MirrorGate is a centered threshold, deliberately unlike the product pages. */
 .mirrorgate-page .detail-hero { display: grid; min-height: auto; padding: 62px 0 110px; grid-template-columns: 1fr; justify-items: center; gap: 54px; }
-.mirrorgate-page .detail-hero::after { right: 50%; bottom: 14%; transform: translateX(50%); }
+.mirrorgate-page .detail-hero::after { right: 50%; bottom: 14%; animation: mirrored-seal-orbit 26s linear infinite; transform: translateX(50%); }
 .mirrorgate-page .detail-copy { display: flex; width: min(100%, 950px); align-items: center; flex-direction: column; text-align: center; }
 .mirrorgate-page .detail-title { font-size: clamp(5rem, 13vw, 11rem); }
 .mirrorgate-page .detail-lead { max-width: 760px; font-family: Georgia, serif; font-size: clamp(1.15rem, 2vw, 1.5rem); }
@@ -1413,6 +1433,7 @@ tbody tr:last-child > * { border-bottom: 0; }
     .voidline-facts { margin-top: 24px; }
 
     .mirrorgate-page .detail-copy { align-items: flex-start; text-align: left; }
+    .mirrorgate-page .detail-hero::after { top: 74px; width: min(118vw, 460px); }
     .mirrorgate-page .detail-title { justify-items: start; font-size: clamp(3.2rem, 15vw, 4.7rem); }
     .mirrorgate-page .detail-lead { font-size: 1.08rem; }
     .mirrorgate-page .mirrorgate-visual { min-height: 410px; border-radius: 38% 38% 24px 24px; }

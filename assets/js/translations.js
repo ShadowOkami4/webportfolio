@@ -1105,7 +1105,6 @@
         'index.html': home,
         'voidline.html': voidline,
         'mirrorgate.html': mirrorgate,
-        'mirrorgate-logo-code.html': mirrorgate,
         'lunaecho.html': { ...lunaecho, ...lunaechoV01 },
         'lunaecho-terms.html': { ...legalCommon, ...terms, ...lunaLegalV01 },
         'lunaecho-privacy.html': { ...legalCommon, ...privacy, ...lunaLegalV01 }
@@ -1118,7 +1117,6 @@
         '/LunaEcho/Privacy': 'lunaecho-privacy.html',
         '/LunaEcho/Terms': 'lunaecho-terms.html',
         '/Mirrored_Realms': 'mirrorgate.html',
-        '/Mirrored_Realms/Logo': 'mirrorgate-logo-code.html',
         '/Voidline': 'voidline.html'
     };
     const fileName = cleanRoutePages[cleanPath] || window.location.pathname.split('/').pop() || 'index.html';

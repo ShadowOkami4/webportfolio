@@ -13,12 +13,10 @@ const ROUTE_ALIASES = new Map([
     ['/LunaEcho/Privacy', 'pages/lunaecho-privacy.html'],
     ['/LunaEcho/Terms', 'pages/lunaecho-terms.html'],
     ['/Mirrored_Realms', 'pages/mirrorgate.html'],
-    ['/Mirrored_Realms/Logo', 'pages/mirrorgate-logo-code.html'],
     ['/Voidline', 'pages/voidline.html']
 ]);
 const ROUTE_REDIRECTS = new Map([
-    ['/MirrorGate', '/Mirrored_Realms'],
-    ['/MirrorGate/Logo', '/Mirrored_Realms/Logo']
+    ['/MirrorGate', '/Mirrored_Realms']
 ]);
 
 if (!Number.isInteger(PORT) || PORT < 1 || PORT > 65535) {
