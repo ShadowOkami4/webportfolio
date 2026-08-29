@@ -30,6 +30,7 @@ Thumbs.db
 
 # Editors and local tooling
 .agents/
+.codex-remote-attachments/
 .idea/
 .vscode/
 *.bak

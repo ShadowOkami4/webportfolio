@@ -18,8 +18,8 @@ The local and production servers expose the same clean public routes:
 - `/LunaEcho`
 - `/LunaEcho/Terms`
 - `/LunaEcho/Privacy`
-- `/MirrorGate`
-- `/MirrorGate/Logo`
+- `/Mirrored_Realms`
+- `/Mirrored_Realms/Logo`
 
 To use a different local port:
 
@@ -57,7 +57,7 @@ The script copies only public static files to `/var/www/webportfolio`, obtains o
 ## Project Structure
 
 - `index.html` contains the portfolio homepage.
-- `pages/` contains the Voidline, LunaEcho, and MirrorGate project pages.
+- `pages/` contains the Voidline, LunaEcho, and The Mirrored Realms project pages.
 - `assets/` contains styles, scripts, and images.
 - `server.js` is the dependency-free local preview server.
 - `nginx.conf` is the hardened production HTTPS template.

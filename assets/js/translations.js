@@ -94,8 +94,9 @@
         'View source': 'Quellcode ansehen',
         'PERSONAL UTILITY / AUTOMATION': 'PERSÖNLICHES TOOL / AUTOMATISIERUNG',
         'A small utility I made for my own setup to send a Discord notification when a stream goes live, then shared for anyone else who finds it useful.': 'Ein kleines Tool für mein eigenes Setup, das bei einem Livestream eine Discord-Benachrichtigung sendet und das ich anschließend für alle veröffentlicht habe, die es nützlich finden.',
-        'Enter the MirrorGate project': 'Das MirrorGate-Projekt betreten',
+        'Enter The Mirrored Realms project': 'Das Projekt „Die Spiegelreiche“ betreten',
         'The Mirrored Realms': 'Die Spiegelreiche',
+        'OPEN-SOURCE WORLD SETTING': 'OPEN-SOURCE-WELTSETTING',
         'Enter the vault': 'Das Archiv betreten',
         'TABLETOP / OPEN-SOURCE SETTING': 'TABLETOP / OPEN-SOURCE-SETTING',
         'A door disguised as an Obsidian vault: an evolving D&D 5.5e setting of broken time, folded roads, royal lies, and reflections that remember more than they should.': 'Eine als Obsidian-Vault getarnte Tür: ein wachsendes D&D-5.5e-Setting aus gebrochener Zeit, gefalteten Wegen, königlichen Lügen und Spiegelbildern, die sich an mehr erinnern, als sie sollten.',
@@ -274,12 +275,14 @@
     };
 
     const mirrorgate = {
-        'MirrorGate | The Mirrored Realms': 'MirrorGate | Die Spiegelreiche',
-        'MirrorGate is an open-source D&D 5.5e world setting built as an interconnected Obsidian vault of broken time, folded space, dangerous reflections, and unfinished histories.': 'MirrorGate ist ein Open-Source-Weltensetting für D&D 5.5e, aufgebaut als vernetzter Obsidian-Vault aus gebrochener Zeit, gefaltetem Raum, gefährlichen Spiegelbildern und unvollendeten Geschichten.',
+        'The Mirrored Realms | Open-Source D&D 5.5e Setting': 'Die Spiegelreiche | Open-Source-Setting für D&D 5.5e',
+        'The Mirrored Realms is an open-source D&D 5.5e world setting built as an interconnected Obsidian vault of broken time, folded space, dangerous reflections, and unfinished histories.': 'Die Spiegelreiche sind ein Open-Source-Weltensetting für D&D 5.5e, aufgebaut als vernetzter Obsidian-Vault aus gebrochener Zeit, gefaltetem Raum, gefährlichen Spiegelbildern und unvollendeten Geschichten.',
         'Enter an evolving open-source D&D 5.5e setting where mirrors remember other lives and roads lose track of centuries.': 'Betritt ein wachsendes Open-Source-Setting für D&D 5.5e, in dem Spiegel sich an andere Leben erinnern und Wege ganze Jahrhunderte verlieren.',
         'Vault': 'Archiv',
         'Contents': 'Inhalte',
         'Open source / D&D 5.5e': 'Open Source / D&D 5.5e',
+        'The Mirrored': 'Die',
+        'Realms': 'Spiegelreiche',
         'Somewhere inside an Obsidian vault waits a world that was never meant to stay still. Its records speak of Zerkalo, where mirrors remember other lives, roads misplace entire centuries, and the wounds of an ancient divine war have begun to dream again.': 'Irgendwo in einem Obsidian-Vault wartet eine Welt, die niemals stillstehen sollte. Ihre Aufzeichnungen erzählen von Zerkalo, wo Spiegel sich an andere Leben erinnern, Wege ganze Jahrhunderte verlegen und die Wunden eines uralten Götterkriegs wieder zu träumen beginnen.',
         'Enter the vault ↗': 'Das Archiv betreten ↗',
         'Read the records ↓': 'Die Aufzeichnungen lesen ↓',
@@ -300,7 +303,7 @@
         'A realm built over wounds no kingdom can truly claim. Beneath palaces and borders lie the remains of the Primordial War, still waiting to reveal whether they hold salvation or the shape of the next catastrophe.': 'Ein Reich, errichtet über Wunden, die kein Königreich wirklich beanspruchen kann. Unter Palästen und Grenzen liegen die Überreste des Primordial War und warten darauf zu offenbaren, ob sie Erlösung oder die Gestalt der nächsten Katastrophe bergen.',
         'The threshold': 'Die Schwelle',
         'Not a road or conventional plane, but a distorted passage through reflection, memory, folded distance, and broken chronology. Some mirrors show a face. Others wait for an invitation.': 'Keine Straße und keine gewöhnliche Ebene, sondern ein verzerrter Durchgang durch Spiegelung, Erinnerung, gefaltete Entfernung und gebrochene Chronologie. Manche Spiegel zeigen ein Gesicht. Andere warten auf eine Einladung.',
-        'Current MirrorGate vault subjects': 'Aktuelle Themen im MirrorGate-Archiv',
+        'Current subjects in The Mirrored Realms vault': 'Aktuelle Themen im Archiv der Spiegelreiche',
         'Shard Monsters': 'Splittermonster',
         'Planned journeys': 'Geplante Reisen',
         'Eighteen ways': 'Achtzehn Wege,',
@@ -316,7 +319,7 @@
         'Campaign frameworks': 'Kampagnenrahmen',
         'Three long shadows cast across the Shattered Hope Era, where crowns, divine wounds, and the Mirrorgate can reshape an entire table’s version of Zerkalo.': 'Drei lange Schatten über der Shattered Hope Era, in der Kronen, göttliche Wunden und das Mirrorgate die gesamte Version von Zerkalo einer Spielrunde neu formen können.',
         'Roadmap:': 'Roadmap:',
-        'These numbers describe the intended complete collection. MirrorGate is still in early development, so individual stories and their order may change as the setting grows.': 'Diese Zahlen beschreiben die geplante vollständige Sammlung. MirrorGate befindet sich noch in einer frühen Entwicklungsphase, daher können sich einzelne Geschichten und ihre Reihenfolge mit dem Wachstum des Settings ändern.',
+        'These numbers describe the intended complete collection. The Mirrored Realms is still in early development, so individual stories and their order may change as the setting grows.': 'Diese Zahlen beschreiben die geplante vollständige Sammlung. Die Spiegelreiche befinden sich noch in einer frühen Entwicklungsphase, daher können sich einzelne Geschichten und ihre Reihenfolge mit dem Wachstum des Settings ändern.',
         'Beyond adventures': 'Mehr als Abenteuer',
         'The vault': 'Das Archiv',
         'keeps growing.': 'wächst weiter.',
@@ -338,7 +341,7 @@
         'Open the archive': 'Das Archiv öffnen',
         'Enter through': 'Betritt es durch',
         'Obsidian.': 'Obsidian.',
-        'MirrorGate does not expect to be read from beginning to end. It expects curiosity. Open the repository as an Obsidian vault, find the welcome record, and follow whichever name first feels familiar.': 'MirrorGate erwartet nicht, von Anfang bis Ende gelesen zu werden. Es erwartet Neugier. Öffne das Repository als Obsidian-Vault, finde die Willkommensaufzeichnung und folge dem ersten Namen, der dir vertraut erscheint.',
+        'The Mirrored Realms does not expect to be read from beginning to end. It expects curiosity. Open the repository as an Obsidian vault, find the welcome record, and follow whichever name first feels familiar.': 'Die Spiegelreiche erwarten nicht, von Anfang bis Ende gelesen zu werden. Sie erwarten Neugier. Öffne das Repository als Obsidian-Vault, finde die Willkommensaufzeichnung und folge dem ersten Namen, der dir vertraut erscheint.',
         'Open source / Explore freely': 'Open Source / Frei erkunden',
         'The door was never locked.': 'Die Tür war nie verschlossen.',
         'Take what your table needs, change what the records got wrong, and follow the wiki-links until the vault begins answering questions you never asked.': 'Nimm, was deine Spielrunde braucht, ändere, was die Aufzeichnungen falsch festgehalten haben, und folge den Wiki-Links, bis das Archiv Fragen beantwortet, die du nie gestellt hast.',
@@ -355,10 +358,15 @@
         'The realm is': 'Das Reich ist',
         'unfinished.': 'unvollendet.',
         'That may be the first thing inside it that tells the truth. Read the records, borrow what your table needs, and leave behind a version of the Mirrored Realms that did not exist before you entered.': 'Das könnte das Erste darin sein, das die Wahrheit sagt. Lies die Aufzeichnungen, nimm, was deine Spielrunde braucht, und hinterlasse eine Version der Spiegelreiche, die vor deinem Eintritt nicht existierte.',
-        'Open MirrorGate on GitHub ↗': 'MirrorGate auf GitHub öffnen ↗',
-        'MIRRORGATE / PROJECT 04': 'MIRRORGATE / PROJEKT 04',
-        'MirrorGate CSS Logo': 'MirrorGate-CSS-Logo',
-        'MirrorGate logo: a luminous mirrored doorway': 'MirrorGate-Logo: ein leuchtendes Spiegeltor'
+        'Open The Mirrored Realms on GitHub ↗': 'Die Spiegelreiche auf GitHub öffnen ↗',
+        'THE MIRRORED REALMS / PROJECT 04': 'DIE SPIEGELREICHE / PROJEKT 04',
+        'The Mirrored Realms CSS Logo': 'CSS-Logo der Spiegelreiche',
+        'The code-made logo for The Mirrored Realms, built entirely with HTML and CSS.': 'Das vollständig mit HTML und CSS erstellte Logo der Spiegelreiche.',
+        '← Back to The Mirrored Realms': '← Zurück zu den Spiegelreichen',
+        'This mark for The Mirrored Realms is assembled entirely from layered HTML elements, borders, gradients, shadows, and motion. The page itself is the working source.': 'Dieses Zeichen der Spiegelreiche besteht vollständig aus geschichteten HTML-Elementen, Rahmen, Verläufen, Schatten und Bewegung. Die Seite selbst ist der funktionierende Quellcode.',
+        'The Mirrored Realms logo: a luminous mirrored doorway': 'Logo der Spiegelreiche: ein leuchtendes Spiegeltor',
+        'AN OPEN-SOURCE SETTING': 'EIN OPEN-SOURCE-SETTING',
+        'THE MIRRORED REALMS / CSS MARK': 'DIE SPIEGELREICHE / CSS-ZEICHEN'
     };
 
     const lunaecho = {
@@ -782,7 +790,7 @@
         'A planned modular Discord platform for moderation, tickets, music, progression, temporary voice, and automation, with self-hosted and managed paths.': 'Eine geplante modulare Discord-Plattform für Moderation, Tickets, Musik, Fortschritt, temporäre Sprachkanäle und Automatisierung mit selbst gehosteten und verwalteten Optionen.',
         'A modular, open-source Discord community platform with Self-Hosted, free Cloud, and managed Custom deployment paths.': 'Eine modulare Open-Source-Plattform für Discord-Communitys mit Self-Hosted, kostenlosem Cloud-Dienst und verwaltetem Custom-Betrieb.',
         'A tiny utility from my own streaming setup that posts a Discord notification when a stream goes live, now public for anyone who needs the same thing.': 'Ein kleines Tool aus meinem eigenen Streaming-Setup, das beim Start eines Streams eine Discord-Benachrichtigung sendet und nun für alle mit demselben Bedarf öffentlich ist.',
-        'An open-source D&D 5.5e setting disguised as an Obsidian vault, where broken time, royal lies, and watchful reflections all lead somewhere deeper.': 'Ein Open-Source-Setting für D&D 5.5e in Gestalt eines Obsidian-Vaults, in dem gebrochene Zeit, königliche Lügen und wachsame Spiegelbilder immer tiefer führen.',
+        'The Mirrored Realms is an open-source D&D 5.5e setting disguised as an Obsidian vault, where broken time, royal lies, and watchful reflections all lead somewhere deeper.': 'Die Spiegelreiche sind ein Open-Source-Setting für D&D 5.5e in Gestalt eines Obsidian-Vaults, in dem gebrochene Zeit, königliche Lügen und wachsame Spiegelbilder immer tiefer führen.',
         'BRING A QUESTION.': 'BRING EINE FRAGE MIT.',
         'OR A STRANGE IDEA.': 'ODER EINE SELTSAME IDEE.',
         'Project feedback, Linux setup questions, campaign ideas, or a simple hello are all welcome.': 'Projektfeedback, Fragen zu Linux-Setups, Kampagnenideen oder ein einfaches Hallo sind jederzeit willkommen.',
@@ -843,17 +851,14 @@
         'the first layer.': 'die erste Schicht.',
         'The realm notices': 'Das Reich bemerkt,',
         'when you enter.': 'wenn du eintrittst.',
-        'The code-made MirrorGate logo, built entirely with HTML and CSS.': 'Das vollständig mit HTML und CSS erstellte MirrorGate-Logo.',
-        '← Back to MirrorGate': '← Zurück zu MirrorGate',
         'HTML / CSS / No image asset': 'HTML / CSS / Keine Bilddatei',
         'A door made': 'Eine Tür, gebaut',
         'from code.': 'aus Code.',
-        'This MirrorGate mark is assembled entirely from layered HTML elements, borders, gradients, shadows, and motion. The page itself is the working source.': 'Dieses MirrorGate-Zeichen besteht vollständig aus geschichteten HTML-Elementen, Rahmen, Verläufen, Schatten und Bewegung. Die Seite selbst ist der funktionierende Quellcode.',
         'Return to the archive': 'Zurück zum Archiv',
         'Rendered by the browser': 'Vom Browser gerendert',
         'Responsive at every size': 'Responsiv in jeder Größe',
         'Hover to wake the mirror': 'Fahre darüber, um den Spiegel zu wecken',
-        'MIRRORGATE / CSS MARK': 'MIRRORGATE / CSS-ZEICHEN'
+        'THE MIRRORED REALMS / CSS MARK': 'DIE SPIEGELREICHE / CSS-ZEICHEN'
     };
 
     const lunaechoV01 = {
@@ -1112,8 +1117,8 @@
         '/LunaEcho': 'lunaecho.html',
         '/LunaEcho/Privacy': 'lunaecho-privacy.html',
         '/LunaEcho/Terms': 'lunaecho-terms.html',
-        '/MirrorGate': 'mirrorgate.html',
-        '/MirrorGate/Logo': 'mirrorgate-logo-code.html',
+        '/Mirrored_Realms': 'mirrorgate.html',
+        '/Mirrored_Realms/Logo': 'mirrorgate-logo-code.html',
         '/Voidline': 'voidline.html'
     };
     const fileName = cleanRoutePages[cleanPath] || window.location.pathname.split('/').pop() || 'index.html';

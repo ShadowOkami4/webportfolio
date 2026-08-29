@@ -12,9 +12,13 @@ const ROUTE_ALIASES = new Map([
     ['/LunaEcho', 'pages/lunaecho.html'],
     ['/LunaEcho/Privacy', 'pages/lunaecho-privacy.html'],
     ['/LunaEcho/Terms', 'pages/lunaecho-terms.html'],
-    ['/MirrorGate', 'pages/mirrorgate.html'],
-    ['/MirrorGate/Logo', 'pages/mirrorgate-logo-code.html'],
+    ['/Mirrored_Realms', 'pages/mirrorgate.html'],
+    ['/Mirrored_Realms/Logo', 'pages/mirrorgate-logo-code.html'],
     ['/Voidline', 'pages/voidline.html']
+]);
+const ROUTE_REDIRECTS = new Map([
+    ['/MirrorGate', '/Mirrored_Realms'],
+    ['/MirrorGate/Logo', '/Mirrored_Realms/Logo']
 ]);
 
 if (!Number.isInteger(PORT) || PORT < 1 || PORT > 65535) {
@@ -139,6 +143,15 @@ async function handleRequest(req, res) {
     }
 
     try {
+        const normalizedPath = requestUrl.pathname.length > 1
+            ? requestUrl.pathname.replace(/\/+$/, '')
+            : requestUrl.pathname;
+        const redirectTarget = ROUTE_REDIRECTS.get(normalizedPath);
+        if (redirectTarget) {
+            sendText(req, res, 308, 'Permanent Redirect', { Location: redirectTarget });
+            return;
+        }
+
         const file = await findPublicFile(requestUrl.pathname);
         if (file.status !== 200) {
             const message = file.status === 403 ? 'Forbidden' : file.status === 400 ? 'Bad Request' : 'Not Found';
