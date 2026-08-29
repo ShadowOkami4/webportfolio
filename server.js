@@ -8,6 +8,7 @@ const ROOT = __dirname;
 const REAL_ROOT = fs.realpathSync(ROOT);
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = Number(process.env.PORT || 8080);
+const NOT_FOUND_PAGE = path.join(ROOT, '404.html');
 const ROUTE_ALIASES = new Map([
     ['/LunaEcho', 'pages/lunaecho.html'],
     ['/LunaEcho/Privacy', 'pages/lunaecho-privacy.html'],
@@ -126,6 +127,21 @@ function sendText(req, res, status, message, extraHeaders = {}) {
     res.end(req.method === 'HEAD' ? undefined : body);
 }
 
+async function sendNotFoundPage(req, res) {
+    try {
+        const body = await fs.promises.readFile(NOT_FOUND_PAGE);
+        res.writeHead(404, {
+            ...SECURITY_HEADERS,
+            'Cache-Control': 'no-store',
+            'Content-Length': body.length,
+            'Content-Type': 'text/html; charset=utf-8'
+        });
+        res.end(req.method === 'HEAD' ? undefined : body);
+    } catch {
+        sendText(req, res, 404, 'Not Found');
+    }
+}
+
 async function handleRequest(req, res) {
     if (req.method !== 'GET' && req.method !== 'HEAD') {
         sendText(req, res, 405, 'Method Not Allowed', { Allow: 'GET, HEAD' });
@@ -152,6 +168,10 @@ async function handleRequest(req, res) {
 
         const file = await findPublicFile(requestUrl.pathname);
         if (file.status !== 200) {
+            if (file.status === 404) {
+                await sendNotFoundPage(req, res);
+                return;
+            }
             const message = file.status === 403 ? 'Forbidden' : file.status === 400 ? 'Bad Request' : 'Not Found';
             sendText(req, res, file.status, message);
             return;

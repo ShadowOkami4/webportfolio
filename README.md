@@ -20,6 +20,8 @@ The local and production servers expose the same clean public routes:
 - `/LunaEcho/Privacy`
 - `/Mirrored_Realms`
 
+Unknown paths return a bilingual custom 404 page while preserving the correct HTTP `404` status.
+
 To use a different local port:
 
 ```powershell

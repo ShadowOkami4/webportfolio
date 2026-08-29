@@ -1101,7 +1101,32 @@
         'if LunaEcho Custom launches, a disclosed payment provider may process billing details. LunaEcho will not store full payment card numbers.': 'wenn LunaEcho Custom startet, kann ein offengelegter Zahlungsanbieter Abrechnungsdaten verarbeiten. LunaEcho speichert keine vollständigen Zahlungskartennummern.'
     };
 
+    const notFound = {
+        'Page Not Found | Okami': 'Seite nicht gefunden | Okami',
+        'This path does not lead anywhere, but the Okami projects are still close by.': 'Dieser Pfad führt nirgendwohin, aber die Okami-Projekte sind weiterhin ganz in der Nähe.',
+        'LOST SIGNAL': 'SIGNAL VERLOREN',
+        'Home': 'Startseite',
+        'Projects': 'Projekte',
+        'ERROR / 404': 'FEHLER / 404',
+        'This path': 'Dieser Pfad',
+        'fades here.': 'verblasst hier.',
+        'The page may have moved, changed its name, or never existed. Nothing is broken on your side. Choose a known path and we will get you back.': 'Die Seite wurde möglicherweise verschoben, umbenannt oder hat nie existiert. Auf deiner Seite ist nichts kaputt. Wähle einen bekannten Pfad und wir bringen dich zurück.',
+        'Return home': 'Zur Startseite',
+        'Explore the projects': 'Projekte entdecken',
+        'A broken portal displaying error 404': 'Ein zerbrochenes Portal mit dem Fehler 404',
+        'NO SIGNAL': 'KEIN SIGNAL',
+        'KNOWN PATHS': 'BEKANNTE PFADE',
+        'Pick another door.': 'Wähle eine andere Tür.',
+        'A connected Hyprland desktop experience.': 'Ein verbundenes Desktop-Erlebnis für Hyprland.',
+        'A modular open-source Discord platform.': 'Eine modulare Open-Source-Plattform für Discord.',
+        'An open-source D&D 5.5e world setting.': 'Ein Open-Source-Weltsetting für D&D 5.5e.',
+        'Open project →': 'Projekt öffnen →',
+        'THE SIGNAL ENDS / THE PROJECTS CONTINUE': 'DAS SIGNAL ENDET / DIE PROJEKTE GEHEN WEITER',
+        'Return home ↑': 'Zur Startseite ↑'
+    };
+
     const pageTranslations = {
+        '404.html': notFound,
         'index.html': home,
         'voidline.html': voidline,
         'mirrorgate.html': mirrorgate,
@@ -1119,7 +1144,9 @@
         '/Mirrored_Realms': 'mirrorgate.html',
         '/Voidline': 'voidline.html'
     };
-    const fileName = cleanRoutePages[cleanPath] || window.location.pathname.split('/').pop() || 'index.html';
+    const fileName = document.documentElement.dataset.page === '404'
+        ? '404.html'
+        : cleanRoutePages[cleanPath] || window.location.pathname.split('/').pop() || 'index.html';
     const translations = { ...common, ...(pageTranslations[fileName] || {}), ...redesign };
     const originalText = new WeakMap();
     const originalAttributes = new WeakMap();
