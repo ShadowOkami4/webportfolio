@@ -16,6 +16,7 @@
         'See my other projects': 'Meine anderen Projekte',
         'Back to top ↑': 'Nach oben ↑',
         'Support me on Ko-fi': 'Unterstütze mich auf Ko-fi',
+        'Site content unless credited otherwise. Project code follows its repository license.': 'Website-Inhalte, sofern nicht anders gekennzeichnet. Projektcode folgt der Lizenz des jeweiligen Repositories.',
         'Copy': 'Kopieren',
         'Copied': 'Kopiert',
         'Select text': 'Text markieren',
