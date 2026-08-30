@@ -15,6 +15,7 @@
         '← Back to my projects': '← Zurück zu meinen Projekten',
         'See my other projects': 'Meine anderen Projekte',
         'Back to top ↑': 'Nach oben ↑',
+        'Support me on Ko-fi': 'Unterstütze mich auf Ko-fi',
         'Copy': 'Kopieren',
         'Copied': 'Kopiert',
         'Select text': 'Text markieren',
@@ -120,13 +121,7 @@
         'LINUX / HYPRLAND DESKTOP SHELL': 'LINUX / HYPRLAND-DESKTOPSHELL',
         'An open-source desktop shell and connected experience around Hyprland, with Quickshell surfaces, native Rust tools, and a public development release to explore.': 'Eine Open-Source-Desktopshell und zusammenhängende Erfahrung rund um Hyprland, mit Quickshell-Oberflächen, nativen Rust-Werkzeugen und einer öffentlichen Entwicklungsversion zum Ausprobieren.',
         'Community space': 'Community-Treffpunkt',
-        'Join the server for project updates, conversation, and feedback.': 'Tritt dem Server bei, um Projektneuigkeiten zu erhalten, dich auszutauschen und Feedback zu geben.',
-        'Optional support': 'Freiwillige Unterstützung',
-        'Like what': 'Gefällt dir, was',
-        'I am building?': 'ich entwickle?',
-        'Everything here begins as a personal project. If you enjoy following the work and want to help with hosting, tools, or future experiments, Ko-fi is available. Support is always optional.': 'Alles hier beginnt als persönliches Projekt. Wenn du die Entwicklung gerne verfolgst und bei Hosting, Werkzeugen oder zukünftigen Experimenten helfen möchtest, gibt es Ko-fi. Unterstützung ist immer freiwillig.',
-        'Open Ko-fi in a new tab ↗': 'Ko-fi in einem neuen Tab öffnen ↗',
-        'Support ShadowOkami on Ko-fi': 'ShadowOkami auf Ko-fi unterstützen'
+        'Join the server for project updates, conversation, and feedback.': 'Tritt dem Server bei, um Projektneuigkeiten zu erhalten, dich auszutauschen und Feedback zu geben.'
     };
 
     const voidline = {
@@ -804,9 +799,6 @@
         'Gaming and relaxed streams, separate from the development work.': 'Gaming und entspannte Streams, getrennt von der Entwicklungsarbeit.',
         'Community and updates': 'Community und Updates',
         'Follow project updates, share feedback, or join the conversation.': 'Verfolge Projektupdates, teile Feedback oder komm ins Gespräch.',
-        'Keep the': 'Halte die',
-        'experiments running.': 'Experimente am Laufen.',
-        'These projects remain personal and support is never expected. If you enjoy following the work, Ko-fi can help with hosting, tools, and whatever idea comes next.': 'Diese Projekte bleiben persönlich und Unterstützung wird niemals erwartet. Wenn du die Arbeit gerne verfolgst, kann Ko-fi bei Hosting, Tools und der nächsten Idee helfen.',
 
         'Hyprland manages the windows. Voidline is building the shell around them: one connected place for the controls, panels, settings, and system moments that make a desktop feel complete.': 'Hyprland verwaltet die Fenster. Voidline entwickelt die Shell darum herum: einen verbundenen Ort für Bedienelemente, Panels, Einstellungen und Systemmomente, die ein Desktop-Erlebnis vollständig machen.',
         'The window manager stays.': 'Der Window-Manager bleibt.',

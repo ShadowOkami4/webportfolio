@@ -51,7 +51,7 @@ The script copies only public static files to `/var/www/webportfolio`, obtains o
 
 - There is no upload endpoint, password endpoint, API server, or writable public directory.
 - The public web root contains only the homepage, project pages, and browser assets.
-- External embeds are limited to the privacy-enhanced YouTube video on the Voidline page and the Ko-fi support widget, both explicitly allowed by the CSP.
+- The only external embed is the privacy-enhanced YouTube video on the Voidline page, explicitly allowed by the CSP. Ko-fi is linked without loading a third-party widget.
 - nginx accepts only `GET` and `HEAD`, uses TLS 1.2 or newer, and sends CSP, HSTS, framing, MIME-sniffing, referrer, permissions, and cross-origin headers.
 - The local Node server is for previewing only; nginx is the production server.
 
