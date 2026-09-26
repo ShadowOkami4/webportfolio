@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "check": "node --check server.js && node --check assets/js/head.js && node --check assets/js/translations.js && node --check assets/js/script.js",
+    "check": "node --check server.js && node --check assets/js/head.js && node --check assets/js/translations.js && node --check assets/js/script.js && node --check assets/js/motion.js",
     "build:tokens": "tsx tools/build-tokens.mjs",
     "build:fonts": "node tools/build-fonts.mjs",
     "build:shapes": "node tools/build-shapes.mjs",
