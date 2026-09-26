@@ -1,0 +1,277 @@
+/* Okami – Material 3 Expressive motion layer.
+   Loaded after the page styles. Everything here is decoration on top of a
+   page that already works without it; prefers-reduced-motion turns it off. */
+
+/* ─── Page transitions: shared-axis fade between pages ───────────────────── */
+
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: page-out 180ms var(--effects) both; }
+::view-transition-new(root) { animation: page-in var(--spring-default-duration) var(--spring-default) both; }
+@keyframes page-out { to { opacity: 0; transform: translateY(-18px); } }
+@keyframes page-in { from { opacity: 0; transform: translateY(36px); } }
+
+/* ─── Ripple: the M3 state layer spreading from the touch point ──────────── */
+
+.has-ripple { overflow: hidden; isolation: isolate; }
+.ripple {
+    position: absolute;
+    top: var(--ripple-y);
+    left: var(--ripple-x);
+    z-index: -1;
+    width: var(--ripple-size);
+    height: var(--ripple-size);
+    margin: calc(var(--ripple-size) / -2) 0 0 calc(var(--ripple-size) / -2);
+    border-radius: 50%;
+    pointer-events: none;
+    background: currentColor;
+    opacity: .14;
+    animation: ripple-grow 520ms var(--effects) forwards;
+    transition: opacity 320ms var(--effects);
+}
+.ripple.is-released { opacity: 0; }
+@keyframes ripple-grow { from { transform: scale(0); } }
+
+/* ─── Button groups: the pressed button widens, M3 Expressive style ──────── */
+
+.button,
+.round-link,
+.button-ghost {
+    transition:
+        border-radius var(--spring-fast-duration) var(--spring-fast),
+        padding var(--spring-fast-duration) var(--spring-fast),
+        transform var(--spring-fast-duration) var(--spring-fast),
+        background var(--effects-duration) var(--effects),
+        color var(--effects-duration) var(--effects);
+}
+:is(.hero-actions, .detail-actions) > :is(.button, .round-link, .button-ghost):active { padding-inline: 38px; }
+.language-option {
+    transition:
+        color var(--effects-duration) var(--effects),
+        background var(--effects-duration) var(--effects),
+        padding var(--spring-fast-duration) var(--spring-fast),
+        border-radius var(--spring-fast-duration) var(--spring-fast);
+}
+.language-option:active { padding-inline: 18px; border-radius: var(--shape-sm); }
+
+/* Cards give a little under the finger. */
+.contact-channel,
+.contact-primary {
+    transition:
+        border-radius var(--spring-default-duration) var(--spring-default),
+        background var(--effects-duration) var(--effects),
+        scale var(--spring-fast-duration) var(--spring-fast);
+}
+.contact-channel:active,
+.contact-primary:active { scale: .975; }
+
+/* ─── Navigation: one indicator that springs between sections ────────────── */
+
+.site-nav { position: relative; isolation: isolate; }
+.nav-indicator {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    width: var(--indicator-width, 0);
+    height: 48px;
+    border-radius: var(--shape-full);
+    pointer-events: none;
+    background: var(--md-sys-color-secondary-container);
+    opacity: 0;
+    translate: var(--indicator-x, 0) -50%;
+    transition:
+        translate var(--spring-default-duration) var(--spring-default),
+        width var(--spring-default-duration) var(--spring-default),
+        opacity var(--effects-duration) var(--effects);
+}
+.nav-indicator.is-shown { opacity: 1; }
+/* While travelling, the indicator stretches across both items first. */
+.nav-indicator.is-stretching { transition-duration: 160ms, 160ms, var(--effects-duration); transition-timing-function: var(--effects); }
+@media (min-width: 921px) {
+    .site-nav.has-indicator a.active { background: transparent; }
+}
+@media (max-width: 920px) {
+    .nav-indicator { display: none; }
+}
+
+/* ─── Wavy reading progress (the M3 Expressive wavy linear indicator) ────── */
+
+.site-header::after {
+    bottom: 0;
+    height: 6px;
+    opacity: .9;
+    transform: none;
+    clip-path: inset(0 calc((1 - var(--scroll-progress, 0)) * 100%) 0 0);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='6'%3E%3Cpath d='M0 3q5-4 10 0t10 0' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") 0 50% / 20px 6px repeat-x;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='6'%3E%3Cpath d='M0 3q5-4 10 0t10 0' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") 0 50% / 20px 6px repeat-x;
+    animation: wave-travel 700ms linear infinite paused;
+}
+/* The wave only travels while the page is moving. */
+.site-header.is-scrolling::after { animation-play-state: running; }
+@keyframes wave-travel { to { -webkit-mask-position: 20px 50%; mask-position: 20px 50%; } }
+
+/* ─── Staggered entrances ────────────────────────────────────────────────── */
+
+/* Items of a list arrive one after another once their section is revealed. */
+.js .reveal [data-stagger] > *,
+.js .reveal[data-stagger] > * { opacity: 0; }
+.js .is-visible [data-stagger] > *,
+.js .is-visible[data-stagger] > * {
+    opacity: 1;
+    animation: item-in var(--spring-slow-duration) var(--spring-slow) backwards;
+    animation-delay: calc(var(--i, 0) * 60ms + 90ms);
+}
+@keyframes item-in { from { opacity: 0; translate: 0 22px; scale: .96; } }
+
+/* Display type "inks in": Roboto Flex runs up its weight axis and settles. */
+.js .is-visible:is(.display-copy, .detail-cta h2),
+.js .is-visible :is(.section-heading h2, .contact-title, .detail-section-head h2, .voidline-section-intro h2, .project-info h3) {
+    animation: ink-in 1100ms var(--spring-slow) backwards;
+}
+@keyframes ink-in { from { font-weight: 260; } }
+
+/* Headlines lean in on hover: a bolder, slightly wider cut. */
+.project-info h3 { transition: font-weight var(--spring-default-duration) var(--spring-default), font-stretch var(--spring-default-duration) var(--spring-default); }
+.project:hover .project-info h3 { font-stretch: 50%; font-weight: 880; }
+
+/* ─── Homepage hero choreography ─────────────────────────────────────────── */
+
+.hero-wordmark { animation: wordmark-in 1400ms var(--spring-slow) 100ms backwards; }
+@keyframes wordmark-in { from { opacity: 0; letter-spacing: .22em; } }
+
+.hero-shape-main { animation: spin 80s linear infinite, shape-pop 1000ms var(--spring-slow) 120ms backwards; }
+.hero-shape-ring { animation: spin 120s linear infinite reverse, shape-pop 1200ms var(--spring-slow) 40ms backwards; }
+.hero-shape-clover { animation: spin 18s linear infinite, shape-pop 800ms var(--spring-fast) 480ms backwards; }
+.hero-shape-gem { animation: spin 24s linear infinite reverse, shape-pop 800ms var(--spring-fast) 620ms backwards; }
+.hero-mark img { animation: shape-pop 900ms var(--spring-default) 300ms backwards; }
+@keyframes shape-pop { from { scale: 0; rotate: -90deg; opacity: 0; } }
+
+/* The status dot is an M3 Expressive loading indicator: a shape that keeps
+   morphing and turning, saying "work in progress" without words. */
+.status-chip > span {
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    box-shadow: none;
+    background: #73e49a;
+    clip-path: var(--shape-cookie9);
+    animation: loader-morph 5.2s infinite, spin 2.6s linear infinite;
+}
+@keyframes loader-morph {
+    0% { clip-path: var(--shape-cookie9); animation-timing-function: var(--spring-default); }
+    16% { clip-path: var(--shape-cookie9); animation-timing-function: var(--spring-default); }
+    20% { clip-path: var(--shape-clover); animation-timing-function: var(--spring-default); }
+    36% { clip-path: var(--shape-clover); animation-timing-function: var(--spring-default); }
+    40% { clip-path: var(--shape-sunny); animation-timing-function: var(--spring-default); }
+    56% { clip-path: var(--shape-sunny); animation-timing-function: var(--spring-default); }
+    60% { clip-path: var(--shape-gem); animation-timing-function: var(--spring-default); }
+    76% { clip-path: var(--shape-gem); animation-timing-function: var(--spring-default); }
+    80% { clip-path: var(--shape-cookie4); animation-timing-function: var(--spring-default); }
+    96% { clip-path: var(--shape-cookie4); animation-timing-function: var(--spring-default); }
+    100% { clip-path: var(--shape-cookie9); }
+}
+
+/* Process numbers and channel icons morph as their cards arrive. */
+.js .is-visible .process-steps li > span { animation: shape-settle 900ms var(--spring-slow) backwards; animation-delay: calc(var(--i, 0) * 60ms + 200ms); }
+@keyframes shape-settle { from { clip-path: var(--shape-circle); rotate: -120deg; } }
+
+/* ─── Scroll-driven motion (where the browser supports it) ───────────────── */
+
+@supports (animation-timeline: scroll()) {
+    /* The outlined name drifts sideways as the hero scrolls away. */
+    .hero-wordmark {
+        animation: wordmark-in 1400ms var(--spring-slow) 100ms backwards, wordmark-drift linear both;
+        animation-timeline: auto, scroll(root);
+        animation-range: normal, 0 100vh;
+    }
+    @keyframes wordmark-drift { to { translate: -14% 0; } }
+
+    /* The hero shapes turn and shrink a little while leaving. */
+    .hero-mark {
+        animation: hero-leave linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 90vh;
+    }
+    @keyframes hero-leave { to { scale: .82; rotate: 18deg; } }
+
+    /* Project screenshots move slightly slower than the page. */
+    .project-media > img:not(.luna-media > img) {
+        scale: 1.12;
+        animation: media-parallax linear both;
+        animation-timeline: view();
+    }
+    @keyframes media-parallax { from { translate: 0 -5%; } to { translate: 0 5%; } }
+
+    /* Section numbers roll into place as they pass through the view. */
+    .section-label span {
+        animation: label-roll linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+    @keyframes label-roll { from { clip-path: var(--shape-sunny); scale: .6; } }
+
+    /* The footer shape grows as the page reaches its end. */
+    .site-footer::before {
+        animation: spin 90s linear infinite, footer-bloom linear both;
+        animation-timeline: auto, view();
+        animation-range: normal, entry 0% entry 100%;
+    }
+    @keyframes footer-bloom { from { scale: .4; opacity: 0; } }
+}
+
+/* ─── The Mirrored Realms: a d20 you can actually roll ───────────────────── */
+
+.realm-d20[role="button"] { cursor: pointer; transition: scale var(--spring-fast-duration) var(--spring-fast); -webkit-tap-highlight-color: transparent; }
+.realm-d20[role="button"]:hover { scale: 1.08; }
+.realm-d20[role="button"]:active { scale: .94; }
+.realm-d20[role="button"]:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; border-radius: 12px; }
+.realm-d20 text { transition: fill var(--effects-duration) var(--effects); }
+.realm-d20.is-rolling { animation-play-state: paused; }
+.realm-d20.is-rolling .d20-roll { animation: d20-tumble 900ms var(--spring-default) both; }
+.realm-d20 .d20-roll { transform-box: fill-box; transform-origin: 50% 50%; }
+@keyframes d20-tumble {
+    0% { transform: rotate(0) scale(1); }
+    30% { transform: rotate(-260deg) scale(.78); }
+    70% { transform: rotate(-520deg) scale(1.08); }
+    100% { transform: rotate(-720deg) scale(1); }
+}
+/* Natural 20: the die flares gold and a ring of light spreads out. */
+.realm-d20.is-crit { filter: drop-shadow(0 0 26px var(--gold)); }
+.realm-d20.is-crit text { fill: #fff3cf; }
+.realm-d20.is-crit .d20-face { fill: color-mix(in srgb, var(--gold) 42%, #120f0a); }
+/* Natural 1: it shakes and burns ember-red. */
+.realm-d20.is-fumble text { fill: var(--ember); }
+.realm-d20.is-fumble .d20-edge { stroke: var(--ember); }
+.realm-d20.is-fumble .d20-roll { animation: d20-shake 420ms var(--effects) both; }
+@keyframes d20-shake { 20%, 60% { transform: translateX(-4px) rotate(-4deg); } 40%, 80% { transform: translateX(4px) rotate(4deg); } }
+.d20-burst {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 0 -60px;
+    pointer-events: none;
+    background: color-mix(in srgb, var(--gold) 55%, transparent);
+    clip-path: var(--shape-burst);
+    animation: d20-burst 900ms var(--spring-slow) forwards;
+}
+@keyframes d20-burst { from { opacity: .9; scale: .2; rotate: 0deg; } to { opacity: 0; scale: 3.2; rotate: 60deg; } }
+.mirrorgate-visual.is-crit .mirror-surface { box-shadow: inset 0 0 120px color-mix(in srgb, var(--gold) 45%, transparent); transition: box-shadow 600ms var(--effects); }
+.d20-result { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+    @view-transition { navigation: none; }
+    .hero-wordmark,
+    .hero-mark,
+    .project-media > img,
+    .section-label span,
+    .site-footer::before,
+    .status-chip > span,
+    .js .is-visible [data-stagger] > *,
+    .js .is-visible[data-stagger] > * { animation: none !important; }
+    .js .reveal [data-stagger] > *,
+    .js .reveal[data-stagger] > * { opacity: 1; }
+    .ripple,
+    .d20-burst { display: none; }
+}

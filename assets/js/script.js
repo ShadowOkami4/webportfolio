@@ -91,10 +91,10 @@
     const reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('is-visible');
+            // Elements entering together (a row of cards) arrive one after another.
+            entries.filter((entry) => entry.isIntersecting).forEach((entry, index) => {
                 observer.unobserve(entry.target);
+                window.setTimeout(() => entry.target.classList.add('is-visible'), Math.min(index, 6) * 80);
             });
         }, { rootMargin: '0px 0px -7% 0px', threshold: 0.08 });
 

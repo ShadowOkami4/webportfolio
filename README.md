@@ -73,6 +73,7 @@ The site follows Material 3 Expressive. Each page loads a small stack of stylesh
 - `base.css` holds the shared foundation: fonts, shape and motion tokens, header, buttons, chips, footer, and the language switch.
 - `home.css` contains the homepage styles, and `projects.css` covers the project pages, legal documents, and the 404 page.
 - `realms.css` is the dark-grimoire layer used only on The Mirrored Realms.
+- `motion.css` loads last on every page and adds the M3 Expressive motion: page transitions, ripples, the wavy progress line, staggered entrances, scroll-driven effects and the rollable d20. `assets/js/motion.js` drives the parts that need script. Both are switched off by `prefers-reduced-motion`.
 
 Fonts (Roboto Flex, Cinzel, EB Garamond) are self-hosted in `assets/fonts/`, so the CSP can stay `self`-only.
 
