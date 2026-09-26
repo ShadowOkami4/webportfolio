@@ -1,0 +1,370 @@
+/* The Mirrored Realms – a dark grimoire.
+   Gold on aged black, teal for the mirror, Cinzel capitals and Garamond prose,
+   and the furniture of a D&D table: stat blocks, ability scores, dice. */
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("../fonts/cinzel-latin.woff2") format("woff2");
+    font-weight: 400 900;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "Cinzel";
+    src: url("../fonts/cinzel-latin-ext.woff2") format("woff2");
+    font-weight: 400 900;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../fonts/eb-garamond-latin.woff2") format("woff2");
+    font-weight: 400 800;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../fonts/eb-garamond-latin-ext.woff2") format("woff2");
+    font-weight: 400 800;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../fonts/eb-garamond-italic-latin.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400 800;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../fonts/eb-garamond-italic-latin-ext.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 400 800;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+1EF2-1EFF, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF;
+}
+
+.mirrorgate-page {
+    --serif: "EB Garamond", "Palatino Linotype", Georgia, serif;
+    --caps: "Cinzel", "Trajan Pro", "Palatino Linotype", serif;
+    --gold: var(--md-sys-color-primary);
+    --gold-soft: color-mix(in srgb, var(--md-sys-color-primary) 35%, transparent);
+    --teal: var(--md-sys-color-tertiary);
+    /* The red of a stat block's rules, darkened for the night. */
+    --ember: #c4533a;
+    --page: min(1180px, calc(100vw - 48px));
+    font-family: var(--serif);
+    font-size: 19px;
+}
+
+/* A faint arcane circle and warm lamplight behind the whole page. */
+body.mirrorgate-page::before {
+    background:
+        radial-gradient(48rem 34rem at 78% 4%, color-mix(in srgb, var(--gold) 12%, transparent), transparent 70%),
+        radial-gradient(40rem 34rem at 10% 60%, color-mix(in srgb, var(--teal) 7%, transparent), transparent 72%);
+}
+.mirrorgate-page .site-grid { opacity: .12; background-size: 96px 96px; mask-image: radial-gradient(circle at 55% 18%, #000, transparent 62%); }
+
+/* UI chrome stays in the site's sans; everything inside the book is serif. */
+.mirrorgate-page .site-header,
+.mirrorgate-page .site-footer { font-family: var(--font); }
+
+.mirrorgate-page h1,
+.mirrorgate-page h2,
+.mirrorgate-page h3 { font-family: var(--caps); font-stretch: normal; font-weight: 600; letter-spacing: .01em; text-transform: none; }
+
+/* Labels become engraved small capitals. */
+.mirrorgate-page .section-label,
+.mirrorgate-page .detail-badge,
+.mirrorgate-page .journey-status,
+.mirrorgate-page .ledger-status,
+.mirrorgate-page .artwork-note > span,
+.mirrorgate-page .detail-visual-label,
+.mirrorgate-page .mirror-quote cite,
+.mirrorgate-page .detail-stats span { font-family: var(--caps); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
+
+/* Chapters are numbered in Roman numerals (CSS counters keep the markup unchanged). */
+.mirrorgate-page main { counter-reset: chapter; }
+.mirrorgate-page .detail-section { counter-increment: chapter; }
+.mirrorgate-page .section-label span { width: 40px; height: 40px; color: #1d1405; background: var(--gold); clip-path: var(--shape-gem); font-size: 0; }
+.mirrorgate-page .section-label span::before { content: counter(chapter, upper-roman); font-family: var(--caps); font-size: .78rem; font-weight: 800; }
+
+.mirrorgate-page .button,
+.mirrorgate-page .button-ghost { font-family: var(--caps); font-size: .9rem; font-weight: 700; letter-spacing: .04em; }
+.mirrorgate-page .button { color: #1d1405; background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 100%, #fff 10%), color-mix(in srgb, var(--gold) 85%, #5a3d0a)); }
+.mirrorgate-page .button-ghost { color: var(--gold); background: transparent; box-shadow: inset 0 0 0 1px var(--gold-soft); }
+.mirrorgate-page .button-ghost:hover { background: color-mix(in srgb, var(--gold) 10%, transparent); }
+.mirrorgate-page .detail-tags span,
+.mirrorgate-page .vault-index span { border-color: var(--gold-soft); color: var(--md-sys-color-on-surface-variant); font-family: var(--caps); font-size: .74rem; font-weight: 600; letter-spacing: .06em; }
+.mirrorgate-page .detail-breadcrumb { font-family: var(--font); }
+
+/* ─── Hero: the threshold ────────────────────────────────────────────────── */
+
+.mirrorgate-page .detail-hero { padding: 58px 0 110px; grid-template-columns: 1fr; justify-items: center; gap: 48px; }
+.mirrorgate-page .detail-copy { display: flex; width: min(100%, 950px); align-items: center; flex-direction: column; text-align: center; }
+/* A slowly turning seal of runic ticks behind the title. */
+.mirrorgate-page .detail-hero::after {
+    position: absolute;
+    top: 6%;
+    right: 50%;
+    width: min(46vw, 620px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    content: "";
+    background:
+        repeating-conic-gradient(from 9deg, color-mix(in srgb, var(--teal) 45%, transparent) 0deg 1.2deg, transparent 1.2deg 40deg),
+        conic-gradient(from 24deg, transparent 0 15%, color-mix(in srgb, var(--gold) 55%, transparent) 18%, transparent 22% 48%, color-mix(in srgb, var(--teal) 40%, transparent) 52%, transparent 57% 82%, color-mix(in srgb, var(--gold) 38%, transparent) 86%, transparent 91%);
+    opacity: .55;
+    pointer-events: none;
+    -webkit-mask: radial-gradient(circle, transparent 0 55%, #000 55.4% 56%, transparent 56.5% 68%, #000 68.5% 69.2%, transparent 69.7% 79%, #000 79.4% 80%, transparent 80.5%);
+    mask: radial-gradient(circle, transparent 0 55%, #000 55.4% 56%, transparent 56.5% 68%, #000 68.5% 69.2%, transparent 69.7% 79%, #000 79.4% 80%, transparent 80.5%);
+    transform: translateX(50%);
+    animation: realm-seal 60s linear infinite;
+}
+@keyframes realm-seal { to { transform: translateX(50%) rotate(360deg); } }
+
+.mirrorgate-page .detail-title { display: grid; justify-items: center; margin: 18px 0 8px; font-size: clamp(4.4rem, 11vw, 9.6rem); font-weight: 600; line-height: .86; }
+.mirrorgate-page .mirrored-title-prefix { color: var(--gold); font-size: .42em; font-weight: 700; letter-spacing: .14em; }
+.mirrorgate-page .detail-title .outline { color: transparent; font-weight: 500; -webkit-text-stroke: 1.2px var(--teal); text-shadow: 0 0 40px color-mix(in srgb, var(--teal) 25%, transparent); }
+/* Flourish: rule – diamond – rule. */
+.realm-ornament {
+    display: block;
+    width: min(320px, 70%);
+    height: 20px;
+    margin: 6px auto 22px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 20'%3E%3Cg fill='none' stroke='%23e8c173' stroke-width='1.2'%3E%3Cpath d='M4 10h122M194 10h122' stroke-opacity='.6'/%3E%3Cpath d='M160 2l9 8-9 8-9-8z'/%3E%3Cpath d='M136 10l8-5v10zM184 10l-8-5v10z' fill='%23e8c173' fill-opacity='.7'/%3E%3Ccircle cx='128' cy='10' r='2' fill='%23e8c173'/%3E%3Ccircle cx='192' cy='10' r='2' fill='%23e8c173'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+}
+.mirrorgate-page .detail-lead { max-width: 760px; color: var(--ink-soft); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.55; }
+.mirrorgate-page .detail-actions { justify-content: center; }
+.mirrorgate-page .detail-tags { justify-content: center; }
+
+.mirrorgate-visual {
+    width: min(100%, 980px);
+    min-height: 660px;
+    margin: 0;
+    border-radius: 48% 48% var(--shape-xxl) var(--shape-xxl);
+    background: radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--teal) 14%, transparent), transparent 36%), linear-gradient(160deg, #13110c, #0b0d0d);
+    box-shadow: inset 0 0 0 1px var(--gold-soft), var(--shadow);
+}
+.mirrorgate-visual::before { display: none; }
+.mirror-portal { position: absolute; top: 40%; left: 50%; width: min(58%, 330px); aspect-ratio: .7; transform: translate(-50%, -50%); }
+.mirror-arch { position: absolute; inset: 0; border-radius: 50% 50% 24% 24%; }
+.mirror-arch-outer { border: 2px solid color-mix(in srgb, var(--gold) 80%, transparent); box-shadow: 0 0 0 16px color-mix(in srgb, var(--gold) 4%, transparent), 0 30px 80px rgb(0 0 0 / .4); }
+.mirror-arch-inner { inset: 14px; border: 1px solid color-mix(in srgb, var(--teal) 50%, transparent); }
+.mirror-surface { position: absolute; inset: 28px; overflow: hidden; border-radius: 50% 50% 24% 24%; background: radial-gradient(circle at 42% 38%, color-mix(in srgb, var(--teal) 40%, transparent), rgb(5 15 16 / .96) 62%); box-shadow: inset 0 0 75px color-mix(in srgb, var(--teal) 14%, transparent); }
+.mirror-surface::after { position: absolute; top: 5%; left: 50%; width: 20%; height: 80%; border-radius: 50%; content: ""; background: rgb(230 255 250 / .1); filter: blur(12px); transform: rotate(10deg); }
+.mirror-surface i { position: absolute; inset: 0; background: linear-gradient(115deg, transparent 36%, rgb(255 255 255 / .1) 49%, transparent 57%); animation: mirror-sheen 7s ease-in-out infinite; }
+.mirror-star { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 14px var(--teal); animation: blink 2.4s ease-in-out infinite alternate; }
+.mirror-star-one { top: 12%; left: 5%; }
+.mirror-star-two { top: 25%; right: 7%; animation-delay: -.7s; }
+.mirror-star-three { right: 12%; bottom: 18%; animation-delay: -1.3s; }
+.mirror-quote { position: absolute; right: 30px; bottom: 58px; left: 30px; margin: 0; color: var(--ink-soft); font-size: 1.2rem; font-style: italic; text-align: center; }
+.mirror-quote cite { display: block; margin-top: 10px; color: var(--muted); font-style: normal; }
+.mirrorgate-page .detail-visual-label { color: color-mix(in srgb, var(--gold) 60%, transparent); }
+@keyframes mirror-sheen {
+    0%, 24% { opacity: 0; transform: translateX(-90%); }
+    30% { opacity: 1; }
+    68% { opacity: 1; transform: translateX(90%); }
+    74%, 100% { opacity: 0; transform: translateX(90%); }
+}
+
+/* The d20 resting at the foot of the mirror. */
+.realm-d20 { width: 86px; height: 86px; overflow: visible; }
+.realm-d20 .d20-face { fill: color-mix(in srgb, var(--gold) 16%, #120f0a); }
+.realm-d20 .d20-edge { fill: none; stroke: var(--gold); stroke-width: 1.4; stroke-linejoin: round; }
+.realm-d20 text { fill: var(--gold); font-family: var(--caps); font-size: 17px; font-weight: 800; text-anchor: middle; }
+.mirrorgate-visual .realm-d20 {
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    filter: drop-shadow(0 0 18px color-mix(in srgb, var(--gold) 35%, transparent));
+    transform: translate(-50%, -50%);
+    animation: d20-hover 6s ease-in-out infinite;
+}
+@keyframes d20-hover { 50% { transform: translate(-50%, calc(-50% - 10px)) rotate(8deg); } }
+
+/* ─── Ability scores (project facts) ─────────────────────────────────────── */
+
+.mirrorgate-page .detail-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 0; background: transparent; box-shadow: none; }
+.mirrorgate-page .detail-stats > div {
+    position: relative;
+    display: grid;
+    min-height: 150px;
+    padding: 26px 20px 22px;
+    place-items: center;
+    border-radius: var(--shape-xl);
+    background: linear-gradient(180deg, var(--md-sys-color-surface-container-high), var(--md-sys-color-surface-container));
+    box-shadow: inset 0 0 0 1px var(--gold-soft);
+    text-align: center;
+}
+/* The small diamond that sits on top of a score box on a character sheet. */
+.mirrorgate-page .detail-stats > div::before { position: absolute; top: -7px; left: 50%; width: 14px; height: 14px; content: ""; background: var(--gold); transform: translateX(-50%) rotate(45deg); }
+.mirrorgate-page .detail-stats strong { color: var(--gold); font-family: var(--caps); font-size: 2.8rem; font-weight: 700; }
+.mirrorgate-page .detail-stats span { margin-top: 6px; color: var(--muted); }
+
+/* ─── Section heads with an illuminated initial ──────────────────────────── */
+
+.mirrorgate-page .detail-section-head h2 { font-size: clamp(2.5rem, 5vw, 4.6rem); font-weight: 600; line-height: 1.02; }
+.mirrorgate-page .detail-section-head > p { font-size: 1.12rem; line-height: 1.6; }
+#vault .detail-section-head > p::first-letter {
+    float: left;
+    margin: 6px 10px 0 0;
+    padding: 4px 10px 2px;
+    border-radius: var(--shape-sm);
+    color: #1d1405;
+    background: var(--gold);
+    font-family: var(--caps);
+    font-size: 3.2em;
+    font-weight: 700;
+    line-height: .82;
+}
+
+/* ─── Lore cards as stat blocks ──────────────────────────────────────────── */
+
+.lore-grid,
+.journey-grid,
+.ledger-grid { display: grid; gap: 16px; }
+.lore-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lore-card {
+    position: relative;
+    display: flex;
+    min-height: 360px;
+    padding: 30px 28px;
+    flex-direction: column;
+    border-radius: var(--shape-lg);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 6%, var(--md-sys-color-surface-container-high)), var(--md-sys-color-surface-container));
+    /* Gold bars top and bottom, like the frame of a printed stat block. */
+    box-shadow: inset 0 4px 0 color-mix(in srgb, var(--gold) 70%, #5a3d0a), inset 0 -4px 0 color-mix(in srgb, var(--gold) 70%, #5a3d0a);
+    transition: transform var(--spring-default-duration) var(--spring-default);
+}
+.lore-card:hover { transform: translateY(-4px) rotate(-.4deg); }
+.lore-card h3 { order: 1; margin: 0; padding-right: 54px; color: var(--gold); font-size: 1.9rem; line-height: 1.05; }
+.lore-card .lore-kicker { order: 2; display: block; margin: 4px 0 0; color: var(--ink-soft); font-family: var(--serif); font-size: 1rem; font-style: italic; font-weight: 500; letter-spacing: 0; text-transform: none; }
+/* The tapered red rule of a stat block. */
+.lore-card .lore-kicker::after { display: block; width: 100%; height: 5px; margin: 14px 0 16px; content: ""; background: var(--ember); clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.lore-card p:last-child { order: 3; margin: 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.55; }
+/* The Roman numeral becomes a wax seal. */
+.lore-index {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    color: #f6e3c8;
+    background: radial-gradient(circle at 35% 30%, #c4533a, #7a2415 70%);
+    clip-path: var(--shape-cookie9);
+    font-family: var(--caps);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.vault-index { margin-top: 18px; padding: 20px; justify-content: center; border-radius: var(--shape-xl); background: var(--md-sys-color-surface-container-low); }
+.vault-index span::before { width: 6px; height: 6px; margin-right: 10px; content: ""; background: var(--gold); transform: rotate(45deg); }
+
+/* ─── Journeys: one die per kind of adventure ────────────────────────────── */
+
+.journey-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.journey-card {
+    min-height: 380px;
+    padding: 34px 30px 30px;
+    border-radius: 50% 50% var(--shape-xl) var(--shape-xl) / 30% 30% var(--shape-xl) var(--shape-xl);
+    background: var(--md-sys-color-surface-container);
+    box-shadow: inset 0 0 0 1px var(--gold-soft);
+    text-align: center;
+}
+.journey-card > strong {
+    display: grid;
+    width: 128px;
+    height: 128px;
+    margin: 26px auto 8px;
+    place-items: center;
+    color: var(--gold);
+    background: center / contain no-repeat;
+    font-family: var(--caps);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.journey-d10 > strong { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e8c173' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M50 4 94 44 50 96 6 44Z' fill='%23e8c173' fill-opacity='.08'/%3E%3Cpath d='M50 4 32 52 50 62 68 52Z M6 44l26 8M94 44l-26 8M50 62v34' stroke-opacity='.55'/%3E%3C/g%3E%3C/svg%3E"); }
+.journey-d6 > strong { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e8c173' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M50 6 90 28v44L50 94 10 72V28Z' fill='%23e8c173' fill-opacity='.08'/%3E%3Cpath d='M10 28l40 22 40-22M50 50v44' stroke-opacity='.55'/%3E%3C/g%3E%3C/svg%3E"); }
+.journey-d4 > strong { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e8c173' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M50 6 94 86H6Z' fill='%23e8c173' fill-opacity='.08'/%3E%3Cpath d='M50 6v58M6 86l44-22 44 22' stroke-opacity='.55'/%3E%3C/g%3E%3C/svg%3E"); padding-top: 26px; }
+.journey-card h3 { margin: 10px 0 12px; color: var(--ink); font-size: 1.7rem; }
+.journey-card p:last-child { color: var(--ink-soft); font-size: 1.02rem; line-height: 1.55; }
+.journey-card-long { background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--teal) 12%, transparent), transparent 55%), var(--md-sys-color-surface-container); }
+.mirrorgate-page .plan-note { border-radius: var(--shape-lg); background: color-mix(in srgb, var(--gold) 7%, var(--md-sys-color-surface-container-low)); font-size: 1rem; }
+.mirrorgate-page .plan-note strong { color: var(--gold); font-family: var(--caps); font-size: .85rem; letter-spacing: .06em; }
+
+/* ─── Ledger: what the vault holds ───────────────────────────────────────── */
+
+.ledger-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ledger-card { min-height: 230px; padding: 28px; border-radius: var(--shape-xl); background: var(--md-sys-color-surface-container); box-shadow: inset 3px 0 0 var(--gold-soft); }
+.ledger-card h3 { margin: 22px 0 10px; font-size: 1.6rem; }
+.ledger-card p { margin: 0; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.55; }
+.ledger-status { display: inline-flex; padding: 5px 12px; border-radius: var(--shape-full); }
+.status-present { color: #a9e6de; background: rgb(75 155 146 / .18); }
+.status-progress { color: #f1d795; background: rgb(180 134 40 / .18); }
+.status-planned { color: #cfc6b3; background: rgb(180 170 150 / .1); }
+
+/* ─── Entering the vault: a quest log ────────────────────────────────────── */
+
+.vault-entry { display: grid; overflow: hidden; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); border-radius: var(--shape-xxl); background: var(--md-sys-color-surface-container); box-shadow: inset 0 0 0 1px var(--gold-soft); }
+.vault-entry-copy { padding: 36px; }
+.vault-entry-copy h3 { margin: 16px 0; color: var(--gold); font-size: 2.4rem; }
+.vault-entry-copy > p { color: var(--ink-soft); }
+.mirrorgate-page .code-box { background: #0c0b08; box-shadow: inset 0 0 0 1px var(--gold-soft); }
+.mirrorgate-page .code-box code { color: var(--gold); }
+.mirrorgate-page .copy-code { color: #1d1405; background: var(--gold); font-family: var(--font); }
+.vault-steps { margin: 0; padding: 8px 0; list-style: none; counter-reset: quest; background: var(--md-sys-color-surface-container-low); }
+.vault-steps li { position: relative; display: flex; min-height: 120px; padding: 22px 26px 22px 80px; align-items: start; counter-increment: quest; }
+.vault-steps li + li { border-top: 1px solid var(--line); }
+/* A checkbox-diamond like a quest objective. */
+.vault-steps li::before { position: absolute; top: 24px; left: 28px; display: grid; width: 32px; height: 32px; place-items: center; color: #1d1405; background: var(--gold); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); content: counter(quest, upper-roman); font-family: var(--caps); font-size: .78rem; font-weight: 800; }
+.vault-steps li > span { display: none; }
+.vault-steps strong { font-family: var(--caps); font-size: 1.1rem; font-weight: 700; }
+.vault-steps p { margin: 5px 0 0; color: var(--ink-soft); font-size: 1rem; }
+.vault-steps code { color: var(--gold); font-size: .85em; }
+.artwork-note { display: grid; margin-top: 16px; padding: 22px 26px; grid-template-columns: 150px 1fr; gap: 24px; border-radius: var(--shape-xl); background: var(--md-sys-color-surface-container-low); }
+.artwork-note > span { color: var(--gold); }
+.artwork-note p { margin: 0; color: var(--ink-soft); font-size: 1rem; font-style: italic; }
+
+/* ─── Closing invitation ─────────────────────────────────────────────────── */
+
+.mirrorgate-cta { text-align: center; background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--gold) 12%, transparent), transparent 55%), var(--md-sys-color-surface-container-high); box-shadow: inset 0 0 0 1px var(--gold-soft); }
+.mirrorgate-cta::after { display: none; }
+.mirrorgate-cta > p:not(.detail-badge) { margin-inline: auto; font-size: 1.1rem; }
+.mirrorgate-cta .detail-actions { justify-content: center; }
+.realm-d20-cta { width: 96px; height: 96px; margin: 0 auto 10px; animation: spin 40s linear infinite; }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 920px) {
+    .lore-grid,
+    .journey-grid,
+    .ledger-grid { grid-template-columns: 1fr; }
+    .lore-card,
+    .journey-card { min-height: 0; }
+    .mirrorgate-visual { min-height: 580px; }
+    .vault-entry { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+    .mirrorgate-page { font-size: 17px; }
+    .mirrorgate-page .detail-hero { padding: 36px 0 60px; gap: 34px; }
+    .mirrorgate-page .detail-hero::after { top: 70px; width: min(118vw, 460px); }
+    .mirrorgate-page .detail-title { font-size: clamp(3.2rem, 15vw, 4.6rem); }
+    .mirrorgate-page .detail-lead { font-size: 1.12rem; }
+    .mirrorgate-visual { min-height: 440px; border-radius: 38% 38% var(--shape-xl) var(--shape-xl); }
+    .mirror-portal { width: min(56%, 220px); top: 38%; }
+    .mirrorgate-visual .realm-d20 { top: 66%; width: 64px; height: 64px; }
+    .mirror-quote { right: 18px; bottom: 44px; left: 18px; font-size: 1rem; }
+    .mirrorgate-page .detail-stats { grid-template-columns: 1fr; }
+    .vault-entry-copy { padding: 26px 22px; }
+    .vault-steps li { padding-left: 72px; }
+    .artwork-note { grid-template-columns: 1fr; }
+}

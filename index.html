@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0b0810">
+    <meta name="theme-color" content="#100d15">
     <title>Okami | Personal Projects &amp; Experiments</title>
     <meta name="description" content="Okami is a hobby developer sharing personal Linux, Discord, automation, and tabletop projects built from curiosity and made public for everyone.">
     <meta name="author" content="ShadowOkami">
@@ -15,8 +15,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=1">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png?v=1">
     <link rel="icon" type="image/png" href="assets/images/okami-logo-v4.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=54">
-    <link rel="stylesheet" href="assets/css/language.css?v=5">
+    <link rel="preload" href="assets/fonts/roboto-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/tokens.css?v=1">
+    <link rel="stylesheet" href="assets/css/shapes.css?v=1">
+    <link rel="stylesheet" href="assets/css/base.css?v=1">
+    <link rel="stylesheet" href="assets/css/home.css?v=1">
     <script src="assets/js/head.js?v=2"></script>
 </head>
 <body class="home-page">
@@ -42,60 +45,53 @@
     </header>
 
     <main id="main">
-        <section class="hero hero-aperture-scene" id="home" aria-labelledby="hero-title">
-            <div class="hero-kicker reveal">
-                <span class="availability"><span></span> Building at my own pace</span>
-                <span class="hero-index">PERSONAL LAB / GERMANY</span>
-            </div>
-            <div class="aperture-stage">
-                <p class="aperture-wordmark" aria-hidden="true">OKAMI</p>
-                <figure class="aperture-mark reveal">
-                    <span class="aperture-ring aperture-ring-outer" aria-hidden="true"></span>
-                    <span class="aperture-ring aperture-ring-inner" aria-hidden="true"></span>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-stage">
+                <p class="hero-wordmark" aria-hidden="true">OKAMI</p>
+                <figure class="hero-mark reveal">
+                    <span class="hero-shape hero-shape-main" aria-hidden="true"></span>
+                    <span class="hero-shape hero-shape-ring" aria-hidden="true"></span>
+                    <span class="hero-shape hero-shape-clover" aria-hidden="true"></span>
+                    <span class="hero-shape hero-shape-gem" aria-hidden="true"></span>
                     <img src="assets/images/okami-logo-v4.png?v=2" alt="Okami wolf logo" width="1108" height="1200">
-                    <figcaption><span>PERSONAL LAB</span><span>EST. 2026</span></figcaption>
                 </figure>
 
-                <div class="hero-manifesto reveal">
-                    <p class="eyebrow">Hobby developer / personal experiments</p>
-                    <h1 id="hero-title">Ideas built close.<br><span>Doors opened wide.</span></h1>
-                    <p>I build tools, desktop experiments, Discord systems, and worlds for my own use first. When an idea becomes useful, interesting, or simply fun, I give it a public home.</p>
-                    <a class="round-link" href="#work">
-                        <span>Explore the projects</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-                    </a>
+                <div class="hero-card reveal">
+                    <p class="status-chip"><span aria-hidden="true"></span> Building at my own pace</p>
+                    <p class="eyebrow">Hey, I’m Okami</p>
+                    <h1 id="hero-title">I build what I want to use.<br><span>Then I share it.</span></h1>
+                    <p>Linux desktops, Discord bots, little automations and a whole D&amp;D world – I make them for myself first. If something turns out useful (or just fun), it ends up here for everyone.</p>
+                    <div class="hero-actions">
+                        <a class="round-link" href="#work">
+                            <span>See what I’m building</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+                        </a>
+                        <a class="button-ghost" href="#contact">Say hi</a>
+                    </div>
                 </div>
-
-                <p class="scene-coordinate scene-coordinate-left" aria-hidden="true">PERSONAL USE FIRST</p>
-                <p class="scene-coordinate scene-coordinate-right" aria-hidden="true">PUBLIC WHEN WORTH SHARING</p>
             </div>
         </section>
-
-        <div class="marquee" aria-label="Interests: hobby projects, learning by doing, open source, worldbuilding, YouTube and gaming">
-            <div class="marquee-track">
-                <span>PERSONAL TOOLS</span><i></i><span>LINUX DESKTOPS</span><i></i><span>OPEN SOURCE</span><i></i><span>WORLDBUILDING</span><i></i><span>YOUTUBE &amp; GAMING</span><i></i>
-                <span aria-hidden="true">PERSONAL TOOLS</span><i aria-hidden="true"></i><span aria-hidden="true">LINUX DESKTOPS</span><i aria-hidden="true"></i><span aria-hidden="true">OPEN SOURCE</span><i aria-hidden="true"></i><span aria-hidden="true">WORLDBUILDING</span><i aria-hidden="true"></i><span aria-hidden="true">YOUTUBE &amp; GAMING</span><i aria-hidden="true"></i>
-            </div>
-        </div>
 
         <section class="section about" id="about" aria-labelledby="about-title">
             <div class="section-label reveal"><span>01</span> About</div>
             <div class="about-layout">
-                <h2 id="about-title" class="display-copy reveal">No studio. No grand plan.<br><em>Just ideas worth following.</em></h2>
+                <h2 id="about-title" class="display-copy reveal">No studio, no master plan.<br><em>Just stuff I got curious about.</em></h2>
                 <div class="about-copy reveal">
-                    <p>I’m Okami, a hobby developer still early in the journey. I learn by making things I genuinely want to use, from Linux desktop ideas and automation to Discord tools and tabletop worlds.</p>
-                    <p>Personal use comes first. If a project becomes useful, interesting, or fun to share, I make it public so others can explore or adapt it. YouTube mixes gaming with project previews and demos; Twitch is where I stream for fun, separate from my coding projects.</p>
+                    <p>I’m Okami – a hobby developer who’s still pretty early on the journey. I learn by building things I actually want to use: Linux desktop tweaks, small automations, Discord tools and a tabletop world that got a little out of hand.</p>
+                    <p>If a project turns out useful or fun, I put it online so you can poke around, fork it or borrow the good bits. On YouTube you’ll find gaming mixed with project previews; on Twitch I just stream for fun.</p>
                 </div>
-                <div class="about-aside reveal">
-                    <p class="aside-label">THE SIMPLE PROCESS</p>
-                    <p class="about-note">An idea catches my attention. I build the version I would want to use, learn what the project demands, and share it once there is something worth exploring.</p>
+                <div class="about-card reveal">
+                    <p class="aside-label">How it usually goes</p>
+                    <ol class="process-steps">
+                        <li><span aria-hidden="true">1</span>Something catches my eye.</li>
+                        <li><span aria-hidden="true">2</span>I build the version I’d want to use – and learn a ton on the way.</li>
+                        <li><span aria-hidden="true">3</span>Once it’s worth showing, it goes public.</li>
+                    </ol>
                 </div>
                 <aside class="ai-disclosure reveal" aria-labelledby="ai-disclosure-title">
-                    <p class="aside-label">AI TRANSPARENCY</p>
-                    <div>
-                        <h3 id="ai-disclosure-title">AI is part of the toolbox.</h3>
-                        <p>I use AI tools as assistants for brainstorming, prototype generation, troubleshooting, and learning. I review and adapt the results, make the final project decisions, and remain responsible for everything I publish.</p>
-                    </div>
+                    <p class="aside-label">AI transparency</p>
+                    <h3 id="ai-disclosure-title">Yes, I use AI.</h3>
+                    <p>AI tools help me brainstorm, sketch prototypes, debug and learn. I review and adapt what comes out, make the calls myself, and I’m responsible for everything I publish.</p>
                 </aside>
             </div>
         </section>
@@ -103,75 +99,71 @@
         <section class="section work" id="work" aria-labelledby="work-title">
             <div class="section-heading reveal">
                 <div class="section-label"><span>02</span> My projects</div>
-                <h2 id="work-title">Different ideas.<br>One personal lab.</h2>
-                <p>Each project starts with something I want to use, understand, or imagine. These are the ones that became public.</p>
+                <h2 id="work-title">Different ideas.<br>One little lab.</h2>
+                <p>Every project started with something I wanted to use, understand or imagine. These are the ones that made it out into the world.</p>
             </div>
 
-            <article class="project project-featured project-voidline reveal">
+            <article class="project project-voidline reveal">
                 <a class="project-media voidline-media" href="/Voidline" aria-label="View the Voidline project">
                     <img class="voidline-card-screenshot" src="assets/images/voidline-action-center.webp" alt="Voidline shell with the Action Center open" width="1920" height="1200">
                     <span class="voidline-card-identity">
                         <img src="assets/images/voidline-logo-v4.webp" alt="" width="96" height="96">
                         <span><strong>Voidline</strong><small>Hyprland desktop shell</small></span>
                     </span>
-                    <span class="project-number">01</span>
-                    <span class="project-status">0.3.0DEV / PUBLIC PREVIEW</span>
+                    <span class="project-status">0.3.0dev · public preview</span>
                     <span class="project-open">Take a look <b aria-hidden="true">↗</b></span>
                 </a>
                 <div class="project-info">
-                    <div>
-                        <p class="project-type">LINUX / HYPRLAND DESKTOP SHELL</p>
-                        <h3>Voidline</h3>
-                    </div>
+                    <span class="project-number" aria-hidden="true">01</span>
+                    <p class="project-type">Linux / Hyprland desktop shell</p>
+                    <h3>Voidline</h3>
                     <p>A public development shell around Hyprland, bringing panels, settings, session controls, and native tools into one connected desktop experience.</p>
                     <div class="tag-list"><span>Hyprland</span><span>Quickshell</span><span>Rust</span><span>Open source</span></div>
                 </div>
             </article>
 
-            <div class="project-pair">
-                <article class="project project-compact project-luna reveal">
-                    <a class="project-media luna-media" href="/LunaEcho" aria-label="View the LunaEcho project">
-                        <img src="assets/images/lunaecho-logo-v3.png" alt="LunaEcho cat bot logo with a pink and blue orbit" width="1600" height="1321">
-                        <span class="project-number">02</span>
-                        <span class="project-status">IN DEVELOPMENT</span>
-                    </a>
-                    <div class="project-info">
-                        <div><p class="project-type">DISCORD / IN DEVELOPMENT</p><h3>LunaEcho</h3></div>
-                        <p>A modular, open-source Discord community platform with Self-Hosted, free Cloud, and managed Custom deployment paths.</p>
-                        <div class="tag-list"><span>Node.js</span><span>Discord</span><span>Repository planned</span></div>
-                    </div>
-                </article>
+            <article class="project project-luna reveal">
+                <a class="project-media luna-media" href="/LunaEcho" aria-label="View the LunaEcho project">
+                    <img src="assets/images/lunaecho-logo-v3.png" alt="LunaEcho cat bot logo with a pink and blue orbit" width="1600" height="1321">
+                    <span class="project-status">In development</span>
+                </a>
+                <div class="project-info">
+                    <span class="project-number" aria-hidden="true">02</span>
+                    <p class="project-type">Discord / in development</p>
+                    <h3>LunaEcho</h3>
+                    <p>A modular, open-source Discord community platform with Self-Hosted, free Cloud, and managed Custom deployment paths.</p>
+                    <div class="tag-list"><span>Node.js</span><span>Discord</span><span>Repository planned</span></div>
+                </div>
+            </article>
 
-                <article class="project project-compact project-stream reveal">
-                    <a class="project-media stream-media" href="https://github.com/ShadowOkami4/StreamNotifier" target="_blank" rel="noopener noreferrer" aria-label="View StreamNotifier on GitHub">
-                        <div class="signal-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-                        <strong>LIVE<span>_</span></strong>
-                        <span class="project-number">03</span>
-                        <span class="project-open">View source <b aria-hidden="true">↗</b></span>
-                    </a>
-                    <div class="project-info">
-                        <div><p class="project-type">PERSONAL UTILITY / AUTOMATION</p><h3>StreamNotifier</h3></div>
-                        <p>A tiny utility from my own streaming setup that posts a Discord notification when a stream goes live, now public for anyone who needs the same thing.</p>
-                        <div class="tag-list"><span>OBS</span><span>Webhooks</span><span>Automation</span></div>
-                    </div>
-                </article>
-            </div>
+            <article class="project project-stream reveal">
+                <a class="project-media stream-media" href="https://github.com/ShadowOkami4/StreamNotifier" target="_blank" rel="noopener noreferrer" aria-label="View StreamNotifier on GitHub">
+                    <div class="signal-art" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+                    <strong>LIVE<span>_</span></strong>
+                    <span class="project-open">View source <b aria-hidden="true">↗</b></span>
+                </a>
+                <div class="project-info">
+                    <span class="project-number" aria-hidden="true">03</span>
+                    <p class="project-type">Personal utility / automation</p>
+                    <h3>StreamNotifier</h3>
+                    <p>A tiny tool from my own streaming setup: it pings Discord the moment a stream goes live. Now public, in case you need the same thing.</p>
+                    <div class="tag-list"><span>OBS</span><span>Webhooks</span><span>Automation</span></div>
+                </div>
+            </article>
 
-            <article class="project project-featured project-mirrorgate reveal">
+            <article class="project project-mirrorgate reveal">
                 <a class="project-media mirrorgate-media" href="/Mirrored_Realms" aria-label="Enter The Mirrored Realms project">
                     <div class="mirror-card-art" aria-hidden="true">
                         <span class="mirror-card-orbit"></span>
                         <span class="mirror-card-door"><i></i></span>
-                        <span class="mirror-card-wordmark"><small>OPEN-SOURCE WORLD SETTING</small><strong>The Mirrored Realms</strong></span>
+                        <span class="mirror-card-wordmark"><small>Open-source world setting</small><strong>The Mirrored Realms</strong></span>
                     </div>
-                    <span class="project-number">04</span>
                     <span class="project-open">Enter the vault <b aria-hidden="true">↗</b></span>
                 </a>
                 <div class="project-info">
-                    <div>
-                        <p class="project-type">TABLETOP / OPEN-SOURCE SETTING</p>
-                        <h3>The Mirrored Realms</h3>
-                    </div>
+                    <span class="project-number" aria-hidden="true">04</span>
+                    <p class="project-type">Tabletop / open-source setting</p>
+                    <h3>The Mirrored Realms</h3>
                     <p>The Mirrored Realms is an open-source D&amp;D 5.5e setting disguised as an Obsidian vault, where broken time, royal lies, and watchful reflections all lead somewhere deeper.</p>
                     <div class="tag-list"><span>D&amp;D 5.5e</span><span>Obsidian</span><span>Worldbuilding</span></div>
                 </div>
@@ -181,49 +173,44 @@
         <section class="contact section" id="contact" aria-labelledby="contact-title">
             <div class="contact-top reveal">
                 <div class="section-label"><span>03</span> Contact</div>
-                <div class="contact-heading-wrap">
-                    <h2 class="contact-title" id="contact-title">BRING A QUESTION.<br><em>OR A STRANGE IDEA.</em></h2>
-                    <p>Project feedback, Linux setup questions, campaign ideas, or a simple hello are all welcome.</p>
-                </div>
+                <h2 class="contact-title" id="contact-title">Got a question?<br><em>Or a weird idea?</em></h2>
+                <p>Feedback on a project, help with a Linux setup, a campaign idea or just a quick hello – I’m happy to hear from you.</p>
             </div>
-            <div class="contact-layout">
-                <a class="contact-primary reveal" href="mailto:service@shadowokami.de">
-                    <span class="contact-eyebrow">EMAIL / BEST WAY TO REACH ME</span>
-                    <span class="contact-primary-copy">
-                        <strong>Start here.</strong>
-                        <span>Email is the clearest way to reach me about a project or idea.</span>
-                    </span>
-                    <span class="contact-email">service@shadowokami.de <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+            <a class="contact-primary reveal" href="mailto:service@shadowokami.de">
+                <span class="contact-eyebrow">Email · the best way to reach me</span>
+                <span class="contact-primary-copy">
+                    <strong>Drop me a line.</strong>
+                    <span>I read everything – even if an answer sometimes takes a few days.</span>
+                </span>
+                <span class="contact-email">service@shadowokami.de <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <div class="contact-channels reveal" aria-label="Find Okami online">
+                <a class="contact-channel" href="https://www.youtube.com/@shadowokami04" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 8.5v7l6-3.5-6-3.5Z"/></svg></span>
+                    <span class="contact-channel-label">YouTube</span>
+                    <strong>Gaming and project videos</strong>
+                    <span>Gaming uploads alongside project previews, feature demos, and progress.</span>
                 </a>
-                <div class="contact-channels reveal" aria-label="Find Okami online">
-                    <a class="contact-channel" href="https://www.youtube.com/@shadowokami04" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-channel-label">01 / YOUTUBE</span>
-                        <strong>Gaming and project videos</strong>
-                        <span>Gaming uploads alongside project previews, feature demos, and progress.</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
-                    </a>
-                    <a class="contact-channel" href="https://github.com/ShadowOkami4" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-channel-label">02 / GITHUB</span>
-                        <strong>Public repositories</strong>
-                        <span>Browse the projects that already have source available.</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
-                    </a>
-                    <a class="contact-channel" href="https://www.twitch.tv/shadowokami_" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-channel-label">03 / TWITCH</span>
-                        <strong>Streams for fun</strong>
-                        <span>Gaming and relaxed streams, separate from the development work.</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
-                    </a>
-                    <a class="contact-channel" href="https://discord.com/invite/g4xSv7VTAm" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-channel-label">04 / DISCORD</span>
-                        <strong>Community and updates</strong>
-                        <span>Follow project updates, share feedback, or join the conversation.</span>
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg>
-                    </a>
-                </div>
+                <a class="contact-channel" href="https://github.com/ShadowOkami4" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"/></svg></span>
+                    <span class="contact-channel-label">GitHub</span>
+                    <strong>Public repositories</strong>
+                    <span>Browse the projects that already have source available.</span>
+                </a>
+                <a class="contact-channel" href="https://www.twitch.tv/shadowokami_" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v10l-4 4h-4l-3 3v-3H5V4ZM11 8v4M15 8v4"/></svg></span>
+                    <span class="contact-channel-label">Twitch</span>
+                    <strong>Streams for fun</strong>
+                    <span>Gaming and relaxed streams, separate from the development work.</span>
+                </a>
+                <a class="contact-channel" href="https://discord.com/invite/g4xSv7VTAm" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 17c4 2 8 2 12 0M8 6c2.5-1 5.5-1 8 0l2 9M8 6l-2 9M9.5 12.5h.01M14.5 12.5h.01"/></svg></span>
+                    <span class="contact-channel-label">Discord</span>
+                    <strong>Community and updates</strong>
+                    <span>Follow project updates, share feedback, or join the conversation.</span>
+                </a>
             </div>
         </section>
-
     </main>
 
     <footer class="site-footer">
@@ -231,7 +218,7 @@
             <strong>© <span data-year>2026</span> SHADOWOKAMI</strong>
             <small>Site content unless credited otherwise. Project code follows its repository license.</small>
         </span>
-        <span class="footer-motto">BUILT FOR FUN / SHARED WITH EVERYONE</span>
+        <span class="footer-motto">Built for fun · shared with everyone</span>
         <span class="footer-actions">
             <a class="footer-kofi" href="https://ko-fi.com/W7W31TOGEY" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -245,7 +232,7 @@
         </span>
     </footer>
 
-    <script src="assets/js/translations.js?v=12"></script>
-    <script src="assets/js/script.js?v=8"></script>
+    <script src="assets/js/translations.js?v=14"></script>
+    <script src="assets/js/script.js?v=9"></script>
 </body>
 </html>

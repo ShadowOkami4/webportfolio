@@ -63,3 +63,26 @@ The script copies only public static files to `/var/www/webportfolio`, obtains o
 - `server.js` is the dependency-free local preview server.
 - `nginx.conf` is the hardened production HTTPS template.
 - `setup-nginx.sh` deploys the static files and activates nginx.
+
+## Design System
+
+The site follows Material 3 Expressive. Each page loads a small stack of stylesheets from `assets/css/`:
+
+- `tokens.css` holds the generated M3 colour roles (`--md-sys-color-*`), one dark scheme per area: home, Voidline, LunaEcho, and The Mirrored Realms.
+- `shapes.css` holds the generated M3 Expressive shape library as `clip-path` polygons (`--shape-cookie9`, `--shape-clover`, …). Every shape has the same number of points, so shapes can morph into each other.
+- `base.css` holds the shared foundation: fonts, shape and motion tokens, header, buttons, chips, footer, and the language switch.
+- `home.css` contains the homepage styles, and `projects.css` covers the project pages, legal documents, and the 404 page.
+- `realms.css` is the dark-grimoire layer used only on The Mirrored Realms.
+
+Fonts (Roboto Flex, Cinzel, EB Garamond) are self-hosted in `assets/fonts/`, so the CSP can stay `self`-only.
+
+The generated files are committed. Regenerate them only after changing a source colour, font, or shape:
+
+```powershell
+npm install
+npm run build:tokens   # seed colours live in tools/build-tokens.mjs
+npm run build:fonts
+npm run build:shapes
+```
+
+German translations live in `assets/js/translations.js`. Open any page with `?i18n-audit` to list English text that has no translation, and run `npm run check:i18n` to find dictionary entries no page uses any more (`node tools/check-translations.mjs --write` removes them).
