@@ -24,36 +24,15 @@
     border-radius: 50%;
     pointer-events: none;
     background: currentColor;
-    opacity: .14;
-    animation: ripple-grow 520ms var(--effects) forwards;
+    opacity: .1;
+    animation: ripple-grow 600ms var(--effects) forwards;
     transition: opacity 320ms var(--effects);
 }
 .ripple.is-released { opacity: 0; }
 @keyframes ripple-grow { from { transform: scale(0); } }
 
-/* ─── Button groups: the pressed button widens, M3 Expressive style ──────── */
+/* ─── Press feedback: cards give a little under the finger ─────────────── */
 
-.button,
-.round-link,
-.button-ghost {
-    transition:
-        border-radius var(--spring-fast-duration) var(--spring-fast),
-        padding var(--spring-fast-duration) var(--spring-fast),
-        transform var(--spring-fast-duration) var(--spring-fast),
-        background var(--effects-duration) var(--effects),
-        color var(--effects-duration) var(--effects);
-}
-:is(.hero-actions, .detail-actions) > :is(.button, .round-link, .button-ghost):active { padding-inline: 38px; }
-.language-option {
-    transition:
-        color var(--effects-duration) var(--effects),
-        background var(--effects-duration) var(--effects),
-        padding var(--spring-fast-duration) var(--spring-fast),
-        border-radius var(--spring-fast-duration) var(--spring-fast);
-}
-.language-option:active { padding-inline: 18px; border-radius: var(--shape-sm); }
-
-/* Cards give a little under the finger. */
 .contact-channel,
 .contact-primary {
     transition:
@@ -64,7 +43,7 @@
 .contact-channel:active,
 .contact-primary:active { scale: .975; }
 
-/* ─── Navigation: one indicator that springs between sections ────────────── */
+/* ─── Navigation: one indicator that glides between sections ───────────── */
 
 .site-nav { position: relative; isolation: isolate; }
 .nav-indicator {
@@ -73,7 +52,7 @@
     left: 0;
     z-index: -1;
     width: var(--indicator-width, 0);
-    height: 48px;
+    height: 42px;
     border-radius: var(--shape-full);
     pointer-events: none;
     background: var(--md-sys-color-secondary-container);
@@ -85,30 +64,12 @@
         opacity var(--effects-duration) var(--effects);
 }
 .nav-indicator.is-shown { opacity: 1; }
-/* While travelling, the indicator stretches across both items first. */
-.nav-indicator.is-stretching { transition-duration: 160ms, 160ms, var(--effects-duration); transition-timing-function: var(--effects); }
 @media (min-width: 921px) {
     .site-nav.has-indicator a.active { background: transparent; }
 }
 @media (max-width: 920px) {
     .nav-indicator { display: none; }
 }
-
-/* ─── Wavy reading progress (the M3 Expressive wavy linear indicator) ────── */
-
-.site-header::after {
-    bottom: 0;
-    height: 6px;
-    opacity: .9;
-    transform: none;
-    clip-path: inset(0 calc((1 - var(--scroll-progress, 0)) * 100%) 0 0);
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='6'%3E%3Cpath d='M0 3q5-4 10 0t10 0' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") 0 50% / 20px 6px repeat-x;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='6'%3E%3Cpath d='M0 3q5-4 10 0t10 0' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") 0 50% / 20px 6px repeat-x;
-    animation: wave-travel 700ms linear infinite paused;
-}
-/* The wave only travels while the page is moving. */
-.site-header.is-scrolling::after { animation-play-state: running; }
-@keyframes wave-travel { to { -webkit-mask-position: 20px 50%; mask-position: 20px 50%; } }
 
 /* ─── Staggered entrances ────────────────────────────────────────────────── */
 

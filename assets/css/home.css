@@ -323,7 +323,6 @@
     overflow-wrap: anywhere;
     transition: border-radius var(--spring-fast-duration) var(--spring-fast);
 }
-.contact-primary:active .contact-email { border-radius: var(--shape-lg); }
 .contact-primary:hover .contact-email svg { transform: translateX(4px); }
 
 .contact-channels { display: grid; margin-top: 12px; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }

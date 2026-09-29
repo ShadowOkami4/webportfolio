@@ -1,5 +1,5 @@
 // Material 3 Expressive motion: ripples, the travelling navigation indicator,
-// staggered list entrances, the wavy progress line and the rollable d20.
+// staggered list entrances and the rollable d20.
 // Pure decoration – the site works the same without this file.
 (() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -71,7 +71,6 @@
         nav.classList.add('has-indicator');
 
         let current = null;
-        let stretchTimer = 0;
 
         const place = (x, width) => {
             indicator.style.setProperty('--indicator-x', `${x}px`);
@@ -79,7 +78,6 @@
         };
 
         const moveTo = (link, animate = true) => {
-            window.clearTimeout(stretchTimer);
             if (!link) {
                 indicator.classList.remove('is-shown');
                 current = null;
@@ -88,21 +86,11 @@
 
             const target = { x: link.offsetLeft, width: link.offsetWidth };
             if (!current || !animate || reducedMotion.matches) {
+                // First placement (or a resize): jump there without animating.
                 indicator.style.transition = 'none';
                 place(target.x, target.width);
                 indicator.getBoundingClientRect();
                 indicator.style.transition = '';
-            } else if (current !== link) {
-                // Stretch over both items, then let the far edge spring in behind.
-                const from = { x: current.offsetLeft, width: current.offsetWidth };
-                const left = Math.min(from.x, target.x);
-                const right = Math.max(from.x + from.width, target.x + target.width);
-                indicator.classList.add('is-stretching');
-                place(left, right - left);
-                stretchTimer = window.setTimeout(() => {
-                    indicator.classList.remove('is-stretching');
-                    place(target.x, target.width);
-                }, 150);
             } else {
                 place(target.x, target.width);
             }
@@ -120,17 +108,6 @@
         window.addEventListener('resize', () => sync(false));
         window.addEventListener('site-language-change', () => window.requestAnimationFrame(() => sync(false)));
         document.fonts?.ready.then(() => sync(false)).catch(() => {});
-    }
-
-    // ─── Wavy progress: travel only while scrolling ──────────────────────
-    const header = document.querySelector('.site-header');
-    if (header) {
-        let idleTimer = 0;
-        window.addEventListener('scroll', () => {
-            header.classList.add('is-scrolling');
-            window.clearTimeout(idleTimer);
-            idleTimer = window.setTimeout(() => header.classList.remove('is-scrolling'), 220);
-        }, { passive: true });
     }
 
     // ─── The Mirrored Realms: roll the d20 ───────────────────────────────

@@ -94,7 +94,6 @@ thead th {
     transition: background var(--effects-duration) var(--effects), border-radius var(--spring-fast-duration) var(--spring-fast);
 }
 .detail-breadcrumb:hover { color: var(--md-sys-color-on-surface); background: var(--md-sys-color-surface-container-high); }
-.detail-breadcrumb:active { border-radius: var(--shape-md); }
 .detail-title { margin: 14px 0 26px; font-size: clamp(4.4rem, 10vw, 9rem); line-height: .86; text-transform: uppercase; }
 .detail-title .outline { color: transparent; -webkit-text-stroke: 1.5px var(--md-sys-color-primary); }
 .detail-lead { max-width: 680px; color: var(--ink-soft); font-size: clamp(1.08rem, 1.6vw, 1.28rem); }

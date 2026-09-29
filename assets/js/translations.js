@@ -52,8 +52,8 @@
     const home = {
         // Material 3 Expressive redesign: casual homepage copy.
         'Hey, I’m Okami': 'Hey, ich bin Okami',
-        'I build what I want to use.': 'Ich baue, was ich selbst nutzen will.',
-        'Then I share it.': 'Und dann teile ich es.',
+        'A passion for building.': 'Eine Leidenschaft fürs Bauen.',
+        'And for pushing my skills.': 'Und dafür, meine Skills zu testen.',
         'Linux desktops, Discord bots, little automations and a whole D&D world – I make them for myself first. If something turns out useful (or just fun), it ends up here for everyone.': 'Linux-Desktops, Discord-Bots, kleine Automatisierungen und eine ganze D&D-Welt – ich baue sie erst mal für mich. Wenn etwas nützlich (oder einfach witzig) wird, landet es hier für alle.',
         'See what I’m building': 'Schau dir meine Projekte an',
         'Say hi': 'Sag Hallo',
