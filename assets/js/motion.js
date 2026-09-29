@@ -47,7 +47,7 @@
 
     // ─── Staggered lists ─────────────────────────────────────────────────
     const STAGGER_LISTS = [
-        '.hero-actions', '.tag-list', '.detail-tags', '.vault-index', '.process-steps', '.contact-channels',
+        '.hero-actions', '.tag-list', '.detail-tags', '.process-steps', '.contact-channels',
         '.detail-actions', '.detail-stats', '.check-list', '.install-list', '.vault-steps', '.deletion-steps'
     ].join(',');
 

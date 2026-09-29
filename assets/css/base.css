@@ -204,7 +204,6 @@ h1, h2, h3 { text-wrap: balance; }
 .eyebrow,
 .project-type,
 .aside-label,
-.lore-kicker,
 .journey-status,
 .tier-label,
 .contact-eyebrow {
@@ -439,11 +438,9 @@ h1, h2, h3 { text-wrap: balance; }
 /* ─── Chips ──────────────────────────────────────────────────────────────── */
 
 .tag-list,
-.detail-tags,
-.vault-index { display: flex; flex-wrap: wrap; gap: 8px; }
+.detail-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-list span,
-.detail-tags span,
-.vault-index span {
+.detail-tags span {
     display: inline-flex;
     min-height: 32px;
     padding: 6px 14px;
