@@ -302,6 +302,90 @@ body.mirrorgate-page::before {
 .mirrorgate-cta .detail-actions { justify-content: center; }
 .realm-d20-cta { width: 96px; height: 96px; margin: 0 auto 10px; animation: spin 40s linear infinite; }
 
+/* ─── Mirror shards ──────────────────────────────────────────────────────── */
+
+/* Splinters of the broken mirror drift up through the page behind the content,
+   tumbling so they catch the light. Only transform and opacity are animated. */
+.realm-shards {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+    perspective: 900px;
+}
+.realm-shards i {
+    /* Per-shard values, set below: column, size, speed, start, tumble axis, sway, strength. */
+    --x: 50%;
+    --size: 80px;
+    --time: 40s;
+    --start: 0s;
+    --ax: .4;
+    --ay: .8;
+    --sway: 6vw;
+    --glow: .5;
+    --y: 40vh;
+    position: absolute;
+    top: 0;
+    left: var(--x);
+    display: block;
+    width: var(--size);
+    height: calc(var(--size) * 1.35);
+    /* Facets: a bright edge, a fracture line, and the teal-to-gold tint of the glass. */
+    background:
+        linear-gradient(112deg, rgb(255 255 255 / .5) 0 3%, transparent 3% 46%, rgb(255 255 255 / .18) 46% 48%, transparent 48%),
+        linear-gradient(200deg, color-mix(in srgb, var(--teal) 46%, transparent), color-mix(in srgb, var(--gold) 16%, transparent) 70%, transparent);
+    clip-path: polygon(38% 0, 100% 22%, 78% 100%, 0 64%);
+    opacity: 0;
+    animation: shard-flow var(--time) linear var(--start) infinite;
+    will-change: transform, opacity;
+}
+.realm-shards i:nth-child(3n + 1) { clip-path: polygon(50% 0, 100% 38%, 62% 100%, 0 72%, 14% 20%); }
+.realm-shards i:nth-child(3n + 2) { clip-path: polygon(12% 0, 100% 10%, 58% 100%, 0 46%); }
+.realm-shards i:nth-child(4n) { clip-path: polygon(64% 0, 100% 58%, 30% 100%, 0 28%); }
+
+.realm-shards i:nth-child(1) { --x: 4%; --size: 96px; --time: 46s; --start: -4s; --ax: .3; --ay: .9; --sway: 7vw; --glow: .5; --y: 18vh; }
+.realm-shards i:nth-child(2) { --x: 14%; --size: 44px; --time: 34s; --start: -21s; --ax: .8; --ay: .2; --sway: -5vw; --glow: .62; --y: 62vh; }
+.realm-shards i:nth-child(3) { --x: 23%; --size: 130px; --time: 62s; --start: -38s; --ax: .2; --ay: .7; --sway: 5vw; --glow: .34; --y: 80vh; }
+.realm-shards i:nth-child(4) { --x: 33%; --size: 58px; --time: 39s; --start: -9s; --ax: .7; --ay: .5; --sway: -8vw; --glow: .55; --y: 30vh; }
+.realm-shards i:nth-child(5) { --x: 44%; --size: 36px; --time: 29s; --start: -17s; --ax: .5; --ay: .9; --sway: 6vw; --glow: .66; --y: 52vh; }
+.realm-shards i:nth-child(6) { --x: 54%; --size: 108px; --time: 55s; --start: -46s; --ax: .9; --ay: .3; --sway: -6vw; --glow: .38; --y: 8vh; }
+.realm-shards i:nth-child(7) { --x: 63%; --size: 50px; --time: 36s; --start: -27s; --ax: .4; --ay: .6; --sway: 9vw; --glow: .58; --y: 70vh; }
+.realm-shards i:nth-child(8) { --x: 72%; --size: 82px; --time: 48s; --start: -12s; --ax: .6; --ay: .8; --sway: -7vw; --glow: .46; --y: 40vh; }
+.realm-shards i:nth-child(9) { --x: 81%; --size: 40px; --time: 31s; --start: -2s; --ax: .2; --ay: .4; --sway: 5vw; --glow: .64; --y: 88vh; }
+.realm-shards i:nth-child(10) { --x: 90%; --size: 118px; --time: 58s; --start: -33s; --ax: .7; --ay: .9; --sway: -5vw; --glow: .36; --y: 24vh; }
+.realm-shards i:nth-child(11) { --x: 9%; --size: 62px; --time: 42s; --start: -30s; --ax: .9; --ay: .6; --sway: 8vw; --glow: .5; --y: 46vh; }
+.realm-shards i:nth-child(12) { --x: 48%; --size: 70px; --time: 44s; --start: -24s; --ax: .3; --ay: .5; --sway: -9vw; --glow: .48; --y: 92vh; }
+.realm-shards i:nth-child(13) { --x: 68%; --size: 32px; --time: 27s; --start: -14s; --ax: .6; --ay: .3; --sway: 6vw; --glow: .7; --y: 14vh; }
+.realm-shards i:nth-child(14) { --x: 95%; --size: 54px; --time: 37s; --start: -19s; --ax: .5; --ay: .7; --sway: -6vw; --glow: .56; --y: 58vh; }
+
+@keyframes shard-flow {
+    0% { opacity: 0; transform: translate3d(0, 112vh, 0) rotate3d(var(--ax), var(--ay), .35, 0deg); }
+    10% { opacity: var(--glow); }
+    50% { transform: translate3d(var(--sway), 46vh, 0) rotate3d(var(--ax), var(--ay), .35, 200deg); }
+    90% { opacity: var(--glow); }
+    100% { opacity: 0; transform: translate3d(calc(var(--sway) * -.5), -24vh, 0) rotate3d(var(--ax), var(--ay), .35, 400deg); }
+}
+
+/* The whole field slides a little against the scroll, so the shards feel like
+   they hang in the room rather than on the page. */
+@supports (animation-timeline: scroll()) {
+    .realm-shards { animation: shard-parallax linear both; animation-timeline: scroll(root); }
+    @keyframes shard-parallax { to { translate: 0 -14vh; } }
+}
+
+@media (max-width: 680px) {
+    /* Fewer and smaller on phones. */
+    .realm-shards i:nth-child(n + 8) { display: none; }
+    .realm-shards i { width: calc(var(--size) * .7); height: calc(var(--size) * .95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* No drifting: the shards simply hang where they are. */
+    .realm-shards { animation: none; }
+    .realm-shards i { animation: none !important; opacity: calc(var(--glow) * .6); transform: translateY(var(--y)) rotate(calc(var(--ax) * 90deg)); }
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 920px) {
