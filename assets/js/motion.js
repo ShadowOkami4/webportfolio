@@ -111,8 +111,9 @@
     }
 
     // ─── The Mirrored Realms: roll the d20 ───────────────────────────────
-    const dice = document.querySelectorAll('.mirrorgate-page .realm-d20');
-    if (!dice.length) return;
+    // The die at the foot of the page is taken over by die3d.js (marked data-die3d).
+    const dice = document.querySelectorAll('.mirrorgate-page .realm-d20:not([data-die3d])');
+    if (!document.querySelector('.mirrorgate-page .realm-d20')) return;
 
     const announcer = document.createElement('p');
     announcer.className = 'd20-result';
@@ -125,6 +126,25 @@
         if (value === 1) return german() ? 'Natürliche 1. Kritischer Fehlschlag.' : 'Natural 1. Critical failure.';
         return german() ? `Du hast eine ${value} gewürfelt.` : `You rolled ${[8, 11, 18].includes(value) ? 'an' : 'a'} ${value}.`;
     };
+
+    // A ring of light spreading out from a die that rolled a natural 20.
+    const burst = (die) => {
+        if (reducedMotion.matches) return;
+        const ring = document.createElement('span');
+        ring.className = 'd20-burst';
+        ring.setAttribute('aria-hidden', 'true');
+        const box = die.getBoundingClientRect();
+        const parent = die.parentElement;
+        const origin = parent.getBoundingClientRect();
+        if (getComputedStyle(parent).position === 'static') parent.style.position = 'relative';
+        ring.style.left = `${box.left - origin.left + box.width / 2}px`;
+        ring.style.top = `${box.top - origin.top + box.height / 2}px`;
+        parent.append(ring);
+        ring.addEventListener('animationend', () => ring.remove());
+    };
+
+    // Shared with the 3D die (die3d.js).
+    window.realmDice = { label, burst, announce: (value) => { announcer.textContent = resultText(value); } };
 
     dice.forEach((die) => {
         const face = die.querySelector('text');
@@ -164,24 +184,12 @@
                 if (result === 20) {
                     die.classList.add('is-crit');
                     die.closest('.mirrorgate-visual')?.classList.add('is-crit');
-                    if (!reducedMotion.matches) {
-                        const burst = document.createElement('span');
-                        burst.className = 'd20-burst';
-                        burst.setAttribute('aria-hidden', 'true');
-                        const box = die.getBoundingClientRect();
-                        const parent = die.parentElement;
-                        const origin = parent.getBoundingClientRect();
-                        if (getComputedStyle(parent).position === 'static') parent.style.position = 'relative';
-                        burst.style.left = `${box.left - origin.left + box.width / 2}px`;
-                        burst.style.top = `${box.top - origin.top + box.height / 2}px`;
-                        parent.append(burst);
-                        burst.addEventListener('animationend', () => burst.remove());
-                    }
+                    burst(die);
                 } else if (result === 1) {
                     die.classList.add('is-fumble');
                 }
 
-                announcer.textContent = resultText(result);
+                window.realmDice.announce(result);
                 rolling = false;
             }, duration);
         };

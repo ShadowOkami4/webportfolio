@@ -295,6 +295,23 @@ body.mirrorgate-page::before {
 .mirrorgate-cta > p:not(.detail-badge) { margin-inline: auto; font-size: 1.1rem; }
 .mirrorgate-cta .detail-actions { justify-content: center; }
 .realm-d20-cta { width: 96px; height: 96px; margin: 0 auto 10px; animation: spin 40s linear infinite; }
+/* The real 3D die that die3d.js puts in its place: press it to roll. */
+.realm-die3d {
+    display: block;
+    width: 168px;
+    height: 168px;
+    margin: -18px auto 0;
+    cursor: pointer;
+    filter: drop-shadow(0 14px 22px rgb(0 0 0 / .45));
+    touch-action: manipulation;
+    transition: scale var(--spring-fast-duration) var(--spring-fast), filter var(--effects-duration) var(--effects);
+    -webkit-tap-highlight-color: transparent;
+}
+.realm-die3d:hover { scale: 1.06; }
+.realm-die3d:active { scale: .95; }
+.realm-die3d:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 50%; }
+.realm-die3d.is-crit { filter: drop-shadow(0 0 28px var(--gold)); }
+.realm-die3d.is-fumble { filter: drop-shadow(0 0 22px color-mix(in srgb, var(--ember) 70%, transparent)); }
 
 /* ─── Mirror shards ──────────────────────────────────────────────────────── */
 
