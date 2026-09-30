@@ -126,6 +126,11 @@ body.mirrorgate-page::before {
 @keyframes realm-seal { to { transform: translateX(50%) rotate(360deg); } }
 
 .mirrorgate-page .detail-title { display: grid; justify-items: center; margin: 18px 0 8px; font-size: clamp(4.4rem, 11vw, 9.6rem); font-weight: 600; line-height: .86; }
+/* German: "Spiegelreiche" is more than twice as long as "Realms" (about 7.4em
+   wide), so on narrow screens the title follows the available width instead. */
+@media (max-width: 920px) {
+    html[lang="de"] .mirrorgate-page .detail-title { font-size: min(4.6rem, calc((100vw - 56px) * .13)); }
+}
 .mirrorgate-page .mirrored-title-prefix { color: var(--gold); font-size: .42em; font-weight: 700; letter-spacing: .14em; }
 .mirrorgate-page .detail-title .outline { color: transparent; font-weight: 500; -webkit-text-stroke: 1.2px var(--teal); text-shadow: 0 0 40px color-mix(in srgb, var(--teal) 25%, transparent); }
 /* Flourish: rule – diamond – rule. */

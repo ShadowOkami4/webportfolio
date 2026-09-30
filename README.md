@@ -84,6 +84,7 @@ npm install
 npm run build:tokens   # seed colours live in tools/build-tokens.mjs
 npm run build:fonts
 npm run build:shapes
+npm run build:og       # link-preview card, from tools/og-card.html (needs Edge or Chrome)
 ```
 
 German translations live in `assets/js/translations.js`. Open any page with `?i18n-audit` to list English text that has no translation, and run `npm run check:i18n` to find dictionary entries no page uses any more (`node tools/check-translations.mjs --write` removes them).

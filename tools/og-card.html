@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- Link-preview card (Open Graph image), rendered to assets/images/og-okami.png
+     by tools/build-og.mjs. Uses the site's own tokens, shapes and font. -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="../assets/css/shapes.css">
+    <style>
+        @font-face {
+            font-family: "Roboto Flex";
+            src: url("../assets/fonts/roboto-flex-latin.woff2") format("woff2");
+            font-weight: 100 1000;
+            font-stretch: 25% 151%;
+        }
+        * { box-sizing: border-box; }
+        html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+        body {
+            position: relative;
+            display: grid;
+            padding: 64px 72px;
+            grid-template-columns: 1fr 440px;
+            align-items: center;
+            gap: 40px;
+            color: var(--md-sys-color-on-surface);
+            background:
+                radial-gradient(640px 460px at 88% 0%, color-mix(in srgb, var(--md-sys-color-primary-container) 38%, transparent), transparent 70%),
+                radial-gradient(520px 420px at 0% 100%, color-mix(in srgb, var(--md-sys-color-tertiary) 12%, transparent), transparent 72%),
+                var(--md-sys-color-surface-container-lowest);
+            font-family: "Roboto Flex", "Segoe UI", sans-serif;
+        }
+        .wordmark {
+            position: absolute;
+            right: -30px;
+            bottom: -70px;
+            margin: 0;
+            color: transparent;
+            font-size: 380px;
+            font-stretch: 42%;
+            font-weight: 760;
+            line-height: .8;
+            -webkit-text-stroke: 2px color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent);
+        }
+        .copy { position: relative; z-index: 2; }
+        .brand { display: flex; margin: 0 0 26px; align-items: center; gap: 16px; font-size: 24px; font-weight: 800; letter-spacing: .16em; }
+        .brand img { width: 56px; height: 56px; object-fit: contain; }
+        .brand small { display: block; margin-top: 4px; color: var(--md-sys-color-on-surface-variant); font-size: 15px; font-weight: 600; letter-spacing: .12em; }
+        h1 { margin: 0; font-size: 88px; font-stretch: 42%; font-weight: 760; letter-spacing: -.005em; line-height: .95; }
+        h1 span { color: var(--md-sys-color-primary); }
+        .url { display: inline-block; margin: 32px 0 0; padding: 10px 24px; border-radius: 999px; color: var(--md-sys-color-on-primary); background: var(--md-sys-color-primary); font-size: 24px; font-weight: 700; letter-spacing: .02em; }
+        .mark { position: relative; z-index: 1; display: grid; width: 440px; height: 440px; place-items: center; }
+        .mark i { position: absolute; display: block; }
+        .ring { inset: -6%; background: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent); clip-path: var(--shape-sunny); }
+        .main {
+            inset: 5%;
+            background:
+                radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--md-sys-color-tertiary) 34%, transparent), transparent 55%),
+                linear-gradient(150deg, color-mix(in srgb, var(--md-sys-color-primary-container) 78%, transparent), color-mix(in srgb, var(--md-sys-color-secondary-container) 80%, transparent));
+            clip-path: var(--shape-cookie12);
+            transform: rotate(12deg);
+        }
+        .clover { top: 0; right: 2%; width: 18%; aspect-ratio: 1; background: var(--md-sys-color-tertiary); clip-path: var(--shape-clover); transform: rotate(20deg); }
+        .gem { bottom: 6%; left: 0; width: 12%; aspect-ratio: 1; background: var(--md-sys-color-primary); clip-path: var(--shape-gem); transform: rotate(-14deg); }
+        .mark img { position: relative; width: 62%; filter: drop-shadow(0 18px 40px rgb(0 0 0 / .45)); }
+    </style>
+</head>
+<body>
+    <p class="wordmark">OKAMI</p>
+    <div class="copy">
+        <p class="brand"><img src="../assets/images/okami-logo-v4.png" alt=""><span>OKAMI<small>PERSONAL LAB</small></span></p>
+        <h1>A passion<br>for building.<br><span>And for pushing<br>my skills.</span></h1>
+        <p class="url">shadowokami.com</p>
+    </div>
+    <div class="mark"><i class="ring"></i><i class="main"></i><i class="clover"></i><i class="gem"></i><img src="../assets/images/okami-logo-v4.png" alt=""></div>
+</body>
+</html>

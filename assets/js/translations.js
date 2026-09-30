@@ -447,7 +447,8 @@
     const redesign = {
         'Okami | Personal Projects & Experiments': 'Okami | Persönliche Projekte & Experimente',
         'Okami is a hobby developer sharing personal Linux, Discord, automation, and tabletop projects built from curiosity and made public for everyone.': 'Okami ist ein Hobbyentwickler, der persönliche Projekte rund um Linux, Discord, Automatisierung und Tabletop aus Neugier entwickelt und für alle veröffentlicht.',
-        'Ideas built for personal use first, then opened for everyone to explore.': 'Ideen, die zuerst für den eigenen Gebrauch entstehen und anschließend für alle zum Entdecken geöffnet werden.',
+        'A passion for building, and for pushing my skills: Linux desktops, Discord bots, small automations and a whole D&D world.': 'Eine Leidenschaft fürs Bauen – und dafür, meine Skills zu testen: Linux-Desktops, Discord-Bots, kleine Automatisierungen und eine ganze D&D-Welt.',
+        'Okami – a passion for building, and for pushing my skills': 'Okami – eine Leidenschaft fürs Bauen und dafür, meine Skills zu testen',
         'PERSONAL LAB': 'PERSÖNLICHES LABOR',
         'Building at my own pace': 'Ich entwickle in meinem eigenen Tempo',
         'Explore the projects': 'Projekte entdecken',

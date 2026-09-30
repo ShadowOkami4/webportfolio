@@ -9,6 +9,7 @@
     "build:tokens": "tsx tools/build-tokens.mjs",
     "build:fonts": "node tools/build-fonts.mjs",
     "build:shapes": "node tools/build-shapes.mjs",
+    "build:og": "node tools/build-og.mjs",
     "check:i18n": "node tools/check-translations.mjs"
   },
   "engines": {
