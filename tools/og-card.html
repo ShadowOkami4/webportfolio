@@ -1,6 +1,7 @@
 <!doctype html>
-<!-- Link-preview card (Open Graph image), rendered to assets/images/og-okami.png
-     by tools/build-og.mjs. Uses the site's own tokens, shapes and font. -->
+<!-- Link-preview cards (Open Graph images), rendered to assets/images/og-*.png
+     by tools/build-og.mjs. One template, picked with ?card=okami|voidline|lunaecho|realms.
+     Uses the site's own tokens, shapes and fonts, so each card matches its page. -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,15 +14,19 @@
             font-weight: 100 1000;
             font-stretch: 25% 151%;
         }
+        @font-face { font-family: "Cinzel"; src: url("../assets/fonts/cinzel-latin.woff2") format("woff2"); font-weight: 400 900; }
+        @font-face { font-family: "EB Garamond"; src: url("../assets/fonts/eb-garamond-latin.woff2") format("woff2"); font-weight: 400 800; }
+        @font-face { font-family: "EB Garamond"; src: url("../assets/fonts/eb-garamond-italic-latin.woff2") format("woff2"); font-style: italic; font-weight: 400 800; }
+
         * { box-sizing: border-box; }
         html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
         body {
             position: relative;
             display: grid;
-            padding: 64px 72px;
-            grid-template-columns: 1fr 440px;
+            padding: 60px 72px;
+            grid-template-columns: 1fr 430px;
             align-items: center;
-            gap: 40px;
+            gap: 44px;
             color: var(--md-sys-color-on-surface);
             background:
                 radial-gradient(640px 460px at 88% 0%, color-mix(in srgb, var(--md-sys-color-primary-container) 38%, transparent), transparent 70%),
@@ -39,16 +44,22 @@
             font-stretch: 42%;
             font-weight: 760;
             line-height: .8;
+            white-space: nowrap;
             -webkit-text-stroke: 2px color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent);
         }
         .copy { position: relative; z-index: 2; }
-        .brand { display: flex; margin: 0 0 26px; align-items: center; gap: 16px; font-size: 24px; font-weight: 800; letter-spacing: .16em; }
+        .brand { display: flex; margin: 0 0 24px; align-items: center; gap: 16px; font-size: 24px; font-weight: 800; letter-spacing: .16em; }
         .brand img { width: 56px; height: 56px; object-fit: contain; }
         .brand small { display: block; margin-top: 4px; color: var(--md-sys-color-on-surface-variant); font-size: 15px; font-weight: 600; letter-spacing: .12em; }
         h1 { margin: 0; font-size: 88px; font-stretch: 42%; font-weight: 760; letter-spacing: -.005em; line-height: .95; }
         h1 span { color: var(--md-sys-color-primary); }
-        .url { display: inline-block; margin: 32px 0 0; padding: 10px 24px; border-radius: 999px; color: var(--md-sys-color-on-primary); background: var(--md-sys-color-primary); font-size: 24px; font-weight: 700; letter-spacing: .02em; }
-        .mark { position: relative; z-index: 1; display: grid; width: 440px; height: 440px; place-items: center; }
+        /* Project cards: the name is the headline, the tagline sits below it. */
+        .project h1 { font-size: 150px; line-height: .86; text-transform: uppercase; }
+        .tagline { max-width: 600px; margin: 20px 0 0; color: var(--md-sys-color-on-surface-variant); font-size: 31px; font-weight: 500; line-height: 1.25; }
+        .tagline:empty { display: none; }
+        .url { display: inline-block; margin: 30px 0 0; padding: 10px 24px; border-radius: 999px; color: var(--md-sys-color-on-primary); background: var(--md-sys-color-primary); font-size: 24px; font-weight: 700; letter-spacing: .02em; }
+
+        .mark { position: relative; z-index: 1; display: grid; width: 430px; height: 430px; place-items: center; }
         .mark i { position: absolute; display: block; }
         .ring { inset: -6%; background: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent); clip-path: var(--shape-sunny); }
         .main {
@@ -61,16 +72,97 @@
         }
         .clover { top: 0; right: 2%; width: 18%; aspect-ratio: 1; background: var(--md-sys-color-tertiary); clip-path: var(--shape-clover); transform: rotate(20deg); }
         .gem { bottom: 6%; left: 0; width: 12%; aspect-ratio: 1; background: var(--md-sys-color-primary); clip-path: var(--shape-gem); transform: rotate(-14deg); }
-        .mark img { position: relative; width: 62%; filter: drop-shadow(0 18px 40px rgb(0 0 0 / .45)); }
+        .mark > img { position: relative; width: 62%; filter: drop-shadow(0 18px 40px rgb(0 0 0 / .45)); }
+        .portal { display: none; }
+
+        /* Voidline: a dark shape so the purple logo stands out. */
+        .voidline-page .main { clip-path: var(--shape-cookie9); background: radial-gradient(circle at 50% 45%, #1d1329, #0c0910 75%); }
+        .voidline-page .ring { background: color-mix(in srgb, var(--md-sys-color-primary) 16%, transparent); }
+
+        /* LunaEcho: a softer, rounder shape behind the cat. */
+        .luna-page .main { clip-path: var(--shape-cookie6); transform: none; }
+        .luna-page .mark > img { width: 74%; }
+
+        /* The Mirrored Realms: the grimoire – serif type, gold, the mirror and its d20. */
+        .mirrorgate-page {
+            --gold: #e8c173;
+            --teal: #79c9bf;
+            background:
+                radial-gradient(620px 460px at 82% 8%, color-mix(in srgb, var(--gold) 16%, transparent), transparent 70%),
+                radial-gradient(520px 420px at 0% 100%, color-mix(in srgb, var(--teal) 9%, transparent), transparent 72%),
+                #120f0a;
+            font-family: "EB Garamond", Georgia, serif;
+        }
+        .mirrorgate-page .brand { font-family: "Roboto Flex", sans-serif; }
+        .mirrorgate-page h1 { font-family: "Cinzel", serif; font-size: 100px; font-stretch: normal; font-weight: 600; line-height: .92; text-transform: none; }
+        .mirrorgate-page h1 em { display: block; margin-bottom: 8px; color: var(--gold); font-size: .42em; font-style: normal; font-weight: 700; letter-spacing: .14em; }
+        .mirrorgate-page h1 span { color: transparent; font-weight: 500; -webkit-text-stroke: 1.6px var(--teal); }
+        .mirrorgate-page .tagline { font-size: 34px; font-style: italic; }
+        .mirrorgate-page .url { color: #1d1405; background: var(--gold); font-family: "Cinzel", serif; font-size: 22px; letter-spacing: .06em; }
+        .mirrorgate-page .mark i,
+        .mirrorgate-page .mark > img { display: none; }
+        .mirrorgate-page .portal { position: relative; display: block; width: 300px; height: 430px; }
+        .portal b { position: absolute; display: block; border-radius: 50% 50% 24% 24%; }
+        .portal .outer { inset: 0; border: 3px solid color-mix(in srgb, var(--gold) 80%, transparent); box-shadow: 0 0 0 18px color-mix(in srgb, var(--gold) 5%, transparent), 0 30px 80px rgb(0 0 0 / .5); }
+        .portal .inner { inset: 16px; border: 1.5px solid color-mix(in srgb, var(--teal) 50%, transparent); }
+        .portal .surface { inset: 32px; background: radial-gradient(circle at 42% 34%, color-mix(in srgb, var(--teal) 46%, transparent), rgb(5 15 16 / .96) 64%); box-shadow: inset 0 0 80px color-mix(in srgb, var(--teal) 16%, transparent); }
+        .d20 { position: absolute; bottom: 38px; left: 50%; width: 120px; height: 120px; margin-left: -60px; overflow: visible; filter: drop-shadow(0 0 22px color-mix(in srgb, var(--gold) 45%, transparent)); }
+        .d20 .face { fill: color-mix(in srgb, var(--gold) 16%, #120f0a); }
+        .d20 .edge { fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linejoin: round; }
+        .d20 text { fill: var(--gold); font-family: "Cinzel", serif; font-size: 17px; font-weight: 800; text-anchor: middle; }
     </style>
 </head>
 <body>
-    <p class="wordmark">OKAMI</p>
+    <p class="wordmark"></p>
     <div class="copy">
-        <p class="brand"><img src="../assets/images/okami-logo-v4.png" alt=""><span>OKAMI<small>PERSONAL LAB</small></span></p>
-        <h1>A passion<br>for building.<br><span>And for pushing<br>my skills.</span></h1>
-        <p class="url">shadowokami.com</p>
+        <p class="brand"><img src="../assets/images/okami-logo-v4.png" alt=""><span>OKAMI<small></small></span></p>
+        <h1></h1>
+        <p class="tagline"></p>
+        <p class="url"></p>
     </div>
-    <div class="mark"><i class="ring"></i><i class="main"></i><i class="clover"></i><i class="gem"></i><img src="../assets/images/okami-logo-v4.png" alt=""></div>
+    <div class="mark">
+        <i class="ring"></i><i class="main"></i><i class="clover"></i><i class="gem"></i>
+        <img alt="">
+        <div class="portal">
+            <b class="outer"></b><b class="inner"></b><b class="surface"></b>
+            <svg class="d20" viewBox="0 0 100 100"><path class="face" d="M50 4 90 27v46L50 96 10 73V27Z"/><path class="edge" d="M50 4 90 27v46L50 96 10 73V27ZM50 4 28 38h44ZM28 38 10 27M72 38l18-11M28 38 50 78 72 38M28 38 10 73M72 38l18 35M50 78 10 73M50 78l40-5M50 78v18"/><text x="50" y="62">20</text></svg>
+        </div>
+    </div>
+    <script>
+        // Card contents. `scope` is the page class whose colour tokens the card uses.
+        const CARDS = {
+            okami: {
+                scope: '', label: 'PERSONAL LAB', wordmark: 'OKAMI',
+                title: 'A passion<br>for building.<br><span>And for pushing<br>my skills.</span>',
+                tagline: '', url: 'shadowokami.com', image: '../assets/images/okami-logo-v4.png'
+            },
+            voidline: {
+                scope: 'voidline-page project', label: 'PROJECT / 01', wordmark: 'VOID',
+                title: 'Voidline',
+                tagline: 'An open-source desktop shell around Hyprland. Public development preview.',
+                url: 'shadowokami.com/Voidline', image: '../assets/images/voidline-logo-v4.webp'
+            },
+            lunaecho: {
+                scope: 'luna-page project', label: 'PROJECT / 02', wordmark: 'LUNA',
+                title: 'Luna<span>Echo</span>',
+                tagline: 'One bot. Every community tool. Your way.',
+                url: 'shadowokami.com/LunaEcho', image: '../assets/images/lunaecho-logo-v3.png'
+            },
+            realms: {
+                scope: 'mirrorgate-page project', label: 'PROJECT / 04', wordmark: '',
+                title: '<em>The Mirrored</em><span>Realms</span>',
+                tagline: 'An open-source D&amp;D 5.5e setting where mirrors remember other lives.',
+                url: 'shadowokami.com/Mirrored_Realms', image: ''
+            }
+        };
+        const card = CARDS[new URLSearchParams(location.search).get('card')] || CARDS.okami;
+        document.body.className = card.scope;
+        document.querySelector('.wordmark').textContent = card.wordmark;
+        document.querySelector('.brand small').textContent = card.label;
+        document.querySelector('h1').innerHTML = card.title;
+        document.querySelector('.tagline').innerHTML = card.tagline;
+        document.querySelector('.url').textContent = card.url;
+        if (card.image) document.querySelector('.mark > img').src = card.image;
+    </script>
 </body>
 </html>
