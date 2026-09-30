@@ -179,7 +179,8 @@ body.mirrorgate-page::before {
 .realm-d20 { width: 86px; height: 86px; overflow: visible; }
 .realm-d20 .d20-face { fill: color-mix(in srgb, var(--gold) 16%, #120f0a); }
 .realm-d20 .d20-edge { fill: none; stroke: var(--gold); stroke-width: 1.4; stroke-linejoin: round; }
-.realm-d20 text { fill: var(--gold); font-family: var(--caps); font-size: 17px; font-weight: 800; text-anchor: middle; }
+/* Sized to stay inside the centre triangle, also for two-digit rolls. */
+.realm-d20 text { fill: var(--gold); font-family: var(--caps); font-size: 11.5px; font-weight: 800; text-anchor: middle; }
 .mirrorgate-visual .realm-d20 {
     position: absolute;
     top: 64%;
@@ -226,13 +227,13 @@ body.mirrorgate-page::before {
     line-height: .82;
 }
 
-/* ─── Journeys: one die per kind of adventure ────────────────────────────── */
+/* ─── Journeys ───────────────────────────────────────────────────────────── */
 
 .journey-grid,
 .ledger-grid { display: grid; gap: 16px; }
 .journey-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .journey-card {
-    min-height: 380px;
+    min-height: 340px;
     padding: 34px 30px 30px;
     border-radius: 50% 50% var(--shape-xl) var(--shape-xl) / 30% 30% var(--shape-xl) var(--shape-xl);
     background: var(--md-sys-color-surface-container);
@@ -240,21 +241,14 @@ body.mirrorgate-page::before {
     text-align: center;
 }
 .journey-card > strong {
-    display: grid;
-    width: 128px;
-    height: 128px;
-    margin: 26px auto 8px;
-    place-items: center;
+    display: block;
+    margin: 30px 0 6px;
     color: var(--gold);
-    background: center / contain no-repeat;
     font-family: var(--caps);
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 700;
     line-height: 1;
 }
-.journey-d10 > strong { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e8c173' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M50 4 94 44 50 96 6 44Z' fill='%23e8c173' fill-opacity='.08'/%3E%3Cpath d='M50 4 32 52 50 62 68 52Z M6 44l26 8M94 44l-26 8M50 62v34' stroke-opacity='.55'/%3E%3C/g%3E%3C/svg%3E"); }
-.journey-d6 > strong { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e8c173' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M50 6 90 28v44L50 94 10 72V28Z' fill='%23e8c173' fill-opacity='.08'/%3E%3Cpath d='M10 28l40 22 40-22M50 50v44' stroke-opacity='.55'/%3E%3C/g%3E%3C/svg%3E"); }
-.journey-d4 > strong { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23e8c173' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M50 6 94 86H6Z' fill='%23e8c173' fill-opacity='.08'/%3E%3Cpath d='M50 6v58M6 86l44-22 44 22' stroke-opacity='.55'/%3E%3C/g%3E%3C/svg%3E"); padding-top: 26px; }
 .journey-card h3 { margin: 10px 0 12px; color: var(--ink); font-size: 1.7rem; }
 .journey-card p:last-child { color: var(--ink-soft); font-size: 1.02rem; line-height: 1.55; }
 .journey-card-long { background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--teal) 12%, transparent), transparent 55%), var(--md-sys-color-surface-container); }
