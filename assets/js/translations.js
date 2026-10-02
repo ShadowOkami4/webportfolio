@@ -91,7 +91,6 @@
         'View the Voidline project': 'Das Voidline-Projekt ansehen',
         'Take a look': 'Ansehen',
         'View the LunaEcho project': 'Das LunaEcho-Projekt ansehen',
-        'Repository planned': 'Repository geplant',
         'View StreamNotifier on GitHub': 'StreamNotifier auf GitHub ansehen',
         'View source': 'Quellcode ansehen',
         'Enter The Mirrored Realms project': 'Das Projekt „Die Spiegelreiche“ betreten',
@@ -248,8 +247,6 @@
 
     const lunaecho = {
         'Features': 'Funktionen',
-        'GitHub repository planned': 'GitHub-Repository geplant',
-        'GitHub planned': 'GitHub geplant',
         'No public release yet': 'Noch keine öffentliche Veröffentlichung',
         'You': 'Dir',
         'At a glance': 'Auf einen Blick',
@@ -497,6 +494,12 @@
     };
 
     const lunaechoV01 = {
+        'Open the dashboard ↗': 'Zum Dashboard ↗',
+        'Open the Cloud dashboard ↗': 'Zum Cloud-Dashboard ↗',
+        'View on GitHub ↗': 'Auf GitHub ansehen ↗',
+        'Get the source ↗': 'Zum Quellcode ↗',
+        'Built in the open.': 'Öffentlich entwickelt.',
+        'The source code and the Cloud dashboard are online. LunaEcho is still in pre-release: Custom, final limits, and the release documentation follow when their roadmap stages are ready.': 'Quellcode und Cloud-Dashboard sind online. LunaEcho ist noch in der Vorabphase: Custom, endgültige Limits und die Release-Dokumentation folgen, wenn ihre Fahrplanstufen bereit sind.',
         'LunaEcho | Modular Open-Source Discord Platform': 'LunaEcho | Modulare Open-Source-Discord-Plattform',
         'LunaEcho is a planned modular, all-in-one, open-source Discord community platform available as Self-Hosted, Cloud, or Custom.': 'LunaEcho ist eine geplante modulare All-in-One-Open-Source-Plattform für Discord-Communitys, verfügbar als Self-Hosted, Cloud oder Custom.',
         'One bot. Every community tool. Your way. Explore LunaEcho Self-Hosted, Cloud, and Custom.': 'Ein Bot. Jedes Community-Werkzeug. Auf deine Weise. Entdecke LunaEcho Self-Hosted, Cloud und Custom.',
@@ -507,7 +510,6 @@
         'One bot. Every community tool. Your way.': 'Ein Bot. Jedes Community-Werkzeug. Auf deine Weise.',
         'A modular, all-in-one, open-source Discord community platform. Enable only the tools your server needs, host it yourself, or let LunaEcho handle the infrastructure.': 'Eine modulare All-in-One-Open-Source-Plattform für Discord-Communitys. Aktiviere nur die Werkzeuge, die dein Server benötigt, hoste sie selbst oder überlasse LunaEcho die Infrastruktur.',
         'Choose how to run it ↓': 'Wähle, wie du es betreibst ↓',
-        'Explore the modules': 'Module entdecken',
         'Open source first': 'Open Source zuerst',
         'Modular by design': 'Von Grund auf modular',
         'One shared codebase': 'Eine gemeinsame Codebasis',
@@ -700,8 +702,6 @@
         'Data categories, token safeguards, retention, service providers, security, and deletion requests.': 'Datenkategorien, Token-Schutz, Aufbewahrung, Dienstleister, Sicherheit und Löschanfragen.',
         'Pre-release product plan v0.1': 'Produktplan v0.1 / Vorabversion',
         'Open source first.': 'Open Source zuerst.',
-        'Public only when ready.': 'Erst öffentlich, wenn es bereit ist.',
-        'LunaEcho is not accepting public servers yet. The repository, Cloud, Custom, final limits, and release documentation will appear only when their roadmap stages are ready.': 'LunaEcho nimmt noch keine öffentlichen Server an. Repository, Cloud, Custom, endgültige Limits und Release-Dokumentation erscheinen erst, wenn ihre jeweiligen Fahrplanstufen bereit sind.'
     };
 
     const lunaLegalV01 = {

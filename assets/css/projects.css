@@ -334,6 +334,7 @@ tbody tr:last-child > * { border-bottom: 0; }
 .luna-card-fit { display: flex; margin: auto 0 0; padding-top: 18px; flex-direction: column; gap: 5px; border-top: 1px solid var(--line); }
 .luna-card-fit span { color: var(--muted); }
 .luna-card-fit strong { color: var(--ink); font-size: .95rem; }
+.luna-card-action { margin-top: 16px; }
 .luna-product-statement { display: grid; margin: 24px 0 0; padding: 34px 38px; grid-template-columns: minmax(180px, .3fr) minmax(0, 1fr); align-items: center; gap: 26px; border-radius: var(--shape-xxl); color: var(--md-sys-color-on-primary-container); background: var(--md-sys-color-primary-container); }
 .luna-product-statement span { opacity: .8; }
 .luna-product-statement p { margin: 0; font-size: clamp(1.8rem, 3.2vw, 3.1rem); line-height: 1.02; }
