@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#16130e">
     <title>The Mirrored Realms | Open-Source 5.5e Campaign Setting</title>
-    <meta name="description" content="The Mirrored Realms is an evolving, open-source 5.5e-compatible campaign setting built as an interconnected Obsidian vault: the world of Zerkalo, the Mirrorgate, and the scars of an ancient divine war.">
+    <meta name="description" content="The Mirrored Realms is an evolving, open-source 5.5e-compatible campaign setting built as an interconnected Obsidian vault: the world of Kagameru, the Mirrorgate, and the scars of an ancient divine war.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Mirrored Realms | Open-Source 5.5e Campaign Setting">
-    <meta property="og:description" content="Enter Zerkalo, an evolving open-source 5.5e-compatible setting where roads arrive in the wrong century and mirrors open toward places no map can contain.">
+    <meta property="og:description" content="Enter Kagameru, an evolving open-source 5.5e-compatible setting where roads arrive in the wrong century and mirrors open toward places no map can contain.">
     <meta property="og:site_name" content="Okami">
     <meta property="og:url" content="https://shadowokami.com/Mirrored_Realms">
     <meta property="og:image" content="https://shadowokami.com/assets/images/og-realms.png?v=2">
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../assets/css/shapes.css?v=1">
     <link rel="stylesheet" href="../assets/css/base.css?v=4">
     <link rel="stylesheet" href="../assets/css/projects.css?v=4">
-    <link rel="stylesheet" href="../assets/css/realms.css?v=10">
+    <link rel="stylesheet" href="../assets/css/realms.css?v=12">
     <link rel="stylesheet" href="../assets/css/motion.css?v=2">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -47,6 +47,7 @@
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Project navigation">
             <a href="#overview">Overview</a>
+            <a href="#world">World</a>
             <a href="#roadmap">Roadmap</a>
             <a href="#contents">Contents</a>
             <a href="#workflow">Workflow</a>
@@ -61,12 +62,12 @@
                 <p class="detail-badge reveal">Open source / 5.5e compatible</p>
                 <h1 class="detail-title reveal" id="project-title"><span class="mirrored-title-prefix">The Mirrored</span><span class="outline">Realms</span></h1>
                 <span class="realm-ornament reveal" aria-hidden="true"></span>
-                <p class="detail-lead reveal">The Obsidian vault calls itself an archive. Follow its links long enough and it becomes a world: Zerkalo, still bearing the wounds of an ancient divine war, where roads arrive in the wrong century, ruins remember histories that never happened, and mirrors open toward places no map can contain.</p>
+                <p class="detail-lead reveal">The Obsidian vault calls itself an archive. Follow its links long enough and it becomes a world: Kagameru, still bearing the wounds of an ancient divine war, where roads arrive in the wrong century, ruins remember histories that never happened, and mirrors open toward places no map can contain.</p>
                 <div class="detail-actions reveal">
                     <a class="button" href="https://github.com/ShadowOkami4/Mirrorgate" target="_blank" rel="noopener noreferrer">Enter the vault ↗</a>
                     <a class="button button-ghost" href="#roadmap">Read the records ↓</a>
                 </div>
-                <div class="detail-tags reveal"><span>5.5e compatible</span><span>Obsidian vault</span><span>Open source</span><span>CC BY 4.0</span><span>Worldbuilding</span></div>
+                <div class="detail-tags reveal"><span>5.5e compatible</span><span>Obsidian vault</span><span>Open source</span><span>CC BY 4.0</span><span>Atlas VTT ready</span></div>
             </div>
 
             <figure class="detail-visual mirrorgate-visual reveal" aria-label="An abstract mirror doorway leading into the Library of Kagami">
@@ -91,18 +92,48 @@
                 <div><strong>WIP</strong><span>Early development</span></div>
             </div>
             <dl class="realm-glance reveal">
-                <div><dt>World</dt><dd>Zerkalo</dd></div>
+                <div><dt>World</dt><dd>Kagameru</dd></div>
                 <div><dt>Central mystery</dt><dd>The Mirrorgate and the Scars of the Primordial War</dd></div>
-                <div><dt>Main campaign</dt><dd>Shattered Hope</dd></div>
+                <div><dt>Present age</dt><dd>The Shattered Hope Era</dd></div>
+                <div><dt>Main campaign</dt><dd>Shattered Hope (CF-01)</dd></div>
                 <div><dt>Rules foundation</dt><dd>5.5e-compatible material using SRD 5.2.1</dd></div>
                 <div><dt>Format</dt><dd>Interconnected Obsidian vault</dd></div>
+                <div><dt>Virtual tabletop</dt><dd>Atlas VTT (optional)</dd></div>
                 <div><dt>License</dt><dd>CC BY 4.0 for original project material</dd></div>
+            </dl>
+        </section>
+
+        <section class="detail-section" id="world" aria-labelledby="world-title">
+            <div class="detail-section-head reveal">
+                <div class="section-label"><span>01</span> The known world</div>
+                <h2 id="world-title">Kagameru, as far<br>as the maps reach.</h2>
+                <p>Seven lands between the oceans: Specula, Drychwen, Scáthan, Veidra, Skuggsjá, Tezcatl, and the Southern Ice. Switch to the political map to see the realms and their borders.</p>
+            </div>
+
+            <figure class="realm-map reveal" data-realm-map>
+                <div class="realm-map-switch" role="group" aria-label="Map view">
+                    <button class="realm-map-option" type="button" data-map="physical" aria-pressed="true">Physical</button>
+                    <button class="realm-map-option" type="button" data-map="political" aria-pressed="false">Political</button>
+                </div>
+                <a class="realm-map-frame" href="../assets/images/kagameru-map-physical.webp" target="_blank" rel="noopener noreferrer">
+                    <img class="realm-map-image is-shown" data-map="physical" src="../assets/images/kagameru-map-physical.webp" width="2400" height="2000" loading="lazy" decoding="async" alt="Physical map of Kagameru, showing Specula, Drychwen, Scáthan, Veidra, Skuggsjá, Tezcatl, and the Southern Ice">
+                    <img class="realm-map-image" data-map="political" src="../assets/images/kagameru-map-political.webp" width="2400" height="2000" loading="lazy" decoding="async" alt="Political map of Kagameru, showing its realms and their borders">
+                    <span class="realm-map-open">Open full size ↗</span>
+                </a>
+                <figcaption><strong>An early version of the map.</strong> Coastlines, borders, realms, and the positions of places may still change wherever they do not fit the stories being written. When the map and the stories disagree, the stories decide.</figcaption>
+            </figure>
+
+            <dl class="realm-glance realm-map-facts reveal">
+                <div><dt>Extent</dt><dd>12,000 × 10,000 km</dd></div>
+                <div><dt>Scale</dt><dd>1 pixel ≈ 1 km at full resolution</dd></div>
+                <div><dt>Made with</dt><dd>The project’s own cartography scripts, from a single seed</dd></div>
+                <div><dt>Simulated</dt><dd>Terrain, erosion, climate, and biomes, then rivers, realms, settlements, roads, and railways</dd></div>
             </dl>
         </section>
 
         <section class="detail-section" id="roadmap" aria-labelledby="roadmap-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>01</span> Planned journeys</div>
+                <div class="section-label"><span>02</span> Planned journeys</div>
                 <h2 id="roadmap-title">Eighteen doors.<br>No safe order.</h2>
                 <p>Every planned adventure belongs to the same setting. A single night beside the wrong mirror may end at dawn, or return much later as the first thread of a history the players have already changed.</p>
             </div>
@@ -113,18 +144,21 @@
                     <strong>10</strong>
                     <h3>One-shots</h3>
                     <p>Ten doors into cursed estates, forbidden archives, unstable scars, and mirrors that promise to open only once.</p>
+                    <ul class="journey-titles"><li>The Dark Alley</li><li>Mirror and Scars</li></ul>
                 </article>
                 <article class="journey-card reveal">
                     <p class="journey-status">Multishots / 3 announced</p>
                     <strong>5</strong>
                     <h3>Short adventures</h3>
                     <p>Five deeper trails where local conflicts expose recurring faces, dangerous relics, and consequences that refuse to remain where they began.</p>
+                    <ul class="journey-titles"><li>The Pact in the Twilight <span>In development</span></li><li>Confronting Yourself</li><li>The Mysteries of the Phantomhives</li></ul>
                 </article>
                 <article class="journey-card journey-card-long reveal">
                     <p class="journey-status">Long term / 1 announced</p>
                     <strong>3</strong>
                     <h3>Campaign frameworks</h3>
-                    <p>Three long shadows over Zerkalo, where crowns, divine wounds, and the Mirrorgate can reshape an entire table’s version of the world. The first is Shattered Hope, the setting’s main campaign.</p>
+                    <p>Three long shadows over Kagameru, where crowns, divine wounds, and the Mirrorgate can reshape an entire table’s version of the world. The first is Shattered Hope, the setting’s main campaign.</p>
+                    <ul class="journey-titles"><li>Shattered Hope <span>Foundation</span></li></ul>
                 </article>
             </div>
 
@@ -144,10 +178,10 @@
                     </article>
                     <article class="production-card">
                         <div class="production-meta"><span class="ledger-status status-present">Active draft</span><span class="production-kind">Short adventure / Multishot</span></div>
-                        <h4>The Pack in the Twilight</h4>
-                        <div class="production-bar" aria-hidden="true"><span style="--progress: 5%"></span></div>
-                        <p class="production-figure"><strong>~5%</strong><span>Estimated progress</span></p>
-                        <p class="production-work"><span>Current work</span>Expanding the prelude into a complete adventure outline.</p>
+                        <h4>The Pact in the Twilight</h4>
+                        <div class="production-bar" aria-hidden="true"><span style="--progress: 25%"></span></div>
+                        <p class="production-figure"><strong>~25%</strong><span>Estimated progress</span></p>
+                        <p class="production-work"><span>Current work</span>Prelude and chapters 1–3 are drafted; now outlining the rest of the adventure.</p>
                     </article>
                 </div>
             </div>
@@ -156,24 +190,26 @@
 
         <section class="detail-section" id="contents" aria-labelledby="contents-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>02</span> Beyond adventures</div>
+                <div class="section-label"><span>03</span> Beyond adventures</div>
                 <h2 id="contents-title">The stories are only<br>the first layer.</h2>
                 <p>The Mirrored Realms is more than a collection of adventures. It is an interconnected worldbuilding archive, where lore, characters, places, rules, and adventures lead into one another.</p>
             </div>
 
             <div class="ledger-grid">
-                <article class="ledger-card reveal"><span class="ledger-status status-present">In the vault</span><h3>World &amp; history</h3><p>Zerkalo, its cosmology, lands, and politics, and the histories and myths that still disagree about the Primordial War.</p></article>
+                <article class="ledger-card reveal"><span class="ledger-status status-present">In the vault</span><h3>World &amp; history</h3><p>Kagameru, its cosmology, lands, and politics, and the histories and myths that still disagree about the Primordial War.</p></article>
                 <article class="ledger-card reveal"><span class="ledger-status status-present">In the vault</span><h3>Peoples &amp; powers</h3><p>Species and cultures, faiths and deities, royal bloodlines, factions, and figures whose names appear more often than coincidence allows.</p></article>
-                <article class="ledger-card reveal"><span class="ledger-status status-progress">In progress</span><h3>Rules &amp; bestiary</h3><p>Homebrew built on SRD 5.2.1: hazards for surviving the scars of the Primordial War, the shard-born Shardkin, and the first subclass drafts.</p></article>
-                <article class="ledger-card reveal"><span class="ledger-status status-progress">In progress</span><h3>Adventures &amp; fiction</h3><p>The Pack in the Twilight and the Shattered Hope campaign are the first threads pulled from the dark.</p></article>
-                <article class="ledger-card reveal"><span class="ledger-status status-progress">In progress</span><h3>The Bookshelf</h3><p>The same records gathered into reading order: a setting guide, a Player’s Companion, a Game Master’s Codex, a bestiary, and one book per adventure.</p></article>
+                <article class="ledger-card reveal"><span class="ledger-status status-progress">Playtest drafts</span><h3>Rules &amp; bestiary</h3><p>Homebrew on SRD 5.2.1: subclasses such as the Mirrorbound fighter and Scarborn Sorcery, Scar Hazards for the wounds of the Primordial War, and the creatures of the Mirrorgate Bestiary.</p></article>
+                <article class="ledger-card reveal"><span class="ledger-status status-progress">In progress</span><h3>Adventures &amp; fiction</h3><p>The Pact in the Twilight, its prelude and first three chapters drafted, and the Shattered Hope campaign are the first threads pulled from the dark.</p></article>
+                <article class="ledger-card reveal"><span class="ledger-status status-present">In the vault</span><h3>The Bookshelf</h3><p>The same records in reading order: the Encyclopedia Kagami, the Player’s Companion, the Game Master’s Codex, the Mirrorgate Bestiary, and one book for every adventure.</p></article>
+                <article class="ledger-card reveal"><span class="ledger-status status-present">In the vault</span><h3>Soundtrack</h3><p>A music recommendation for every important place and character, some moods, some tracks from games like Celeste and Professor Layton. No music is included; self-made remixes are planned.</p></article>
+                <article class="ledger-card reveal"><span class="ledger-status status-present">In the vault</span><h3>At the table</h3><p>Ready for Atlas VTT, an optional virtual tabletop inside Obsidian: battle maps, tokens, fog of war, dice, initiative, and a player view.</p></article>
                 <article class="ledger-card reveal"><span class="ledger-status status-planned">Planned</span><h3>Feats, spells &amp; magic items</h3><p>Further character options, spells, relics, and other objects whose histories may be more dangerous than their powers.</p></article>
             </div>
         </section>
 
         <section class="detail-section" id="enter" aria-labelledby="enter-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>03</span> Open the archive</div>
+                <div class="section-label"><span>04</span> Open the archive</div>
                 <h2 id="enter-title">Enter through<br>Obsidian.</h2>
                 <p>The Mirrored Realms does not expect to be read from beginning to end. It expects curiosity. Open the repository as an Obsidian vault, find the welcome record, and follow whichever name first feels familiar.</p>
             </div>
@@ -187,9 +223,9 @@
                 </div>
                 <ol class="vault-steps">
                     <li><span>01</span><div><strong>Clone or download</strong><p>Get the complete repository from GitHub.</p></div></li>
-                    <li><span>02</span><div><strong>Open as a vault</strong><p>Select the repository folder inside Obsidian.</p></div></li>
+                    <li><span>02</span><div><strong>Open as a vault</strong><p>Open the folder in Obsidian 1.8.7 or newer and trust its community plugins when asked.</p></div></li>
                     <li><span>03</span><div><strong>Find the entrance</strong><p>Open <code>00 Library of Kagami/Welcome.md</code> and meet the library’s custodian.</p></div></li>
-                    <li><span>04</span><div><strong>Follow the links</strong><p>Choose whichever record catches your attention and explore the archive from there.</p></div></li>
+                    <li><span>04</span><div><strong>Library or books</strong><p>Follow the links in any order, or read the same records as books from the bookshelf in <code>04 Books</code>.</p></div></li>
                 </ol>
             </div>
 
@@ -201,7 +237,7 @@
 
         <section class="detail-section" id="workflow" aria-labelledby="workflow-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>04</span> Tools &amp; workflow</div>
+                <div class="section-label"><span>05</span> Tools &amp; workflow</div>
                 <h2 id="workflow-title">The Scriptorium<br>behind the archive.</h2>
                 <p>Every archive needs a scriptorium. The Mirrored Realms is written and connected in Obsidian today; other tools wait for the stage of development when maps and play sessions will need them.</p>
             </div>
@@ -212,14 +248,20 @@
                     <article class="ledger-card tool-card">
                         <span class="ledger-status status-present">Primary environment</span>
                         <h4>Obsidian</h4>
-                        <p>The vault is the work itself. Every record is written, linked, and organised in Obsidian: the primary editor, the knowledge base, and the place where Zerkalo is built.</p>
+                        <p>The vault is the work itself. Every record is written, linked, and organised in Obsidian: the primary editor, the knowledge base, and the place where Kagameru is built.</p>
                         <a class="tool-link" href="https://obsidian.md/" target="_blank" rel="noopener noreferrer">Visit Obsidian ↗</a>
                     </article>
                     <article class="ledger-card tool-card">
                         <span class="ledger-status status-present">Supporting plugin</span>
                         <h4>Atlas VTT</h4>
-                        <p>An Obsidian plugin that brings a virtual tabletop into the vault. It supports the current tabletop workflow alongside the records, while Obsidian remains where they are written.</p>
-                        <a class="tool-link" href="https://community.obsidian.md/plugins/atlas-vtt" target="_blank" rel="noopener noreferrer">View the plugin ↗</a>
+                        <p>A free, open-source Obsidian plugin by Fabian Urbanek (ByteMirror) that turns the vault into a virtual tabletop: battle maps, tokens, fog of war, dice, and initiative. Optional; every note works without it.</p>
+                        <a class="tool-link" href="https://github.com/ByteMirror/atlas-vtt" target="_blank" rel="noopener noreferrer">Atlas VTT on GitHub ↗</a>
+                    </article>
+                    <article class="ledger-card tool-card">
+                        <span class="ledger-status status-present">Own tooling</span>
+                        <h4>Cartography scripts</h4>
+                        <p>The world map comes from the project’s own scripts: one seed, simulated terrain, erosion, and climate, then rivers, realms, settlements, and roads.</p>
+                        <a class="tool-link" href="#world">See the map ↑</a>
                     </article>
                 </div>
                 <div class="tool-group tool-group-planned reveal">
@@ -227,21 +269,25 @@
                     <article class="ledger-card tool-card">
                         <span class="ledger-status status-planned">Planned</span>
                         <h4>Canvas of Kings</h4>
-                        <p>The intended tool for the setting’s future maps. It belongs to a later stage of development and is not yet part of production.</p>
+                        <p>Planned for later map work. It belongs to a later stage of development and is not yet part of production.</p>
                         <a class="tool-link" href="https://store.steampowered.com/app/2498570/Canvas_of_Kings/" target="_blank" rel="noopener noreferrer">Canvas of Kings on Steam ↗</a>
                     </article>
                     <article class="ledger-card tool-card">
                         <span class="ledger-status status-planned">Planned</span>
                         <h4>TaleSpire</h4>
-                        <p>A planned 3D environment for building places of Zerkalo as maps and bringing them to a virtual table. It is reserved for later-stage visualisation and play.</p>
+                        <p>A planned 3D environment for building places of Kagameru as maps and bringing them to a virtual table. It is reserved for later-stage visualisation and play.</p>
                         <a class="tool-link" href="https://talespire.com/" target="_blank" rel="noopener noreferrer">Visit TaleSpire ↗</a>
                     </article>
                 </div>
             </div>
 
             <aside class="artwork-note reveal">
-                <span>Artwork note</span>
-                <p>AI-generated images in the vault are currently used as visual aids, concept references, and temporary representations during development. Original artist contributions are welcome; suitable work may replace them over time, and every accepted piece will credit its artist.</p>
+                <span>Made by hand</span>
+                <p>The Mirrored Realms is made by Okami, about two years and many scrapped versions in the making. The story, its characters, and where it goes are written by hand. AI (Claude) only helps with checks: whether the map and the lore agree, grammar and spelling, some balancing of mechanics, and keeping the vault organised.</p>
+            </aside>
+            <aside class="artwork-note reveal">
+                <span>Artwork</span>
+                <p>AI-generated images in the vault are temporary visual aids. Artists are welcome to propose original work, voluntarily or as a paid commission (payment cannot be promised); every accepted piece is credited to its artist.</p>
             </aside>
         </section>
 
@@ -257,8 +303,8 @@
     <footer class="site-footer">
         <span class="footer-copyright"><strong>© <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small></span><span class="footer-motto">THE MIRRORED REALMS / PROJECT 04</span><a href="#overview">Back to top ↑</a>
     </footer>
-    <script src="../assets/js/translations.js?v=20"></script>
-    <script src="../assets/js/script.js?v=10"></script>
+    <script src="../assets/js/translations.js?v=22"></script>
+    <script src="../assets/js/script.js?v=11"></script>
     <script src="../assets/js/motion.js?v=5"></script>
     <script src="../assets/js/die3d.js?v=2"></script>
 </body>

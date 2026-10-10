@@ -145,6 +145,20 @@
         }, { passive: true });
     }
 
+    document.querySelectorAll('[data-realm-map]').forEach((map) => {
+        const frame = map.querySelector('.realm-map-frame');
+        const options = map.querySelectorAll('.realm-map-option');
+        options.forEach((option) => option.addEventListener('click', () => {
+            const view = option.dataset.map;
+            options.forEach((other) => other.setAttribute('aria-pressed', String(other === option)));
+            map.querySelectorAll('.realm-map-image').forEach((image) => {
+                const shown = image.dataset.map === view;
+                image.classList.toggle('is-shown', shown);
+                if (shown && frame) frame.href = image.getAttribute('src');
+            });
+        }));
+    });
+
     document.querySelectorAll('[data-year]').forEach((element) => {
         element.textContent = new Date().getFullYear();
     });
