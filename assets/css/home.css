@@ -196,7 +196,6 @@
 .project:nth-of-type(odd) .project-media { order: 2; }
 .project:hover { border-radius: var(--shape-xl-inc); background: var(--md-sys-color-surface-container-high); }
 .project-luna { --project-accent: #ff85d2; --project-on-accent: #3b0030; }
-.project-stream { --project-accent: #ff6b8b; --project-on-accent: #3d0012; }
 .project-mirrorgate { --project-accent: #c9a55a; --project-on-accent: #2b1d00; }
 
 .project-media {
@@ -265,14 +264,6 @@
 .luna-media { display: grid; place-items: center; background: radial-gradient(circle at 50% 42%, rgb(255 145 219 / .25), transparent 32%), linear-gradient(145deg, #131426, #26142b); }
 .luna-media > img { width: min(66%, 300px); height: auto; object-fit: contain; filter: drop-shadow(0 22px 40px rgb(255 128 203 / .16)); }
 .project:hover .luna-media > img { transform: scale(1.06) rotate(-3deg); }
-.stream-media { display: grid; place-items: center; background: linear-gradient(145deg, #140d13, #1b1118); }
-.stream-media strong { position: relative; z-index: 2; font-size: clamp(3.4rem, 8vw, 6.5rem); font-stretch: var(--display-stretch); font-weight: var(--display-weight); letter-spacing: -.005em; line-height: 1; }
-.stream-media strong span { color: #ff6b8b; animation: blink 1s steps(2, end) infinite; }
-.signal-art { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 12px; opacity: .24; }
-.signal-art span { width: 14px; height: 28%; border-radius: var(--shape-full); background: #ff6b8b; animation: signal 1.8s var(--effects) infinite alternate; }
-.signal-art span:nth-child(2), .signal-art span:nth-child(4) { height: 46%; animation-delay: -.4s; }
-.signal-art span:nth-child(3) { height: 68%; animation-delay: -.8s; }
-@keyframes signal { to { transform: scaleY(.55); opacity: .5; } }
 .mirrorgate-media { background: radial-gradient(circle at 65% 48%, rgb(79 178 167 / .18), transparent 24%), linear-gradient(135deg, #0d1212, #16110c 70%); }
 .mirror-card-art { position: absolute; inset: 0; z-index: 2; }
 .mirror-card-orbit { position: absolute; top: 46%; left: 64%; width: 52%; aspect-ratio: 1; border: 1px solid rgb(145 207 198 / .28); border-radius: 50%; transform: translate(-50%, -50%) rotate(-14deg) scaleY(.36); }
