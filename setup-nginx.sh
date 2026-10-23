@@ -39,6 +39,8 @@ done
 echo "Deploying static files to $WEB_ROOT..."
 install -d -m 0755 "$WEB_ROOT"
 install -m 0644 "$SCRIPT_DIRECTORY/index.html" "$WEB_ROOT/index.html"
+# nginx serves this for every missing page (error_page 404 /404.html) – it has to be deployed too.
+install -m 0644 "$SCRIPT_DIRECTORY/404.html" "$WEB_ROOT/404.html"
 install -d -m 0755 "$WEB_ROOT/assets" "$WEB_ROOT/pages"
 cp -R "$SCRIPT_DIRECTORY/assets/." "$WEB_ROOT/assets/"
 cp -R "$SCRIPT_DIRECTORY/pages/." "$WEB_ROOT/pages/"
