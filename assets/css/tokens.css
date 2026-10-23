@@ -105,7 +105,7 @@
   --md-sys-color-on-error-container: #ffdad6;
 }
 
-/* LunaEcho – seed #ff85d2, tertiary #8bc7ff */
+/* LunaEcho – seed #ff85d2, tertiary #d29bff */
 .luna-page, .luna-legal-page {
   --md-sys-color-background: #191115;
   --md-sys-color-on-background: #efdee5;
@@ -142,15 +142,15 @@
   --md-sys-color-secondary-fixed-dim: #f2b5d6;
   --md-sys-color-on-secondary-fixed: #330c27;
   --md-sys-color-on-secondary-fixed-variant: #663854;
-  --md-sys-color-tertiary: #9ecfff;
-  --md-sys-color-tertiary-dim: #8ac6fe;
-  --md-sys-color-on-tertiary: #003353;
-  --md-sys-color-tertiary-container: #78b4eb;
-  --md-sys-color-on-tertiary-container: #00456e;
-  --md-sys-color-tertiary-fixed: #cee5ff;
-  --md-sys-color-tertiary-fixed-dim: #96ccff;
-  --md-sys-color-on-tertiary-fixed: #001d32;
-  --md-sys-color-on-tertiary-fixed-variant: #004a76;
+  --md-sys-color-tertiary: #e2bcff;
+  --md-sys-color-tertiary-dim: #d19afe;
+  --md-sys-color-on-tertiary: #481172;
+  --md-sys-color-tertiary-container: #cf98fc;
+  --md-sys-color-on-tertiary-container: #5b2885;
+  --md-sys-color-tertiary-fixed: #f1daff;
+  --md-sys-color-tertiary-fixed-dim: #e0b7ff;
+  --md-sys-color-on-tertiary-fixed: #2d004f;
+  --md-sys-color-on-tertiary-fixed-variant: #602e8a;
   --md-sys-color-error: #ffb4ab;
   --md-sys-color-error-dim: #ff554a;
   --md-sys-color-on-error: #690005;

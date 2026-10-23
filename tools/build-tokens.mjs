@@ -14,7 +14,7 @@ import { DynamicScheme, Hct, MaterialDynamicColors, SchemeContent, TonalPalette,
 const AREAS = [
   { selector: ":root", name: "Okami (home, 404)", seed: "#a568ff" },
   { selector: ".voidline-page", name: "Voidline", seed: "#9748f4", tertiary: "#6ee7f2" },
-  { selector: ".luna-page, .luna-legal-page", name: "LunaEcho", seed: "#ff85d2", tertiary: "#8bc7ff" },
+  { selector: ".luna-page, .luna-legal-page", name: "LunaEcho", seed: "#ff85d2", tertiary: "#d29bff" },
   { selector: ".mirrorgate-page", name: "The Mirrored Realms (grimoire)", seed: "#c9a55a", tertiary: "#79c9bf" },
 ];
 

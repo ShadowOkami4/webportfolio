@@ -84,12 +84,14 @@
 }
 @keyframes item-in { from { opacity: 0; translate: 0 22px; scale: .96; } }
 
-/* Display type "inks in": Roboto Flex runs up its weight axis and settles. */
+/* Display type "inks in": it rises out of a soft blur. Only opacity, filter
+   and translate move, so the lines never re-wrap mid-animation (animating the
+   weight axis did, and the headline jittered while it settled). */
 .js .is-visible:is(.display-copy, .detail-cta h2),
 .js .is-visible :is(.section-heading h2, .contact-title, .detail-section-head h2, .voidline-section-intro h2, .project-info h3) {
-    animation: ink-in 1100ms var(--spring-slow) backwards;
+    animation: ink-in 900ms var(--spring-slow) 80ms backwards;
 }
-@keyframes ink-in { from { font-weight: 260; } }
+@keyframes ink-in { from { opacity: 0; filter: blur(8px); translate: 0 .14em; } }
 
 /* Headlines lean in on hover: a bolder, slightly wider cut. */
 .project-info h3 { transition: font-weight var(--spring-default-duration) var(--spring-default), font-stretch var(--spring-default-duration) var(--spring-default); }
@@ -116,7 +118,7 @@
     box-shadow: none;
     background: #73e49a;
     clip-path: var(--shape-cookie9);
-    animation: loader-morph 5.2s infinite, spin 2.6s linear infinite;
+    animation: loader-morph 6.4s infinite, spin 7s linear infinite;
 }
 @keyframes loader-morph {
     0% { clip-path: var(--shape-cookie9); animation-timing-function: var(--spring-default); }

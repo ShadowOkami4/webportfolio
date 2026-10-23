@@ -66,7 +66,7 @@ body.mirrorgate-page::before {
         radial-gradient(48rem 34rem at 78% 4%, color-mix(in srgb, var(--gold) 12%, transparent), transparent 70%),
         radial-gradient(40rem 34rem at 10% 60%, color-mix(in srgb, var(--teal) 7%, transparent), transparent 72%);
 }
-.mirrorgate-page .site-grid { opacity: .12; background-size: 96px 96px; mask-image: radial-gradient(circle at 55% 18%, #000, transparent 62%); }
+.mirrorgate-page .site-grid { opacity: .45; background-size: 96px 96px; mask-image: radial-gradient(circle at 55% 18%, #000, transparent 62%); }
 
 /* UI chrome stays in the site's sans; everything inside the book is serif. */
 .mirrorgate-page .site-header,

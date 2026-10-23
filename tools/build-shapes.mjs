@@ -5,7 +5,7 @@
 //   npm run build:shapes
 import { writeFileSync } from "node:fs";
 
-const POINTS = 72;
+const POINTS = 144;
 
 const radius = {
   circle: () => 1,
@@ -14,8 +14,8 @@ const radius = {
   cookie6: (t) => 1 - 0.11 * (1 - Math.cos(6 * t)) / 2,
   cookie9: (t) => 1 - 0.09 * (1 - Math.cos(9 * t)) / 2,
   cookie12: (t) => 1 - 0.07 * (1 - Math.cos(12 * t)) / 2,
-  // Four soft petals.
-  clover: (t) => 0.7 + 0.3 * Math.abs(Math.cos(2 * t)) ** 0.6,
+  // Four soft petals with rounded valleys (no cusps between them).
+  clover: (t) => 0.72 + 0.28 * (1 - (1 - (1 + Math.cos(4 * t)) / 2) ** 2),
   // Many small rays.
   sunny: (t) => 1 - 0.07 * (1 - Math.cos(8 * t)) / 2,
   burst: (t) => 1 - 0.2 * (1 - Math.cos(12 * t)) / 2,

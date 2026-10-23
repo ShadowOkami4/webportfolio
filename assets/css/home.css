@@ -261,7 +261,7 @@
 .voidline-card-identity span { display: grid; }
 .voidline-card-identity strong { font-size: 1.4rem; font-stretch: var(--display-stretch); font-weight: var(--display-weight); line-height: 1; }
 .voidline-card-identity small { margin-top: 6px; color: #cbc1d2; font-size: .74rem; }
-.luna-media { display: grid; place-items: center; background: radial-gradient(circle at 50% 42%, rgb(255 145 219 / .25), transparent 32%), linear-gradient(145deg, #131426, #26142b); }
+.luna-media { display: grid; place-items: center; background: radial-gradient(circle at 50% 42%, rgb(255 145 219 / .25), transparent 32%), linear-gradient(145deg, #150d1a, #26142b); }
 .luna-media > img { width: min(66%, 300px); height: auto; object-fit: contain; filter: drop-shadow(0 22px 40px rgb(255 128 203 / .16)); }
 .project:hover .luna-media > img { transform: scale(1.06) rotate(-3deg); }
 .mirrorgate-media { background: radial-gradient(circle at 65% 48%, rgb(79 178 167 / .18), transparent 24%), linear-gradient(135deg, #0d1212, #16110c 70%); }

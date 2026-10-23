@@ -64,7 +64,9 @@
 .luna-page,
 .luna-legal-page,
 .mirrorgate-page {
-    --bg: var(--md-sys-color-surface-container-lowest);
+    /* Near-black page: the lowest surface pushed most of the way to black,
+       so the area tint survives only as a hint. */
+    --bg: color-mix(in srgb, var(--md-sys-color-surface-container-lowest) 38%, #000);
     --surface: var(--md-sys-color-surface-container-low);
     --surface-solid: var(--md-sys-color-surface-container);
     --surface-raised: var(--md-sys-color-surface-container-high);
@@ -115,8 +117,8 @@ body::before {
     content: "";
     pointer-events: none;
     background:
-        radial-gradient(52rem 38rem at 85% -6%, color-mix(in srgb, var(--md-sys-color-primary-container) 20%, transparent), transparent 70%),
-        radial-gradient(40rem 34rem at 6% 62%, color-mix(in srgb, var(--md-sys-color-tertiary) 7%, transparent), transparent 72%);
+        radial-gradient(52rem 38rem at 85% -6%, color-mix(in srgb, var(--md-sys-color-primary-container) 14%, transparent), transparent 70%),
+        radial-gradient(40rem 34rem at 6% 62%, color-mix(in srgb, var(--md-sys-color-tertiary) 5%, transparent), transparent 72%);
 }
 
 /* Film grain, as before, so large dark areas do not band. */
@@ -168,23 +170,27 @@ h1, h2, h3 { text-wrap: balance; }
 .skip-link:focus { transform: translateY(0); }
 :focus-visible { outline: 3px solid var(--md-sys-color-primary); outline-offset: 4px; }
 
-/* Background grid and pointer glow from the previous design (kept, quieter). */
+/* Background grid and pointer glow from the previous design. The grid lines
+   carry a touch of the area colour and fade out towards the page edges. */
 .site-grid {
     position: fixed;
     inset: 0;
     z-index: -4;
     pointer-events: none;
-    opacity: .28;
+    --grid-line: color-mix(in srgb, var(--md-sys-color-primary) 9%, rgb(255 255 255 / .055));
     background-image:
-        linear-gradient(rgb(255 255 255 / .025) 1px, transparent 1px),
-        linear-gradient(90deg, rgb(255 255 255 / .025) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 72px 72px;
-    mask-image: radial-gradient(circle at 50% 15%, #000 10%, transparent 72%);
+    background-position: center top;
+    mask-image: radial-gradient(130% 95% at 50% 10%, #000 20%, rgb(0 0 0 / .35) 62%, transparent 92%);
 }
+/* Moved with a transform (no layout per pointer move) and eased, so it trails
+   the pointer softly instead of sticking to it. */
 .cursor-glow {
     position: fixed;
-    top: var(--pointer-y, 20vh);
-    left: var(--pointer-x, 50vw);
+    top: 0;
+    left: 0;
     z-index: -3;
     width: 520px;
     height: 520px;
@@ -193,7 +199,9 @@ h1, h2, h3 { text-wrap: balance; }
     opacity: .1;
     background: var(--md-sys-color-primary-container);
     filter: blur(105px);
-    transform: translate(-50%, -50%);
+    transform: translate(calc(var(--pointer-x, 50vw) - 50%), calc(var(--pointer-y, 20vh) - 50%));
+    transition: transform 900ms var(--effects);
+    will-change: transform;
 }
 
 /* ─── Type roles ─────────────────────────────────────────────────────────── */
@@ -515,16 +523,16 @@ h1, h2, h3 { text-wrap: balance; }
     align-items: center;
     gap: 9px;
     border-radius: var(--shape-full);
-    color: #0e1b33;
-    background: #9ec4ff;
+    color: var(--md-sys-color-on-tertiary);
+    background: var(--md-sys-color-tertiary);
     letter-spacing: .02em;
     text-transform: none;
 }
-.footer-kofi:hover { background: #b7d3ff; }
+.footer-kofi:hover { background: color-mix(in srgb, var(--md-sys-color-on-tertiary) var(--state-hover), var(--md-sys-color-tertiary)); }
 .footer-kofi svg { width: 24px; height: 24px; overflow: visible; }
-.footer-kofi .kofi-cup { fill: #0e1b33; stroke: #0e1b33; stroke-width: 1.2; stroke-linejoin: round; }
-.footer-kofi .kofi-handle { fill: none; stroke: #0e1b33; stroke-width: 1.8; stroke-linecap: round; }
-.footer-kofi .kofi-heart { fill: #ff5e5b; }
+.footer-kofi .kofi-cup { fill: currentColor; stroke: currentColor; stroke-width: 1.2; stroke-linejoin: round; }
+.footer-kofi .kofi-handle { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.footer-kofi .kofi-heart { fill: #d9264f; }
 
 /* ─── Code box (install commands) ────────────────────────────────────────── */
 
