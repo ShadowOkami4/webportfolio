@@ -3,30 +3,19 @@
    area's M3 scheme (tokens.css), shapes and motion from base.css. */
 
 /* Small uppercase label used inside cards (was a monospace style before). */
-.tier-definition span,
 .detail-visual-label,
 .voidline-facts span,
 .voidline-purpose-card > span,
 .voidline-settings-shot figcaption span,
 .voidline-requirements > span,
 .step-number,
-.roadmap-card-top,
 .legal-doc-card-top,
 .legal-support-strip > span,
 .legal-toc p,
 .legal-section > p:first-child,
-.luna-product-card > header,
-.luna-card-fit span,
-.luna-product-statement span,
-.decision-note > span,
-.luna-module-card > span,
-.module-toggle-demo strong,
-.runtime-rail span,
-.custom-flow li span,
 .error-route > span,
 .error-orbit small,
-.voidline-hero-shot figcaption,
-thead th {
+.voidline-hero-shot figcaption {
     font-size: .74rem;
     font-weight: 650;
     letter-spacing: .08em;
@@ -41,17 +30,7 @@ thead th {
 .voidline-history-copy h2,
 .voidline-requirements h3,
 .install-step h3,
-.tier-comparison-head h3,
-.roadmap-card h3,
 .legal-doc-card h3,
-.luna-hero-kicker,
-.luna-product-card h3,
-.luna-product-statement p,
-.decision-note h3,
-.luna-module-card h3,
-.module-control-note h3,
-.luna-architecture-card h3,
-.custom-flow h3,
 .legal-title,
 .legal-section h2,
 .error-copy h1,
@@ -162,36 +141,8 @@ thead th {
 .detail-cta > p:not(.detail-badge) { max-width: 720px; color: var(--ink-soft); }
 .detail-cta .detail-actions { margin-top: 30px; }
 
-/* Shared lists, tables, notes */
-.check-list { margin: 22px 0 28px; padding: 0; list-style: none; }
-.check-list li { position: relative; margin-top: 10px; padding-left: 24px; color: var(--ink-soft); font-size: .9rem; }
-.check-list li::before { position: absolute; top: .55em; left: 0; width: 10px; height: 10px; content: ""; background: var(--md-sys-color-primary); clip-path: var(--shape-cookie4); }
-.tier-label { color: var(--md-sys-color-primary); }
-.tier-comparison { margin-top: 28px; padding: 30px; border-radius: var(--shape-xxl); background: var(--md-sys-color-surface-container-low); }
-.tier-comparison-head { display: flex; margin-bottom: 24px; align-items: end; justify-content: space-between; gap: 28px; }
-.tier-comparison-head h3 { margin: 8px 0 0; font-size: 2.2rem; }
-.tier-comparison-head > p { max-width: 420px; margin: 0; color: var(--muted); font-size: .9rem; }
-.tier-table-wrap { overflow-x: auto; border-radius: var(--shape-lg); background: var(--md-sys-color-surface-container); }
-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: .88rem; }
-th, td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; }
-thead th { color: var(--md-sys-color-on-secondary-container); background: var(--md-sys-color-secondary-container); }
-tbody th { color: var(--ink); }
-tbody td { color: var(--ink-soft); }
-tbody tr:last-child > * { border-bottom: 0; }
+/* Shared notes */
 .plan-note { margin: 22px 0 0; padding: 18px 22px; border-radius: var(--shape-lg); color: var(--ink-soft); background: color-mix(in srgb, var(--md-sys-color-primary) 9%, var(--md-sys-color-surface-container-low)); font-size: .9rem; }
-.comparison-footnote { margin: 0; padding: 18px 22px 22px; color: var(--muted); font-size: .84rem; line-height: 1.6; }
-
-.product-roadmap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.roadmap-card { position: relative; min-height: 330px; padding: 28px; overflow: hidden; border-radius: var(--shape-xl-inc); background: var(--md-sys-color-surface-container); }
-.roadmap-card::after { position: absolute; right: -40px; bottom: -40px; width: 130px; height: 130px; content: ""; background: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent); clip-path: var(--shape-clover); }
-.roadmap-current { background: color-mix(in srgb, var(--md-sys-color-primary-container) 22%, var(--md-sys-color-surface-container)); }
-.roadmap-card-top { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); }
-.roadmap-card-top strong { color: var(--md-sys-color-primary); }
-.roadmap-card h3 { margin: 40px 0 10px; font-size: 2.2rem; line-height: 1; }
-.roadmap-card p,
-.roadmap-card li { color: var(--muted); font-size: .9rem; }
-.roadmap-card ul { padding-left: 18px; }
-.luna-phase-roadmap .roadmap-card { min-height: 420px; }
 
 .legal-doc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .legal-doc-card {
@@ -286,96 +237,6 @@ tbody tr:last-child > * { border-bottom: 0; }
 .step-number { color: var(--md-sys-color-primary); }
 .install-step h3 { margin: 16px 0 14px; font-size: 1.7rem; }
 
-/* ─── LunaEcho: midnight community platform ──────────────────────────────── */
-
-.luna-page .detail-hero { padding: 64px 0 96px; grid-template-columns: minmax(280px, .62fr) minmax(0, 1.38fr); align-items: stretch; gap: clamp(46px, 8vw, 120px); }
-.luna-page .detail-copy { grid-column: 2; grid-row: 1; align-self: center; }
-.luna-page .detail-title { font-size: clamp(4.6rem, 10vw, 9rem); }
-.luna-page .detail-title .outline { -webkit-text-stroke-color: var(--md-sys-color-tertiary); }
-.luna-page .bot-visual {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    min-height: 600px;
-    border-radius: 160px 160px var(--shape-xxl) var(--shape-xxl);
-    background:
-        radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--md-sys-color-tertiary) 20%, transparent), transparent 32%),
-        radial-gradient(circle at 75% 72%, color-mix(in srgb, var(--md-sys-color-primary) 20%, transparent), transparent 36%),
-        var(--md-sys-color-surface-container);
-}
-.luna-page .bot-visual img { width: min(86%, 420px); }
-.luna-hero-kicker { max-width: 720px; margin: -8px 0 18px; color: var(--md-sys-color-primary); font-size: clamp(1.2rem, 2vw, 1.5rem); }
-
-.luna-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.luna-product-card {
-    position: relative;
-    display: flex;
-    min-width: 0;
-    min-height: 660px;
-    padding: 28px;
-    flex-direction: column;
-    gap: 26px;
-    overflow: hidden;
-    border-radius: var(--shape-xxl);
-    background: var(--md-sys-color-surface-container);
-}
-.luna-product-card::before { position: absolute; top: -90px; right: -70px; width: 230px; height: 230px; content: ""; background: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent); clip-path: var(--shape-cookie9); pointer-events: none; }
-.luna-product-card > header { display: flex; min-height: 38px; align-items: center; justify-content: space-between; gap: 12px; color: var(--muted); }
-.luna-product-card h3 { margin: 5px 0 13px; font-size: clamp(2.4rem, 4vw, 3.7rem); line-height: .95; }
-.luna-product-card > div > p:last-child { min-height: 88px; margin: 0; color: var(--ink-soft); line-height: 1.65; }
-.luna-product-card .check-list { margin: 0; }
-.luna-product-card .check-list li { padding-block: 9px; }
-.luna-price { padding: 8px 12px; border-radius: var(--shape-full); color: var(--md-sys-color-on-secondary-container); background: var(--md-sys-color-secondary-container); white-space: nowrap; letter-spacing: 0; text-transform: none; }
-.luna-product-cloud { background: color-mix(in srgb, var(--md-sys-color-tertiary) 8%, var(--md-sys-color-surface-container)); }
-.luna-product-custom { background: color-mix(in srgb, var(--md-sys-color-primary-container) 22%, var(--md-sys-color-surface-container)); }
-.luna-path { display: grid; min-height: 82px; padding: 14px; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 6px; border-radius: var(--shape-lg); background: var(--md-sys-color-surface-container-lowest); text-align: center; }
-.luna-path span { color: var(--ink-soft); font-size: .76rem; font-weight: 700; line-height: 1.25; }
-.luna-path b { color: var(--md-sys-color-primary); font-size: .85rem; }
-.luna-card-fit { display: flex; margin: auto 0 0; padding-top: 18px; flex-direction: column; gap: 5px; border-top: 1px solid var(--line); }
-.luna-card-fit span { color: var(--muted); }
-.luna-card-fit strong { color: var(--ink); font-size: .95rem; }
-.luna-card-action { margin-top: 16px; }
-.luna-product-statement { display: grid; margin: 24px 0 0; padding: 34px 38px; grid-template-columns: minmax(180px, .3fr) minmax(0, 1fr); align-items: center; gap: 26px; border-radius: var(--shape-xxl); color: var(--md-sys-color-on-primary-container); background: var(--md-sys-color-primary-container); }
-.luna-product-statement span { opacity: .8; }
-.luna-product-statement p { margin: 0; font-size: clamp(1.8rem, 3.2vw, 3.1rem); line-height: 1.02; }
-.decision-note { display: grid; margin-top: 24px; padding: 30px 34px; grid-template-columns: minmax(170px, .3fr) minmax(0, 1fr); gap: 28px; border-radius: var(--shape-xl-inc); background: var(--md-sys-color-surface-container-low); }
-.decision-note > span { padding-top: 4px; color: var(--md-sys-color-primary); }
-.decision-note h3 { margin: 0 0 8px; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
-.decision-note p { max-width: 830px; margin: 0; color: var(--ink-soft); }
-
-.luna-module-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.luna-module-card { min-height: 250px; padding: 26px 28px 30px; border-radius: var(--shape-xl); background: var(--md-sys-color-surface-container); transition: background var(--effects-duration) var(--effects), border-radius var(--spring-default-duration) var(--spring-default); }
-.luna-module-card:hover { border-radius: var(--shape-xxl); background: var(--md-sys-color-surface-container-high); }
-.luna-module-card > span { display: block; margin-bottom: 40px; color: var(--md-sys-color-primary); }
-.luna-module-card h3 { margin: 0 0 10px; font-size: clamp(1.6rem, 2.4vw, 2.3rem); line-height: 1.02; }
-.luna-module-card p { margin: 0; color: var(--ink-soft); font-size: .92rem; line-height: 1.65; }
-.luna-module-card-future { background: color-mix(in srgb, var(--md-sys-color-tertiary) 12%, var(--md-sys-color-surface-container)); }
-.module-control-note { display: grid; margin-top: 24px; padding: 30px 34px; grid-template-columns: minmax(240px, .45fr) minmax(0, 1fr); align-items: center; gap: 34px; border-radius: var(--shape-xl-inc); background: var(--md-sys-color-surface-container-low); }
-.module-control-note h3 { margin: 0 0 8px; font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
-.module-control-note p { margin: 0; color: var(--ink-soft); }
-.module-toggle-demo { display: grid; min-height: 72px; padding: 15px 17px; grid-template-columns: 1fr auto auto; align-items: center; gap: 12px; border-radius: var(--shape-lg); background: var(--md-sys-color-surface-container-high); }
-.module-toggle-demo span { font-weight: 800; }
-/* An M3 switch in its "on" state. */
-.module-toggle-demo i { position: relative; display: block; width: 52px; height: 32px; border-radius: var(--shape-full); background: var(--md-sys-color-primary); }
-.module-toggle-demo i::after { position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; border-radius: 50%; content: ""; background: var(--md-sys-color-on-primary); }
-.module-toggle-demo strong { color: var(--md-sys-color-primary); }
-
-.runtime-rail { display: flex; min-height: 76px; margin-bottom: 20px; padding: 18px 26px; align-items: center; justify-content: space-between; gap: 18px; border-radius: var(--shape-full); background: var(--md-sys-color-surface-container); }
-.runtime-rail i { height: 2px; flex: 1; border-radius: 2px; background: linear-gradient(90deg, var(--md-sys-color-primary), color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent)); }
-.luna-architecture-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.luna-architecture-card { min-height: 420px; padding: clamp(28px, 4vw, 42px); border-radius: var(--shape-xxl); background: var(--md-sys-color-surface-container); }
-.luna-architecture-card h3 { margin: 7px 0 14px; font-size: clamp(2.2rem, 3.8vw, 3.4rem); line-height: .98; }
-.luna-architecture-card > p:not(.tier-label) { color: var(--ink-soft); }
-.luna-architecture-card ul { margin: 28px 0 0; padding: 0; list-style: none; }
-.luna-architecture-card li { position: relative; padding: 10px 0 10px 24px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .92rem; }
-.luna-architecture-card li::before { position: absolute; top: 16px; left: 2px; width: 10px; height: 10px; content: ""; background: var(--md-sys-color-primary); clip-path: var(--shape-gem); }
-.luna-security-card { background: color-mix(in srgb, var(--md-sys-color-primary-container) 18%, var(--md-sys-color-surface-container)); }
-.custom-flow { display: grid; margin-top: 20px; padding: 38px; grid-template-columns: minmax(230px, .38fr) minmax(0, 1fr); gap: 40px; border-radius: var(--shape-xxl); background: var(--md-sys-color-surface-container-lowest); }
-.custom-flow h3 { margin: 8px 0 0; font-size: clamp(2rem, 3.4vw, 3.1rem); line-height: 1; }
-.custom-flow ol { display: grid; margin: 0; padding: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; list-style: none; }
-.custom-flow li { display: flex; min-height: 54px; padding: 12px 0; align-items: center; gap: 13px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: .92rem; }
-.custom-flow li span { color: var(--md-sys-color-primary); }
-
 /* ─── Legal documents (LunaEcho terms and privacy) ───────────────────────── */
 
 .legal-main { width: var(--page); margin-inline: auto; }
@@ -466,10 +327,6 @@ tbody tr:last-child > * { border-bottom: 0; }
     .voidline-title-lockup > img { width: 80px; height: 80px; }
     .voidline-purpose-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .voidline-purpose-primary { grid-column: 1 / -1; }
-    .luna-product-grid { grid-template-columns: 1fr; }
-    .luna-product-card { min-height: 0; }
-    .luna-product-card > div > p:last-child { min-height: 0; }
-    .luna-module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 920px) {
@@ -483,10 +340,8 @@ tbody tr:last-child > * { border-bottom: 0; }
     .detail-section-head > p,
     .voidline-section-intro > p { grid-column: 1; }
     .detail-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .product-roadmap,
     .legal-doc-grid,
     .voidline-feature-groups,
-    .luna-architecture-grid,
     .error-route-grid { grid-template-columns: 1fr; }
     .voidline-hero-copy { grid-template-columns: 1fr; }
     .voidline-hero-copy .detail-breadcrumb,
@@ -501,15 +356,6 @@ tbody tr:last-child > * { border-bottom: 0; }
     .legal-toc { position: static; }
     .legal-toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .legal-toc p { grid-column: 1 / -1; }
-    .luna-page .detail-hero { grid-template-columns: 1fr; }
-    .luna-page .detail-copy { grid-column: 1; grid-row: 1; }
-    .luna-page .bot-visual { grid-column: 1; grid-row: 2; width: min(100%, 560px); min-height: 480px; justify-self: center; border-radius: 120px 120px var(--shape-xxl) var(--shape-xxl); }
-    .luna-product-statement,
-    .decision-note,
-    .module-control-note,
-    .custom-flow { grid-template-columns: 1fr; }
-    .runtime-rail { padding: 20px; flex-direction: column; border-radius: var(--shape-xl); }
-    .runtime-rail i { width: 2px; height: 22px; flex: none; background: linear-gradient(var(--md-sys-color-primary), color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent)); }
     .error-visual { width: min(72vw, 480px); justify-self: center; }
 }
 
@@ -521,8 +367,6 @@ tbody tr:last-child > * { border-bottom: 0; }
     .detail-stats { grid-template-columns: 1fr; }
     .detail-stats > div { min-height: 92px; padding: 18px 20px; }
     .detail-cta { margin-block: 56px; padding: 36px 24px; border-radius: var(--shape-xl-inc); }
-    .tier-comparison { padding: 20px; border-radius: var(--shape-xl-inc); }
-    .tier-comparison-head { align-items: flex-start; flex-direction: column; }
     .legal-support-strip,
     .voidline-wallpaper-note { grid-template-columns: 1fr; }
     .voidline-hero { padding: 38px 0 62px; }
@@ -537,22 +381,6 @@ tbody tr:last-child > * { border-bottom: 0; }
     .voidline-purpose-grid,
     .voidline-settings-shot figcaption { grid-template-columns: 1fr; }
     .voidline-purpose-primary { grid-column: auto; }
-    .luna-page .detail-title { font-size: clamp(3.2rem, 15vw, 4.4rem); overflow-wrap: anywhere; }
-    .luna-page .bot-visual { min-height: 300px; padding: 16px; border-radius: var(--shape-xxl); }
-    .luna-page .bot-visual img { width: min(58%, 220px); }
-    .luna-product-card { padding: 22px 20px; border-radius: var(--shape-xl-inc); }
-    .luna-product-card > header { align-items: flex-start; flex-direction: column; }
-    .luna-path { grid-template-columns: 1fr; padding: 16px; }
-    .luna-path b { transform: rotate(90deg); }
-    .luna-product-statement,
-    .decision-note,
-    .module-control-note,
-    .custom-flow { padding: 24px 20px; border-radius: var(--shape-xl-inc); }
-    .luna-module-grid,
-    .custom-flow ol { grid-template-columns: 1fr; }
-    .module-toggle-demo { grid-template-columns: 1fr auto; }
-    .module-toggle-demo strong { grid-column: 1 / -1; }
-    .luna-architecture-card { min-height: 0; padding: 25px 21px; border-radius: var(--shape-xl-inc); }
     .legal-hero { padding-top: 48px; }
     .legal-title { font-size: clamp(3rem, 15vw, 4.4rem); }
     .legal-toc { grid-template-columns: 1fr; }

@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="../assets/css/tokens.css?v=2">
     <link rel="stylesheet" href="../assets/css/shapes.css?v=2">
     <link rel="stylesheet" href="../assets/css/base.css?v=6">
-    <link rel="stylesheet" href="../assets/css/projects.css?v=4">
+    <link rel="stylesheet" href="../assets/css/projects.css?v=5">
+    <link rel="stylesheet" href="../assets/css/lunaecho.css?v=1">
     <link rel="stylesheet" href="../assets/css/motion.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -47,115 +48,160 @@
     </header>
 
     <main id="main">
-        <section class="detail-hero" id="overview" aria-labelledby="project-title">
-            <div class="detail-copy">
+        <svg class="le-icons" aria-hidden="true" focusable="false">
+            <symbol id="le-i-shield" viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+            <symbol id="le-i-wave" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.4 2.7-6 6-6s6 2.6 6 6M19 8v6M16 11h6"/></symbol>
+            <symbol id="le-i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+            <symbol id="le-i-ticket" viewBox="0 0 24 24"><path d="M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4V6Z"/><path d="M10 6v2M10 11v2M10 16v2"/></symbol>
+            <symbol id="le-i-levels" viewBox="0 0 24 24"><path d="M5 19v-5M12 19V9M19 19V4"/></symbol>
+            <symbol id="le-i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+            <symbol id="le-i-log" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6V3Z"/><path d="M9 11h7M9 15h7M9 7h3"/></symbol>
+            <symbol id="le-i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></symbol>
+            <symbol id="le-i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+            <symbol id="le-i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4l2-2Z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+            <symbol id="le-i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></symbol>
+            <symbol id="le-i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+            <symbol id="le-i-server" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="7" rx="2"/><rect x="4" y="13" width="16" height="7" rx="2"/><path d="M8 7.5h.01M8 16.5h.01"/></symbol>
+            <symbol id="le-i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7Z"/></symbol>
+            <symbol id="le-i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M5 21c.8-3.5 3.6-6 7-6s6.2 2.5 7 6"/></symbol>
+            <symbol id="le-i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+            <symbol id="le-i-code" viewBox="0 0 24 24"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"/></symbol>
+            <symbol id="le-i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+            <symbol id="le-i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></symbol>
+        </svg>
+
+        <section class="le-hero" id="overview" aria-labelledby="project-title">
+            <div class="le-hero-copy">
                 <a class="detail-breadcrumb reveal" href="/#work">&larr; Back to my projects</a>
                 <p class="detail-badge reveal">Product plan v0.1 / Pre-release</p>
                 <h1 class="detail-title reveal" id="project-title">Luna<span class="outline">Echo</span></h1>
                 <p class="luna-hero-kicker reveal">One bot. Every community tool. Your way.</p>
                 <p class="detail-lead reveal">A modular, all-in-one, open-source Discord community platform. Enable only the tools your server needs, host it yourself, or let LunaEcho handle the infrastructure.</p>
-                <div class="detail-actions reveal"><a class="button" href="https://lunaecho.shadowokami.com" target="_blank" rel="noopener noreferrer">Open the dashboard ↗</a><a class="button button-ghost" href="https://github.com/ShadowOkami4/LunaEcho" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a><a class="button button-ghost" href="#hosting">Choose how to run it &darr;</a></div>
+                <div class="detail-actions reveal"><a class="button" href="https://lunaecho.shadowokami.com" target="_blank" rel="noopener noreferrer">Open the dashboard ↗</a><a class="button button-ghost" href="https://github.com/ShadowOkami4/LunaEcho" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div>
                 <div class="detail-tags reveal"><span>Open source first</span><span>Modular by design</span><span>One shared codebase</span></div>
             </div>
-            <figure class="detail-visual bot-visual reveal">
-                <img src="../assets/images/lunaecho-logo-v3.png" alt="LunaEcho cat bot logo with a pink and blue orbit" width="1600" height="1321">
-                <figcaption class="detail-visual-label">PRE-RELEASE / PRODUCT PLAN 0.1</figcaption>
+            <figure class="le-console reveal">
+                <img class="le-console-mascot" src="../assets/images/lunaecho-logo-v3.png" alt="LunaEcho cat bot logo with a pink and blue orbit" width="1600" height="1321">
+                <div class="le-console-panel" aria-hidden="true">
+                    <div class="le-console-head">
+                        <span class="le-console-avatar"><img src="../assets/images/lunaecho-logo-v3.png" alt="" width="40" height="33"></span>
+                        <span class="le-console-name"><strong>LunaEcho</strong> <b class="le-bot-tag">BOT</b><small>Your server · Modules</small></span>
+                    </div>
+                    <ul class="le-console-list">
+                        <li><svg><use href="#le-i-shield"/></svg><span>Moderation &amp; Safety</span><i class="is-on"></i></li>
+                        <li><svg><use href="#le-i-wave"/></svg><span>Welcome &amp; Onboarding</span><i class="is-on"></i></li>
+                        <li><svg><use href="#le-i-ticket"/></svg><span>Support &amp; Tickets</span><i class="is-on"></i></li>
+                        <li><svg><use href="#le-i-levels"/></svg><span>Levels &amp; Rewards</span><i></i></li>
+                        <li><svg><use href="#le-i-music"/></svg><span>Music</span><i class="is-on"></i></li>
+                    </ul>
+                    <p class="le-console-foot"><span>4 of 11 modules on</span><span>Settings saved</span></p>
+                </div>
+                <figcaption>Illustrative preview · not the final dashboard</figcaption>
             </figure>
         </section>
 
-        <section class="detail-strip" aria-label="Project facts"><div class="detail-stats">
+        <section class="detail-strip le-strip" aria-label="Project facts"><div class="detail-stats">
             <div><strong>3</strong><span>Ways to run LunaEcho</span></div><div><strong>11</strong><span>Planned version 1 modules</span></div><div><strong>1</strong><span>Shared modular codebase</span></div><div><strong>WIP</strong><span>No public release yet</span></div>
         </div></section>
 
-        <section class="detail-section luna-hosting-section" id="hosting" aria-labelledby="hosting-title">
-            <div class="detail-section-head reveal"><div class="section-label"><span>01</span> Three ways to run it</div><h2 id="hosting-title">Same LunaEcho.<br>Different responsibility.</h2><p>The product stays the same. What changes is who hosts it, which Discord bot identity it uses, and which operational limits apply.</p></div>
+        <section class="detail-section le-section" id="hosting" aria-labelledby="hosting-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>01</span> Three ways to run it</div><h2 id="hosting-title">Same LunaEcho.<br>Different responsibility.</h2><p>Same bot everywhere. Only who hosts it and whose bot identity it uses changes.</p></div>
 
-            <div class="luna-product-grid" aria-label="LunaEcho deployment options">
-                <article class="luna-product-card reveal">
-                    <header><span>01 / Your infrastructure</span><strong class="luna-price">Free, always</strong></header>
-                    <div><p class="tier-label">Open source</p><h3>Self-Hosted</h3><p>Run the complete LunaEcho platform on hardware you control, using your own Discord application and bot token.</p></div>
-                    <div class="luna-path" aria-label="Self-Hosted architecture"><span>Your hardware</span><b>&rarr;</b><span>Your bot</span><b>&rarr;</b><span>Your server</span></div>
-                    <ul class="check-list"><li>Complete open-source feature set</li><li>No artificial LunaEcho feature restrictions</li><li>Your data, branding, bot identity, and infrastructure</li><li>You handle setup, updates, backups, and uptime</li></ul>
-                    <p class="luna-card-fit"><span>Best for</span><strong>Technical users who want full control</strong></p>
-                    <a class="button button-ghost luna-card-action" href="https://github.com/ShadowOkami4/LunaEcho" target="_blank" rel="noopener noreferrer">Get the source ↗</a>
+            <div class="le-plans" aria-label="LunaEcho deployment options">
+                <article class="le-plan reveal">
+                    <div class="le-plan-top"><span class="le-plan-icon"><svg aria-hidden="true"><use href="#le-i-server"/></svg></span><strong class="le-price">Free, always</strong></div>
+                    <p class="le-plan-kicker">Open source</p>
+                    <h3>Self-Hosted</h3>
+                    <p class="le-plan-text">Run everything on your own hardware with your own bot.</p>
+                    <div class="le-path" aria-label="Self-Hosted architecture"><span>Your hardware</span><b aria-hidden="true">&rarr;</b><span>Your bot</span><b aria-hidden="true">&rarr;</b><span>Your server</span></div>
+                    <ul class="check-list"><li>Full feature set, no artificial limits</li><li>Your data, branding and bot identity</li><li>You handle setup, updates and backups</li></ul>
+                    <p class="le-plan-fit"><span>Best for</span><strong>Technical users who want full control</strong></p>
+                    <a class="button button-ghost le-plan-action" href="https://github.com/ShadowOkami4/LunaEcho" target="_blank" rel="noopener noreferrer">Get the source ↗</a>
                 </article>
-                <article class="luna-product-card luna-product-cloud reveal">
-                    <header><span>02 / Shared managed service</span><strong class="luna-price">Free</strong></header>
-                    <div><p class="tier-label">Invite and start</p><h3>Cloud</h3><p>Invite the official LunaEcho bot and use the platform without maintaining a VPS, Docker setup, database, or bot application.</p></div>
-                    <div class="luna-path" aria-label="Cloud architecture"><span>LunaEcho hardware</span><b>&rarr;</b><span>LunaEcho bot</span><b>&rarr;</b><span>Your server</span></div>
-                    <ul class="check-list"><li>Hosting, maintenance, and updates included</li><li>Official shared LunaEcho bot identity</li><li>Useful core modules with reasonable service limits</li><li>No hardware or bot token required from you</li></ul>
-                    <p class="luna-card-fit"><span>Best for</span><strong>Most small communities</strong></p>
-                    <a class="button luna-card-action" href="https://lunaecho.shadowokami.com" target="_blank" rel="noopener noreferrer">Open the Cloud dashboard ↗</a>
+                <article class="le-plan le-plan-featured reveal">
+                    <p class="le-plan-flag">Easiest start</p>
+                    <div class="le-plan-top"><span class="le-plan-icon"><svg aria-hidden="true"><use href="#le-i-cloud"/></svg></span><strong class="le-price">Free</strong></div>
+                    <p class="le-plan-kicker">Invite and start</p>
+                    <h3>Cloud</h3>
+                    <p class="le-plan-text">Invite the official bot. No server, no Docker, no token.</p>
+                    <div class="le-path" aria-label="Cloud architecture"><span>LunaEcho hardware</span><b aria-hidden="true">&rarr;</b><span>LunaEcho bot</span><b aria-hidden="true">&rarr;</b><span>Your server</span></div>
+                    <ul class="check-list"><li>Hosting and updates included</li><li>Shared official LunaEcho bot</li><li>Core modules with fair service limits</li></ul>
+                    <p class="le-plan-fit"><span>Best for</span><strong>Most small communities</strong></p>
+                    <a class="button le-plan-action" href="https://lunaecho.shadowokami.com" target="_blank" rel="noopener noreferrer">Open the Cloud dashboard ↗</a>
                 </article>
-                <article class="luna-product-card luna-product-custom reveal">
-                    <header><span>03 / Managed custom identity</span><strong class="luna-price">Paid / size-based</strong></header>
-                    <div><p class="tier-label">Your bot, managed by us</p><h3>Custom</h3><p>Use your own Discord application and bot identity while LunaEcho manages the deployment, database, updates, backups, and monitoring.</p></div>
-                    <div class="luna-path" aria-label="Custom architecture"><span>LunaEcho hardware</span><b>&rarr;</b><span>Your bot</span><b>&rarr;</b><span>Your server</span></div>
-                    <ul class="check-list"><li>Your bot name, avatar, profile, and application</li><li>Complete LunaEcho functionality</li><li>No normal Cloud feature restrictions</li><li>Managed infrastructure and customer support</li></ul>
-                    <p class="luna-card-fit"><span>Best for</span><strong>Established communities wanting their own identity</strong></p>
+                <article class="le-plan reveal">
+                    <div class="le-plan-top"><span class="le-plan-icon"><svg aria-hidden="true"><use href="#le-i-badge"/></svg></span><strong class="le-price">Paid / size-based</strong></div>
+                    <p class="le-plan-kicker">Your bot, managed by us</p>
+                    <h3>Custom</h3>
+                    <p class="le-plan-text">Your own bot identity, run and maintained by LunaEcho.</p>
+                    <div class="le-path" aria-label="Custom architecture"><span>LunaEcho hardware</span><b aria-hidden="true">&rarr;</b><span>Your bot</span><b aria-hidden="true">&rarr;</b><span>Your server</span></div>
+                    <ul class="check-list"><li>Your bot name, avatar and profile</li><li>Full functionality, no Cloud limits</li><li>Managed hosting and support</li></ul>
+                    <p class="le-plan-fit"><span>Best for</span><strong>Established communities wanting their own identity</strong></p>
+                    <span class="le-plan-action le-plan-soon">Coming later</span>
                 </article>
             </div>
 
-            <blockquote class="luna-product-statement reveal"><span>LunaEcho Custom</span><p>Your bot. Powered by LunaEcho. Hosted by us.</p></blockquote>
-
-            <div class="tier-comparison reveal" aria-labelledby="comparison-title">
-                <div class="tier-comparison-head"><div><p class="detail-badge">At a glance</p><h3 id="comparison-title">What actually changes?</h3></div><p>Custom server-size brackets belong inside billing. They are not separate products.</p></div>
-                <div class="tier-table-wrap"><table>
-                    <thead><tr><th scope="col">Decision</th><th scope="col">Self-Hosted</th><th scope="col">Cloud</th><th scope="col">Custom</th></tr></thead>
+            <div class="le-compare reveal" aria-labelledby="comparison-title">
+                <div class="le-compare-head"><p class="detail-badge">At a glance</p><h3 id="comparison-title">What actually changes?</h3></div>
+                <div class="le-table-wrap"><table>
+                    <thead><tr><th scope="col">Decision</th><th scope="col">Self-Hosted</th><th scope="col" class="is-featured">Cloud</th><th scope="col">Custom</th></tr></thead>
                     <tbody>
-                        <tr><th scope="row">Price</th><td>Free</td><td>Free</td><td>Paid, based on server size</td></tr><tr><th scope="row">Hosted by</th><td>You</td><td>LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Bot application</th><td>Yours</td><td>LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Bot token</th><td>Yours</td><td>LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Feature restrictions</th><td>None*</td><td>Reasonable service limits</td><td>No normal Cloud restrictions*</td></tr><tr><th scope="row">Updates &amp; maintenance</th><td>You</td><td>LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Branding</th><td>Yours</td><td>LunaEcho</td><td>Yours</td></tr>
+                        <tr><th scope="row">Price</th><td>Free</td><td class="is-featured">Free</td><td>Paid, based on server size</td></tr><tr><th scope="row">Hosted by</th><td>You</td><td class="is-featured">LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Bot application</th><td>Yours</td><td class="is-featured">LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Bot token</th><td>Yours</td><td class="is-featured">LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Feature restrictions</th><td>None*</td><td class="is-featured">Reasonable service limits</td><td>No normal Cloud restrictions*</td></tr><tr><th scope="row">Updates &amp; maintenance</th><td>You</td><td class="is-featured">LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Branding</th><td>Yours</td><td class="is-featured">LunaEcho</td><td>Yours</td></tr>
                     </tbody>
                 </table></div>
-                <p class="comparison-footnote">* Subject to technical, Discord API, third-party API, and fair-use constraints rather than artificial feature locks.</p>
+                <p class="le-footnote">* Subject to technical, Discord API, third-party API, and fair-use constraints rather than artificial feature locks.</p>
             </div>
 
-            <aside class="decision-note reveal"><span>Intentionally undecided</span><div><h3>No made-up prices or limits.</h3><p>Exact Custom prices, member brackets, and Cloud limits will be set only after real measurements of music, database, storage, bandwidth, backup, and support costs.</p></div></aside>
+            <aside class="le-note reveal"><span class="le-note-icon"><svg aria-hidden="true"><use href="#le-i-help"/></svg></span><div><p class="le-note-label">Intentionally undecided</p><h3>No made-up prices or limits.</h3><p>Prices and limits are set after real cost measurements, not before.</p></div></aside>
         </section>
 
-        <section class="detail-section luna-modules-section" id="modules" aria-labelledby="modules-title">
-            <div class="detail-section-head reveal"><div class="section-label"><span>02</span> Version 1 modules</div><h2 id="modules-title">Enable what matters.<br>Leave the rest quiet.</h2><p>A server should not receive a hundred commands simply because LunaEcho supports them. Every major capability is planned as an individually configurable module.</p></div>
-            <div class="luna-module-grid">
-                <article class="luna-module-card reveal"><span>01</span><h3>Moderation &amp; Safety</h3><p>Warnings, timeouts, kicks, bans, cleanup, moderation cases, AutoMod, and anti-spam.</p></article>
-                <article class="luna-module-card reveal"><span>02</span><h3>Welcome &amp; Onboarding</h3><p>Welcome and goodbye messages, autoroles, verification, and onboarding flows.</p></article>
-                <article class="luna-module-card reveal"><span>03</span><h3>Roles</h3><p>Reaction, button, select, persistent, and self-service role menus.</p></article>
-                <article class="luna-module-card reveal"><span>04</span><h3>Support &amp; Tickets</h3><p>Panels, categories, staff assignment, transcripts, claims, and ticket logs.</p></article>
-                <article class="luna-module-card reveal"><span>05</span><h3>Levels &amp; Rewards</h3><p>XP, ranks, leaderboards, rewards, voice XP, and exclusions.</p></article>
-                <article class="luna-module-card reveal"><span>06</span><h3>Voice Rooms</h3><p>Join-to-create rooms, ownership, limits, locking, names, and permissions.</p></article>
-                <article class="luna-module-card reveal"><span>07</span><h3>Logs</h3><p>Moderation, member, message, channel, role, voice, and configuration events.</p></article>
-                <article class="luna-module-card reveal"><span>08</span><h3>Music</h3><p>Playback, queues, permissions, playlists, and voice controls.</p></article>
-                <article class="luna-module-card reveal"><span>09</span><h3>Automation</h3><p>Flexible trigger, condition, and action workflows.</p></article>
-                <article class="luna-module-card reveal"><span>10</span><h3>Social Notifications</h3><p>YouTube, Twitch, and potentially other service notifications.</p></article>
-                <article class="luna-module-card reveal"><span>11</span><h3>Utilities</h3><p>Server and user information, polls, reminders, and general Discord tools.</p></article>
-                <article class="luna-module-card luna-module-card-future reveal"><span>+</span><h3>Built to expand</h3><p>New modules can be added later without turning LunaEcho into separate bots.</p></article>
+        <section class="detail-section le-section" id="modules" aria-labelledby="modules-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>02</span> Version 1 modules</div><h2 id="modules-title">Enable what matters.<br>Leave the rest quiet.</h2><p>Every major feature is its own module. Turn on what your server needs.</p></div>
+            <div class="le-modules">
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-shield"/></svg></span><h3>Moderation &amp; Safety</h3><p>Warnings, timeouts, kicks, bans, cleanup, moderation cases, AutoMod, and anti-spam.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-wave"/></svg></span><h3>Welcome &amp; Onboarding</h3><p>Welcome and goodbye messages, autoroles, verification, and onboarding flows.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-tag"/></svg></span><h3>Roles</h3><p>Reaction, button, select, persistent, and self-service role menus.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-ticket"/></svg></span><h3>Support &amp; Tickets</h3><p>Panels, categories, staff assignment, transcripts, claims, and ticket logs.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-levels"/></svg></span><h3>Levels &amp; Rewards</h3><p>XP, ranks, leaderboards, rewards, voice XP, and exclusions.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-mic"/></svg></span><h3>Voice Rooms</h3><p>Join-to-create rooms, ownership, limits, locking, names, and permissions.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-log"/></svg></span><h3>Logs</h3><p>Moderation, member, message, channel, role, voice, and configuration events.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-music"/></svg></span><h3>Music</h3><p>Playback, queues, permissions, playlists, and voice controls.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-bolt"/></svg></span><h3>Automation</h3><p>Flexible trigger, condition, and action workflows.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-bell"/></svg></span><h3>Social Notifications</h3><p>YouTube, Twitch, and potentially other service notifications.</p></article>
+                <article class="le-module reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-tool"/></svg></span><h3>Utilities</h3><p>Server and user information, polls, reminders, and general Discord tools.</p></article>
+                <article class="le-module le-module-future reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-plus"/></svg></span><h3>Built to expand</h3><p>New modules can be added later without turning LunaEcho into separate bots.</p></article>
             </div>
-            <aside class="module-control-note reveal"><div class="module-toggle-demo" aria-hidden="true"><span>Tickets</span><i></i><strong>Enabled</strong></div><div><h3>Configuration stays yours.</h3><p>Disabling a module should stop its commands, events, and workers without immediately destroying its settings. Turn it back on when your community needs it again.</p></div></aside>
+            <aside class="le-note reveal"><div class="le-toggle-demo" aria-hidden="true"><span>Tickets</span><i></i></div><div><p class="le-note-label">Module settings</p><h3>Configuration stays yours.</h3><p>Turning a module off stops it but keeps its settings.</p></div></aside>
         </section>
 
-        <section class="detail-section luna-architecture-section" id="architecture" aria-labelledby="architecture-title">
-            <div class="detail-section-head reveal"><div class="section-label"><span>03</span> Platform foundation</div><h2 id="architecture-title">One codebase.<br>Three runtime modes.</h2><p>Self-Hosted, Cloud, and Custom are deployment choices, not separate bots. A fix in a module should improve LunaEcho for everyone.</p></div>
-            <div class="runtime-rail reveal" aria-label="LunaEcho runtime modes"><span>SELF_HOSTED</span><i></i><span>CLOUD_SHARED</span><i></i><span>CLOUD_CUSTOM</span></div>
-            <div class="luna-architecture-grid">
-                <article class="luna-architecture-card reveal"><p class="tier-label">Planned foundation</p><h3>TypeScript throughout</h3><p>Node.js, TypeScript, and discord.js connect the bot, API, dashboard, workers, and modules through shared types.</p><ul><li>Next.js + React dashboard</li><li>PostgreSQL + Redis + BullMQ</li><li>Docker Compose for self-hosting</li><li>S3-compatible object storage</li><li>Prisma or Drizzle still to be evaluated</li></ul></article>
-                <article class="luna-architecture-card luna-security-card reveal"><p class="tier-label">Custom token security</p><h3>A bot token is a password.</h3><p>Custom requires a real secrets system from day one. Customer bot tokens must be encrypted at rest and exposed only to the service that establishes the Discord connection.</p><ul><li>Never included in logs, analytics, or support tickets</li><li>Never returned to the browser after submission</li><li>Excluded from normal database exports</li><li>Masked in the dashboard and replaced, never revealed</li></ul></article>
-                <article class="luna-architecture-card reveal"><p class="tier-label">Two permission layers</p><h3>Discord access is not billing access.</h3><p>Discord permissions control what the bot can do. LunaEcho dashboard permissions control what staff can configure, inspect, or purchase.</p><ul><li>Manage moderation or tickets</li><li>View logs and analytics</li><li>Edit automations and modules</li><li>Manage hosting, billing, and support access</li></ul></article>
-                <article class="luna-architecture-card reveal"><p class="tier-label">Support boundaries</p><h3>Responsibility follows hosting.</h3><p>Self-Hosted receives documentation and community support. Cloud receives best-effort support. Custom adds managed support for LunaEcho infrastructure, deployment, updates, and billing.</p><ul><li>No promise of 24/7 support at launch</li><li>No promise to repair third-party VPS setups</li><li>Third-party and Discord configuration remain separate</li></ul></article>
+        <section class="detail-section le-section" id="architecture" aria-labelledby="architecture-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>03</span> Platform foundation</div><h2 id="architecture-title">One codebase.<br>Three runtime modes.</h2><p>Self-Hosted, Cloud and Custom are modes of one bot, not separate products.</p></div>
+            <div class="le-rail reveal" aria-label="LunaEcho runtime modes"><span>SELF_HOSTED</span><i></i><span>CLOUD_SHARED</span><i></i><span>CLOUD_CUSTOM</span></div>
+            <div class="le-facts">
+                <article class="le-fact reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-code"/></svg></span><p class="le-plan-kicker">Planned foundation</p><h3>TypeScript throughout</h3><p>One typed codebase for bot, API, dashboard and workers.</p><div class="detail-tags"><span>Node.js</span><span>discord.js</span><span>Next.js</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span></div></article>
+                <article class="le-fact le-fact-accent reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-lock"/></svg></span><p class="le-plan-kicker">Custom token security</p><h3>A bot token is a password.</h3><p>Encrypted at rest, never logged, never shown again.</p></article>
+                <article class="le-fact reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-layers"/></svg></span><p class="le-plan-kicker">Two permission layers</p><h3>Discord access is not billing access.</h3><p>Discord roles decide what the bot may do; dashboard roles decide what staff may change.</p></article>
+                <article class="le-fact reveal"><span class="le-module-icon"><svg aria-hidden="true"><use href="#le-i-help"/></svg></span><p class="le-plan-kicker">Support boundaries</p><h3>Responsibility follows hosting.</h3><p>Self-Hosted: docs and community. Cloud: best effort. Custom: managed support.</p></article>
             </div>
-            <div class="custom-flow reveal" aria-labelledby="custom-flow-title"><div><p class="detail-badge">Planned Custom onboarding</p><h3 id="custom-flow-title">From product choice to your own managed bot.</h3></div><ol><li><span>01</span>Choose Custom</li><li><span>02</span>Sign in with Discord</li><li><span>03</span>Select your server</li><li><span>04</span>Create an application</li><li><span>05</span>Submit and verify the bot token</li><li><span>06</span>Invite your custom bot</li><li><span>07</span>Configure modules</li><li><span>08</span>Start the managed instance</li></ol></div>
-        </section>
-
-        <section class="detail-section luna-roadmap-section" id="roadmap" aria-labelledby="roadmap-title">
-            <div class="detail-section-head reveal"><div class="section-label"><span>04</span> Development roadmap</div><h2 id="roadmap-title">Build the platform.<br>Validate before selling.</h2><p>The roadmap describes order, not dates. Billing comes late, after the core community tools and managed infrastructure prove themselves.</p></div>
-            <div class="product-roadmap luna-phase-roadmap">
-                <article class="roadmap-card roadmap-current reveal"><div class="roadmap-card-top"><span>Phases 0-4</span><strong>Foundation</strong></div><h3>Specify and build</h3><ul><li>0 / Specification</li><li>1 / Core platform</li><li>2 / Moderation and logging</li><li>3 / Roles, onboarding, and tickets</li><li>4 / Levels and voice rooms</li></ul></article>
-                <article class="roadmap-card reveal"><div class="roadmap-card-top"><span>Phases 5-7</span><strong>Product</strong></div><h3>Connect the experience</h3><ul><li>5 / Dashboard</li><li>6 / Automation engine</li><li>7 / Isolated music service</li></ul></article>
-                <article class="roadmap-card reveal"><div class="roadmap-card-top"><span>Phases 8-10</span><strong>Release paths</strong></div><h3>Test every deployment</h3><ul><li>8 / Self-Hosted Alpha</li><li>9 / Cloud Alpha</li><li>10 / Custom Alpha</li></ul></article>
-                <article class="roadmap-card reveal"><div class="roadmap-card-top"><span>Phases 11-12</span><strong>Validation</strong></div><h3>Earn version 1.0</h3><ul><li>11 / Public Beta</li><li>12 / Stable public release</li><li>Semantic versioning from 0.1.0 onward</li></ul></article>
+            <div class="le-flow reveal" aria-labelledby="custom-flow-title">
+                <div><p class="detail-badge">Planned Custom onboarding</p><h3 id="custom-flow-title">From product choice to your own managed bot.</h3></div>
+                <ol><li><span>01</span>Choose Custom</li><li><span>02</span>Sign in with Discord</li><li><span>03</span>Select your server</li><li><span>04</span>Create an application</li><li><span>05</span>Submit and verify the bot token</li><li><span>06</span>Invite your custom bot</li><li><span>07</span>Configure modules</li><li><span>08</span>Start the managed instance</li></ol>
             </div>
-            <aside class="decision-note reveal"><span>Not locked yet</span><div><h3>Measure first. Decide second.</h3><p>Exact pricing, member brackets, Cloud limits, large-scale orchestration, AI features, and enterprise features remain intentionally open until the platform provides evidence for those decisions.</p></div></aside>
         </section>
 
-        <section class="detail-section luna-legal-section" id="legal" aria-labelledby="legal-title">
-            <div class="detail-section-head reveal"><div class="section-label"><span>05</span> Legal &amp; privacy</div><h2 id="legal-title">Clear rules.<br>Transparent data use.</h2><p>LunaEcho publishes permanent, English-language legal documents for Discord users, server administrators, and application review.</p></div>
+        <section class="detail-section le-section" id="roadmap" aria-labelledby="roadmap-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>04</span> Development roadmap</div><h2 id="roadmap-title">Build the platform.<br>Validate before selling.</h2><p>Order, not dates. Billing comes last.</p></div>
+            <ol class="le-timeline">
+                <li class="le-stage is-current reveal"><p class="le-stage-top"><span>Phases 0-4</span><strong>Foundation</strong></p><b class="le-stage-now">Now</b><h3>Specify and build</h3><ul><li>0 / Specification</li><li>1 / Core platform</li><li>2 / Moderation and logging</li><li>3 / Roles, onboarding, and tickets</li><li>4 / Levels and voice rooms</li></ul></li>
+                <li class="le-stage reveal"><p class="le-stage-top"><span>Phases 5-7</span><strong>Product</strong></p><h3>Connect the experience</h3><ul><li>5 / Dashboard</li><li>6 / Automation engine</li><li>7 / Isolated music service</li></ul></li>
+                <li class="le-stage reveal"><p class="le-stage-top"><span>Phases 8-10</span><strong>Release paths</strong></p><h3>Test every deployment</h3><ul><li>8 / Self-Hosted Alpha</li><li>9 / Cloud Alpha</li><li>10 / Custom Alpha</li></ul></li>
+                <li class="le-stage reveal"><p class="le-stage-top"><span>Phases 11-12</span><strong>Validation</strong></p><h3>Earn version 1.0</h3><ul><li>11 / Public Beta</li><li>12 / Stable public release</li><li>Semantic versioning from 0.1.0 onward</li></ul></li>
+            </ol>
+            <aside class="le-note reveal"><span class="le-note-icon"><svg aria-hidden="true"><use href="#le-i-levels"/></svg></span><div><p class="le-note-label">Not locked yet</p><h3>Measure first. Decide second.</h3><p>Pricing, limits and bigger features stay open until real usage backs them up.</p></div></aside>
+        </section>
+
+        <section class="detail-section le-section luna-legal-section" id="legal" aria-labelledby="legal-title">
+            <div class="detail-section-head reveal"><div class="section-label"><span>05</span> Legal &amp; privacy</div><h2 id="legal-title">Clear rules.<br>Transparent data use.</h2><p>Public Terms and Privacy Policy for users, server admins and Discord’s app review.</p></div>
             <div class="legal-doc-grid">
                 <a class="legal-doc-card reveal" href="/LunaEcho/Terms"><div class="legal-doc-card-top"><span>Document / 01</span><strong>Effective 27 August 2026</strong></div><div><p>Service rules</p><h3>Terms of Service</h3><span>Acceptable use, deployment responsibilities, service availability, and pre-release conditions.</span></div><b>Read the Terms <span aria-hidden="true">&nearr;</span></b></a>
                 <a class="legal-doc-card legal-doc-card-privacy reveal" href="/LunaEcho/Privacy"><div class="legal-doc-card-top"><span>Document / 02</span><strong>Effective 27 August 2026</strong></div><div><p>Data transparency</p><h3>Privacy Policy</h3><span>Data categories, token safeguards, retention, service providers, security, and deletion requests.</span></div><b>Read the Policy <span aria-hidden="true">&nearr;</span></b></a>
@@ -163,13 +209,13 @@
             <aside class="legal-support-strip reveal"><span>Data requests</span><div><h3>Access, correction, or deletion.</h3><p>Discord users and authorized server administrators can follow the published request process or contact <a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">service@shadowokami.de</a>.</p></div><a href="/LunaEcho/Privacy#your-rights">View instructions &rarr;</a></aside>
         </section>
 
-        <section class="detail-cta">
-            <p class="detail-badge reveal">Pre-release product plan v0.1</p><h2 class="reveal">Open source first.<br>Built in the open.</h2><p class="reveal">The source code and the Cloud dashboard are online. LunaEcho is still in pre-release: Custom, final limits, and the release documentation follow when their roadmap stages are ready.</p><div class="detail-actions reveal"><a class="button" href="https://lunaecho.shadowokami.com" target="_blank" rel="noopener noreferrer">Open the dashboard ↗</a><a class="button button-ghost" href="#roadmap">Review the roadmap &uarr;</a><a class="button button-ghost" href="/#work">See my other projects</a></div>
+        <section class="detail-cta le-cta">
+            <p class="detail-badge reveal">Pre-release product plan v0.1</p><h2 class="reveal">Open source first.<br>Built in the open.</h2><p class="reveal">Source code and Cloud dashboard are online. Custom and final limits follow later.</p><div class="detail-actions reveal"><a class="button" href="https://lunaecho.shadowokami.com" target="_blank" rel="noopener noreferrer">Open the dashboard ↗</a><a class="button button-ghost" href="#roadmap">Review the roadmap &uarr;</a><a class="button button-ghost" href="/#work">See my other projects</a></div>
         </section>
     </main>
 
     <footer class="site-footer"><span class="footer-copyright"><strong>&copy; <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small></span><span class="footer-links"><a href="/LunaEcho/Terms">Terms</a><a href="/LunaEcho/Privacy">Privacy</a><a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">Data request</a></span><a href="#overview">Back to top &uarr;</a></footer>
-    <script src="../assets/js/translations.js?v=24"></script>
+    <script src="../assets/js/translations.js?v=25"></script>
     <script src="../assets/js/script.js?v=12"></script>
     <script src="../assets/js/motion.js?v=4"></script>
 </body>
