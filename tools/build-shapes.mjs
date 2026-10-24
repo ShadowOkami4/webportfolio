@@ -22,6 +22,8 @@ const radius = {
   // Soft rounded triangle and pentagon ("gem").
   triangle: (t) => 0.8 + 0.2 * Math.cos(3 * (t + Math.PI / 2)) ** 3,
   gem: (t) => 0.88 + 0.12 * Math.cos(5 * (t + Math.PI / 2)),
+  // A diamond with softened corners (a rounded L1 circle).
+  diamond: (t) => (Math.abs(Math.cos(t)) ** 1.25 + Math.abs(Math.sin(t)) ** 1.25) ** (-1 / 1.25),
 };
 
 function polygon(r) {

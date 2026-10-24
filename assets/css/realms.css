@@ -89,8 +89,10 @@ body.mirrorgate-page::before {
 /* Chapters are numbered in Roman numerals (CSS counters keep the markup unchanged). */
 .mirrorgate-page main { counter-reset: chapter; }
 .mirrorgate-page .detail-section { counter-increment: chapter; }
-.mirrorgate-page .section-label span { width: 40px; height: 40px; color: #1d1405; background: var(--gold); clip-path: var(--shape-gem); font-size: 0; }
-.mirrorgate-page .section-label span::before { content: counter(chapter, upper-roman); font-family: var(--caps); font-size: .78rem; font-weight: 800; }
+/* The chapter number sits in a gold diamond, like the quest markers below. */
+.mirrorgate-page .section-label { gap: 14px; font-size: .8rem; }
+.mirrorgate-page .section-label span { width: 50px; height: 50px; flex: none; color: #1d1405; background: linear-gradient(160deg, color-mix(in srgb, var(--gold) 100%, #fff 18%), var(--gold) 55%, color-mix(in srgb, var(--gold) 80%, #5a3d0a)); clip-path: var(--shape-diamond); font-size: 0; }
+.mirrorgate-page .section-label span::before { content: counter(chapter, upper-roman); font-family: var(--caps); font-size: .86rem; font-weight: 800; }
 
 .mirrorgate-page .button,
 .mirrorgate-page .button-ghost { font-family: var(--caps); font-size: .9rem; font-weight: 700; letter-spacing: .04em; }
@@ -322,7 +324,7 @@ body.mirrorgate-page::before {
 .vault-steps li { position: relative; display: flex; min-height: 120px; padding: 22px 26px 22px 80px; align-items: start; counter-increment: quest; }
 .vault-steps li + li { border-top: 1px solid var(--line); }
 /* A checkbox-diamond like a quest objective. */
-.vault-steps li::before { position: absolute; top: 24px; left: 28px; display: grid; width: 32px; height: 32px; place-items: center; color: #1d1405; background: var(--gold); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); content: counter(quest, upper-roman); font-family: var(--caps); font-size: .78rem; font-weight: 800; }
+.vault-steps li::before { position: absolute; top: 24px; left: 28px; display: grid; width: 32px; height: 32px; place-items: center; color: #1d1405; background: var(--gold); clip-path: var(--shape-diamond); content: counter(quest, upper-roman); font-family: var(--caps); font-size: .78rem; font-weight: 800; }
 .vault-steps li > span { display: none; }
 .vault-steps strong { font-family: var(--caps); font-size: 1.1rem; font-weight: 700; }
 .vault-steps p { margin: 5px 0 0; color: var(--ink-soft); font-size: 1rem; }
@@ -333,14 +335,52 @@ body.mirrorgate-page::before {
 
 /* ─── The Scriptorium: tools in use, tools on the horizon ────────────────── */
 
-.tool-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.tool-group { display: grid; align-content: start; gap: 14px; }
-.mirrorgate-page .tool-group-title { margin: 0 0 4px; color: var(--gold); font-family: var(--caps); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+/* Tools in use stand in a row of three; planned ones wait, outlined, below. */
+.tool-groups { display: grid; gap: 40px; }
+.tool-group { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 14px; }
+.tool-group-planned { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mirrorgate-page .tool-group-title { display: flex; margin: 0 0 4px; grid-column: 1 / -1; align-items: center; gap: 16px; color: var(--gold); font-family: var(--caps); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.mirrorgate-page .tool-group-title::after { height: 1px; flex: 1; content: ""; background: linear-gradient(90deg, var(--gold-soft), transparent); }
 .tool-group-planned .tool-group-title { color: var(--muted); }
-.tool-card { display: flex; min-height: 0; flex-direction: column; align-items: flex-start; }
-.tool-group-planned .tool-card { background: transparent; box-shadow: inset 0 0 0 1px var(--line), inset 3px 0 0 color-mix(in srgb, var(--gold) 14%, transparent); }
-.tool-card h4 { margin: 18px 0 10px; color: var(--ink); font-family: var(--caps); font-size: 1.5rem; font-weight: 600; }
-.tool-card p { margin: 0 0 18px; }
+.tool-card {
+    display: flex;
+    min-width: 0;
+    padding: 26px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: var(--shape-xl);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 5%, var(--md-sys-color-surface-container)), var(--md-sys-color-surface-container-low));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gold) 18%, transparent);
+    transition: border-radius var(--spring-default-duration) var(--spring-default), translate var(--spring-default-duration) var(--spring-default), box-shadow var(--effects-duration) var(--effects);
+}
+.tool-card:hover { border-radius: var(--shape-xxl); box-shadow: inset 0 0 0 1px var(--gold-soft), 0 18px 40px rgb(0 0 0 / .35); translate: 0 -3px; }
+.tool-group-planned .tool-card { background: transparent; box-shadow: none; outline: 1px dashed color-mix(in srgb, var(--gold) 22%, transparent); outline-offset: -1px; }
+.tool-group-planned .tool-card:hover { background: color-mix(in srgb, var(--gold) 4%, transparent); box-shadow: none; }
+.tool-card-top { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; }
+/* Each tool carries a line icon in a gold diamond that softens on hover. */
+.tool-icon {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    flex: none;
+    place-items: center;
+    color: var(--gold);
+    background: color-mix(in srgb, var(--gold) 14%, transparent);
+    clip-path: var(--shape-diamond);
+    transition: clip-path var(--spring-default-duration) var(--spring-default);
+}
+.tool-card:hover .tool-icon { clip-path: var(--shape-cookie9); }
+.tool-icon svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.tool-group-planned .tool-icon { color: var(--muted); background: color-mix(in srgb, var(--md-sys-color-on-surface) 6%, transparent); }
+.tool-card h4 { margin: 20px 0 10px; color: var(--ink); font-family: var(--caps); font-size: 1.5rem; font-weight: 600; }
+.tool-card p { margin: 0 0 18px; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.55; }
+.tool-badge { display: block; width: 100%; max-width: 280px; height: auto; margin: 0 0 14px; }
+
+/* The Atlas VTT compatibility badge under the hero tags. */
+.atlas-badge { display: inline-block; width: min(100%, 300px); margin-top: 22px; border-radius: 14px; transition: translate var(--spring-fast-duration) var(--spring-fast), filter var(--effects-duration) var(--effects); }
+.atlas-badge img { width: 100%; height: auto; }
+.atlas-badge:hover { translate: 0 -2px; filter: drop-shadow(0 8px 18px rgb(0 0 0 / .45)); }
+.atlas-badge:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .tool-link { margin-top: auto; padding: 4px 0; color: var(--gold); font-family: var(--caps); font-size: .85rem; font-weight: 700; letter-spacing: .04em; text-decoration: none; border-bottom: 1px solid var(--gold-soft); }
 .tool-link:hover { border-bottom-color: var(--gold); }
 .tool-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
@@ -535,7 +575,8 @@ body.mirrorgate-page::before {
     .mirrorgate-visual { min-height: 580px; }
     .vault-entry { grid-template-columns: minmax(0, 1fr); }
     .realm-glance { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .tool-groups { grid-template-columns: 1fr; }
+    .tool-group,
+    .tool-group-planned { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {

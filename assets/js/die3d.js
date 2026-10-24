@@ -126,7 +126,8 @@
     // mood: 0 normal, 1 natural 20 (bright), -1 natural 1 (ember).
     const draw = (orientation, lift = 0, mood = 0) => {
         const width = canvas.width;
-        const radius = width * 0.37;
+        // Leaves headroom above the die for the hop of a roll.
+        const radius = width * 0.34;
         const centreX = width / 2;
         const centreY = width / 2 + width * 0.04 - lift * ratio;
         const tint = mood < 0 ? EMBER : mood > 0 ? BRIGHT : GOLD;
@@ -139,10 +140,21 @@
         context.clearRect(0, 0, width, width);
         const turned = vertices.map((vertex) => apply(orientation, vertex));
 
-        faces.forEach((face) => {
-            const normal = apply(orientation, face.normal);
-            // Back faces are hidden by the solid itself.
-            if (normal[2] <= 0.02) return;
+        // A face is visible when it points towards the eye, not merely towards
+        // the screen: with perspective, faces near the outline that point a
+        // little forward can still face away and would paint over the front.
+        // The visible ones are drawn far to near.
+        const visibleFaces = faces
+            .map((face) => {
+                const normal = apply(orientation, face.normal);
+                const middle = apply(orientation, face.centre);
+                const towardsEye = dot(normal, normalize(sub([0, 0, CAMERA], middle)));
+                return { face, normal, middle, towardsEye };
+            })
+            .filter((entry) => entry.towardsEye > 0.01)
+            .sort((a, b) => a.middle[2] - b.middle[2]);
+
+        visibleFaces.forEach(({ face, normal, middle, towardsEye }) => {
             const corners = face.corners.map((index) => project(turned[index]));
             const lit = Math.max(0, dot(normal, LIGHT));
 
@@ -160,9 +172,9 @@
             context.stroke();
 
             // The number lies in the plane of its face, so it foreshortens with it.
-            const visible = Math.min(1, Math.max(0, (normal[2] - 0.12) / 0.45));
+            const visible = Math.min(1, Math.max(0, (towardsEye - 0.12) / 0.45));
             if (!visible) return;
-            const centre = project(apply(orientation, face.centre));
+            const centre = project(middle);
             const right = apply(orientation, face.right);
             const up = apply(orientation, face.up);
             const unit = radius / 100;
@@ -214,7 +226,7 @@
             const spin = rotation(roll.axis, roll.angle * (1 - progress) ** 3);
             const tumble = rotation(roll.tumbleAxis, Math.PI * 2 * (1 - (1 - progress) ** 2));
             // The die hops and settles in ever smaller bounces.
-            const lift = Math.abs(Math.sin(Math.PI * 3 * progress)) * (1 - progress) ** 2 * size * 0.16;
+            const lift = Math.abs(Math.sin(Math.PI * 3 * progress)) * (1 - progress) ** 2 * size * 0.12;
             draw(multiply(tumble, multiply(spin, roll.target)), lift, 0);
             if (progress === 1) {
                 base = roll.target;
