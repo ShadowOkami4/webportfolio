@@ -159,6 +159,56 @@
         }));
     });
 
+    // Contact: the current time in Germany and whether Okami is likely to answer now.
+    // Texts are written here in both languages; the clock's nodes are skipped by translations.js.
+    document.querySelectorAll('[data-clock]').forEach((clock) => {
+        const from = Number(clock.dataset.replyFrom ?? 10);
+        const until = Number(clock.dataset.replyUntil ?? 22);
+        const timeOutput = clock.querySelector('[data-clock-time]');
+        const stateOutput = clock.querySelector('[data-clock-state]');
+        const noteOutput = clock.querySelector('[data-clock-note]');
+        const pad = (hour) => `${String(hour).padStart(2, '0')}:00`;
+        const berlinParts = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Europe/Berlin', hourCycle: 'h23',
+            year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'
+        });
+
+        const render = () => {
+            const now = new Date();
+            const part = Object.fromEntries(berlinParts.formatToParts(now).map(({ type, value }) => [type, Number(value)]));
+            const de = document.documentElement.lang === 'de';
+            const available = part.hour >= from && part.hour < until;
+
+            timeOutput.textContent = `${String(part.hour).padStart(2, '0')}:${String(part.minute).padStart(2, '0')}`;
+            clock.classList.toggle('is-available', available);
+
+            if (available) {
+                stateOutput.textContent = de ? 'Gerade bin ich meistens erreichbar.' : 'I’m usually around right now.';
+            } else if (part.hour < from) {
+                stateOutput.textContent = de ? 'In Deutschland ist gerade Nacht.' : 'It’s night-time in Germany.';
+            } else {
+                stateOutput.textContent = de ? 'Für heute bin ich wahrscheinlich offline.' : 'I’m probably offline for today.';
+            }
+
+            // Reply hours in German time, plus the visitor's own time when their clock differs.
+            const berlinOffset = Date.UTC(part.year, part.month - 1, part.day, part.hour, part.minute) - Math.floor(now.getTime() / 60000) * 60000;
+            const local = (hour) => new Date(Date.UTC(part.year, part.month - 1, part.day, hour) - berlinOffset)
+                .toLocaleTimeString(de ? 'de-DE' : 'en-GB', { hour: '2-digit', minute: '2-digit' });
+            const sameClock = Math.abs(berlinOffset + now.getTimezoneOffset() * 60000) < 60000;
+            noteOutput.textContent = de
+                ? `Ich antworte meist zwischen ${pad(from)} und ${pad(until)} Uhr deutscher Zeit${sameClock ? '' : ` (bei dir ${local(from)}–${local(until)})`}.`
+                : `I usually answer between ${pad(from)} and ${pad(until)} German time${sameClock ? '' : ` (${local(from)}–${local(until)} for you)`}.`;
+        };
+
+        render();
+        // Re-render on the next full minute, then every minute.
+        window.setTimeout(() => {
+            render();
+            window.setInterval(render, 60000);
+        }, 60000 - (Date.now() % 60000) + 50);
+        window.addEventListener('site-language-change', render);
+    });
+
     document.querySelectorAll('[data-year]').forEach((element) => {
         element.textContent = new Date().getFullYear();
     });

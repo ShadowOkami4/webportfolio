@@ -231,6 +231,7 @@
     .section-label span,
     .site-footer::before,
     .status-chip > span,
+    .contact-clock-dot,
     .js .is-visible [data-stagger] > *,
     .js .is-visible[data-stagger] > * { animation: none !important; }
     .js .reveal [data-stagger] > *,

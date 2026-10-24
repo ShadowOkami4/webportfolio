@@ -51,16 +51,19 @@
 
     const home = {
         // Material 3 Expressive redesign: casual homepage copy.
-        'Hey, I’m Okami': 'Hey, ich bin Okami',
-        'A passion for building.': 'Eine Leidenschaft fürs Bauen.',
-        'And for pushing my skills.': 'Und dafür, meine Skills zu testen.',
-        'Linux desktops, Discord bots, little automations and a whole D&D world – I make them for myself first. If something turns out useful (or just fun), it ends up here for everyone.': 'Linux-Desktops, Discord-Bots, kleine Automatisierungen und eine ganze D&D-Welt – ich baue sie erst mal für mich. Wenn etwas nützlich (oder einfach witzig) wird, landet es hier für alle.',
+        'Digital workshop · Germany': 'Digitale Werkstatt · Deutschland',
+        'Welcome to my digital workshop.': 'Willkommen in meiner digitalen Werkstatt.',
+        'Half finished,': 'Halb fertig,',
+        'fully loved.': 'heiß geliebt.',
+        'I’m Okami, a hobby developer from Germany. Everything here started as an experiment; some of it grew into real projects.': 'Ich bin Okami, ein Hobby-Entwickler aus Deutschland. Alles hier hat als Experiment angefangen – manches ist zu einem echten Projekt gewachsen.',
+        'I’m Okami, a German hobby developer building things in my free time. No company and no team behind it, just me, a lot of curiosity and the habit of learning by doing.': 'Ich bin Okami, ein Hobby-Entwickler aus Deutschland, der in seiner Freizeit Dinge baut. Keine Firma und kein Team dahinter – nur ich, jede Menge Neugier und die Angewohnheit, durchs Machen zu lernen.',
+        'I work on what I actually want to use: a Linux desktop shell, a Discord bot for communities and a D&D world that got a little out of hand. When something is ready, it goes online so you can try it, fork it or borrow the good bits. On YouTube you’ll find gaming and project previews; on Twitch I stream for fun.': 'Ich arbeite an dem, was ich selbst nutzen will: einer Linux-Desktop-Shell, einem Discord-Bot für Communities und einer D&D-Welt, die ein bisschen aus dem Ruder gelaufen ist. Wenn etwas fertig ist, geht es online – zum Ausprobieren, Forken oder um dir die besten Teile zu schnappen. Auf YouTube gibt’s Gaming und Projekt-Vorschauen; auf Twitch streame ich aus Spaß.',
+        'Built by hand.': 'Von Hand gebaut.',
+        'Time in Germany': 'Uhrzeit in Deutschland',
         'See what I’m building': 'Schau dir meine Projekte an',
         'Say hi': 'Sag Hallo',
         'No studio, no master plan.': 'Kein Studio, kein Masterplan.',
         'Just stuff I got curious about.': 'Nur Dinge, die mich neugierig gemacht haben.',
-        'I’m Okami – a hobby developer who’s still pretty early on the journey. I learn by building things I actually want to use: Linux desktop tweaks, small automations, Discord tools and a tabletop world that got a little out of hand.': 'Ich bin Okami – Hobbyentwickler und noch ziemlich am Anfang. Ich lerne, indem ich Dinge baue, die ich wirklich nutzen will: Linux-Desktop-Tweaks, kleine Automatisierungen, Discord-Tools und eine Tabletop-Welt, die ein bisschen aus dem Ruder gelaufen ist.',
-        'If a project turns out useful or fun, I put it online so you can poke around, fork it or borrow the good bits. On YouTube you’ll find gaming mixed with project previews; on Twitch I just stream for fun.': 'Wenn ein Projekt nützlich oder witzig wird, stelle ich es online – zum Stöbern, Forken oder um dir die besten Teile zu schnappen. Auf YouTube gibt’s Gaming gemischt mit Projekt-Vorschauen; auf Twitch streame ich einfach aus Spaß.',
         'How it usually goes': 'So läuft’s meistens',
         'Something catches my eye.': 'Irgendwas weckt mein Interesse.',
         'I build the version I’d want to use – and learn a ton on the way.': 'Ich baue die Version, die ich selbst nutzen würde – und lerne dabei jede Menge.',
@@ -68,7 +71,6 @@
         'AI transparency': 'KI-Transparenz',
         'Yes, I use AI.': 'Ja, ich nutze KI.',
         'AI tools help me brainstorm, sketch prototypes, debug and learn. I review and adapt what comes out, make the calls myself, and I’m responsible for everything I publish.': 'KI-Tools helfen mir beim Brainstorming, bei Prototypen, beim Debuggen und beim Lernen. Ich prüfe und überarbeite die Ergebnisse, treffe die Entscheidungen selbst und stehe für alles gerade, was ich veröffentliche.',
-        'One little lab.': 'Ein kleines Labor.',
         'Every project started with something I wanted to use, understand or imagine. These are the ones that made it out into the world.': 'Jedes Projekt begann mit etwas, das ich nutzen, verstehen oder mir ausmalen wollte. Das hier sind die, die es raus in die Welt geschafft haben.',
         '0.3.0dev · public preview': '0.3.0dev · öffentliche Vorschau',
         'Linux / Hyprland desktop shell': 'Linux / Hyprland-Desktop-Shell',
@@ -525,10 +527,10 @@
 
     const redesign = {
         'Okami | Personal Projects & Experiments': 'Okami | Persönliche Projekte & Experimente',
-        'Okami is a hobby developer sharing personal Linux, Discord, automation, and tabletop projects built from curiosity and made public for everyone.': 'Okami ist ein Hobbyentwickler, der persönliche Projekte rund um Linux, Discord, Automatisierung und Tabletop aus Neugier entwickelt und für alle veröffentlicht.',
-        'A passion for building, and for pushing my skills: Linux desktops, Discord bots, small automations and a whole D&D world.': 'Eine Leidenschaft fürs Bauen – und dafür, meine Skills zu testen: Linux-Desktops, Discord-Bots, kleine Automatisierungen und eine ganze D&D-Welt.',
-        'Okami – a passion for building, and for pushing my skills': 'Okami – eine Leidenschaft fürs Bauen und dafür, meine Skills zu testen',
-        'PERSONAL LAB': 'PERSÖNLICHES LABOR',
+        'DIGITAL WORKSHOP': 'DIGITALE WERKSTATT',
+        'Okami is a hobby developer from Germany sharing personal Linux, Discord, automation, and tabletop projects built from curiosity and made public for everyone.': 'Okami ist ein Hobby-Entwickler aus Deutschland, der persönliche Projekte rund um Linux, Discord, Automatisierung und Tabletop teilt – aus Neugier gebaut und für alle veröffentlicht.',
+        'Okami’s digital workshop: a hobby developer from Germany building Linux desktops, Discord bots, small automations and a whole D&D world.': 'Okamis digitale Werkstatt: ein Hobby-Entwickler aus Deutschland, der Linux-Desktops, Discord-Bots, kleine Automatisierungen und eine ganze D&D-Welt baut.',
+        'Okami – welcome to my digital workshop': 'Okami – willkommen in meiner digitalen Werkstatt',
         'Building at my own pace': 'Ich entwickle in meinem eigenen Tempo',
         'Explore the projects': 'Projekte entdecken',
         'Different ideas.': 'Verschiedene Ideen.',
@@ -883,7 +885,7 @@
 
     const shouldSkipText = (node) => {
         const parent = node.parentElement;
-        return !parent || parent.closest('script, style, code, pre, .copy-code, [data-language-switch]');
+        return !parent || parent.closest('script, style, code, pre, .copy-code, [data-language-switch], [data-no-translate]');
     };
 
     const translateTextNodes = () => {

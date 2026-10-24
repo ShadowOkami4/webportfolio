@@ -345,6 +345,32 @@
 .contact-channel strong { margin-top: 6px; font-size: 1.3rem; font-stretch: var(--display-stretch); font-weight: 800; line-height: 1.15; }
 .contact-channel > span:last-child { margin-top: 8px; color: var(--muted); font-size: .88rem; line-height: 1.5; }
 
+/* Time in Germany: a small status strip under the email card. */
+.contact-clock {
+    display: grid;
+    margin-top: 12px;
+    padding: 22px clamp(22px, 3vw, 32px);
+    grid-template-columns: auto auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px clamp(18px, 3vw, 32px);
+    border-radius: var(--shape-xl);
+    background: var(--md-sys-color-surface-container);
+}
+.contact-clock-dot {
+    width: 22px;
+    height: 22px;
+    background: var(--md-sys-color-outline);
+    clip-path: var(--shape-cookie9);
+    transition: background var(--effects-duration) var(--effects);
+}
+.contact-clock.is-available .contact-clock-dot { background: #73e49a; animation: spin 7s linear infinite; }
+.contact-clock-time { display: grid; }
+.contact-clock-label { color: var(--md-sys-color-primary); font-size: .78rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.contact-clock-time strong { margin-top: 4px; font-size: clamp(2.4rem, 4vw, 3.2rem); font-stretch: var(--display-stretch); font-weight: var(--display-weight); font-variant-numeric: tabular-nums; line-height: 1; }
+.contact-clock-status { display: grid; gap: 4px; padding-left: clamp(18px, 3vw, 32px); border-left: 1px solid var(--line); }
+.contact-clock-status strong { font-size: 1.05rem; font-weight: 700; line-height: 1.35; }
+.contact-clock-status span { color: var(--muted); font-size: .9rem; line-height: 1.5; }
+
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 1120px) {
@@ -402,5 +428,7 @@
     .contact-email { min-height: 56px; padding-inline: 18px; font-size: .88rem; }
     .contact-channels { grid-template-columns: 1fr; }
     .contact-channel { min-height: 0; }
+    .contact-clock { padding: 22px; grid-template-columns: auto minmax(0, 1fr); border-radius: var(--shape-xl-inc); }
+    .contact-clock-status { grid-column: 1 / -1; padding: 14px 0 0; border-top: 1px solid var(--line); border-left: 0; }
     .contact-channel-label { margin-top: 20px; }
 }
