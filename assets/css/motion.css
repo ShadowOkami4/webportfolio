@@ -55,7 +55,7 @@
     height: 42px;
     border-radius: var(--shape-full);
     pointer-events: none;
-    background: var(--md-sys-color-secondary-container);
+    background: color-mix(in srgb, var(--md-sys-color-primary) 15%, transparent);
     opacity: 0;
     translate: var(--indicator-x, 0) -50%;
     transition:

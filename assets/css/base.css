@@ -257,51 +257,60 @@ h1, h2, h3 { text-wrap: balance; }
 .contact-title em,
 .voidline-section-intro h2 em { color: var(--md-sys-color-primary); font-style: normal; }
 
-/* ─── Header: floating M3 toolbar ────────────────────────────────────────── */
+/* ─── Header: floating glass toolbar ─────────────────────────────────────── */
 
+/* Near-black glass with a hairline edge; it firms up once the page scrolls.
+   Order: brand · navigation · language switch (menu button on small screens). */
 .site-header {
     position: sticky;
-    top: 12px;
+    top: 14px;
     z-index: 100;
     isolation: isolate;
     display: flex;
     width: min(var(--page), calc(100% - 24px));
-    min-height: 58px;
-    margin: 12px auto 0;
-    padding: 5px 6px 5px 12px;
+    min-height: 60px;
+    margin: 14px auto 0;
+    padding: 6px 7px 6px 8px;
     align-items: center;
-    gap: 10px;
-    border: 1px solid color-mix(in srgb, var(--md-sys-color-outline-variant) 45%, transparent);
+    gap: 8px;
     border-radius: var(--shape-full);
-    background: color-mix(in srgb, var(--md-sys-color-surface-container) 62%, transparent);
-    box-shadow: 0 6px 20px rgb(0 0 0 / .16);
-    backdrop-filter: blur(20px) saturate(130%);
-    transition: background var(--effects-duration) var(--effects), box-shadow var(--effects-duration) var(--effects);
+    background: color-mix(in srgb, var(--bg) 58%, transparent);
+    box-shadow:
+        inset 0 0 0 1px rgb(255 255 255 / .07),
+        inset 0 1px 0 rgb(255 255 255 / .05);
+    backdrop-filter: blur(22px) saturate(140%);
+    transition:
+        background var(--effects-duration) var(--effects),
+        box-shadow var(--effects-duration) var(--effects);
 }
-/* Reading progress, drawn along the bottom edge of the toolbar. */
-.site-header::after {
-    position: absolute;
-    right: 28px;
-    bottom: 0;
-    left: 28px;
-    height: 1.5px;
-    border-radius: var(--shape-full);
-    content: "";
-    background: var(--md-sys-color-primary);
-    transform: scaleX(var(--scroll-progress, 0));
-    transform-origin: left;
-    opacity: .55;
+.site-header.is-scrolled {
+    background: color-mix(in srgb, var(--md-sys-color-surface-container-lowest) 84%, transparent);
+    box-shadow:
+        inset 0 0 0 1px rgb(255 255 255 / .08),
+        inset 0 1px 0 rgb(255 255 255 / .06),
+        0 12px 32px rgb(0 0 0 / .5);
 }
-.site-header.is-scrolled { background: color-mix(in srgb, var(--md-sys-color-surface-container-high) 80%, transparent); box-shadow: 0 8px 26px rgb(0 0 0 / .22); }
 
 .brand { display: inline-flex; min-width: max-content; min-height: 46px; padding-right: 10px; align-items: center; gap: 10px; }
-.brand-mark { position: relative; display: grid; width: 38px; height: 38px; place-items: center; }
-.brand-mark img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.brand-mark { position: relative; display: grid; width: 44px; height: 44px; place-items: center; }
+.brand-mark img { position: absolute; inset: 5px; width: calc(100% - 10px); height: calc(100% - 10px); object-fit: contain; }
+/* Reading progress: a thin ring that fills around the logo as the page scrolls. */
+.brand-mark::before {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    content: "";
+    background: conic-gradient(var(--md-sys-color-primary) calc(var(--scroll-progress, 0) * 1turn), color-mix(in srgb, var(--md-sys-color-on-surface) 10%, transparent) 0);
+    mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2px));
+    opacity: 0;
+    transition: opacity var(--effects-duration) var(--effects);
+}
+.site-header.is-scrolled .brand-mark::before { opacity: 1; }
 .brand-copy { display: grid; line-height: 1; }
 .brand-copy strong { font-size: .95rem; font-stretch: 90%; font-weight: 800; letter-spacing: .14em; }
 .brand-copy small { margin-top: 6px; color: var(--muted); font-size: .66rem; font-weight: 600; letter-spacing: .1em; }
 
-.site-nav { display: flex; margin-left: auto; align-items: center; gap: 4px; }
+.site-nav { display: flex; margin-left: auto; padding-right: 10px; align-items: center; gap: 2px; order: 1; border-right: 1px solid rgb(255 255 255 / .08); }
 .site-nav a,
 .site-nav .nav-status {
     position: relative;
@@ -318,10 +327,10 @@ h1, h2, h3 { text-wrap: balance; }
         color var(--effects-duration) var(--effects),
         background var(--effects-duration) var(--effects);
 }
-.site-nav a:hover { color: var(--md-sys-color-on-surface); background: color-mix(in srgb, var(--md-sys-color-on-surface) var(--state-hover), transparent); }
-/* Active section: the M3 navigation indicator. */
-.site-nav a.active { color: var(--md-sys-color-on-secondary-container); background: var(--md-sys-color-secondary-container); }
-.site-nav .nav-out { margin-left: 4px; padding-inline: 22px; color: var(--md-sys-color-on-primary); background: var(--md-sys-color-primary); }
+.site-nav a:hover { color: var(--md-sys-color-on-surface); background: color-mix(in srgb, var(--md-sys-color-on-surface) 6%, transparent); }
+/* Active section: a soft tint of the area colour. */
+.site-nav a.active { color: var(--md-sys-color-primary); background: color-mix(in srgb, var(--md-sys-color-primary) 15%, transparent); }
+.site-nav .nav-out { margin-left: 6px; padding-inline: 20px; color: var(--md-sys-color-on-primary); background: var(--md-sys-color-primary); }
 .site-nav .nav-out:hover { color: var(--md-sys-color-on-primary); background: color-mix(in srgb, var(--md-sys-color-on-primary) var(--state-hover), var(--md-sys-color-primary)); }
 .site-nav .nav-status { opacity: .7; border: 1px solid var(--line-strong); }
 
@@ -333,9 +342,10 @@ h1, h2, h3 { text-wrap: balance; }
     align-items: center;
     justify-content: center;
     border: 0;
+    order: 3;
     border-radius: var(--shape-full);
-    color: var(--md-sys-color-on-secondary-container);
-    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-primary);
+    background: color-mix(in srgb, var(--md-sys-color-primary) 15%, transparent);
     cursor: pointer;
 }
 .menu-toggle > span:first-child { display: none; }
@@ -355,11 +365,11 @@ h1, h2, h3 { text-wrap: balance; }
     z-index: 102;
     isolation: isolate;
     display: inline-flex;
-    margin-left: auto;
     padding: 3px;
     flex: 0 0 auto;
+    order: 2;
     border-radius: var(--shape-full);
-    background: color-mix(in srgb, var(--md-sys-color-surface-container-highest) 80%, transparent);
+    background: color-mix(in srgb, var(--md-sys-color-on-surface) 7%, transparent);
 }
 .language-switch::before {
     position: absolute;
@@ -561,8 +571,9 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width: 920px) {
     :root { --page: min(100% - 30px, 760px); }
     body { font-size: 17px; }
-    .site-header { top: 10px; width: min(var(--page), calc(100% - 18px)); margin-top: 10px; border-radius: var(--shape-xl); }
+    .site-header { top: 10px; width: min(var(--page), calc(100% - 18px)); margin-top: 10px; }
     .menu-toggle { display: inline-flex; }
+    .language-switch { margin-left: auto; }
     .site-nav {
         position: absolute;
         top: calc(100% + 10px);
@@ -574,9 +585,10 @@ h1, h2, h3 { text-wrap: balance; }
         flex-direction: column;
         align-items: stretch;
         gap: 4px;
+        border: 0;
         border-radius: var(--shape-xl);
-        background: var(--md-sys-color-surface-container-high);
-        box-shadow: var(--shadow);
+        background: color-mix(in srgb, var(--md-sys-color-surface-container-low) 97%, transparent);
+        box-shadow: inset 0 0 0 1px rgb(255 255 255 / .07), var(--shadow);
     }
     .site-nav.open { display: flex; animation: menu-in var(--spring-default-duration) var(--spring-default); }
     .site-nav a,
@@ -593,7 +605,7 @@ h1, h2, h3 { text-wrap: balance; }
     html { scroll-padding-top: 84px; }
     .site-header { min-height: 56px; padding: 5px 5px 5px 10px; }
     .brand { min-height: 44px; gap: 8px; padding-right: 4px; }
-    .brand-mark { width: 36px; height: 36px; }
+    .brand-mark { width: 42px; height: 42px; }
     .section,
     .detail-section,
     .voidline-section { padding-block: 76px; }
