@@ -4,7 +4,7 @@
 //   node tools/check-translations.mjs [--write]
 import { readFileSync, writeFileSync } from "node:fs";
 
-const PAGES = ["index.html", "404.html", "pages/voidline.html", "pages/lunaecho.html", "pages/lunaecho-terms.html", "pages/lunaecho-privacy.html", "pages/mirrorgate.html"];
+const PAGES = ["index.html", "404.html", "pages/voidline.html", "pages/lunaecho.html", "pages/lunaecho-terms.html", "pages/lunaecho-privacy.html", "pages/mirrorgate.html", "pages/mirrorgate-terms.html"];
 // Keys looked up from JavaScript rather than from page text.
 const USED_IN_CODE = ["Copy", "Copied", "Select text"];
 const DICTIONARY = new URL("../assets/js/translations.js", import.meta.url);

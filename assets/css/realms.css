@@ -89,10 +89,11 @@ body.mirrorgate-page::before {
 /* Chapters are numbered in Roman numerals (CSS counters keep the markup unchanged). */
 .mirrorgate-page main { counter-reset: chapter; }
 .mirrorgate-page .detail-section { counter-increment: chapter; }
-/* The chapter number sits in a gold diamond, like the quest markers below. */
+/* The chapter number sits in a gold diamond, like the quest markers below.
+   Cinzel capitals sit about .075em above the centre of their line box. */
 .mirrorgate-page .section-label { gap: 14px; font-size: .8rem; }
-.mirrorgate-page .section-label span { width: 50px; height: 50px; flex: none; color: #1d1405; background: linear-gradient(160deg, color-mix(in srgb, var(--gold) 100%, #fff 18%), var(--gold) 55%, color-mix(in srgb, var(--gold) 80%, #5a3d0a)); clip-path: var(--shape-diamond); font-size: 0; }
-.mirrorgate-page .section-label span::before { content: counter(chapter, upper-roman); font-family: var(--caps); font-size: .86rem; font-weight: 800; }
+.mirrorgate-page .section-label span { width: 50px; height: 50px; flex: none; place-content: center; color: #1d1405; background: linear-gradient(160deg, color-mix(in srgb, var(--gold) 100%, #fff 18%), var(--gold) 55%, color-mix(in srgb, var(--gold) 80%, #5a3d0a)); clip-path: var(--shape-diamond); font-size: 0; }
+.mirrorgate-page .section-label span::before { content: counter(chapter, upper-roman); font-family: var(--caps); font-size: .86rem; font-weight: 800; line-height: 1; letter-spacing: .02em; translate: 0 .075em; }
 
 .mirrorgate-page .button,
 .mirrorgate-page .button-ghost { font-family: var(--caps); font-size: .9rem; font-weight: 700; letter-spacing: .04em; }
@@ -146,6 +147,14 @@ body.mirrorgate-page::before {
 .mirrorgate-page .detail-lead { max-width: 760px; color: var(--ink-soft); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.55; }
 .mirrorgate-page .detail-actions { justify-content: center; }
 .mirrorgate-page .detail-tags { justify-content: center; }
+
+/* Hero marks: what the setting is built for, each with a small engraved icon. */
+.realm-marks { display: flex; margin: 30px 0 0; padding: 0; flex-wrap: wrap; justify-content: center; gap: 12px; list-style: none; }
+.realm-marks li { display: flex; min-height: 64px; padding: 8px 20px 8px 8px; align-items: center; gap: 14px; border-radius: var(--shape-full); background: color-mix(in srgb, var(--gold) 6%, var(--md-sys-color-surface-container-low)); box-shadow: inset 0 0 0 1px var(--gold-soft); text-align: left; }
+.realm-mark-icon { display: grid; width: 48px; height: 48px; flex: none; place-items: center; border-radius: 50%; color: var(--gold); background: color-mix(in srgb, var(--gold) 14%, transparent); }
+.realm-mark-icon svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+.realm-marks strong { display: block; color: var(--ink); font-family: var(--caps); font-size: .92rem; font-weight: 700; letter-spacing: .04em; line-height: 1.2; }
+.realm-marks small { display: block; margin-top: 2px; color: var(--muted); font-size: .9rem; line-height: 1.3; }
 
 .mirrorgate-visual {
     width: min(100%, 980px);
@@ -391,6 +400,20 @@ body.mirrorgate-page::before {
 .mirrorgate-cta::after { display: none; }
 .mirrorgate-cta > p:not(.detail-badge) { margin-inline: auto; font-size: 1.1rem; }
 .mirrorgate-cta .detail-actions { justify-content: center; }
+/* Open source and the licence, at the foot of the invitation. */
+.realm-license { display: flex; margin-top: 30px; padding-top: 24px; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px; border-top: 1px solid var(--gold-soft); }
+.realm-license-chip { display: inline-flex; min-height: 40px; padding: 0 16px 0 10px; align-items: center; gap: 10px; border-radius: var(--shape-full); color: var(--ink-soft); box-shadow: inset 0 0 0 1px var(--gold-soft); font-family: var(--caps); font-size: .78rem; font-weight: 700; letter-spacing: .06em; }
+.realm-license-chip > span { display: grid; color: var(--gold); }
+.realm-license-chip svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+a.realm-license-chip:hover { color: var(--ink); background: color-mix(in srgb, var(--gold) 8%, transparent); }
+.realm-license-link { color: var(--gold); font-family: var(--caps); font-size: .8rem; font-weight: 700; letter-spacing: .04em; border-bottom: 1px solid var(--gold-soft); }
+.realm-license-link:hover { border-bottom-color: var(--gold); }
+
+/* Terms page: the attribution statement as a quotable block. */
+.realm-attribution { margin: 18px 0; padding: 20px 24px; border-radius: var(--shape-lg); color: var(--ink); background: color-mix(in srgb, var(--gold) 7%, var(--md-sys-color-surface-container)); box-shadow: inset 3px 0 0 var(--gold); font-style: italic; }
+/* Cinzel runs much wider than the condensed sans; keep the title inside its column. */
+.realm-legal-page .legal-title { font-size: clamp(2.8rem, 5.6vw, 5.4rem); line-height: .95; overflow-wrap: anywhere; }
+.realm-legal-page .legal-section-number { font-family: var(--caps); font-size: .72rem; font-weight: 700; letter-spacing: .12em; }
 .realm-d20-cta { width: 96px; height: 96px; margin: 0 auto 10px; animation: spin 40s linear infinite; }
 /* The real 3D die that die3d.js puts in its place: press it to roll. */
 .realm-die3d {
