@@ -588,6 +588,148 @@ a.realm-license-chip:hover { color: var(--ink); background: color-mix(in srgb, v
     .realm-shards i { animation: none !important; opacity: calc(var(--glow) * .6); transform: translateY(var(--y)) rotate(calc(var(--ax) * 90deg)); }
 }
 
+/* ─── Atmosphere: mist, lantern light, and things half-seen ──────────────── */
+
+/* Low mist drifts through the page behind the content. Only transforms move. */
+.realm-mist { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.realm-mist i {
+    position: absolute;
+    width: 90vmax;
+    height: 50vmax;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--teal) 9%, transparent), color-mix(in srgb, #b9c2bf 4%, transparent) 45%, transparent);
+    will-change: transform;
+}
+.realm-mist i:nth-child(1) { top: 55%; left: -30%; animation: mist-drift 70s ease-in-out infinite alternate; }
+.realm-mist i:nth-child(2) { top: 10%; right: -40%; width: 110vmax; animation: mist-drift 95s ease-in-out -30s infinite alternate-reverse; }
+.realm-mist i:nth-child(3) { bottom: -30%; left: 20%; height: 40vmax; background: radial-gradient(closest-side, color-mix(in srgb, var(--gold) 5%, transparent), transparent); animation: mist-drift 80s ease-in-out -50s infinite alternate; }
+@keyframes mist-drift { from { transform: translate3d(-8vw, 2vh, 0) scale(1); } to { transform: translate3d(14vw, -4vh, 0) scale(1.15); } }
+
+/* A lantern: the page is a little darker away from the light, which follows the
+   pointer on desktop and rests above the middle of the screen elsewhere. It is
+   moved with a transform, so following the pointer never repaints the page. */
+.realm-lantern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    width: 260vmax;
+    height: 260vmax;
+    pointer-events: none;
+    background: radial-gradient(closest-side, transparent 0 13%, rgb(4 3 2 / .16) 24%, rgb(4 3 2 / .38) 46%, rgb(4 3 2 / .42));
+    transform: translate(calc(var(--pointer-x, 50vw) - 50%), calc(var(--pointer-y, 38vh) - 50%));
+    transition: transform 1100ms var(--effects);
+    will-change: transform;
+}
+
+/* An inscription circles the mirror, too faint to read at a glance. */
+.mirror-inscription {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    width: min(78%, 500px);
+    aspect-ratio: 1;
+    overflow: visible;
+    pointer-events: none;
+    translate: -50% -50%;
+    animation: inscription-turn 140s linear infinite;
+}
+.mirror-inscription text { fill: color-mix(in srgb, var(--gold) 42%, transparent); font-family: var(--caps); font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+@keyframes inscription-turn { to { rotate: 360deg; } }
+
+/* Rings spread over the mirror's surface, as if something stirred behind it. */
+.mirror-surface b {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    width: 70%;
+    aspect-ratio: 1;
+    border: 1px solid color-mix(in srgb, var(--teal) 55%, transparent);
+    border-radius: 50%;
+    opacity: 0;
+    translate: -50% -50%;
+    animation: mirror-ripple 9s ease-out infinite;
+}
+.mirror-surface b + b { animation-delay: -4.5s; }
+@keyframes mirror-ripple { 0% { opacity: 0; scale: .1; } 15% { opacity: .7; } 100% { opacity: 0; scale: 1.6; } }
+
+/* Sections surface out of the mist instead of merely fading in. */
+.js .mirrorgate-page .reveal { filter: blur(10px); transition: opacity 1100ms var(--effects), transform 1100ms var(--spring-slow), filter 1300ms var(--effects); }
+.js .mirrorgate-page .reveal.is-visible { filter: none; }
+
+/* Chapter diamonds glow like a candle behind glass: a soft halo behind the
+   diamond (its own clip-path would cut a glow on the diamond itself away). */
+.mirrorgate-page .section-label { position: relative; isolation: isolate; }
+.mirrorgate-page .section-label::before {
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    z-index: -1;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    content: "";
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--gold) 34%, transparent), transparent);
+    translate: 0 -50%;
+    animation: candle 5s ease-in-out infinite;
+}
+@keyframes candle {
+    0%, 100% { opacity: .55; scale: .92; }
+    40% { opacity: 1; scale: 1.06; }
+    55% { opacity: .7; scale: .97; }
+}
+
+/* Doors not yet announced: a smudged line where a title will one day be. */
+.journey-titles .journey-sealed { color: var(--muted); font-style: italic; }
+.journey-sealed::before {
+    display: inline-block;
+    width: 4.2em;
+    height: .5em;
+    margin-right: .6em;
+    border-radius: 3px;
+    content: "";
+    background: repeating-linear-gradient(90deg, var(--gold-soft) 0 7px, transparent 7px 10px);
+    filter: blur(1.4px);
+    vertical-align: middle;
+}
+
+/* Cards catch a glint of the mirror when the pointer passes over them. */
+.journey-card,
+.tool-card { position: relative; isolation: isolate; overflow: hidden; }
+.journey-card::after,
+.tool-card::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 35%, color-mix(in srgb, var(--teal) 14%, transparent) 48%, color-mix(in srgb, var(--gold) 10%, transparent) 52%, transparent 65%);
+    transform: translateX(-110%);
+    transition: transform 1200ms var(--effects);
+}
+.journey-card:hover::after,
+.tool-card:hover::after { transform: translateX(110%); }
+
+/* On phones the mirror is taller than any circle that fits around it. */
+@media (max-width: 680px) {
+    .mirror-inscription { display: none; }
+}
+
+@media (pointer: coarse) {
+    /* No pointer to carry the lantern: keep a gentle, fixed vignette. */
+    .realm-lantern { transition: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .realm-mist i,
+    .mirror-inscription,
+    .mirror-surface b,
+    .mirrorgate-page .section-label::before { animation: none !important; }
+    .mirror-surface b { display: none; }
+    .realm-lantern { transition: none; }
+    .js .mirrorgate-page .reveal { filter: none; }
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 1120px) {

@@ -176,6 +176,9 @@
     };
 
     const mirrorgate = {
+        '✦ What the mirror shows is not what stands before it ✦ Every door remembers who opened it ✦': '✦ Was der Spiegel zeigt, ist nicht, was vor ihm steht ✦ Jede Tür erinnert sich, wer sie geöffnet hat ✦',
+        '8 doors still sealed': '8 Türen noch versiegelt',
+        '2 doors still sealed': '2 Türen noch versiegelt',
         'SRD 5.2.1 rules': 'Regeln nach SRD 5.2.1',
         'Linked Markdown notes': 'Verknüpfte Markdown-Notizen',
         'Built for': 'Gebaut für',
