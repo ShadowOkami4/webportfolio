@@ -875,15 +875,95 @@
         'Your work stays yours, and it is credited.': 'Deine Arbeit bleibt deine, und sie wird genannt.',
     };
 
+    // Custom pricing, the Impressum, and the paid Custom terms (November 2026).
+    const lunaPricing = {
+        'Pricing': 'Preise',
+        'From €2.50 / month': 'Ab 2,50 € / Monat',
+        'See how pricing works': 'So funktionieren die Preise',
+        'Per bot plus members,': 'Pro Bot plus Mitglieder,',
+        'see pricing': 'siehe Preise',
+        'Custom pricing': 'Custom-Preise',
+        'Pay for your bot and its size. Nothing else.': 'Du zahlst für deinen Bot und seine Größe. Sonst nichts.',
+        '€2.50 per bot': '2,50 € pro Bot',
+        'Covers what every bot costs: its own container and its own database.': 'Deckt ab, was jeder Bot kostet: seinen eigenen Container und seine eigene Datenbank.',
+        'Members in steps of 1,000': 'Mitglieder in 1.000er-Schritten',
+        "The first 1,000 are free. Each step's rate applies only to the members inside it, like tax brackets, so crossing an edge never makes the price jump.": 'Die ersten 1.000 sind kostenlos. Jeder Satz gilt nur für die Mitglieder in seiner Stufe, wie bei Steuerstufen, deshalb springt der Preis an keiner Grenze.',
+        '30-day average': '30-Tage-Durchschnitt',
+        "Each bot's servers are counted once a day and the 30-day average counts, so a raid or a busy week barely changes anything.": 'Die Server jedes Bots werden einmal am Tag gezählt, und es zählt der 30-Tage-Durchschnitt. Ein Raid oder eine volle Woche ändert deshalb kaum etwas.',
+        'Changes at renewal only': 'Änderungen nur zur Verlängerung',
+        'A new size applies from your next monthly bill, never mid-month. When your community shrinks, the price follows automatically.': 'Eine neue Größe gilt ab deiner nächsten Monatsrechnung, nie mitten im Monat. Schrumpft deine Community, sinkt der Preis automatisch mit.',
+        'Members (30-day average)': 'Mitglieder (30-Tage-Durchschnitt)',
+        'Per 1,000 members': 'Pro 1.000 Mitglieder',
+        'First 1,000': 'Erste 1.000',
+        '1,001 to 10,000': '1.001 bis 10.000',
+        '10,001 to 50,000': '10.001 bis 50.000',
+        'Above 50,000': 'Über 50.000',
+        '€0.40': '0,40 €',
+        '€0.25': '0,25 €',
+        '€0.15': '0,15 €',
+        'Estimate your price': 'Preis schätzen',
+        'Members across all your bots': 'Mitglieder über alle deine Bots',
+        'Members': 'Mitglieder',
+        'Per month': 'Pro Monat',
+        'An estimate from your current size; the bill uses the 30-day average. The final price, including any VAT, is shown at checkout. Billed monthly through Stripe; cancel any time.': 'Eine Schätzung nach deiner aktuellen Größe; abgerechnet wird der 30-Tage-Durchschnitt. Den Endpreis inklusive eventueller Umsatzsteuer siehst du beim Bezahlen. Monatliche Abrechnung über Stripe, jederzeit kündbar.',
+        'Get Custom ↗': 'Custom holen ↗',
+        'Discord reports members per server, so someone in two of your servers counts twice. Removing duplicates would mean collecting member lists, which LunaEcho does not do for billing.': 'Discord meldet Mitglieder pro Server, wer in zwei deiner Server ist, zählt deshalb doppelt. Doppelte zu entfernen hieße, Mitgliederlisten zu sammeln, und das tut LunaEcho für die Abrechnung nicht.'
+    };
+
+    const lunaPaidLegal = {
+        '5 November 2026': '5. November 2026',
+        'LunaEcho is in pre-release. Cloud and Custom are offered as they become available; features and operational limits may still change. Custom prices are the ones shown on the project page and at checkout when you buy.': 'LunaEcho befindet sich in der Vorabversion. Cloud und Custom werden angeboten, sobald sie verfügbar sind; Funktionen und betriebliche Limits können sich noch ändern. Für Custom gelten die Preise, die beim Kauf auf der Projektseite und beim Bezahlen angezeigt werden.',
+        'Custom is the paid managed service using a Discord application and bot identity supplied by an authorized customer. We operate the LunaEcho infrastructure while the customer remains responsible for their Discord application and their authority to provide its bot token.': 'Custom ist der kostenpflichtige verwaltete Dienst mit einer Discord-Anwendung und Bot-Identität eines autorisierten Kunden. Wir betreiben die LunaEcho-Infrastruktur, während der Kunde für seine Discord-Anwendung und die Berechtigung zur Bereitstellung des Bot-Tokens verantwortlich bleibt.',
+        'Custom price and billing': 'Custom-Preis und Abrechnung',
+        'Custom is a monthly subscription, paid in advance through our payment provider Stripe. The price is a base price per bot plus a price for members, as described in the': 'Custom ist ein Monatsabo, das im Voraus über unseren Zahlungsanbieter Stripe bezahlt wird. Der Preis besteht aus einem Grundpreis pro Bot und einem Preis für Mitglieder, wie im',
+        'pricing section': 'Preisabschnitt',
+        'of the project page and shown at checkout before you pay. Members are counted once a day per bot, as the approximate member counts Discord reports for the servers the bot is in, and averaged over 30 days. A change in size takes effect at the next renewal; we never charge more within a paid month.': 'der Projektseite beschrieben und beim Bezahlen vor der Zahlung angezeigt. Mitglieder werden einmal am Tag pro Bot gezählt, als die ungefähren Mitgliederzahlen, die Discord für die Server des Bots meldet, und über 30 Tage gemittelt. Eine geänderte Größe gilt ab der nächsten Verlängerung; innerhalb eines bezahlten Monats berechnen wir nie mehr.',
+        'Cancellation': 'Kündigung',
+        'You can cancel at any time in the billing portal, reachable from the Custom bots page of the dashboard. There is no minimum term: the cancellation takes effect at the end of the paid month, and your bots keep running until then. Afterwards they stop; removing a bot deletes its database.': 'Du kannst jederzeit im Abrechnungsportal kündigen, das du über die Seite „Custom bots“ im Dashboard erreichst. Es gibt keine Mindestlaufzeit: Die Kündigung wirkt zum Ende des bezahlten Monats, bis dahin laufen deine Bots weiter. Danach stoppen sie; das Entfernen eines Bots löscht seine Datenbank.',
+        'Right of withdrawal for consumers': 'Widerrufsrecht für Verbraucher',
+        'If you are a consumer, you may withdraw from the contract within 14 days of concluding it, without giving a reason, by sending a clear statement to': 'Als Verbraucher kannst du den Vertrag innerhalb von 14 Tagen nach Vertragsschluss ohne Angabe von Gründen widerrufen, indem du eine eindeutige Erklärung an',
+        'or by post to the address in the': 'oder per Post an die Anschrift im',
+        '. Because Custom starts right after purchase, at checkout you ask us to begin immediately. If you then withdraw, you pay a proportionate amount for the days already provided; we refund the rest within 14 days using the same payment method.': 'sendest. Weil Custom direkt nach dem Kauf startet, verlangst du beim Bezahlen, dass wir sofort beginnen. Widerrufst du danach, zahlst du einen anteiligen Betrag für die bereits erbrachten Tage; den Rest erstatten wir innerhalb von 14 Tagen über dieselbe Zahlungsart.',
+        'Custom billing and size readings': 'Custom-Abrechnung und Größenmessungen',
+        'For LunaEcho Custom we store which Stripe customer belongs to your Discord user ID, your number of bot slots, and once a day per Custom bot the number of servers it is in and their approximate member counts added up, as Discord reports them. We never collect member lists or names for billing. Payment details such as card numbers and your billing address are processed by Stripe, not by LunaEcho.': 'Für LunaEcho Custom speichern wir, welcher Stripe-Kunde zu deiner Discord-Benutzer-ID gehört, deine Anzahl an Bot-Plätzen und einmal am Tag pro Custom-Bot die Anzahl seiner Server und deren zusammengezählte ungefähre Mitgliederzahlen, wie Discord sie meldet. Für die Abrechnung sammeln wir nie Mitgliederlisten oder Namen. Zahlungsdaten wie Kartennummern und deine Rechnungsadresse verarbeitet Stripe, nicht LunaEcho.',
+        'processes payments, invoices, and billing details for LunaEcho Custom as our payment provider (Stripe Payments Europe, Ltd., Dublin, Ireland). LunaEcho receives only the subscription status and never sees full payment card numbers.': 'verarbeitet als unser Zahlungsanbieter Zahlungen, Rechnungen und Rechnungsdaten für LunaEcho Custom (Stripe Payments Europe, Ltd., Dublin, Irland). LunaEcho erhält nur den Abo-Status und sieht nie vollständige Kartennummern.',
+        'Daily Custom size readings are kept for 90 days, long enough to calculate and check the 30-day averages billed. Invoices and payment records are kept by Stripe and, where tax law requires it, for the statutory retention period.': 'Tägliche Custom-Größenmessungen werden 90 Tage aufbewahrt, lange genug, um die abgerechneten 30-Tage-Durchschnitte zu berechnen und zu prüfen. Rechnungen und Zahlungsbelege bewahrt Stripe auf, und soweit das Steuerrecht es verlangt, für die gesetzliche Aufbewahrungsfrist.'
+    };
+
+    const impressum = {
+        'Impressum | Okami': 'Impressum | Okami',
+        'Legal notice (Impressum) for shadowokami.com and LunaEcho.': 'Impressum für shadowokami.com und LunaEcho.',
+        'LEGAL / IMPRESSUM': 'RECHTLICHES / IMPRESSUM',
+        'Legal navigation': 'Rechtliche Navigation',
+        '← Back home': '← Zur Startseite',
+        'Legal notice': 'Rechtliche Angaben',
+        'Who runs shadowokami.com, LunaEcho Cloud, and LunaEcho Custom, and how to reach them.': 'Wer shadowokami.com, LunaEcho Cloud und LunaEcho Custom betreibt und wie du Kontakt aufnimmst.',
+        '01 / Information according to § 5 DDG': '01 / Angaben gemäß § 5 DDG',
+        'Provider': 'Anbieter',
+        '02 / Contact': '02 / Kontakt',
+        'The fastest way to reach me is by email.': 'Am schnellsten erreichst du mich per E-Mail.',
+        '03 / Responsible for content according to § 18 (2) MStV': '03 / Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV',
+        'Responsible for content': 'Verantwortlich für den Inhalt',
+        '04 / Consumer dispute resolution': '04 / Verbraucherstreitbeilegung',
+        'Disputes': 'Streitbeilegung',
+        'I am neither obliged nor willing to take part in dispute resolution proceedings before a consumer arbitration board. If something goes wrong, please write to me first; most problems are solved quickly that way.': 'Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Wenn etwas schiefläuft, schreib mir bitte zuerst; die meisten Probleme lassen sich so schnell lösen.',
+        '05 / Content and links': '05 / Inhalte und Links',
+        'Content and links': 'Inhalte und Links',
+        'I write the content of these pages with care, but cannot guarantee that it is complete, correct, and current at all times. Links to other websites lead to content I do not control; I am not responsible for it. If I learn of unlawful content on a linked page, I remove the link.': 'Ich erstelle die Inhalte dieser Seiten mit Sorgfalt, kann aber nicht garantieren, dass sie jederzeit vollständig, richtig und aktuell sind. Links zu anderen Websites führen zu Inhalten, auf die ich keinen Einfluss habe; für sie bin ich nicht verantwortlich. Erfahre ich von rechtswidrigen Inhalten auf einer verlinkten Seite, entferne ich den Link.',
+        'Home': 'Startseite',
+        'Germany': 'Deutschland'
+    };
+
     const pageTranslations = {
         '404.html': notFound,
         'index.html': home,
         'voidline.html': voidline,
         'mirrorgate.html': mirrorgate,
         'mirrorgate-terms.html': { ...legalCommon, ...mirrorgateTerms },
-        'lunaecho.html': { ...lunaecho, ...lunaechoV01 },
-        'lunaecho-terms.html': { ...legalCommon, ...terms, ...lunaLegalV01 },
-        'lunaecho-privacy.html': { ...legalCommon, ...privacy, ...lunaLegalV01 }
+        'lunaecho.html': { ...lunaecho, ...lunaechoV01, ...lunaPricing },
+        'lunaecho-terms.html': { ...legalCommon, ...terms, ...lunaLegalV01, ...lunaPaidLegal },
+        'lunaecho-privacy.html': { ...legalCommon, ...privacy, ...lunaLegalV01, ...lunaPaidLegal },
+        'impressum.html': { ...legalCommon, ...impressum }
     };
 
     const cleanPath = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -894,7 +974,8 @@
         '/LunaEcho/Terms': 'lunaecho-terms.html',
         '/Mirrored_Realms': 'mirrorgate.html',
         '/Mirrored_Realms/Terms': 'mirrorgate-terms.html',
-        '/Voidline': 'voidline.html'
+        '/Voidline': 'voidline.html',
+        '/Impressum': 'impressum.html'
     };
     const fileName = document.documentElement.dataset.page === '404'
         ? '404.html'

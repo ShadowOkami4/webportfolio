@@ -14,7 +14,8 @@ const ROUTE_ALIASES = new Map([
     ['/LunaEcho/Privacy', 'pages/lunaecho-privacy.html'],
     ['/LunaEcho/Terms', 'pages/lunaecho-terms.html'],
     ['/Mirrored_Realms', 'pages/mirrorgate.html'],
-    ['/Voidline', 'pages/voidline.html']
+    ['/Voidline', 'pages/voidline.html'],
+    ['/Impressum', 'pages/impressum.html']
 ]);
 const ROUTE_REDIRECTS = new Map([
     ['/MirrorGate', '/Mirrored_Realms']

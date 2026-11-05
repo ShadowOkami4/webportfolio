@@ -507,6 +507,8 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .site-footer a { transition: color var(--effects-duration) var(--effects), background var(--effects-duration) var(--effects), border-radius var(--spring-fast-duration) var(--spring-fast); }
 .footer-copyright { display: grid; max-width: 470px; gap: 10px; }
+.footer-legal { justify-self: start; color: var(--muted); font-size: .82rem; text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal:hover { color: var(--ink); }
 .footer-copyright strong { color: var(--ink); font-size: 1rem; font-stretch: 90%; font-weight: 800; letter-spacing: .12em; }
 .footer-copyright small { color: var(--muted); font-size: .8rem; font-weight: 450; letter-spacing: 0; line-height: 1.6; text-transform: none; }
 .footer-motto { max-width: 280px; color: var(--md-sys-color-primary); line-height: 1.55; }

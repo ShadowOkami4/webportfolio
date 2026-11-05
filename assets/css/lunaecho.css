@@ -239,6 +239,29 @@
 .le-table-wrap thead .is-featured { color: var(--md-sys-color-primary); }
 .le-footnote { margin: 16px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.6; }
 
+/* Custom pricing: the rules and rate table beside a small estimate calculator. */
+.le-pricing { margin-top: 24px; padding: 30px; scroll-margin-top: 112px; border-radius: var(--shape-xxl); background: var(--le-card); box-shadow: var(--le-edge); }
+.le-pricing-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); align-items: start; gap: 24px; }
+.le-pricing-rules { display: grid; min-width: 0; gap: 20px; }
+.le-pricing-steps { display: grid; margin: 0; padding: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; list-style: none; counter-reset: step; }
+.le-pricing-steps li { display: grid; padding: 16px 18px; align-content: start; gap: 6px; border-radius: var(--shape-lg); background: var(--md-sys-color-surface-container-lowest); counter-increment: step; }
+.le-pricing-steps strong { color: var(--ink); font-size: .98rem; }
+.le-pricing-steps strong::before { margin-right: 8px; color: var(--md-sys-color-primary); content: "0" counter(step); font-size: .78rem; letter-spacing: .06em; }
+.le-pricing-steps span { color: var(--ink-soft); font-size: .88rem; line-height: 1.55; }
+.le-rate-table { min-width: 0 !important; }
+.le-rate-table td { color: var(--md-sys-color-primary) !important; font-weight: 700; text-align: right !important; }
+.le-calculator { position: sticky; top: 104px; display: grid; padding: 24px; gap: 14px; border-radius: var(--shape-xl); background: color-mix(in srgb, var(--md-sys-color-primary) 7%, var(--md-sys-color-surface-container)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--md-sys-color-primary) 30%, transparent); }
+.le-calculator .le-note-label { margin: 0; }
+.le-field { display: grid; gap: 6px; color: var(--ink-soft); font-size: .86rem; font-weight: 600; }
+.le-field input { width: 100%; min-height: 48px; padding: 0 14px; border: 0; border-bottom: 2px solid var(--md-sys-color-outline); border-radius: var(--shape-md) var(--shape-md) 0 0; color: var(--ink); background: var(--md-sys-color-surface-container-highest); font: inherit; font-size: 1.05rem; }
+.le-field input:focus { border-bottom-color: var(--md-sys-color-primary); outline: none; }
+.le-calc-lines { display: grid; margin: 4px 0 0; gap: 6px; }
+.le-calc-lines div { display: flex; justify-content: space-between; gap: 12px; color: var(--ink-soft); font-size: .92rem; }
+.le-calc-lines dt, .le-calc-lines dd { margin: 0; }
+.le-calc-lines .le-calc-total { margin-top: 6px; padding-top: 12px; align-items: baseline; border-top: 1px solid var(--line); color: var(--ink); }
+.le-calc-total dd { color: var(--md-sys-color-primary); font-size: clamp(2rem, 4vw, 2.6rem); font-stretch: var(--display-stretch); font-weight: var(--display-weight); line-height: 1; }
+.le-calc-note { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.55; }
+
 /* Short notes with an icon or a demo switch */
 .le-note { display: flex; margin-top: 16px; padding: 22px 26px; align-items: center; gap: 22px; border-radius: var(--shape-xl); background: var(--le-card); box-shadow: var(--le-edge); }
 .le-note-label { margin: 0 0 4px; color: var(--md-sys-color-primary); }
@@ -315,6 +338,8 @@
 }
 
 @media (max-width: 920px) {
+    .le-pricing-grid { grid-template-columns: 1fr; }
+    .le-calculator { position: static; }
     .le-hero { padding-top: 48px; grid-template-columns: 1fr; }
     .le-console { width: min(100%, 520px); justify-self: center; }
     .le-modules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -337,6 +362,8 @@
     .le-path { flex-direction: column; }
     .le-path b { rotate: 90deg; }
     .le-compare { padding: 20px; border-radius: var(--shape-xl-inc); }
+    .le-pricing { padding: 20px; border-radius: var(--shape-xl-inc); }
+    .le-pricing-steps { grid-template-columns: 1fr; }
     .le-note { padding: 20px; flex-direction: column; align-items: flex-start; border-radius: var(--shape-xl-inc); }
     .le-toggle-demo { width: 100%; }
     .le-modules,

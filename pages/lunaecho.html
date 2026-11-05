@@ -24,9 +24,9 @@
     <link rel="preload" href="../assets/fonts/roboto-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/css/tokens.css?v=2">
     <link rel="stylesheet" href="../assets/css/shapes.css?v=3">
-    <link rel="stylesheet" href="../assets/css/base.css?v=6">
+    <link rel="stylesheet" href="../assets/css/base.css?v=7">
     <link rel="stylesheet" href="../assets/css/projects.css?v=5">
-    <link rel="stylesheet" href="../assets/css/lunaecho.css?v=1">
+    <link rel="stylesheet" href="../assets/css/lunaecho.css?v=2">
     <link rel="stylesheet" href="../assets/css/motion.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -42,7 +42,7 @@
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
         <nav class="site-nav" id="site-nav" aria-label="Project navigation">
-            <a href="#overview">Overview</a><a href="#hosting">Hosting</a><a href="#modules">Modules</a><a href="#architecture">Architecture</a><a href="#roadmap">Roadmap</a>
+            <a href="#overview">Overview</a><a href="#hosting">Hosting</a><a href="#pricing">Pricing</a><a href="#modules">Modules</a><a href="#architecture">Architecture</a><a href="#roadmap">Roadmap</a>
             <a class="nav-out" href="https://github.com/ShadowOkami4/LunaEcho" target="_blank" rel="noopener noreferrer">Source ↗</a>
         </nav>
     </header>
@@ -130,14 +130,14 @@
                     <a class="button le-plan-action" href="https://lunaecho.shadowokami.com" target="_blank" rel="noopener noreferrer">Open the Cloud dashboard ↗</a>
                 </article>
                 <article class="le-plan reveal">
-                    <div class="le-plan-top"><span class="le-plan-icon"><svg aria-hidden="true"><use href="#le-i-badge"/></svg></span><strong class="le-price">Paid / size-based</strong></div>
+                    <div class="le-plan-top"><span class="le-plan-icon"><svg aria-hidden="true"><use href="#le-i-badge"/></svg></span><strong class="le-price">From €2.50 / month</strong></div>
                     <p class="le-plan-kicker">Your bot, managed by us</p>
                     <h3>Custom</h3>
                     <p class="le-plan-text">Your own bot identity, run and maintained by LunaEcho.</p>
                     <div class="le-path" aria-label="Custom architecture"><span>LunaEcho hardware</span><b aria-hidden="true">&rarr;</b><span>Your bot</span><b aria-hidden="true">&rarr;</b><span>Your server</span></div>
                     <ul class="check-list"><li>Your bot name, avatar and profile</li><li>Full functionality, no Cloud limits</li><li>Managed hosting and support</li></ul>
                     <p class="le-plan-fit"><span>Best for</span><strong>Established communities wanting their own identity</strong></p>
-                    <span class="le-plan-action le-plan-soon">Coming later</span>
+                    <a class="button button-ghost le-plan-action" href="#pricing">See how pricing works</a>
                 </article>
             </div>
 
@@ -146,13 +146,47 @@
                 <div class="le-table-wrap"><table>
                     <thead><tr><th scope="col">Decision</th><th scope="col">Self-Hosted</th><th scope="col" class="is-featured">Cloud</th><th scope="col">Custom</th></tr></thead>
                     <tbody>
-                        <tr><th scope="row">Price</th><td>Free</td><td class="is-featured">Free</td><td>Paid, based on server size</td></tr><tr><th scope="row">Hosted by</th><td>You</td><td class="is-featured">LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Bot application</th><td>Yours</td><td class="is-featured">LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Bot token</th><td>Yours</td><td class="is-featured">LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Feature restrictions</th><td>None*</td><td class="is-featured">Reasonable service limits</td><td>No normal Cloud restrictions*</td></tr><tr><th scope="row">Updates &amp; maintenance</th><td>You</td><td class="is-featured">LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Branding</th><td>Yours</td><td class="is-featured">LunaEcho</td><td>Yours</td></tr>
+                        <tr><th scope="row">Price</th><td>Free</td><td class="is-featured">Free</td><td>Per bot plus members, <a href="#pricing">see pricing</a></td></tr><tr><th scope="row">Hosted by</th><td>You</td><td class="is-featured">LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Bot application</th><td>Yours</td><td class="is-featured">LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Bot token</th><td>Yours</td><td class="is-featured">LunaEcho's</td><td>Yours</td></tr><tr><th scope="row">Feature restrictions</th><td>None*</td><td class="is-featured">Reasonable service limits</td><td>No normal Cloud restrictions*</td></tr><tr><th scope="row">Updates &amp; maintenance</th><td>You</td><td class="is-featured">LunaEcho</td><td>LunaEcho</td></tr><tr><th scope="row">Branding</th><td>Yours</td><td class="is-featured">LunaEcho</td><td>Yours</td></tr>
                     </tbody>
                 </table></div>
                 <p class="le-footnote">* Subject to technical, Discord API, third-party API, and fair-use constraints rather than artificial feature locks.</p>
             </div>
 
-            <aside class="le-note reveal"><span class="le-note-icon"><svg aria-hidden="true"><use href="#le-i-help"/></svg></span><div><p class="le-note-label">Intentionally undecided</p><h3>No made-up prices or limits.</h3><p>Prices and limits are set after real cost measurements, not before.</p></div></aside>
+            <div class="le-pricing reveal" id="pricing" aria-labelledby="pricing-title">
+                <div class="le-compare-head"><p class="detail-badge">Custom pricing</p><h3 id="pricing-title">Pay for your bot and its size. Nothing else.</h3></div>
+                <div class="le-pricing-grid">
+                    <div class="le-pricing-rules">
+                        <ol class="le-pricing-steps">
+                            <li><strong>€2.50 per bot</strong><span>Covers what every bot costs: its own container and its own database.</span></li>
+                            <li><strong>Members in steps of 1,000</strong><span>The first 1,000 are free. Each step's rate applies only to the members inside it, like tax brackets, so crossing an edge never makes the price jump.</span></li>
+                            <li><strong>30-day average</strong><span>Each bot's servers are counted once a day and the 30-day average counts, so a raid or a busy week barely changes anything.</span></li>
+                            <li><strong>Changes at renewal only</strong><span>A new size applies from your next monthly bill, never mid-month. When your community shrinks, the price follows automatically.</span></li>
+                        </ol>
+                        <div class="le-table-wrap"><table class="le-rate-table" data-pricing data-base="2.50">
+                            <thead><tr><th scope="col">Members (30-day average)</th><th scope="col">Per 1,000 members</th></tr></thead>
+                            <tbody>
+                                <tr data-from="1" data-to="1" data-rate="0"><th scope="row">First 1,000</th><td>Free</td></tr>
+                                <tr data-from="2" data-to="10" data-rate="0.40"><th scope="row">1,001 to 10,000</th><td>€0.40</td></tr>
+                                <tr data-from="11" data-to="50" data-rate="0.25"><th scope="row">10,001 to 50,000</th><td>€0.25</td></tr>
+                                <tr data-from="51" data-to="" data-rate="0.15"><th scope="row">Above 50,000</th><td>€0.15</td></tr>
+                            </tbody>
+                        </table></div>
+                    </div>
+                    <div class="le-calculator" data-calculator>
+                        <p class="le-note-label">Estimate your price</p>
+                        <label class="le-field"><span>Bots</span><input type="number" min="1" max="10" step="1" value="1" inputmode="numeric" data-bots></label>
+                        <label class="le-field"><span>Members across all your bots</span><input type="number" min="0" max="10000000" step="100" value="2500" inputmode="numeric" data-members></label>
+                        <dl class="le-calc-lines">
+                            <div><dt>Bots</dt><dd data-line-bots data-no-translate>€2.50</dd></div>
+                            <div><dt>Members</dt><dd data-line-members data-no-translate>€0.80</dd></div>
+                            <div class="le-calc-total"><dt>Per month</dt><dd data-total data-no-translate>€3.30</dd></div>
+                        </dl>
+                        <p class="le-calc-note">An estimate from your current size; the bill uses the 30-day average. The final price, including any VAT, is shown at checkout. Billed monthly through Stripe; cancel any time.</p>
+                        <a class="button le-plan-action" href="https://lunaecho.shadowokami.com/bots" target="_blank" rel="noopener noreferrer">Get Custom ↗</a>
+                    </div>
+                </div>
+                <p class="le-footnote">Discord reports members per server, so someone in two of your servers counts twice. Removing duplicates would mean collecting member lists, which LunaEcho does not do for billing.</p>
+            </div>
         </section>
 
         <section class="detail-section le-section" id="modules" aria-labelledby="modules-title">
@@ -214,9 +248,10 @@
         </section>
     </main>
 
-    <footer class="site-footer"><span class="footer-copyright"><strong>&copy; <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small></span><span class="footer-links"><a href="/LunaEcho/Terms">Terms</a><a href="/LunaEcho/Privacy">Privacy</a><a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">Data request</a></span><a href="#overview">Back to top &uarr;</a></footer>
-    <script src="../assets/js/translations.js?v=28"></script>
+    <footer class="site-footer"><span class="footer-copyright"><strong>&copy; <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small><a class="footer-legal" href="/Impressum">Impressum</a></span><span class="footer-links"><a href="/LunaEcho/Terms">Terms</a><a href="/LunaEcho/Privacy">Privacy</a><a href="mailto:service@shadowokami.de?subject=LunaEcho%20Data%20Request">Data request</a></span><a href="#overview">Back to top &uarr;</a></footer>
+    <script src="../assets/js/translations.js?v=29"></script>
     <script src="../assets/js/script.js?v=12"></script>
     <script src="../assets/js/motion.js?v=4"></script>
+    <script src="../assets/js/luna-pricing.js?v=1"></script>
 </body>
 </html>

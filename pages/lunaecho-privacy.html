@@ -24,7 +24,7 @@
     <link rel="preload" href="../assets/fonts/roboto-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/css/tokens.css?v=2">
     <link rel="stylesheet" href="../assets/css/shapes.css?v=3">
-    <link rel="stylesheet" href="../assets/css/base.css?v=6">
+    <link rel="stylesheet" href="../assets/css/base.css?v=7">
     <link rel="stylesheet" href="../assets/css/projects.css?v=5">
     <link rel="stylesheet" href="../assets/css/motion.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
@@ -59,7 +59,7 @@
                 <p>This Policy explains what LunaEcho processes, why it is needed, how long it is kept, and how Discord users and server administrators can request deletion.</p>
                 <dl class="legal-meta">
                     <div><dt>Effective</dt><dd>27 August 2026</dd></div>
-                    <div><dt>Last updated</dt><dd>27 August 2026</dd></div>
+                    <div><dt>Last updated</dt><dd>5 November 2026</dd></div>
                     <div><dt>Service status</dt><dd>Pre-release</dd></div>
                 </dl>
             </div>
@@ -132,6 +132,9 @@
                     <p>When LunaEcho Custom becomes available, an authorized administrator will submit the bot token for a Discord application they control through a dedicated setup flow. The token will be treated as an authentication secret: encrypted at rest, excluded from application logs, analytics, support tickets, and normal database exports, and never returned to the browser after submission. It will be decrypted only by the service that needs to establish the Discord connection.</p>
                     <p>LunaEcho is not intended for sensitive personal data. Do not submit passwords, user tokens, payment card details, health data, government identifiers, or other confidential information through bot commands, tickets, or ordinary configuration fields. A Custom bot token may be submitted only through the dedicated secure setup flow by an authorized administrator.</p>
 
+                    <h3>Custom billing and size readings</h3>
+                    <p>For LunaEcho Custom we store which Stripe customer belongs to your Discord user ID, your number of bot slots, and once a day per Custom bot the number of servers it is in and their approximate member counts added up, as Discord reports them. We never collect member lists or names for billing. Payment details such as card numbers and your billing address are processed by Stripe, not by LunaEcho.</p>
+
                     <h3>Website delivery data</h3>
                     <p>When you visit the LunaEcho website, the server may process IP address, user agent, requested URL, response status, and timestamp to deliver the page, prevent abuse, and diagnose errors. The website does not intentionally use advertising trackers, analytics profiles, or marketing cookies.</p>
                 </section>
@@ -157,7 +160,7 @@
                     <ul>
                         <li><strong>Discord:</strong> commands, responses, and app activity pass through Discord's platform.</li>
                         <li><strong>Infrastructure providers:</strong> hosting, storage, backup, security, and email providers may process data under appropriate contractual and confidentiality obligations.</li>
-                        <li><strong>Payment providers:</strong> if LunaEcho Custom launches, a disclosed payment provider may process billing details. LunaEcho will not store full payment card numbers.</li>
+                        <li><strong>Stripe:</strong> processes payments, invoices, and billing details for LunaEcho Custom as our payment provider (Stripe Payments Europe, Ltd., Dublin, Ireland). LunaEcho receives only the subscription status and never sees full payment card numbers.</li>
                         <li><strong>Authorities or affected parties:</strong> when required by law or reasonably necessary to protect users, rights, safety, or service security.</li>
                     </ul>
                     <p>LunaEcho does not sell personal data, build advertising profiles, or share Discord API data for targeted advertising.</p>
@@ -172,6 +175,7 @@
                         <li>Ticket-transcript retention will follow the selected managed service, configured administrator controls, operational needs, and published limits.</li>
                         <li>Custom bot tokens are retained only while needed to operate the customer's managed bot, subject to protected backup and recovery cycles, and are removed when replaced or when the Custom deployment ends unless retention is legally required.</li>
                         <li>Server configuration, active moderation records, progression data, and automation settings are retained while the feature is active. After LunaEcho is removed, managed-service records are deleted or anonymized within 30 days unless earlier deletion is requested or retention is legally required.</li>
+                        <li>Daily Custom size readings are kept for 90 days, long enough to calculate and check the 30-day averages billed. Invoices and payment records are kept by Stripe and, where tax law requires it, for the statutory retention period.</li>
                         <li>Website security logs are normally retained for up to 30 days.</li>
                     </ul>
                     <p>Backups, if used, may retain deleted records for a limited recovery cycle and are protected from ordinary use until overwritten. Data may be retained longer only when necessary for legal claims, abuse prevention, or a binding legal obligation.</p>
@@ -220,11 +224,11 @@
     </main>
 
     <footer class="site-footer legal-footer">
-        <span class="footer-copyright"><strong>&copy; <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small></span>
+        <span class="footer-copyright"><strong>&copy; <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small><a class="footer-legal" href="/Impressum">Impressum</a></span>
         <span class="footer-links"><a href="/LunaEcho">LunaEcho</a><a href="/LunaEcho/Terms">Terms of Service</a></span>
         <a href="#main">Back to top &uarr;</a>
     </footer>
-    <script src="../assets/js/translations.js?v=28"></script>
+    <script src="../assets/js/translations.js?v=29"></script>
     <script src="../assets/js/script.js?v=12"></script>
     <script src="../assets/js/motion.js?v=4"></script>
 </body>

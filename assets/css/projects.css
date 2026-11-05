@@ -248,6 +248,9 @@
 .legal-meta strong { color: var(--ink); }
 .legal-status { margin: 0; padding: 18px; border-radius: var(--shape-lg); color: var(--ink-soft); background: var(--md-sys-color-surface-container); font-size: .9rem; }
 .legal-layout { display: grid; padding: 72px 0 120px; grid-template-columns: 260px minmax(0, 1fr); align-items: start; gap: 64px; }
+/* Short legal pages without a contents column, such as the Impressum. */
+.legal-layout-single { grid-template-columns: minmax(0, 860px); }
+.legal-address { margin: 0; color: var(--ink); font-size: 1.15rem; font-style: normal; line-height: 1.7; }
 .legal-toc { position: sticky; top: 106px; display: grid; padding: 18px; border-radius: var(--shape-xl); background: var(--md-sys-color-surface-container); }
 .legal-toc p { margin: 0 0 10px 8px; color: var(--md-sys-color-primary); }
 .legal-toc a { padding: 10px 12px; border-radius: var(--shape-full); color: var(--muted); font-size: .88rem; transition: background var(--effects-duration) var(--effects); }
