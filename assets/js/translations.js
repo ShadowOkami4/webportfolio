@@ -878,13 +878,13 @@
     // Custom pricing, the Impressum, and the paid Custom terms (November 2026).
     const lunaPricing = {
         'Pricing': 'Preise',
-        'From €2.50 / month': 'Ab 2,50 € / Monat',
+        'From €3 / month': 'Ab 3 € / Monat',
         'See how pricing works': 'So funktionieren die Preise',
         'Per bot plus members,': 'Pro Bot plus Mitglieder,',
         'see pricing': 'siehe Preise',
         'Custom pricing': 'Custom-Preise',
         'Pay for your bot and its size. Nothing else.': 'Du zahlst für deinen Bot und seine Größe. Sonst nichts.',
-        '€2.50 per bot': '2,50 € pro Bot',
+        '€3 per bot': '3 € pro Bot',
         'Covers what every bot costs: its own container and its own database.': 'Deckt ab, was jeder Bot kostet: seinen eigenen Container und seine eigene Datenbank.',
         'Members in steps of 1,000': 'Mitglieder in 1.000er-Schritten',
         "The first 1,000 are free. Each step's rate applies only to the members inside it, like tax brackets, so crossing an edge never makes the price jump.": 'Die ersten 1.000 sind kostenlos. Jeder Satz gilt nur für die Mitglieder in seiner Stufe, wie bei Steuerstufen, deshalb springt der Preis an keiner Grenze.',
