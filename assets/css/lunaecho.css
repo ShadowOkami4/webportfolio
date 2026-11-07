@@ -284,6 +284,8 @@
 .le-module h3 { margin: 26px 0 8px; font-size: clamp(1.45rem, 2vw, 1.8rem); line-height: 1.02; }
 .le-module p { margin: 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.6; }
 .le-module-future { background: color-mix(in srgb, var(--md-sys-color-tertiary) 10%, var(--le-card)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--md-sys-color-tertiary) 30%, transparent); }
+/* Marks the modules Cloud leaves out, so the plan difference is visible on the module itself. */
+.le-module-tag { display: inline-block; margin-top: 14px; padding: 3px 10px; border-radius: var(--shape-full); color: var(--md-sys-color-tertiary); background: color-mix(in srgb, var(--md-sys-color-tertiary) 14%, transparent); font-size: .72rem; font-weight: 600; letter-spacing: .02em; }
 .le-module-future .le-module-icon { color: var(--md-sys-color-tertiary); background: color-mix(in srgb, var(--md-sys-color-tertiary) 16%, transparent); }
 
 /* Architecture */
@@ -305,13 +307,16 @@
 
 /* Roadmap timeline: a line with one node per stage, the current one lit. */
 .le-timeline { position: relative; display: grid; margin: 0; padding: 30px 0 0; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; list-style: none; }
-.le-timeline::before { position: absolute; top: 8px; right: 0; left: 0; height: 2px; border-radius: 2px; content: ""; background: linear-gradient(90deg, var(--md-sys-color-primary) 0 22%, var(--line-strong) 30%); }
+.le-timeline::before { position: absolute; top: 8px; right: 0; left: 0; height: 2px; border-radius: 2px; content: ""; background: linear-gradient(90deg, var(--md-sys-color-primary) 0 72%, var(--line-strong) 80%); }
 .le-stage { position: relative; padding: 26px 24px; border-radius: var(--shape-xl-inc); background: var(--le-card); box-shadow: var(--le-edge); }
 .le-stage::before { position: absolute; top: -30px; left: 24px; width: 18px; height: 18px; content: ""; background: var(--md-sys-color-surface-container-highest); clip-path: var(--shape-cookie9); }
 .le-stage.is-current { background: color-mix(in srgb, var(--md-sys-color-primary-container) 14%, var(--le-card)); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--md-sys-color-primary) 45%, transparent); }
 .le-stage.is-current::before { background: var(--md-sys-color-primary); box-shadow: 0 0 18px var(--md-sys-color-primary); animation: spin 8s linear infinite; }
 .le-stage-top { display: flex; margin: 0; justify-content: space-between; gap: 12px; color: var(--muted); }
 .le-stage-top strong { color: var(--md-sys-color-primary); }
+/* Finished stages: a lit node without the spin, and a quieter label than the current "Now". */
+.le-stage.is-done::before { background: var(--md-sys-color-primary); }
+.le-stage-now.le-stage-done { color: var(--md-sys-color-primary); background: color-mix(in srgb, var(--md-sys-color-primary) 16%, transparent); }
 .le-stage-now { position: absolute; top: -36px; left: 50px; padding: 4px 10px; border-radius: var(--shape-full); color: var(--md-sys-color-on-primary); background: var(--md-sys-color-primary); }
 .le-stage h3 { margin: 30px 0 10px; font-size: clamp(1.6rem, 2.2vw, 2rem); line-height: 1; }
 .le-stage ul { margin: 0; padding-left: 18px; }
