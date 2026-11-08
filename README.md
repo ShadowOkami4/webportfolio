@@ -47,6 +47,27 @@ sudo bash setup-nginx.sh example.com
 
 The script copies only public static files to `/var/www/webportfolio`, obtains or reuses the domain's Let's Encrypt certificate, validates the nginx configuration, and reloads nginx. Run the same command after pulling future website updates.
 
+### Updating the live site
+
+The server's clone is `~/webportfolio` on `okami@87.106.48.87`; the live domain is `shadowokami.com`.
+
+1. On this PC, check, commit and push the change:
+
+```powershell
+npm run check
+git add -A
+git commit -m "Describe the change"
+git push
+```
+
+2. Pull it on the server and publish it (this runs `setup-nginx.sh`, which copies the files to `/var/www/webportfolio` and reloads nginx):
+
+```powershell
+ssh -t okami@87.106.48.87 "cd ~/webportfolio && git pull --ff-only && sudo bash setup-nginx.sh shadowokami.com"
+```
+
+3. Open https://shadowokami.com and press Ctrl+F5 to skip the browser cache.
+
 ## Security Model
 
 - There is no upload endpoint, password endpoint, API server, or writable public directory.
