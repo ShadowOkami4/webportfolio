@@ -1635,3 +1635,5 @@ html.is-through .mirror-whisper::before {
 @keyframes quill-dot { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 @media (max-width: 900px) { .mirrorgate-page .realm-glance { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .status-quill svg, .status-quill::after { animation: none; } }
+.mirrorgate-page .detail-stats .stat-icon { width: 60px; height: 60px; margin: 0 0 16px; }
+.mirrorgate-page .detail-stats .stat-icon svg { width: 38px; height: 38px; stroke-width: 1.4; }
