@@ -1170,11 +1170,10 @@ html.is-through .mirror-secret { transform: scaleX(-1); }
     height: 92px;
     margin-bottom: 18px;
     place-items: center;
-    clip-path: var(--shape-cookie9, circle(50%));
-    background: radial-gradient(circle at 30% 25%, #9a6fd0, #6b45b0 55%, #4b2f86);
-    box-shadow: 0 0 40px color-mix(in srgb, var(--amethyst) 40%, transparent);
+    border-radius: 50%;
+    box-shadow: 0 14px 34px -10px rgb(0 0 0 / .7), 0 0 40px rgb(201 211 224 / .16);
 }
-.mp-seal svg { width: 56px; height: 56px; fill: none; stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; }
+.mp-seal svg { display: block; width: 100%; height: 100%; }
 .mp-promo h2 { margin: 10px 0 14px; font-size: clamp(2.4rem, 4.6vw, 4rem); line-height: 1; }
 .mp-promo h2 b { color: var(--amethyst); -webkit-text-fill-color: var(--amethyst); font-weight: inherit; }
 .mp-promo-copy > p { margin: 0 0 18px; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
