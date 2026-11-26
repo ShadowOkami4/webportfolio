@@ -1608,3 +1608,30 @@ html.is-through .mirror-whisper::before {
 
 /* facts strip: a word instead of a number, and one row of four facts */
 .mirrorgate-page .detail-stats > .stat-word strong { font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.35; }
+
+/* facts v3: three big cards of what is planned, then rules, status, licence */
+.mirrorgate-page .detail-stats { gap: 16px; }
+.mirrorgate-page .detail-stats > .stat-card {
+    min-height: 0;
+    padding: 30px 26px 26px;
+    align-content: start;
+    justify-items: center;
+    gap: 0;
+}
+.stat-icon { display: grid; width: 46px; height: 46px; margin-bottom: 14px; place-items: center; border-radius: 50%; color: var(--silver-hi); background: radial-gradient(circle at 35% 30%, rgb(255 255 255 / .16), rgb(255 255 255 / .03)); box-shadow: inset 0 0 0 1px var(--glass-edge), 0 0 22px -8px rgb(201 211 224 / .5); }
+.stat-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.mirrorgate-page .detail-stats > .stat-card strong { font-size: 3.4rem; line-height: 1; }
+.mirrorgate-page .detail-stats > .stat-card-word strong { font-size: clamp(1.8rem, 2.8vw, 2.4rem); line-height: 1.25; }
+.mirrorgate-page .detail-stats > .stat-card .stat-title { margin-top: 8px; }
+.stat-chips { display: flex; margin: 18px 0 0; padding: 0; flex-wrap: wrap; justify-content: center; gap: 6px; list-style: none; }
+.stat-chips li { padding: 4px 11px; border-radius: 999px; color: var(--ink-soft); background: rgb(255 255 255 / .04); box-shadow: inset 0 0 0 1px var(--glass-edge); font-size: .92rem; }
+.stat-note { margin: 16px 0 0; color: var(--muted); font-size: .92rem; font-style: italic; }
+.mirrorgate-page .realm-glance { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.glance-status { display: flex; align-items: center; gap: 9px; }
+.status-quill { position: relative; display: grid; width: 26px; height: 26px; flex: none; place-items: center; border-radius: 50%; color: #c9f0d6; background: rgb(120 220 160 / .12); box-shadow: inset 0 0 0 1px rgb(120 220 160 / .35); }
+.status-quill svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; animation: quill-write 2.4s ease-in-out infinite; transform-origin: 30% 80%; }
+.status-quill::after { position: absolute; right: -1px; top: -1px; width: 7px; height: 7px; border-radius: 50%; content: ""; background: #7be0a4; box-shadow: 0 0 8px #7be0a4; animation: quill-dot 2.4s ease-in-out infinite; }
+@keyframes quill-write { 0%, 100% { transform: rotate(0deg) translate(0, 0); } 30% { transform: rotate(-8deg) translate(-1px, 0); } 60% { transform: rotate(4deg) translate(1px, 0); } }
+@keyframes quill-dot { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@media (max-width: 900px) { .mirrorgate-page .realm-glance { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .status-quill svg, .status-quill::after { animation: none; } }
