@@ -1577,3 +1577,31 @@ html.is-through .mirror-whisper::before {
     to { transform: translate(-4px, -6px) rotate(12deg); }
 }
 @media (prefers-reduced-motion: reduce) { .quest-campaign .quest-shard { animation: none; transform: rotate(9deg); } }
+
+/* ─── The reflection that lags (the hero secret) ───────────────────────── */
+.mirror-reflection {
+    position: absolute;
+    top: var(--ry, 46%);
+    left: var(--rx, 50%);
+    z-index: 1;
+    width: 26%;
+    aspect-ratio: .7;
+    translate: -50% -50%;
+    background:
+        radial-gradient(circle at 50% 26%, rgb(232 238 247 / .8) 0 15%, transparent 16.5%),
+        radial-gradient(ellipse 48% 34% at 50% 86%, rgb(232 238 247 / .62) 0 97%, transparent 100%);
+    filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    transition: top 900ms cubic-bezier(.2, .7, .2, 1), left 900ms cubic-bezier(.2, .7, .2, 1), opacity 700ms ease, scale 1.2s ease, filter 1.2s ease;
+}
+.mirror-portal.is-watched .mirror-reflection { opacity: .42; }
+.mirror-portal.remembers .mirror-reflection { opacity: .1; }
+.mirror-portal.is-waking .mirror-reflection {
+    opacity: .9;
+    scale: 1.25;
+    filter: blur(2px) drop-shadow(0 0 14px rgb(232 238 247 / .8));
+    transition-duration: 1300ms;
+}
+.mirror-portal.is-cracked .mirror-reflection { opacity: 0; scale: 1.6; transition: opacity 900ms ease, scale 900ms ease; }
+@media (prefers-reduced-motion: reduce) { .mirror-reflection { transition: opacity 300ms ease; } }

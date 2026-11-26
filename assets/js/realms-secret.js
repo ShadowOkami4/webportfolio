@@ -1,46 +1,92 @@
 // The Mirrored Realms: a secret in the hero mirror.
-// "A mirror is a door pretending to be furniture." Knock on it three times
-// (click, tap, or Enter/Space when focused) and the glass cracks. Behind the
+// Move over the glass and a faint reflection follows you, mirrored. Hold
+// still long enough and it stops following: it keeps moving on its own,
+// comes to the middle of the glass and breaks it from the inside. Behind the
 // crack the Professor left a note in mirror writing, and a way to step
-// through to the other side of the page. The glass remembers being broken.
+// through to the other side of the page. Touch: press and hold the glass.
+// Keyboard: focus the mirror and press Enter. The glass remembers.
 (() => {
     'use strict';
     const portal = document.querySelector('.mirror-portal');
     const secret = document.querySelector('.mirror-secret');
-    if (!portal || !secret) return;
+    const glass = portal && portal.querySelector('.mirror-surface');
+    const ghost = portal && portal.querySelector('.mirror-reflection');
+    if (!portal || !secret || !glass || !ghost) return;
 
-    const STORE = 'realms-mirror-knocked';
+    const STORE = 'realms-mirror-met';
     const remembered = () => { try { return localStorage.getItem(STORE) === '1'; } catch { return false; } };
     if (remembered()) portal.classList.add('remembers');
 
-    let knocks = 0;
-    let reset = 0;
+    const STILL_MS = 2600;
+    let stillTimer = 0;
+    let awake = false;
+
+    const place = (x, y) => {
+        ghost.style.setProperty('--rx', `${x}%`);
+        ghost.style.setProperty('--ry', `${y}%`);
+    };
 
     const open = () => {
-        portal.classList.remove('remembers');
-        portal.classList.add('is-cracked');
-        secret.hidden = false;
-        requestAnimationFrame(() => requestAnimationFrame(() => secret.classList.add('is-open')));
-        try { localStorage.setItem(STORE, '1'); } catch { /* private mode: the glass forgets */ }
+        if (awake) return;
+        awake = true;
+        window.clearTimeout(stillTimer);
+        // The reflection takes over: it drifts to the centre, then breaks out.
+        portal.classList.add('is-watched', 'is-waking');
+        place(58, 34);
+        window.setTimeout(() => {
+            portal.classList.remove('remembers', 'is-waking');
+            portal.classList.add('is-cracked');
+            secret.hidden = false;
+            requestAnimationFrame(() => requestAnimationFrame(() => secret.classList.add('is-open')));
+            try { localStorage.setItem(STORE, '1'); } catch { /* private mode: the glass forgets */ }
+        }, 1400);
     };
 
-    const knock = () => {
-        if (portal.classList.contains('is-cracked')) return;
-        knocks += 1;
-        window.clearTimeout(reset);
-        reset = window.setTimeout(() => { knocks = 0; }, 2400);
-        // Restart the shudder for every knock.
-        portal.classList.remove('is-knocked');
-        void portal.offsetWidth;
-        portal.classList.add('is-knocked');
-        if (knocks >= 3) open();
+    const waitForStillness = () => {
+        window.clearTimeout(stillTimer);
+        if (!awake) stillTimer = window.setTimeout(open, STILL_MS);
     };
 
-    portal.addEventListener('click', knock);
+    // Browsers send move events when the animated glass shifts under a resting
+    // cursor, so only a real move of a few pixels counts as moving.
+    let lastX = -99;
+    let lastY = -99;
+    glass.addEventListener('pointermove', (event) => {
+        if (awake || event.pointerType !== 'mouse') return;
+        if (Math.hypot(event.clientX - lastX, event.clientY - lastY) < 4) return;
+        lastX = event.clientX;
+        lastY = event.clientY;
+        const box = glass.getBoundingClientRect();
+        const x = ((event.clientX - box.left) / box.width) * 100;
+        const y = ((event.clientY - box.top) / box.height) * 100;
+        // A mirror swaps left and right.
+        place(100 - x, y);
+        portal.classList.add('is-watched');
+        waitForStillness();
+    });
+    glass.addEventListener('pointerleave', () => {
+        if (awake) return;
+        lastX = -99;
+        portal.classList.remove('is-watched');
+        window.clearTimeout(stillTimer);
+    });
+
+    // Touch: press and hold the glass.
+    let holdTimer = 0;
+    glass.addEventListener('pointerdown', (event) => {
+        if (awake || event.pointerType === 'mouse') return;
+        portal.classList.add('is-watched');
+        holdTimer = window.setTimeout(open, 1400);
+    });
+    ['pointerup', 'pointercancel'].forEach((type) => glass.addEventListener(type, () => {
+        window.clearTimeout(holdTimer);
+        if (!awake) portal.classList.remove('is-watched');
+    }));
+
     portal.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            knock();
+            open();
         }
     });
 

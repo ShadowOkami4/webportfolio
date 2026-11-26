@@ -194,8 +194,6 @@
         'Read the records ↓': 'Die Aufzeichnungen lesen ↓',
         'Obsidian vault': 'Obsidian-Vault',
         'An abstract mirror doorway leading into the Library of Kagami': 'Ein abstraktes Spiegeltor, das in die Bibliothek von Kagami führt',
-        '“A mirror is a door pretending to be furniture.”': '„Ein Spiegel ist eine Tür, die vorgibt, ein Möbelstück zu sein.“',
-        'ARCHIVE / UNSEALED': 'ARCHIV / ENTSIEGELT',
         'Open the archive': 'Das Archiv öffnen',
         'Enter through': 'Betritt es durch',
         'Obsidian.': 'Obsidian.',
@@ -290,12 +288,9 @@
         'Get Mirrored Pages ↗': 'Mirrored Pages holen ↗',
         'How to install ↗': 'So installierst du es ↗',
         'Made for The Mirrored Realms, free for every vault.': 'Gemacht für die Spiegelreiche, kostenlos für jeden Vault.',
-        '✦ What the mirror shows is not what stands before it ✦ Knock three times, and it may answer ✦': '✦ Was der Spiegel zeigt, ist nicht, was vor ihm steht ✦ Klopf dreimal, und vielleicht antwortet er ✦',
         'The mirror': 'Der Spiegel',
         'A note behind the glass': 'Eine Notiz hinter dem Glas',
         'Behind the glass': 'Hinter dem Glas',
-        'You knocked.': 'Du hast geklopft.',
-        'Something on this side knocked back. If you can read this, you are already standing on the wrong side of the glass.': 'Etwas auf dieser Seite hat zurückgeklopft. Wenn du das lesen kannst, stehst du bereits auf der falschen Seite des Glases.',
         'P. P. II': 'P. P. II',
         'Mirror writing: hover or tap it to read.': 'Spiegelschrift: zum Lesen darüberfahren oder antippen.',
         'Step through ↺': 'Hindurchtreten ↺',
@@ -361,6 +356,9 @@
         'More one-shots, short adventures and campaigns are planned, and each gets its title once its writing begins. Progress figures are rough estimates, not release dates; names, lore and the order of releases may still change through writing and playtesting.': 'Weitere One-Shots, kurze Abenteuer und Kampagnen sind geplant; jedes bekommt seinen Titel, sobald das Schreiben beginnt. Fortschrittsangaben sind grobe Schätzungen, keine Veröffentlichungstermine; Namen, Lore und die Reihenfolge der Veröffentlichungen können sich durch Schreiben und Playtests noch ändern.',
         'One world.': 'Eine Welt.',
         'Many ways in.': 'Viele Wege hinein.',
+        '“Stand still before a mirror long enough, and you will learn which of you moves first.”': '„Steh lange genug still vor einem Spiegel, und du erfährst, wer von euch sich zuerst bewegt.“',
+        'You stopped.': 'Du bist stehen geblieben.',
+        'Your reflection did not. It has waited a long time for someone to hold still long enough to notice. Now it would like to trade places.': 'Dein Spiegelbild nicht. Es hat lange gewartet, dass jemand still genug hält, um es zu bemerken. Jetzt möchte es mit dir tauschen.',
     };
 
     const lunaecho = {
