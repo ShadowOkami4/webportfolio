@@ -97,6 +97,7 @@
         'Find Okami online': 'Okami online finden',
         'Voidline shell with the Action Center open': 'Voidline-Shell mit geöffnetem Action Center',
         'Hyprland desktop shell': 'Hyprland-Desktopshell',
+        'Written for Game Masters, with statblocks for Atlas VTT and its own silver theme, Mirrored Pages. Knock on the mirror when you get there.': 'Geschrieben für Spielleitungen, mit Werteblöcken für Atlas VTT und einem eigenen silbernen Theme, Mirrored Pages. Klopf an den Spiegel, wenn du dort bist.',
     };
 
     const voidline = {

@@ -196,7 +196,7 @@
 .project:nth-of-type(odd) .project-media { order: 2; }
 .project:hover { border-radius: var(--shape-xl-inc); background: var(--md-sys-color-surface-container-high); }
 .project-luna { --project-accent: #ff85d2; --project-on-accent: #3b0030; }
-.project-mirrorgate { --project-accent: #c9a55a; --project-on-accent: #2b1d00; }
+.project-mirrorgate { --project-accent: #c9d3e0; --project-on-accent: #10141c; }
 
 .project-media {
     isolation: isolate;
@@ -264,15 +264,95 @@
 .luna-media { display: grid; place-items: center; background: radial-gradient(circle at 50% 42%, rgb(255 145 219 / .25), transparent 32%), linear-gradient(145deg, #150d1a, #26142b); }
 .luna-media > img { width: min(66%, 300px); height: auto; object-fit: contain; filter: drop-shadow(0 22px 40px rgb(255 128 203 / .16)); }
 .project:hover .luna-media > img { transform: scale(1.06) rotate(-3deg); }
-.mirrorgate-media { background: radial-gradient(circle at 65% 48%, rgb(79 178 167 / .18), transparent 24%), linear-gradient(135deg, #0d1212, #16110c 70%); }
+/* The Mirrored Realms: a standing mirror in brushed silver under a night
+   sky, with shards drifting past that still reflect pieces of the vault. */
+.mirrorgate-media {
+    background:
+        radial-gradient(1px 1px at 12% 18%, #fff, transparent), radial-gradient(1px 1px at 30% 62%, rgb(255 255 255 / .7), transparent),
+        radial-gradient(1.4px 1.4px at 48% 12%, #fff, transparent), radial-gradient(1px 1px at 88% 22%, rgb(220 228 255 / .8), transparent),
+        radial-gradient(1px 1px at 92% 78%, rgb(255 255 255 / .6), transparent), radial-gradient(1px 1px at 20% 84%, rgb(255 255 255 / .5), transparent),
+        radial-gradient(circle at 64% 44%, rgb(201 211 224 / .16), transparent 30%),
+        radial-gradient(circle at 70% 60%, rgb(179 154 240 / .1), transparent 36%),
+        linear-gradient(135deg, #0b0e15, #06070b 70%);
+}
 .mirror-card-art { position: absolute; inset: 0; z-index: 2; }
-.mirror-card-orbit { position: absolute; top: 46%; left: 64%; width: 52%; aspect-ratio: 1; border: 1px solid rgb(145 207 198 / .28); border-radius: 50%; transform: translate(-50%, -50%) rotate(-14deg) scaleY(.36); }
-.mirror-card-door { position: absolute; top: 46%; left: 64%; width: 23%; aspect-ratio: .68; border: 2px solid #d2b36f; border-radius: 50% 50% 24% 24%; background: radial-gradient(circle at 48% 40%, rgb(94 199 185 / .35), #071113 68%); box-shadow: 0 0 0 18px rgb(210 179 111 / .035), 0 0 70px rgb(94 199 185 / .12); transform: translate(-50%, -50%); transition: box-shadow var(--spring-slow-duration) var(--spring-slow); }
-.project:hover .mirror-card-door { box-shadow: 0 0 0 26px rgb(210 179 111 / .06), 0 0 90px rgb(94 199 185 / .25); }
-.mirror-card-door i { position: absolute; top: 50%; left: 52%; width: 6px; height: 6px; border-radius: 50%; background: #f0dca9; box-shadow: 0 0 16px #f0dca9; }
-.mirror-card-wordmark { position: absolute; bottom: 22px; left: 22px; display: grid; width: min(72%, 560px); }
-.mirror-card-wordmark small { color: #91cfc6; font-size: .72rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
-.mirror-card-wordmark strong { margin-top: 6px; color: #f3e6c4; font: 500 clamp(2rem, 4vw, 3.8rem)/.95 "Palatino Linotype", Georgia, serif; letter-spacing: -.005em; text-wrap: balance; }
+.mirror-card-door { position: absolute; top: 44%; left: 66%; width: 22%; aspect-ratio: .68; transform: translate(-50%, -50%); transition: transform var(--spring-slow-duration) var(--spring-slow); }
+.project:hover .mirror-card-door { transform: translate(-50%, -52%) scale(1.03); }
+/* the frame: a ring of brushed silver */
+.mirror-card-door::before {
+    position: absolute;
+    inset: 0;
+    padding: 7px;
+    border-radius: 50% 50% 24% 24%;
+    content: "";
+    background: conic-gradient(from 210deg, #f4f7fb, #8d99a9 12%, #e6ecf3 24%, #6f7b8b 38%, #dfe6ee 52%, #8995a5 66%, #f7f9fc 80%, #7f8b9b 90%, #f4f7fb);
+    -webkit-mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    filter: drop-shadow(0 0 16px rgb(201 211 224 / .4));
+}
+.mcd-glass {
+    position: absolute;
+    inset: 11px;
+    overflow: hidden;
+    border-radius: 50% 50% 22% 22%;
+    background:
+        radial-gradient(1px 1px at 30% 24%, #fff, transparent), radial-gradient(1px 1px at 70% 30%, #fff, transparent), radial-gradient(1px 1px at 52% 70%, rgb(255 255 255 / .7), transparent),
+        radial-gradient(circle at 42% 34%, rgb(201 211 224 / .3), transparent 46%),
+        radial-gradient(circle at 60% 72%, rgb(179 154 240 / .2), transparent 52%),
+        linear-gradient(180deg, #0e131d, #05060b);
+    box-shadow: inset 0 0 40px rgb(0 0 0 / .7);
+}
+/* an endless corridor of doors inside the glass */
+.mcd-glass i { position: absolute; inset: 0; margin: auto; width: var(--d); height: var(--d); border: 1px solid rgb(201 211 224 / .3); border-radius: 50% 50% 24% 24%; opacity: var(--o); }
+.mcd-glass i:nth-child(1) { --d: 74%; --o: .6; }
+.mcd-glass i:nth-child(2) { --d: 50%; --o: .38; }
+.mcd-glass i:nth-child(3) { --d: 28%; --o: .2; }
+.mcd-glass svg { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: #f4f7fb; stroke-width: .9; stroke-linecap: round; opacity: 0; filter: drop-shadow(0 0 2px #fff); transition: opacity 500ms var(--effects); }
+.project:hover .mcd-glass svg { opacity: .75; }
+/* a sheen sweeps the glass on hover */
+.mcd-glass::after { position: absolute; inset: 0; content: ""; background: linear-gradient(115deg, transparent 35%, rgb(255 255 255 / .16) 48%, transparent 58%); transform: translateX(-110%); transition: transform 1200ms var(--effects); }
+.project:hover .mcd-glass::after { transform: translateX(110%); }
+.mcd-crown { position: absolute; top: -11px; left: 50%; width: 18px; height: 18px; translate: -50% 0; rotate: 45deg; border-radius: 2px; background: linear-gradient(135deg, #fff 0 30%, #c9d3e0 31% 50%, #b39af0 51% 72%, #5f47a8 73%); box-shadow: 0 0 0 2px #dfe6ee, 0 0 18px rgb(179 154 240 / .55); }
+.mcd-stud { position: absolute; top: 52%; width: 8px; height: 8px; rotate: 45deg; background: linear-gradient(135deg, #fff 0 45%, #8d99a9 46%); box-shadow: 0 0 8px rgb(201 211 224 / .6); }
+.mcd-stud-l { left: -4px; }
+.mcd-stud-r { right: -4px; }
+/* shards of the broken mirror, still showing the vault */
+.mirror-card-shards i {
+    position: absolute;
+    width: var(--s);
+    height: calc(var(--s) * 1.3);
+    background:
+        linear-gradient(112deg, rgb(255 255 255 / .45), transparent 30%, transparent 70%, rgb(255 255 255 / .15)),
+        linear-gradient(200deg, rgb(201 211 224 / .18), rgb(5 7 12 / .35)),
+        url("../images/realms/reflections.webp") var(--x) var(--y) / 400% 200% no-repeat;
+    clip-path: polygon(38% 0, 100% 22%, 78% 100%, 0 64%);
+    opacity: .7;
+    animation: card-shard 9s ease-in-out infinite alternate;
+}
+.mirror-card-shards i:nth-child(1) { --s: 58px; --x: 0%; --y: 0%; top: 14%; left: 40%; rotate: -18deg; }
+.mirror-card-shards i:nth-child(2) { --s: 40px; --x: 66.667%; --y: 0%; top: 64%; left: 44%; rotate: 24deg; animation-delay: -3s; clip-path: polygon(50% 0, 100% 38%, 62% 100%, 0 72%, 14% 20%); }
+.mirror-card-shards i:nth-child(3) { --s: 50px; --x: 33.333%; --y: 100%; top: 18%; left: 84%; rotate: 32deg; animation-delay: -5s; clip-path: polygon(12% 0, 100% 10%, 58% 100%, 0 46%); }
+.mirror-card-shards i:nth-child(4) { --s: 30px; --x: 100%; --y: 100%; top: 70%; left: 86%; rotate: -12deg; animation-delay: -1s; }
+.mirror-card-shards i:nth-child(5) { --s: 24px; --x: 0%; --y: 100%; top: 8%; left: 62%; rotate: 50deg; animation-delay: -7s; clip-path: polygon(64% 0, 100% 58%, 30% 100%, 0 28%); }
+@keyframes card-shard { to { translate: 0 -12px; rotate: calc(var(--r, 0deg) + 8deg); } }
+.mirror-card-wordmark { position: absolute; bottom: 30px; left: 24px; display: grid; width: min(72%, 560px); }
+.mirror-card-wordmark small { color: #9aa6b4; font-size: .72rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; }
+.mirror-card-wordmark strong {
+    margin-top: 6px;
+    font: 500 clamp(2rem, 4vw, 3.8rem)/.95 "Palatino Linotype", Georgia, serif;
+    letter-spacing: -.005em;
+    text-wrap: balance;
+    color: #f4f7fb;
+    background: linear-gradient(180deg, #ffffff 0%, #e3e9f1 40%, #9aa6b4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-reflect: below -.1em linear-gradient(transparent 62%, rgb(0 0 0 / .18));
+}
+.project-mirrorgate .project-open { color: #10141c; background: linear-gradient(180deg, #ffffff 0%, #dfe6ef 22%, #aab6c5 50%, #e8eef5 74%, #9aa6b4 100%); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .4), 0 8px 24px -8px rgb(201 211 224 / .6); }
+.project-mirrorgate .project-number { color: #10141c; background: linear-gradient(150deg, #fff 0 22%, #d5dde7 23% 50%, #9eaabb 51% 100%); }
+.project-mirrorgate .project-extra { margin-top: -6px; color: var(--muted); font-size: .95rem; }
+@media (prefers-reduced-motion: reduce) { .mirror-card-shards i { animation: none; } }
 
 /* ─── Contact ────────────────────────────────────────────────────────────── */
 
