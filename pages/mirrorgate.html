@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="../assets/css/shapes.css?v=3">
     <link rel="stylesheet" href="../assets/css/base.css?v=7">
     <link rel="stylesheet" href="../assets/css/projects.css?v=5">
-    <link rel="stylesheet" href="../assets/css/realms.css?v=20">
+    <link rel="stylesheet" href="../assets/css/realms.css?v=21">
     <link rel="stylesheet" href="../assets/css/motion.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -123,54 +123,50 @@
                 <p>Every planned adventure belongs to the same setting. A single night beside the wrong mirror may end at dawn, or return much later as the first thread of a history the players have already changed.</p>
             </div>
 
-            <div class="journey-grid">
-                <article class="journey-card reveal">
-                    <p class="journey-status">Standalone / 2 announced</p>
-                    <strong>10</strong>
-                    <h3>One-shots</h3>
-                    <p>Ten doors into cursed estates, forbidden archives, unstable scars, and mirrors that promise to open only once.</p>
-                    <ul class="journey-titles"><li>The Dark Alley</li><li>Mirror and Scars</li><li class="journey-sealed">8 doors still sealed</li></ul>
+            <div class="quest-ledger">
+                <article class="quest-block quest-oneshot reveal">
+                    <header class="quest-head"><span class="quest-rank">Standalone</span><h3>One-shots</h3><p class="quest-sub">A single session, a single door</p></header>
+                    <div class="quest-scores"><div><span>Doors</span><strong>10</strong></div><div><span>Announced</span><strong>2</strong></div><div><span>Sealed</span><strong>8</strong></div></div>
+                    <p class="quest-desc">Ten doors into cursed estates, forbidden archives, unstable scars, and mirrors that promise to open only once.</p>
+                    <h4 class="quest-rule">Announced</h4>
+                    <ul class="quest-entries"><li><strong>The Dark Alley</strong></li><li><strong>Mirror and Scars</strong></li><li class="journey-sealed">8 doors still sealed</li></ul>
                 </article>
-                <article class="journey-card reveal">
-                    <p class="journey-status">Multishots / 3 announced</p>
-                    <strong>5</strong>
-                    <h3>Short adventures</h3>
-                    <p>Five deeper trails where local conflicts expose recurring faces, dangerous relics, and consequences that refuse to remain where they began.</p>
-                    <ul class="journey-titles"><li>The Pact in the Twilight <span>In development</span></li><li>Confronting Yourself</li><li>The Mysteries of the Phantomhives</li><li class="journey-sealed">2 doors still sealed</li></ul>
+                <article class="quest-block quest-short reveal">
+                    <header class="quest-head"><span class="quest-rank">Multishot</span><h3>Short adventures</h3><p class="quest-sub">A few sessions, one thread</p></header>
+                    <div class="quest-scores"><div><span>Doors</span><strong>5</strong></div><div><span>Announced</span><strong>3</strong></div><div><span>Sealed</span><strong>2</strong></div></div>
+                    <p class="quest-desc">Five deeper trails where local conflicts expose recurring faces, dangerous relics, and consequences that refuse to remain where they began.</p>
+                    <h4 class="quest-rule">Announced</h4>
+                    <ul class="quest-entries"><li><strong>The Pact in the Twilight</strong><span>In development</span></li><li><strong>Confronting Yourself</strong></li><li><strong>The Mysteries of the Phantomhives</strong></li><li class="journey-sealed">2 doors still sealed</li></ul>
                 </article>
-                <article class="journey-card journey-card-long reveal">
-                    <p class="journey-status">Long term / 1 announced</p>
-                    <strong>3</strong>
-                    <h3>Campaign frameworks</h3>
-                    <p>Three long shadows over Kagameru, where crowns, divine wounds, and the Mirrorgate can reshape an entire table’s version of the world. The first is Shattered Hope, the setting’s main campaign.</p>
-                    <ul class="journey-titles"><li>Shattered Hope <span>Foundation</span></li><li class="journey-sealed">2 doors still sealed</li></ul>
+                <article class="quest-block quest-campaign reveal">
+                    <header class="quest-head"><span class="quest-rank">Campaign</span><h3>Campaign frameworks</h3><p class="quest-sub">Many sessions, one world</p></header>
+                    <div class="quest-scores"><div><span>Doors</span><strong>3</strong></div><div><span>Announced</span><strong>1</strong></div><div><span>Sealed</span><strong>2</strong></div></div>
+                    <p class="quest-desc">Three long shadows over Kagameru, where crowns, divine wounds, and the Mirrorgate can reshape an entire table’s version of the world. The first is Shattered Hope, the setting’s main campaign.</p>
+                    <h4 class="quest-rule">Announced</h4>
+                    <ul class="quest-entries"><li><strong>Shattered Hope</strong><span>Foundation</span></li><li class="journey-sealed">2 doors still sealed</li></ul>
                 </article>
             </div>
 
-            <div class="production reveal" role="group" aria-labelledby="production-title">
-                <div class="production-head">
+            <div class="quest-active-wrap reveal" role="group" aria-labelledby="production-title">
+                <div class="quest-active-head">
                     <p class="detail-badge">Current production</p>
                     <h3 id="production-title">Two doors stand ajar.</h3>
                     <p>Of the eighteen, only two are being written today. The other announced journeys have a public title and premise, but work on them has not begun; the remaining slots are reserved and still unnamed.</p>
                 </div>
-                <div class="production-grid">
-                    <article class="production-card">
-                        <div class="production-meta"><span class="ledger-status status-progress">Foundation</span><span class="production-kind">Main campaign / Campaign framework</span></div>
-                        <h4>Shattered Hope</h4>
-                        <div class="production-bar" aria-hidden="true"><span style="--progress: 1%"></span></div>
-                        <p class="production-figure"><strong>~1%</strong><span>Estimated progress</span></p>
-                        <p class="production-work"><span>Current work</span>Defining the campaign spine and its major arcs.</p>
+                <div class="quest-active-grid">
+                    <article class="quest-active quest-campaign">
+                        <header class="quest-head"><span class="quest-rank">Main campaign</span><h4>Shattered Hope</h4><p class="quest-sub">Campaign framework · Foundation</p></header>
+                        <div class="quest-hp"><span>Progress</span><div class="production-bar" aria-hidden="true"><span style="--progress: 1%"></span></div><strong>~1%</strong></div>
+                        <p class="quest-trait"><strong>Current work.</strong> Defining the campaign spine and its major arcs.</p>
                     </article>
-                    <article class="production-card">
-                        <div class="production-meta"><span class="ledger-status status-present">Active draft</span><span class="production-kind">Short adventure / Multishot</span></div>
-                        <h4>The Pact in the Twilight</h4>
-                        <div class="production-bar" aria-hidden="true"><span style="--progress: 25%"></span></div>
-                        <p class="production-figure"><strong>~25%</strong><span>Estimated progress</span></p>
-                        <p class="production-work"><span>Current work</span>Prelude and chapters 1–3 are drafted; now outlining the rest of the adventure.</p>
+                    <article class="quest-active quest-short">
+                        <header class="quest-head"><span class="quest-rank">Active draft</span><h4>The Pact in the Twilight</h4><p class="quest-sub">Short adventure · Multishot</p></header>
+                        <div class="quest-hp"><span>Progress</span><div class="production-bar" aria-hidden="true"><span style="--progress: 25%"></span></div><strong>~25%</strong></div>
+                        <p class="quest-trait"><strong>Current work.</strong> Prelude and chapters 1–3 are drafted; now outlining the rest of the adventure.</p>
                     </article>
                 </div>
             </div>
-            <p class="plan-note reveal"><strong>Roadmap:</strong> The eighteen journeys describe the intended complete collection, not work already underway. Progress figures are editorial development estimates, not release dates, and lore, names, and the order of releases may still change as the setting is written and playtested.</p>
+            <aside class="vault-callout vault-callout-info reveal"><p class="vault-callout-title">Roadmap</p><p>The eighteen journeys describe the intended complete collection, not work already underway. Progress figures are editorial development estimates, not release dates, and lore, names, and the order of releases may still change as the setting is written and playtested.</p></aside>
         </section>
 
         <section class="detail-section" id="enter" aria-labelledby="enter-title">
@@ -180,25 +176,39 @@
                 <p>The Mirrored Realms does not expect to be read from beginning to end. It expects curiosity. Open the repository as an Obsidian vault, start at the Home page, and follow whichever name first feels familiar.</p>
             </div>
 
-            <div class="vault-entry reveal">
-                <div class="vault-entry-copy">
+            <div class="vault-showcase reveal">
+                <div class="vault-pitch">
                     <p class="detail-badge">Open source / Explore freely</p>
                     <h3>The door was never locked.</h3>
                     <p>Take what your table needs, change what the records got wrong, and follow the wiki-links until the vault begins answering questions you never asked.</p>
-                    <div class="code-box"><code>git clone https://github.com/ShadowOkami4/Mirrorgate.git</code><button class="copy-code" type="button">Copy</button></div>
+                    <div class="vault-terminal">
+                        <div class="vault-terminal-bar" aria-hidden="true"><i></i><i></i><i></i><span>Terminal</span></div>
+                        <div class="code-box"><code>git clone https://github.com/ShadowOkami4/Mirrorgate.git</code><button class="copy-code" type="button">Copy</button></div>
+                    </div>
+                    <a class="button" href="https://github.com/ShadowOkami4/Mirrorgate/archive/refs/heads/main.zip">Download as ZIP ↓</a>
                 </div>
-                <ol class="vault-steps">
-                    <li><span>01</span><div><strong>Clone or download</strong><p>Get the complete repository from GitHub.</p></div></li>
-                    <li><span>02</span><div><strong>Open as a vault</strong><p>Open the folder in Obsidian 1.15 or newer and trust its community plugins when asked. The Mirrored Pages theme comes already set up.</p></div></li>
-                    <li><span>03</span><div><strong>Find the entrance</strong><p>The Hearth start screen opens on its own. From there, <code>Home.md</code> leads to every section: Atlas, Characters, Factions, History, Rules and more.</p></div></li>
-                    <li><span>04</span><div><strong>Written for the GM</strong><p>Every page tells the Game Master the whole truth; what players may know waits in a Player info box. Or read the same records as books in <code>10 Books</code>.</p></div></li>
-                </ol>
+                <figure class="vault-window" role="img" aria-label="A preview of the vault's Home page in Obsidian, with a card for every section">
+                    <div class="vw-bar" aria-hidden="true"><i></i><i></i><i></i><span class="vw-tab">Home</span></div>
+                    <div class="vw-body" aria-hidden="true">
+                        <ul class="vw-tree"><li class="vw-atlas">01 Atlas</li><li class="vw-characters">02 Characters</li><li class="vw-factions">03 Factions</li><li class="vw-history">04 History</li><li class="vw-faiths-cosmos">05 Faiths & Cosmos</li><li class="vw-peoples">06 Peoples</li><li class="vw-secrets">07 Secrets</li><li class="vw-adventures">08 Adventures</li><li class="vw-rules">09 Rules</li><li class="vw-books">10 Books</li><li class="vw-meta">99 Meta</li></ul>
+                        <div class="vw-page">
+                            <p class="vw-title">The Mirrored Realms</p>
+                            <p class="vw-tagline">An evolving campaign setting of living reflections, broken time, folded space, and divine scars.</p>
+                            <p class="vw-h2">Sections</p>
+                            <ul class="vw-cards"><li class="vw-card vw-atlas"><span class="vw-icon"></span><strong>Atlas</strong><small>Places, nested like the map</small></li><li class="vw-card vw-characters"><span class="vw-icon"></span><strong>Characters</strong><small>Everyone, with motives and stats</small></li><li class="vw-card vw-factions"><span class="vw-icon"></span><strong>Factions</strong><small>Who wants what</small></li><li class="vw-card vw-history"><span class="vw-icon"></span><strong>History</strong><small>What really happened</small></li><li class="vw-card vw-faiths-cosmos"><span class="vw-icon"></span><strong>Faiths & Cosmos</strong><small>Gods, planes, the Mirrorgate</small></li><li class="vw-card vw-peoples"><span class="vw-icon"></span><strong>Peoples</strong><small>Species and cultures</small></li><li class="vw-card vw-secrets"><span class="vw-icon"></span><strong>Secrets</strong><small>Hidden truths and twists</small></li><li class="vw-card vw-adventures"><span class="vw-icon"></span><strong>Adventures</strong><small>Ready to run</small></li><li class="vw-card vw-rules"><span class="vw-icon"></span><strong>Rules</strong><small>Mechanics, options, bestiary</small></li><li class="vw-card vw-books"><span class="vw-icon"></span><strong>Books</strong><small>Compiled editions</small></li><li class="vw-card vw-meta"><span class="vw-icon"></span><strong>Meta</strong><small>World Bible, GM toolkit, templates</small></li></ul>
+                        </div>
+                    </div>
+                </figure>
             </div>
 
-            <aside class="artwork-note reveal">
-                <span>License</span>
-                <p>Original project material is released under CC BY 4.0: copy, adapt, and publish it with credit. Material from SRD 5.2.1 carries its own attribution, and files from Obsidian plugins or other third-party tools keep their original licenses. The Mirrored Realms is an independent project, not an official Wizards of the Coast product.</p>
-            </aside>
+            <ol class="vault-callouts">
+                <li class="vault-callout vault-callout-clone reveal"><p class="vault-callout-title">Clone or download</p><p>Get the complete repository from GitHub.</p></li>
+                <li class="vault-callout vault-callout-open reveal"><p class="vault-callout-title">Open as a vault</p><p>Open the folder in Obsidian 1.15 or newer and trust its community plugins when asked. The Mirrored Pages theme comes already set up.</p></li>
+                <li class="vault-callout vault-callout-home reveal"><p class="vault-callout-title">Find the entrance</p><p>The Hearth start screen opens on its own. From there, <code>Home.md</code> leads to every section: Atlas, Characters, Factions, History, Rules and more.</p></li>
+                <li class="vault-callout vault-callout-gm reveal"><p class="vault-callout-title">Written for the GM</p><p>Every page tells the Game Master the whole truth; what players may know waits in a Player info box. Or read the same records as books in <code>10 Books</code>.</p></li>
+            </ol>
+
+            <aside class="vault-callout vault-callout-legal reveal"><p class="vault-callout-title">License</p><p>Original project material is released under CC BY 4.0: copy, adapt, and publish it with credit. Material from SRD 5.2.1 carries its own attribution, and files from Obsidian plugins or other third-party tools keep their original licenses. The Mirrored Realms is an independent project, not an official Wizards of the Coast product.</p></aside>
         </section>
 
         <section class="detail-section" id="inside" aria-labelledby="inside-title">
@@ -221,7 +231,7 @@
             <div class="detail-section-head reveal">
                 <div class="section-label"><span>04</span> Tools &amp; workflow</div>
                 <h2 id="workflow-title">The Scriptorium<br>behind the archive.</h2><p class="mirror-whisper">The scribe writes by hand. Over here, the ink writes back.</p>
-                <p>Every archive needs a scriptorium. The Mirrored Realms is written and connected in Obsidian today; other tools wait for the stage of development when maps and play sessions will need them.</p>
+                <p>Every archive needs a scriptorium. The Mirrored Realms is written and connected in Obsidian, mapped in Canvas of Kings, and dressed in its own theme. TaleSpire waits for the stage when play sessions will need it.</p>
             </div>
 
             <div class="tool-groups">
@@ -241,19 +251,20 @@
                         <a class="tool-link" href="https://github.com/ByteMirror/atlas-vtt" target="_blank" rel="noopener noreferrer">Atlas VTT on GitHub ↗</a>
                     </article>
                     <article class="tool-card">
-                        <div class="tool-card-top"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 19 6-10 4 6 2-3 6 7H3Z"/><circle cx="17" cy="6" r="2"/></svg></span><span class="ledger-status status-present">Own tooling</span></div>
-                        <h4>Cartography scripts</h4>
-                        <p>The world map comes from the project’s own scripts: one seed, simulated terrain, erosion, and climate, then rivers, realms, settlements, and roads.</p>
+                        <div class="tool-card-top"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-8 8-6-6 8-8Z"/><path d="M6 12l-2 6 6-2"/></svg></span><span class="ledger-status status-present">In use</span></div>
+                        <h4>Canvas of Kings</h4>
+                        <p>The maps of Kagameru are drawn here, from the world map down to the places the adventures lead to.</p>
+                        <a class="tool-link" href="https://store.steampowered.com/app/2498570/Canvas_of_Kings/" target="_blank" rel="noopener noreferrer">Canvas of Kings on Steam ↗</a>
+                    </article>
+                    <article class="tool-card">
+                        <div class="tool-card-top"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4Z"/><path d="M10 16V8h3a2.6 2.6 0 0 1 0 5.2h-3"/></svg></span><span class="ledger-status status-present">Own theme</span></div>
+                        <h4>Mirrored Pages</h4>
+                        <p>The vault’s own Obsidian theme: slate glass, brushed silver and statblocks for Atlas VTT. Made for this setting, free for every vault.</p>
+                        <a class="tool-link" href="#mirrored-pages">More about the theme ↓</a>
                     </article>
                 </div>
                 <div class="tool-group tool-group-planned reveal">
                     <h3 class="tool-group-title">Planned workflow</h3>
-                    <article class="tool-card">
-                        <div class="tool-card-top"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-8 8-6-6 8-8Z"/><path d="M6 12l-2 6 6-2"/></svg></span><span class="ledger-status status-planned">Planned</span></div>
-                        <h4>Canvas of Kings</h4>
-                        <p>Planned for later map work. It belongs to a later stage of development and is not yet part of production.</p>
-                        <a class="tool-link" href="https://store.steampowered.com/app/2498570/Canvas_of_Kings/" target="_blank" rel="noopener noreferrer">Canvas of Kings on Steam ↗</a>
-                    </article>
                     <article class="tool-card">
                         <div class="tool-card-top"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span><span class="ledger-status status-planned">Planned</span></div>
                         <h4>TaleSpire</h4>
@@ -311,7 +322,7 @@
     <footer class="site-footer">
         <span class="footer-copyright"><strong>© <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small><a class="footer-legal" href="/Impressum">Impressum</a></span><span class="footer-motto">THE MIRRORED REALMS / PROJECT 03</span><span class="footer-links"><a href="/Mirrored_Realms/Terms">Terms</a></span><a href="#overview">Back to top ↑</a>
     </footer>
-    <script src="../assets/js/translations.js?v=34"></script>
+    <script src="../assets/js/translations.js?v=35"></script>
     <script src="../assets/js/script.js?v=12"></script>
     <script src="../assets/js/motion.js?v=5"></script>
     <script src="../assets/js/die3d.js?v=4"></script>
