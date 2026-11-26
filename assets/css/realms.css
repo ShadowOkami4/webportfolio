@@ -1223,3 +1223,46 @@ html.is-through .mirror-secret { transform: scaleX(-1); }
 @media (prefers-reduced-motion: reduce) {
     .realm-shot, .realm-shot img, .mp-promo-shots img { transition: none; }
 }
+
+/* Whispers: lines that exist only on the mirror side. The page is reversed
+   there, so they are turned back once more: the only words that read true. */
+.mirror-whisper { display: none; }
+html.is-through .mirror-whisper {
+    display: block;
+    width: fit-content;
+    max-width: min(100%, 620px);
+    margin: 14px 0 0;
+    padding: 10px 16px 10px 34px;
+    position: relative;
+    border-radius: 12px;
+    color: var(--silver-hi);
+    background: linear-gradient(90deg, rgb(244 247 251 / .1), rgb(244 247 251 / .02));
+    box-shadow: inset 0 0 0 1px rgb(244 247 251 / .18), 0 0 30px -8px color-mix(in srgb, var(--silver) 60%, transparent);
+    font-family: var(--serif);
+    font-size: 1.08rem;
+    font-style: italic;
+    line-height: 1.45;
+    text-align: left;
+    text-shadow: 0 0 12px rgb(244 247 251 / .45);
+    transform: scaleX(-1);
+    animation: whisper-in 1400ms ease both;
+}
+html.is-through .mirror-whisper::before {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    width: 8px;
+    height: 8px;
+    content: "";
+    translate: 0 -50%;
+    rotate: 45deg;
+    background: linear-gradient(135deg, #fff 0 45%, #9eaabb 46%);
+    box-shadow: 0 0 8px rgb(244 247 251 / .8);
+}
+.detail-copy > .mirror-whisper,
+.mirrorgate-cta > .mirror-whisper { margin-inline: auto; }
+@keyframes whisper-in {
+    0% { opacity: 0; filter: blur(6px); letter-spacing: .08em; }
+    100% { opacity: 1; filter: none; letter-spacing: normal; }
+}
+@media (prefers-reduced-motion: reduce) { html.is-through .mirror-whisper { animation: none; } }

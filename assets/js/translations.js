@@ -334,6 +334,13 @@
         'The Kaleidoscope, one of the Shardkin born from broken mirrors.': 'Das Kaleidoskop, eines der Splitterwesen, die aus zerbrochenen Spiegeln geboren wurden.',
         'The Kaleidoscope statblock with Creature and Aberration tags': 'Der Werteblock des Kaleidoskops mit Kreatur- und Aberrations-Markierung',
         'Mirrored Pages': 'Mirrored Pages',
+        'So this is what the archive looks like from the inside. Everything you just read was written for the other side.': 'So sieht das Archiv also von innen aus. Alles, was du gerade gelesen hast, wurde für die andere Seite geschrieben.',
+        'Eighteen doors on your side. On this side, every one of them is already open.': 'Achtzehn Türen auf deiner Seite. Auf dieser Seite steht jede einzelne schon offen.',
+        'You did not clone the vault. The vault cloned you.': 'Du hast nicht den Vault geklont. Der Vault hat dich geklont.',
+        'None of these pictures were taken from this side. Look closer: nobody in them has a reflection.': 'Keines dieser Bilder wurde von dieser Seite aufgenommen. Sieh genauer hin: Niemand darin hat ein Spiegelbild.',
+        'The scribe writes by hand. Over here, the ink writes back.': 'Der Schreiber schreibt von Hand. Hier drüben schreibt die Tinte zurück.',
+        'Every page has a mirrored twin. You are reading one now.': 'Jede Seite hat einen gespiegelten Zwilling. Du liest gerade einen.',
+        'It noticed. Go back before it notices you staying.': 'Es hat dich bemerkt. Geh zurück, bevor es merkt, dass du bleibst.',
     };
 
     const lunaecho = {
