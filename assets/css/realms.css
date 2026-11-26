@@ -1192,7 +1192,8 @@ html.is-through .mirror-secret { transform: scaleX(-1); }
 }
 .mp-features li::before { position: absolute; top: 50%; left: 11px; width: 6px; height: 6px; content: ""; background: linear-gradient(135deg, #fff 0 45%, #9eaabb 46%); transform: translateY(-50%) rotate(45deg); box-shadow: 0 0 6px color-mix(in srgb, var(--silver) 70%, transparent); }
 .mp-promo .detail-actions { justify-content: flex-start; }
-.mp-promo-note { margin: 16px 0 0; color: var(--muted); font-family: var(--font); font-size: .85rem; }
+.mp-promo-copy > .mp-promo-note { display: flex; margin: 26px 0 0; padding-top: 18px; align-items: center; gap: 10px; border-top: 1px solid var(--glass-edge); color: var(--muted); font-family: var(--serif); font-size: 1rem; font-style: italic; }
+.mp-promo-note::before { width: 6px; height: 6px; flex: none; content: ""; rotate: 45deg; background: linear-gradient(135deg, #fff 0 45%, #9eaabb 46%); box-shadow: 0 0 6px color-mix(in srgb, var(--silver) 60%, transparent); }
 .mp-promo-shots { position: relative; height: 470px; }
 .mp-promo-shots img {
     position: absolute;
