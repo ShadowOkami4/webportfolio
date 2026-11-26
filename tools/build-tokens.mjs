@@ -9,13 +9,13 @@ import { DynamicScheme, Hct, MaterialDynamicColors, SchemeContent, TonalPalette,
  * Each area keeps its identity colour as the seed. "Content" keeps the seed's
  * own chroma (the brand violet stays the brand violet) and derives calm,
  * slightly tinted surfaces. `tertiary` pins the accent pair a page has always
- * used (Voidline's cyan, the Grimoire's teal) instead of the computed one.
+ * used (Voidline’s cyan, the Realms’ mirror silver-blue) instead of the computed one.
  */
 const AREAS = [
   { selector: ":root", name: "Okami (home, 404)", seed: "#a568ff" },
   { selector: ".voidline-page", name: "Voidline", seed: "#9748f4", tertiary: "#6ee7f2" },
   { selector: ".luna-page, .luna-legal-page", name: "LunaEcho", seed: "#ff85d2", tertiary: "#d29bff" },
-  { selector: ".mirrorgate-page", name: "The Mirrored Realms (grimoire)", seed: "#c9a55a", tertiary: "#79c9bf" },
+  { selector: ".mirrorgate-page", name: "The Mirrored Realms (Mirrored Pages: amethyst on slate glass)", seed: "#a98ae6", tertiary: "#8fb6e0" },
 ];
 
 const argb = (hex) => parseInt(hex.slice(1), 16) | 0xff000000;

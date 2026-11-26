@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#070503">
+    <meta name="theme-color" content="#05060b">
     <title>The Mirrored Realms | Open-Source 5.5e Campaign Setting</title>
     <meta name="description" content="The Mirrored Realms is an evolving, open-source 5.5e-compatible campaign setting built as an interconnected Obsidian vault: the world of Kagameru, the Mirrorgate, and the scars of an ancient divine war.">
     <meta property="og:type" content="website">
@@ -23,11 +23,11 @@
     <link rel="icon" type="image/png" href="../assets/images/okami-logo-v4.png?v=2">
     <link rel="preload" href="../assets/fonts/roboto-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/cinzel-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../assets/css/tokens.css?v=2">
+    <link rel="stylesheet" href="../assets/css/tokens.css?v=3">
     <link rel="stylesheet" href="../assets/css/shapes.css?v=3">
     <link rel="stylesheet" href="../assets/css/base.css?v=7">
     <link rel="stylesheet" href="../assets/css/projects.css?v=5">
-    <link rel="stylesheet" href="../assets/css/realms.css?v=17">
+    <link rel="stylesheet" href="../assets/css/realms.css?v=18">
     <link rel="stylesheet" href="../assets/css/motion.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -50,7 +50,9 @@
         <nav class="site-nav" id="site-nav" aria-label="Project navigation">
             <a href="#overview">Overview</a>
             <a href="#roadmap">Roadmap</a>
+            <a href="#inside">Gallery</a>
             <a href="#workflow">Workflow</a>
+            <a href="#mirrored-pages">Theme</a>
             <a class="nav-out" href="https://github.com/ShadowOkami4/Mirrorgate" target="_blank" rel="noopener noreferrer">Source ↗</a>
         </nav>
     </header>
@@ -68,7 +70,7 @@
                     <a class="button button-ghost" href="#roadmap">Read the records ↓</a>
                 </div>
                 <ul class="realm-marks reveal" aria-label="Built for"><li><span class="realm-mark-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5 20.5 7.4v9.2L12 21.5l-8.5-4.9V7.4L12 2.5Z"/><path d="M12 2.5 7.6 9.6h8.8L12 2.5ZM7.6 9.6 3.5 7.4M16.4 9.6l4.1-2.2M7.6 9.6 12 17.5l4.4-7.9M7.6 9.6l-4.1 7M16.4 9.6l4.1 7M12 17.5v4"/></svg></span><span><strong>5.5e compatible</strong><small>SRD 5.2.1 rules</small></span></li><li><span class="realm-mark-icon realm-mark-logo" aria-hidden="true"><img src="../assets/images/obsidian-logo.svg" alt="" width="30" height="30"></span><span><strong>Obsidian vault</strong><small>Linked Markdown notes</small></span></li></ul>
-                <a class="atlas-badge reveal" href="https://github.com/ByteMirror/atlas-vtt" target="_blank" rel="noopener noreferrer"><img src="../assets/images/atlas-vtt-compatible.svg" alt="Compatible with Atlas VTT" width="375" height="56"></a>
+                <a class="atlas-badge reveal" href="https://atlas-vtt.dev" target="_blank" rel="noopener noreferrer"><img src="../assets/images/atlas-vtt-compatible.svg" alt="Compatible with Atlas VTT" width="375" height="56"></a>
             </div>
 
             <figure class="detail-visual mirrorgate-visual reveal" aria-label="An abstract mirror doorway leading into the Library of Kagami">
@@ -166,7 +168,7 @@
             <div class="detail-section-head reveal">
                 <div class="section-label"><span>02</span> Open the archive</div>
                 <h2 id="enter-title">Enter through<br>Obsidian.</h2>
-                <p>The Mirrored Realms does not expect to be read from beginning to end. It expects curiosity. Open the repository as an Obsidian vault, find the welcome record, and follow whichever name first feels familiar.</p>
+                <p>The Mirrored Realms does not expect to be read from beginning to end. It expects curiosity. Open the repository as an Obsidian vault, start at the Home page, and follow whichever name first feels familiar.</p>
             </div>
 
             <div class="vault-entry reveal">
@@ -178,9 +180,9 @@
                 </div>
                 <ol class="vault-steps">
                     <li><span>01</span><div><strong>Clone or download</strong><p>Get the complete repository from GitHub.</p></div></li>
-                    <li><span>02</span><div><strong>Open as a vault</strong><p>Open the folder in Obsidian 1.8.7 or newer and trust its community plugins when asked.</p></div></li>
-                    <li><span>03</span><div><strong>Find the entrance</strong><p>Open <code>00 Library of Kagami/Welcome.md</code> and meet the library’s custodian.</p></div></li>
-                    <li><span>04</span><div><strong>Library or books</strong><p>Follow the links in any order, or read the same records as books from the bookshelf in <code>04 Books</code>.</p></div></li>
+                    <li><span>02</span><div><strong>Open as a vault</strong><p>Open the folder in Obsidian 1.15 or newer and trust its community plugins when asked. The Mirrored Pages theme comes already set up.</p></div></li>
+                    <li><span>03</span><div><strong>Find the entrance</strong><p>The Hearth start screen opens on its own. From there, <code>Home.md</code> leads to every section: Atlas, Characters, Factions, History, Rules and more.</p></div></li>
+                    <li><span>04</span><div><strong>Written for the GM</strong><p>Every page tells the Game Master the whole truth; what players may know waits in a Player info box. Or read the same records as books in <code>10 Books</code>.</p></div></li>
                 </ol>
             </div>
 
@@ -190,9 +192,25 @@
             </aside>
         </section>
 
+        <section class="detail-section" id="inside" aria-labelledby="inside-title">
+            <div class="detail-section-head reveal">
+                <div class="section-label"><span>03</span> Inside the vault</div>
+                <h2 id="inside-title">Through the<br>looking glass.</h2>
+                <p>This is what waits on the other side of the clone: a night sky over every section, statblocks ready for the table, and pages that tell the Game Master the whole truth.</p>
+            </div>
+            <div class="realm-gallery">
+                <figure class="realm-shot realm-shot-land realm-shot-wide reveal"><a href="../assets/images/realms/home.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/home.webp" alt="The Home page with a night-sky title card and colour-coded section cards" width="844" height="703" loading="lazy" decoding="async"></a><figcaption><strong>Home</strong>Every section of the setting on one night-sky page, colour-coded and one click away.</figcaption></figure>
+                <figure class="realm-shot realm-shot-tall reveal"><a href="../assets/images/realms/statblock-boss.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/statblock-boss.webp" alt="The statblock of Maria Rose, Corrupted, in red with Boss and Undead tags" width="949" height="999" loading="lazy" decoding="async"></a><figcaption><strong>Boss statblocks</strong>Maria Rose, Corrupted, ready for Atlas VTT with legendary actions.</figcaption></figure>
+                <figure class="realm-shot realm-shot-tall reveal"><a href="../assets/images/realms/place-page.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/place-page.webp" alt="The Forest of Thieves page with a quote, an at-a-glance box and the overview" width="661" height="823" loading="lazy" decoding="async"></a><figcaption><strong>Places</strong>The Forest of Thieves: a quote, an at-a-glance box, and the whole truth below.</figcaption></figure>
+                <figure class="realm-shot realm-shot-land realm-shot-wide reveal"><a href="../assets/images/realms/graph.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/graph.webp" alt="The graph view over a dark night sky with a struck-glass crack, sections coloured" width="1125" height="756" loading="lazy" decoding="async"></a><figcaption><strong>Graph view</strong>Every note linked to its section, under the same cracked night sky.</figcaption></figure>
+                <figure class="realm-shot realm-shot-full reveal"><a href="../assets/images/realms/sandra-page.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/sandra-page.webp" alt="Sandra Mistic's page with her lore on the left and her Atlas VTT statblock on the right" width="1400" height="674" loading="lazy" decoding="async"></a><figcaption><strong>Characters</strong>Sandra Mistic: her lore on the left, her statblock on the right, both on one page.</figcaption></figure>
+                <figure class="realm-shot realm-shot-tall reveal"><a href="../assets/images/realms/callouts-1.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/callouts-1.webp" alt="Callouts for read-aloud text, handouts, rumours, loot, lore, traps and rules" width="633" height="886" loading="lazy" decoding="async"></a><figcaption><strong>Callouts</strong>Read-aloud text, handouts, rumours, loot and traps, each with its own look.</figcaption></figure>
+            </div>
+        </section>
+
         <section class="detail-section" id="workflow" aria-labelledby="workflow-title">
             <div class="detail-section-head reveal">
-                <div class="section-label"><span>03</span> Tools &amp; workflow</div>
+                <div class="section-label"><span>04</span> Tools &amp; workflow</div>
                 <h2 id="workflow-title">The Scriptorium<br>behind the archive.</h2>
                 <p>Every archive needs a scriptorium. The Mirrored Realms is written and connected in Obsidian today; other tools wait for the stage of development when maps and play sessions will need them.</p>
             </div>
@@ -242,6 +260,34 @@
             </aside>
         </section>
 
+        <section class="detail-section" id="mirrored-pages" aria-labelledby="mp-title">
+            <div class="mp-promo reveal">
+                <div class="mp-promo-copy">
+                    <span class="mp-seal" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 6 54.5 19v26L32 58 9.5 45V19Z"/><path d="M32 13 48.5 22.5v19L32 51 15.5 41.5v-19Z" stroke-opacity=".55"/><path d="M27 44V21h7.5a6.5 6.5 0 0 1 0 13H27"/></svg></span>
+                    <p class="detail-badge">Free Obsidian theme / MIT licence</p>
+                    <h2 id="mp-title">Mirrored <span>Pages.</span></h2>
+                    <p>Like how the vault looks? It is a theme of its own, and it works in any vault: deep slate glass, brushed silver and serif headings with a reflected rule, in dark and light.</p>
+                    <ul class="mp-features">
+                        <li>Atlas VTT statblocks</li>
+                        <li>30+ TTRPG callouts</li>
+                        <li>Night-sky graph</li>
+                        <li>Hearth start screen</li>
+                        <li>Dice Roller</li>
+                        <li>Accent palettes</li>
+                    </ul>
+                    <div class="detail-actions">
+                        <a class="button" href="https://github.com/ShadowOkami4/mirrored-pages" target="_blank" rel="noopener noreferrer">Get Mirrored Pages ↗</a>
+                        <a class="button button-ghost" href="https://github.com/ShadowOkami4/mirrored-pages#installing" target="_blank" rel="noopener noreferrer">How to install ↗</a>
+                    </div>
+                    <p class="mp-promo-note">Made for The Mirrored Realms, free for every vault.</p>
+                </div>
+                <div class="mp-promo-shots" aria-hidden="true">
+                    <img src="../assets/images/realms/callouts-2.webp" alt="" width="633" height="1069" loading="lazy" decoding="async">
+                    <img src="../assets/images/realms/statblock-dormant.webp" alt="" width="949" height="928" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </section>
+
         <section class="detail-cta mirrorgate-cta">
             <svg class="realm-d20 realm-d20-cta" data-die3d viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path class="d20-face" d="M50 4 90 27v46L50 96 10 73V27Z"/><path class="d20-edge" d="M50 4 90 27v46L50 96 10 73V27ZM50 4 28 38h44ZM28 38 10 27M72 38l18-11M28 38 50 78 72 38M28 38 10 73M72 38l18 35M50 78 10 73M50 78l40-5M50 78v18"/><text x="50" y="55">20</text></svg>
             <p class="detail-badge reveal">The Library of Kagami awaits</p>
@@ -255,7 +301,7 @@
     <footer class="site-footer">
         <span class="footer-copyright"><strong>© <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small><a class="footer-legal" href="/Impressum">Impressum</a></span><span class="footer-motto">THE MIRRORED REALMS / PROJECT 03</span><span class="footer-links"><a href="/Mirrored_Realms/Terms">Terms</a></span><a href="#overview">Back to top ↑</a>
     </footer>
-    <script src="../assets/js/translations.js?v=31"></script>
+    <script src="../assets/js/translations.js?v=32"></script>
     <script src="../assets/js/script.js?v=12"></script>
     <script src="../assets/js/motion.js?v=5"></script>
     <script src="../assets/js/die3d.js?v=3"></script>
