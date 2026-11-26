@@ -1605,3 +1605,6 @@ html.is-through .mirror-whisper::before {
 }
 .mirror-portal.is-cracked .mirror-reflection { opacity: 0; scale: 1.6; transition: opacity 900ms ease, scale 900ms ease; }
 @media (prefers-reduced-motion: reduce) { .mirror-reflection { transition: opacity 300ms ease; } }
+
+/* facts strip: a word instead of a number, and one row of four facts */
+.mirrorgate-page .detail-stats > .stat-word strong { font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.35; }
