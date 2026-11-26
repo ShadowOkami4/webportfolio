@@ -1485,3 +1485,28 @@ html.is-through .mirror-whisper::before {
 @media (prefers-reduced-motion: reduce) {
     .vault-window, .quest-block { transition: none; }
 }
+
+/* ─── Section I, rewritten: what is on the desk, and what comes next ───── */
+.quest-active-wrap + .quest-active-wrap { margin-top: 16px; }
+.quest-list { display: grid; margin: 0; padding: 0; list-style: none; }
+.quest-list li {
+    position: relative;
+    display: grid;
+    padding: 16px 10px 16px 18px;
+    grid-template-columns: 70px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--glass-edge);
+    transition: background 300ms ease;
+}
+.quest-list li:last-child { border-bottom: 0; }
+.quest-list li::before { position: absolute; top: 14px; bottom: 14px; left: 0; width: 2px; border-radius: 2px; content: ""; background: var(--rank); box-shadow: 0 0 10px var(--rank); opacity: .75; }
+.quest-list li:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--rank) 8%, transparent), transparent 70%); }
+.quest-id { color: var(--rank); font-family: var(--caps); font-size: .82rem; font-weight: 700; letter-spacing: .12em; }
+.quest-list h3 { margin: 0 0 3px; font-family: var(--caps); font-size: 1.18rem; font-weight: 600; line-height: 1.2; color: var(--silver-hi); }
+.quest-list p { margin: 0; color: var(--ink-soft); font-size: .98rem; line-height: 1.45; }
+.quest-kind { padding: 4px 11px; border-radius: 999px; color: color-mix(in srgb, var(--rank) 70%, var(--silver-hi)); background: color-mix(in srgb, var(--rank) 12%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--rank) 34%, transparent); font-family: var(--caps); font-size: .7rem; font-weight: 700; letter-spacing: .1em; white-space: nowrap; }
+@media (max-width: 560px) {
+    .quest-list li { grid-template-columns: 1fr; gap: 6px; }
+    .quest-kind { justify-self: start; }
+}
