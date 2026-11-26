@@ -23,11 +23,11 @@
     <link rel="icon" type="image/png" href="../assets/images/okami-logo-v4.png?v=2">
     <link rel="preload" href="../assets/fonts/roboto-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/cinzel-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../assets/css/tokens.css?v=3">
+    <link rel="stylesheet" href="../assets/css/tokens.css?v=4">
     <link rel="stylesheet" href="../assets/css/shapes.css?v=3">
     <link rel="stylesheet" href="../assets/css/base.css?v=7">
     <link rel="stylesheet" href="../assets/css/projects.css?v=5">
-    <link rel="stylesheet" href="../assets/css/realms.css?v=18">
+    <link rel="stylesheet" href="../assets/css/realms.css?v=19">
     <link rel="stylesheet" href="../assets/css/motion.css?v=5">
     <script src="../assets/js/head.js?v=2"></script>
 </head>
@@ -74,17 +74,26 @@
             </div>
 
             <figure class="detail-visual mirrorgate-visual reveal" aria-label="An abstract mirror doorway leading into the Library of Kagami">
-                <svg class="mirror-inscription" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><defs><path id="mirror-inscription-ring" d="M200 200m-178 0a178 178 0 1 1 356 0a178 178 0 1 1-356 0"/></defs><text><textPath href="#mirror-inscription-ring" textLength="1110" lengthAdjust="spacing">✦ What the mirror shows is not what stands before it ✦ Every door remembers who opened it ✦</textPath></text></svg>
-                <div class="mirror-portal" aria-hidden="true">
+                <svg class="mirror-inscription" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><defs><path id="mirror-inscription-ring" d="M200 200m-178 0a178 178 0 1 1 356 0a178 178 0 1 1-356 0"/></defs><text><textPath href="#mirror-inscription-ring" textLength="1110" lengthAdjust="spacing">✦ What the mirror shows is not what stands before it ✦ Knock three times, and it may answer ✦</textPath></text></svg>
+                <div class="mirror-portal" role="button" tabindex="0" aria-label="The mirror">
                     <span class="mirror-arch mirror-arch-outer"></span>
                     <span class="mirror-arch mirror-arch-inner"></span>
-                    <span class="mirror-surface"><i></i><b></b><b></b></span>
+                    <span class="mirror-surface"><span class="mirror-depth"><i></i><i></i><i></i><i></i></span><i></i><b></b><b></b><svg class="mirror-crack" viewBox="0 0 100 140" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M58 46 52 38 47 24 44 6"/><path pathLength="1" d="M58 46 70 40 84 38 98 30"/><path pathLength="1" d="M58 46 61 60 56 78 60 98 55 124"/><path pathLength="1" d="M58 46 44 52 30 50 12 60 2 58"/><path pathLength="1" d="M58 46 72 58 80 74 94 84"/><path pathLength="1" d="M58 46 50 62 38 72 26 92"/><path pathLength="1" d="M47 24 38 22 30 14"/><path pathLength="1" d="M61 60 70 66"/><path pathLength="1" d="M44 52 46 64"/></svg></span>
+                    <span class="mirror-crown"></span>
+                    <span class="mirror-stud mirror-stud-left"></span>
+                    <span class="mirror-stud mirror-stud-right"></span>
                     <span class="mirror-star mirror-star-one"></span>
                     <span class="mirror-star mirror-star-two"></span>
                     <span class="mirror-star mirror-star-three"></span>
                 </div>
                 <svg class="realm-d20" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path class="d20-face" d="M50 4 90 27v46L50 96 10 73V27Z"/><path class="d20-edge" d="M50 4 90 27v46L50 96 10 73V27ZM50 4 28 38h44ZM28 38 10 27M72 38l18-11M28 38 50 78 72 38M28 38 10 73M72 38l18 35M50 78 10 73M50 78l40-5M50 78v18"/><text x="50" y="55">20</text></svg>
                 <blockquote class="mirror-quote">“A mirror is a door pretending to be furniture.”<cite>Professor Phineas Phantomhive II</cite></blockquote>
+                <div class="mirror-secret" role="dialog" aria-label="A note behind the glass" hidden>
+                    <p class="mirror-secret-label">Behind the glass</p>
+                    <p class="mirror-secret-text" tabindex="0"><strong>You knocked.</strong><span>Something on this side knocked back. If you can read this, you are already standing on the wrong side of the glass.</span><em>P. P. II</em></p>
+                    <p class="mirror-secret-hint">Mirror writing: hover or tap it to read.</p>
+                    <button class="mirror-through" type="button" aria-pressed="false"><span class="through-in">Step through ↺</span><span class="through-out">Step back ↺</span></button>
+                </div>
                 <figcaption class="detail-visual-label">ARCHIVE / UNSEALED</figcaption>
             </figure>
         </section>
@@ -202,9 +211,9 @@
                 <figure class="realm-shot realm-shot-land realm-shot-wide reveal"><a href="../assets/images/realms/home.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/home.webp" alt="The Home page with a night-sky title card and colour-coded section cards" width="844" height="703" loading="lazy" decoding="async"></a><figcaption><strong>Home</strong>Every section of the setting on one night-sky page, colour-coded and one click away.</figcaption></figure>
                 <figure class="realm-shot realm-shot-tall reveal"><a href="../assets/images/realms/statblock-boss.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/statblock-boss.webp" alt="The statblock of Maria Rose, Corrupted, in red with Boss and Undead tags" width="949" height="999" loading="lazy" decoding="async"></a><figcaption><strong>Boss statblocks</strong>Maria Rose, Corrupted, ready for Atlas VTT with legendary actions.</figcaption></figure>
                 <figure class="realm-shot realm-shot-tall reveal"><a href="../assets/images/realms/place-page.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/place-page.webp" alt="The Forest of Thieves page with a quote, an at-a-glance box and the overview" width="661" height="823" loading="lazy" decoding="async"></a><figcaption><strong>Places</strong>The Forest of Thieves: a quote, an at-a-glance box, and the whole truth below.</figcaption></figure>
-                <figure class="realm-shot realm-shot-land realm-shot-wide reveal"><a href="../assets/images/realms/graph.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/graph.webp" alt="The graph view over a dark night sky with a struck-glass crack, sections coloured" width="1125" height="756" loading="lazy" decoding="async"></a><figcaption><strong>Graph view</strong>Every note linked to its section, under the same cracked night sky.</figcaption></figure>
-                <figure class="realm-shot realm-shot-full reveal"><a href="../assets/images/realms/sandra-page.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/sandra-page.webp" alt="Sandra Mistic's page with her lore on the left and her Atlas VTT statblock on the right" width="1400" height="674" loading="lazy" decoding="async"></a><figcaption><strong>Characters</strong>Sandra Mistic: her lore on the left, her statblock on the right, both on one page.</figcaption></figure>
                 <figure class="realm-shot realm-shot-tall reveal"><a href="../assets/images/realms/callouts-1.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/callouts-1.webp" alt="Callouts for read-aloud text, handouts, rumours, loot, lore, traps and rules" width="633" height="886" loading="lazy" decoding="async"></a><figcaption><strong>Callouts</strong>Read-aloud text, handouts, rumours, loot and traps, each with its own look.</figcaption></figure>
+                <figure class="realm-shot realm-shot-tall reveal"><a href="../assets/images/realms/statblock-creature.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/statblock-creature.webp" alt="The Kaleidoscope statblock with Creature and Aberration tags" width="949" height="753" loading="lazy" decoding="async"></a><figcaption><strong>Bestiary</strong>The Kaleidoscope, one of the Shardkin born from broken mirrors.</figcaption></figure>
+                <figure class="realm-shot realm-shot-full reveal"><a href="../assets/images/realms/sandra-page.webp" target="_blank" rel="noopener"><img src="../assets/images/realms/sandra-page.webp" alt="Sandra Mistic's page with her lore on the left and her Atlas VTT statblock on the right" width="1400" height="674" loading="lazy" decoding="async"></a><figcaption><strong>Characters</strong>Sandra Mistic: her lore on the left, her statblock on the right, both on one page.</figcaption></figure>
             </div>
         </section>
 
@@ -265,7 +274,7 @@
                 <div class="mp-promo-copy">
                     <span class="mp-seal" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 6 54.5 19v26L32 58 9.5 45V19Z"/><path d="M32 13 48.5 22.5v19L32 51 15.5 41.5v-19Z" stroke-opacity=".55"/><path d="M27 44V21h7.5a6.5 6.5 0 0 1 0 13H27"/></svg></span>
                     <p class="detail-badge">Free Obsidian theme / MIT licence</p>
-                    <h2 id="mp-title">Mirrored <span>Pages.</span></h2>
+                    <h2 id="mp-title">Mirrored Pages<b>.</b></h2>
                     <p>Like how the vault looks? It is a theme of its own, and it works in any vault: deep slate glass, brushed silver and serif headings with a reflected rule, in dark and light.</p>
                     <ul class="mp-features">
                         <li>Atlas VTT statblocks</li>
@@ -297,13 +306,15 @@
             <div class="realm-license reveal"><span class="realm-license-chip"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 8-4 4 4 4M15 8l4 4-4 4"/></svg></span>Open source</span><a class="realm-license-chip" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M10.6 10.1a2.4 2.4 0 1 0 0 3.8M16.6 10.1a2.4 2.4 0 1 0 0 3.8"/></svg></span>CC BY 4.0</a><a class="realm-license-link" href="/Mirrored_Realms/Terms">Terms &amp; attribution →</a></div>
         </section>
     </main>
+    <button class="mirror-return" type="button">Step back ↺</button>
 
     <footer class="site-footer">
         <span class="footer-copyright"><strong>© <span data-year>2026</span> SHADOWOKAMI</strong><small>Site content unless credited otherwise. Project code follows its repository license.</small><a class="footer-legal" href="/Impressum">Impressum</a></span><span class="footer-motto">THE MIRRORED REALMS / PROJECT 03</span><span class="footer-links"><a href="/Mirrored_Realms/Terms">Terms</a></span><a href="#overview">Back to top ↑</a>
     </footer>
-    <script src="../assets/js/translations.js?v=32"></script>
+    <script src="../assets/js/translations.js?v=33"></script>
     <script src="../assets/js/script.js?v=12"></script>
     <script src="../assets/js/motion.js?v=5"></script>
-    <script src="../assets/js/die3d.js?v=3"></script>
+    <script src="../assets/js/die3d.js?v=4"></script>
+    <script src="../assets/js/realms-secret.js?v=1"></script>
 </body>
 </html>

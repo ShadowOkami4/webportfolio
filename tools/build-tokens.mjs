@@ -15,7 +15,7 @@ const AREAS = [
   { selector: ":root", name: "Okami (home, 404)", seed: "#a568ff" },
   { selector: ".voidline-page", name: "Voidline", seed: "#9748f4", tertiary: "#6ee7f2" },
   { selector: ".luna-page, .luna-legal-page", name: "LunaEcho", seed: "#ff85d2", tertiary: "#d29bff" },
-  { selector: ".mirrorgate-page", name: "The Mirrored Realms (Mirrored Pages: amethyst on slate glass)", seed: "#a98ae6", tertiary: "#8fb6e0" },
+  { selector: ".mirrorgate-page", name: "The Mirrored Realms (Mirrored Pages: brushed silver on slate glass)", seed: "#9fb0c6", tertiary: "#b39af0" },
 ];
 
 const argb = (hex) => parseInt(hex.slice(1), 16) | 0xff000000;

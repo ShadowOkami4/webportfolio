@@ -777,12 +777,14 @@ a.realm-license-chip:hover { color: var(--ink); background: color-mix(in srgb, v
     --silver: #c9d3e0;
     --silver-lo: #9aa6b4;
     --amethyst: #b39af0;
-    --on-accent: #17112b;
+    --on-accent: #10141c;
     --glass: rgb(20 24 32 / .62);
-    --glass-edge: rgb(200 215 235 / .1);
-    --glass-shine: rgb(255 255 255 / .06);
-    --gold: var(--amethyst);
-    --gold-soft: color-mix(in srgb, var(--amethyst) 32%, transparent);
+    --glass-edge: rgb(200 215 235 / .12);
+    --glass-shine: rgb(255 255 255 / .07);
+    /* brushed silver: the metal every accent is cut from */
+    --brushed: linear-gradient(180deg, #ffffff 0%, #dfe6ef 22%, #aab6c5 50%, #e8eef5 74%, #9aa6b4 100%);
+    --gold: var(--silver);
+    --gold-soft: color-mix(in srgb, var(--silver) 28%, transparent);
     --teal: #8fb6e0;
     /* slate instead of the violet-tinted generated surfaces */
     --md-sys-color-surface-container-lowest: #07090d;
@@ -800,8 +802,9 @@ a.realm-license-chip:hover { color: var(--ink); background: color-mix(in srgb, v
 body.mirrorgate-page::before {
     background-image:
         url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1600 1000%22 preserveAspectRatio=%22xMidYMid slice%22%3E%3Cg fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M1130 330L1177 342L1227 344L1255 337L1276 341L1296 331L1328 322L1359 310L1398 290L1435 312L1462 349L1510 345L1530 351L1575 336L1607 371L1648 320L1684 385L1713 372 M1130 330L1153 336L1195 342L1218 344L1241 346L1277 369L1309 365L1341 376L1360 376L1388 411L1418 430L1425 465L1455 508L1498 489L1532 456L1550 469L1592 496L1622 487 M1130 330L1175 351L1197 353L1219 369L1243 386L1285 398L1297 420L1342 435L1373 470L1394 483L1427 460L1444 485L1454 535L1502 549L1501 610L1485 658L1483 713L1536 708L1528 757L1559 769L1623 761L1640 801 M1130 330L1151 340L1188 363L1230 378L1258 383L1284 390L1324 406L1375 402L1404 431L1443 430L1468 464L1508 481L1528 537L1562 555L1600 568L1600 634L1601 712L1583 785L1640 756L1682 736L1677 778 M1130 330L1173 354L1200 368L1244 381L1278 389L1305 398L1333 410L1386 404L1402 436L1436 419L1473 459L1478 502L1531 482L1571 513L1572 559L1576 623L1592 638L1576 699L1630 687L1682 681L1762 639 M1130 330L1147 357L1169 399L1202 429L1221 469L1259 490L1298 498L1317 540L1331 574L1333 606L1339 642L1348 681L1358 722L1358 767L1369 793L1428 797 M1130 330L1143 376L1146 421L1158 445L1162 470L1171 513L1194 549L1232 571L1253 607L1274 621L1294 643L1344 642L1392 638L1455 641L1455 700L1453 727L1418 780L1402 823L1474 815L1444 870L1511 856L1514 892L1580 888 M1130 330L1110 367L1098 389L1085 407L1064 428L1052 462L1042 507L1043 534L1025 563L1007 599L1019 652L997 677L959 691L956 714L892 730 M1130 330L1098 365L1072 386L1033 414L1002 443L980 446L970 470L956 513L957 562L910 565L880 601L887 657L879 690L836 708L867 767L894 832L851 838L782 827L803 870L723 863L712 901 M1130 330L1089 345L1048 358L1023 371L1008 388L992 413L984 440L967 458L942 504L895 513L862 505L838 534L832 566L841 613L821 629 M1130 330L1111 331L1086 334L1040 343L995 352L951 340L930 355L892 351L862 346L845 375L808 369L757 360L736 339L709 389L664 378L630 329L609 377 M1130 330L1107 292L1094 276L1070 239L1051 230L1040 203L1015 199L974 183L950 144L950 111L923 100L889 67L855 33L809 25L784 16L751 13L699 9L713 -40L691 -63L632 -66L621 -124 M1130 330L1140 310L1152 287L1164 263L1196 225L1229 191L1236 165L1246 134L1230 105L1230 82L1242 46L1223 18L1256 1L1289 -6L1312 -36L1327 -68L1313 -108L1290 -168 M260 780L227 781L205 778L160 782L134 784L104 780L71 774L41 795L12 771L-17 764L-41 794L-79 789 M260 780L278 762L304 729L330 698L349 672L364 633L365 588L394 566L429 555L451 530 M260 780L286 762L311 750L338 729L381 706L402 685L436 670L459 670L475 629%22 stroke=%22rgba(170,200,255,0.05)%22 stroke-width=%224%22/%3E%3Cpath d=%22M1255 337L1300 367 M1276 341L1297 331 M1462 349L1496 364 M1607 371L1644 347 M1130 330L1177 342L1227 344L1255 337L1276 341L1296 331L1328 322L1359 310L1398 290L1435 312L1462 349L1510 345L1530 351L1575 336L1607 371L1648 320L1684 385L1713 372 M1195 342L1224 376 M1309 365L1340 359 M1532 456L1582 453 M1592 496L1619 491 M1130 330L1153 336L1195 342L1218 344L1241 346L1277 369L1309 365L1341 376L1360 376L1388 411L1418 430L1425 465L1455 508L1498 489L1532 456L1550 469L1592 496L1622 487 M1219 369L1286 371 M1342 435L1369 478 M1373 470L1429 464 M1502 549L1539 550 M1483 713L1491 770 M1623 761L1666 769 M1130 330L1175 351L1197 353L1219 369L1243 386L1285 398L1297 420L1342 435L1373 470L1394 483L1427 460L1444 485L1454 535L1502 549L1501 610L1485 658L1483 713L1536 708L1528 757L1559 769L1623 761L1640 801 M1188 363L1251 366 M1284 390L1311 435 M1375 402L1430 381 M1404 431L1460 423 M1468 464L1502 464 M1682 736L1702 797 M1130 330L1151 340L1188 363L1230 378L1258 383L1284 390L1324 406L1375 402L1404 431L1443 430L1468 464L1508 481L1528 537L1562 555L1600 568L1600 634L1601 712L1583 785L1640 756L1682 736L1677 778 M1278 389L1306 414 M1402 436L1448 473 M1531 482L1555 479 M1572 559L1609 559 M1592 638L1625 635 M1762 639L1794 637 M1130 330L1173 354L1200 368L1244 381L1278 389L1305 398L1333 410L1386 404L1402 436L1436 419L1473 459L1478 502L1531 482L1571 513L1572 559L1576 623L1592 638L1576 699L1630 687L1682 681L1762 639 M1202 414L1236 428 M1223 421L1230 442 M1379 507L1394 532 M1469 531L1504 534 M1130 330L1157 358L1181 398L1202 414L1223 421L1254 445L1287 482L1313 482L1332 487L1379 507L1420 496L1464 495L1469 531L1522 512L1578 495L1614 521L1653 535L1704 501 M1259 490L1259 528 M1298 498L1317 503 M1331 574L1338 597 M1333 606L1338 645 M1348 681L1392 710 M1358 722L1365 755 M1130 330L1147 357L1169 399L1202 429L1221 469L1259 490L1298 498L1317 540L1331 574L1333 606L1339 642L1348 681L1358 722L1358 767L1369 793L1428 797 M1162 470L1150 494 M1232 571L1225 611 M1514 892L1521 957 M1130 330L1143 376L1146 421L1158 445L1162 470L1171 513L1194 549L1232 571L1253 607L1274 621L1294 643L1344 642L1392 638L1455 641L1455 700L1453 727L1418 780L1402 823L1474 815L1444 870L1511 856L1514 892L1580 888 M1085 407L1048 428 M1052 462L1048 500 M1042 507L997 542 M1130 330L1110 367L1098 389L1085 407L1064 428L1052 462L1042 507L1043 534L1025 563L1007 599L1019 652L997 677L959 691L956 714L892 730 M1072 386L1057 438 M980 446L968 479 M956 513L947 543 M880 601L863 637 M887 657L861 675 M851 838L806 874 M723 863L706 874 M1130 330L1098 365L1072 386L1033 414L1002 443L980 446L970 470L956 513L957 562L910 565L880 601L887 657L879 690L836 708L867 767L894 832L851 838L782 827L803 870L723 863L712 901 M1079 365L1028 380 M1014 416L987 468 M985 422L939 431 M931 460L910 465 M1130 330L1095 350L1079 365L1056 384L1046 408L1014 416L985 422L962 447L931 460L901 448L852 441L816 417L786 407L772 456L723 458L715 491L653 457L630 473 M992 413L952 421 M942 504L889 514 M832 566L801 624 M1130 330L1089 345L1048 358L1023 371L1008 388L992 413L984 440L967 458L942 504L895 513L862 505L838 534L832 566L841 613L821 629 M1040 343L1014 372 M951 340L915 327 M892 351L861 378 M862 346L825 376 M808 369L780 388 M609 377L584 366 M1130 330L1111 331L1086 334L1040 343L995 352L951 340L930 355L892 351L862 346L845 375L808 369L757 360L736 339L709 389L664 378L630 329L609 377 M946 281L925 289 M748 196L723 176 M725 143L689 148 M586 129L558 98 M1130 330L1093 318L1057 308L1034 306L985 309L946 281L898 279L856 298L821 264L779 245L755 241L748 196L725 143L695 135L664 101L634 102L586 129 M1040 203L1037 144 M974 183L950 127 M1130 330L1107 292L1094 276L1070 239L1051 230L1040 203L1015 199L974 183L950 144L950 111L923 100L889 67L855 33L809 25L784 16L751 13L699 9L713 -40L691 -63L632 -66L621 -124 M1246 134L1288 103 M1230 82L1254 63 M1242 46L1234 4 M1327 -68L1334 -114 M1313 -108L1318 -155 M1290 -168L1313 -185 M1130 330L1140 310L1152 287L1164 263L1196 225L1229 191L1236 165L1246 134L1230 105L1230 82L1242 46L1223 18L1256 1L1289 -6L1312 -36L1327 -68L1313 -108L1290 -168 M1155 336L1156 338L1154 339 M1160 342L1162 343L1159 344 M1153 341L1154 342L1153 341 M1159 344L1160 347L1157 347 M1157 347L1157 351L1153 353 M1150 349L1149 352L1146 352 M1134 355L1126 357L1118 353 M1116 359L1111 358L1109 354 M1108 355L1102 351L1101 345 M1105 343L1103 343L1104 341 M1103 342L1099 336L1101 329 M1100 329L1098 326L1101 323 M1100 323L1102 312L1112 305 M1114 308L1128 301L1143 306 M1142 307L1155 319L1155 336 M1193 345L1195 350L1190 353 M1204 358L1207 363L1202 364 M1190 358L1193 360L1190 359 M1190 359L1191 365L1186 366 M1196 372L1195 382L1186 385 M1183 382L1181 390L1173 390 M1177 395L1163 408L1143 409 M1143 406L1118 411L1095 399 M1095 399L1084 398L1078 388 M1080 386L1067 379L1064 364 M1071 360L1067 360L1070 357 M1064 359L1054 344L1058 327 M1069 316L1075 293L1094 279 M1246 358L1251 367L1241 372 M1239 400L1238 416L1223 421 M1225 424L1222 438L1208 439 M1150 448L1111 456L1076 437 M1069 453L1049 450L1039 432 M1058 411L1039 401L1033 380 M1005 394L996 394L1001 387 M1029 375L1015 352L1020 325 M1020 325L1014 314L1022 305 M1050 219L1120 185L1193 209 M1194 208L1262 270L1263 362 M1303 372L1310 386L1296 393 M1286 406L1290 420L1276 423 M1286 430L1284 453L1262 460 M1234 474L1203 504L1160 505 M1161 510L1102 521L1048 493 M1033 524L1001 520L986 492 M990 487L954 466L943 426 M985 405L974 405L981 396 M960 405L936 366L944 321 M949 322L940 304L953 289 M943 287L960 217L1018 174 M1007 159L1114 107L1228 143 M1367 387L1376 406L1357 417 M1394 454L1408 463L1392 458 M1336 431L1342 449L1324 454 M1357 475L1353 508L1322 519 M1304 502L1298 527L1273 529 M1280 539L1235 582L1173 584 M1172 577L1091 593L1018 554 M1017 556L980 552L962 519 M940 544L890 516L875 461 M918 439L902 439L912 427 M914 426L884 376L894 319 M844 317L830 289L851 266 M857 267L883 165L967 102 M977 117L1111 53L1252 98 M1270 63L1421 198L1423 400 M400 805L424 827 M260 780L292 785L333 795L363 792L400 805L426 803L466 809 M361 895L386 907 M260 780L291 801L324 826L338 850L361 895L382 906L414 911L420 944L417 972L408 1010L432 1016L458 1019L478 1055 M279 853L303 880 M260 780L267 818L279 853L299 887L306 930L316 954L333 988L367 1026L392 1062 M259 863L232 912 M260 780L260 815L259 863L255 898L257 933L249 957 M208 836L157 843 M179 863L113 876 M152 926L152 978 M130 950L119 1001 M260 780L225 815L208 836L179 863L162 895L152 926L130 950 M134 784L86 821 M71 774L38 761 M260 780L227 781L205 778L160 782L134 784L104 780L71 774L41 795L12 771L-17 764L-41 794L-79 789 M381 625L406 616 M260 780L290 749L316 725L342 682L369 659L381 625L391 605L414 581 M365 588L387 577 M394 566L393 515 M260 780L278 762L304 729L330 698L349 672L364 633L365 588L394 566L429 555L451 530 M260 780L286 762L311 750L338 729L381 706L402 685L436 670L459 670L475 629 M282 793L277 802L267 805 M267 806L263 809L258 807 M258 806L248 805L241 798 M241 798L234 790L234 780 M234 780L250 754L279 763 M277 765L278 764L277 765 M279 764L281 764L280 766 M278 767L283 775L282 783 M278 845L267 851L254 847 M255 837L234 835L218 820 M213 825L196 805L195 780 M204 780L239 725L302 743 M304 741L307 739L305 742 M305 742L309 742L308 746 M315 741L330 764L327 791 M341 829L321 860L286 871 M251 892L208 887L178 857 M181 854L153 822L152 779 M344 705L350 701L346 707 M356 699L365 698L362 707 M347 718L371 754L366 797%22 stroke=%22rgba(215,228,255,0.17)%22 stroke-width=%220.9%22/%3E%3Ccircle cx=%221130%22 cy=%22330%22 r=%226%22 fill=%22rgba(215,228,255,0.17)%22/%3E%3Ccircle cx=%22260%22 cy=%22780%22 r=%224%22 fill=%22rgba(215,228,255,0.17)%22/%3E%3C/g%3E%3C/svg%3E"),
-        radial-gradient(48rem 34rem at 80% 2%, color-mix(in srgb, var(--amethyst) 13%, transparent), transparent 70%),
-        radial-gradient(40rem 34rem at 8% 64%, color-mix(in srgb, var(--teal) 7%, transparent), transparent 72%),
+        radial-gradient(48rem 34rem at 80% 2%, color-mix(in srgb, var(--silver) 10%, transparent), transparent 70%),
+        radial-gradient(30rem 24rem at 92% 10%, color-mix(in srgb, var(--amethyst) 6%, transparent), transparent 70%),
+        radial-gradient(40rem 34rem at 8% 64%, color-mix(in srgb, var(--teal) 6%, transparent), transparent 72%),
         var(--mp-sky-cracks, none),
     radial-gradient(0.6px 0.6px at 163px 28px, rgba(255,255,255,0.62), transparent),
     radial-gradient(0.7px 0.7px at 57px 35px, rgba(255,255,255,0.59), transparent),
@@ -827,17 +830,17 @@ body.mirrorgate-page::before {
     linear-gradient(118deg, transparent 28%, color-mix(in srgb, var(--mp-accent-2) 5%, transparent) 44%, color-mix(in srgb, var(--mp-accent) 4%, transparent) 52%, transparent 66%),
     radial-gradient(ellipse 85% 75% at 50% 45%, transparent 55%, rgba(0, 0, 0, 0.55) 100%),
     linear-gradient(180deg, #04050a 0%, #06070f 55%, #090b16 100%);
-    background-size: min(1400px, 140vw) auto, 100% 100%, 100% 100%, cover, 197px 197px, 197px 197px, 197px 197px, 197px 197px, 313px 313px, 313px 313px, 313px 313px, 313px 313px, 313px 313px, 487px 487px, 487px 487px, 487px 487px, 487px 487px, 487px 487px, 487px 487px, 701px 701px, 701px 701px, 701px 701px, 701px 701px, 701px 701px, 701px 701px, 100% 100%, 100% 100%, 100% 100%;
-    background-position: 100% 0, 0 0, 0 0, center;
-    background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+    background-size: min(1400px, 140vw) auto, 100% 100%, 100% 100%, 100% 100%, cover, 197px 197px, 197px 197px, 197px 197px, 197px 197px, 313px 313px, 313px 313px, 313px 313px, 313px 313px, 313px 313px, 487px 487px, 487px 487px, 487px 487px, 487px 487px, 487px 487px, 487px 487px, 701px 701px, 701px 701px, 701px 701px, 701px 701px, 701px 701px, 701px 701px, 100% 100%, 100% 100%, 100% 100%;
+    background-position: 100% 0, 0 0, 0 0, 0 0, center;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
 }
 .mirrorgate-page .site-grid { opacity: .22; }
 .realm-lantern { background: radial-gradient(closest-side, transparent 0 13%, rgb(3 4 9 / .14) 24%, rgb(3 4 9 / .34) 46%, rgb(3 4 9 / .4)); }
-.realm-mist i { background: radial-gradient(closest-side, color-mix(in srgb, var(--amethyst) 7%, transparent), color-mix(in srgb, var(--silver) 3%, transparent) 45%, transparent); }
+.realm-mist i { background: radial-gradient(closest-side, color-mix(in srgb, var(--silver) 6%, transparent), color-mix(in srgb, var(--silver) 2%, transparent) 45%, transparent); }
 .realm-shards i {
     background:
-        linear-gradient(112deg, rgb(255 255 255 / .4), transparent 34%, transparent 66%, rgb(255 255 255 / .12)),
-        linear-gradient(200deg, color-mix(in srgb, var(--silver) 40%, transparent), color-mix(in srgb, var(--amethyst) 26%, transparent) 70%, transparent);
+        linear-gradient(112deg, rgb(255 255 255 / .5), transparent 34%, transparent 66%, rgb(255 255 255 / .16)),
+        linear-gradient(200deg, color-mix(in srgb, var(--silver-hi) 42%, transparent), color-mix(in srgb, var(--silver-lo) 30%, transparent) 60%, color-mix(in srgb, var(--amethyst) 14%, transparent));
 }
 
 /* brushed silver headings with the reflected rule */
@@ -862,8 +865,8 @@ body.mirrorgate-page::before {
     height: 6px;
     content: "";
     background:
-        linear-gradient(90deg, var(--amethyst), var(--silver-lo) 60%, transparent) top / 100% 1px no-repeat,
-        linear-gradient(90deg, color-mix(in srgb, var(--amethyst) 35%, transparent), transparent 70%) 0 4px / 100% 1px no-repeat;
+        linear-gradient(90deg, var(--silver-hi), var(--silver-lo) 60%, transparent) top / 100% 1px no-repeat,
+        linear-gradient(90deg, color-mix(in srgb, var(--silver) 35%, transparent), transparent 70%) 0 4px / 100% 1px no-repeat;
 }
 .mirrorgate-page .mirrored-title-prefix {
     background: linear-gradient(180deg, var(--silver-hi), var(--silver-lo));
@@ -874,20 +877,21 @@ body.mirrorgate-page::before {
 /* "Realms": an outlined word with its reflection below, like the title card */
 .mirrorgate-page .detail-title .outline {
     position: relative;
-    -webkit-text-stroke: 1.3px color-mix(in srgb, var(--amethyst) 75%, var(--silver-hi));
-    text-shadow: 0 0 44px color-mix(in srgb, var(--amethyst) 30%, transparent);
+    -webkit-text-stroke: 1.3px var(--silver);
+    text-shadow: 0 0 44px color-mix(in srgb, var(--silver) 22%, transparent), 0 0 90px color-mix(in srgb, var(--amethyst) 14%, transparent);
     -webkit-box-reflect: below -.14em linear-gradient(transparent 58%, rgb(0 0 0 / .22));
 }
 .realm-ornament { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 20'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23b39af0' stop-opacity='0'/%3E%3Cstop offset='.35' stop-color='%23b39af0'/%3E%3Cstop offset='.65' stop-color='%23c9d3e0'/%3E%3Cstop offset='1' stop-color='%23c9d3e0' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke-width='1.2'%3E%3Cpath d='M4 10h138M178 10h138' stroke='url(%23g)'/%3E%3Cpath d='M160 2l8 8-8 8-8-8z' stroke='%23f4f7fb'/%3E%3Cpath d='M163 5l-4 4 3 2-3 4' stroke='%23b39af0'/%3E%3Ccircle cx='146' cy='10' r='1.6' fill='%23b39af0'/%3E%3Ccircle cx='174' cy='10' r='1.6' fill='%23c9d3e0'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; }
 
-/* chapter diamonds and buttons: amethyst cut glass with dark ink */
-.mirrorgate-page .section-label span { color: var(--on-accent); background: linear-gradient(150deg, var(--silver-hi) 0 22%, color-mix(in srgb, var(--amethyst) 85%, #fff) 23% 50%, var(--amethyst) 51% 100%); }
-.mirrorgate-page .section-label::before { background: radial-gradient(closest-side, color-mix(in srgb, var(--amethyst) 40%, transparent), transparent); }
-.mirrorgate-page .button { color: var(--on-accent); background: linear-gradient(180deg, color-mix(in srgb, var(--amethyst) 100%, #fff 22%), var(--amethyst) 55%, color-mix(in srgb, var(--amethyst) 80%, #2a1b55)); box-shadow: 0 0 0 1px rgb(255 255 255 / .12) inset, 0 10px 30px -12px var(--amethyst); }
-.mirrorgate-page .button-ghost { color: var(--silver); box-shadow: inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 var(--glass-shine); background: var(--glass); backdrop-filter: blur(10px); }
-.mirrorgate-page .button-ghost:hover { color: var(--silver-hi); background: color-mix(in srgb, var(--amethyst) 12%, var(--glass)); }
-#roadmap .detail-section-head > p::first-letter { color: var(--on-accent); background: linear-gradient(150deg, var(--silver-hi) 0 30%, var(--amethyst) 31%); }
-.vault-steps li::before { color: var(--on-accent); background: linear-gradient(150deg, var(--silver-hi) 0 30%, var(--amethyst) 31%); }
+/* chapter diamonds and buttons: brushed silver with dark ink */
+.mirrorgate-page .section-label span { color: var(--on-accent); background: linear-gradient(150deg, #fff 0 22%, #d5dde7 23% 50%, #9eaabb 51% 100%); }
+.mirrorgate-page .section-label::before { background: radial-gradient(closest-side, color-mix(in srgb, var(--silver) 34%, transparent), color-mix(in srgb, var(--amethyst) 10%, transparent) 60%, transparent); }
+.mirrorgate-page .button { color: var(--on-accent); background: var(--brushed); box-shadow: 0 0 0 1px rgb(255 255 255 / .35) inset, 0 -2px 0 rgb(0 0 0 / .18) inset, 0 10px 30px -12px color-mix(in srgb, var(--silver) 70%, transparent); text-shadow: 0 1px 0 rgb(255 255 255 / .5); }
+.mirrorgate-page .button:hover { filter: brightness(1.06); box-shadow: 0 0 0 1px rgb(255 255 255 / .45) inset, 0 -2px 0 rgb(0 0 0 / .18) inset, 0 12px 34px -10px color-mix(in srgb, var(--silver) 80%, transparent), 0 0 24px -6px color-mix(in srgb, var(--amethyst) 45%, transparent); }
+.mirrorgate-page .button-ghost { color: var(--silver); box-shadow: inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 var(--glass-shine); background: var(--glass); backdrop-filter: blur(10px); text-shadow: none; }
+.mirrorgate-page .button-ghost:hover { color: var(--silver-hi); background: color-mix(in srgb, var(--silver) 10%, var(--glass)); }
+#roadmap .detail-section-head > p::first-letter { color: var(--on-accent); background: linear-gradient(150deg, #fff 0 30%, #b9c4d2 31%); }
+.vault-steps li::before { color: var(--on-accent); background: linear-gradient(150deg, #fff 0 30%, #b9c4d2 31%); }
 .mirrorgate-page .copy-code { color: var(--on-accent); }
 .realm-map-open, .realm-map-option[aria-pressed="true"] { color: var(--on-accent); }
 
@@ -907,45 +911,188 @@ body.mirrorgate-page::before {
     backdrop-filter: blur(12px);
     box-shadow: inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 var(--glass-shine), 0 18px 40px -22px rgb(0 0 0 / .8);
 }
-.mirrorgate-page .detail-stats > div { background-image: linear-gradient(180deg, rgb(255 255 255 / .04), transparent 60%); }
-.mirrorgate-page .detail-stats > div::before { background: linear-gradient(135deg, var(--silver-hi) 0 45%, var(--amethyst) 46%); box-shadow: 0 0 10px var(--amethyst); }
-.mirrorgate-page .detail-stats strong { color: var(--silver-hi); background: linear-gradient(180deg, var(--silver-hi), var(--silver-lo)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.journey-card { background-image: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--amethyst) 9%, transparent), transparent 55%); }
-.journey-card > strong { background: linear-gradient(180deg, var(--silver-hi), var(--amethyst)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.journey-card-long { background-image: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--teal) 14%, transparent), transparent 55%); }
-.production { background-image: radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--amethyst) 10%, transparent), transparent 50%); }
-.production-card { box-shadow: inset 2px 0 0 var(--amethyst), inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 var(--glass-shine); }
+.mirrorgate-page .detail-stats > div { background-image: linear-gradient(180deg, rgb(255 255 255 / .05), transparent 60%); }
+.mirrorgate-page .detail-stats > div::before { background: linear-gradient(135deg, #fff 0 45%, #9eaabb 46%); box-shadow: 0 0 10px color-mix(in srgb, var(--silver) 70%, transparent); }
+.mirrorgate-page .detail-stats strong { color: var(--silver-hi); background: var(--brushed); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.journey-card { background-image: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--silver) 8%, transparent), transparent 55%); }
+.journey-card > strong { background: var(--brushed); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.journey-card-long { background-image: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--amethyst) 9%, transparent), transparent 55%); }
+.journey-titles li { color: var(--silver); }
+.production { background-image: radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--silver) 8%, transparent), transparent 50%); }
+.production-card { box-shadow: inset 2px 0 0 var(--silver), inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 var(--glass-shine); }
 .production-bar { background: color-mix(in srgb, var(--silver-lo) 14%, transparent); }
-.production-bar span { background: linear-gradient(90deg, var(--amethyst), var(--teal)); box-shadow: 0 0 10px var(--amethyst); }
-.realm-glance { box-shadow: inset 0 2px 0 var(--amethyst), inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 var(--glass-shine); }
-.realm-glance dt { color: var(--amethyst); }
-.status-present { color: #cfe0f5; background: rgb(143 182 224 / .16); }
-.status-progress { color: #dccfff; background: rgb(179 154 240 / .18); }
-.status-planned { color: #b9c2ce; background: rgb(154 166 180 / .1); }
+.production-bar span { background: linear-gradient(90deg, var(--silver-lo), var(--silver-hi)); box-shadow: 0 0 10px color-mix(in srgb, var(--silver) 70%, transparent); }
+.production-figure strong { color: var(--silver-hi); }
+.realm-glance { box-shadow: inset 0 2px 0 color-mix(in srgb, var(--silver) 75%, transparent), inset 0 0 0 1px var(--glass-edge), inset 0 1px 0 var(--glass-shine); }
+.realm-glance dt { color: var(--silver-lo); }
+.status-present { color: #dde6f1; background: rgb(201 211 224 / .14); }
+.status-progress { color: #f4f7fb; background: rgb(244 247 251 / .12); box-shadow: inset 0 0 0 1px rgb(244 247 251 / .18); }
+.status-planned { color: #9aa6b4; background: rgb(154 166 180 / .08); }
 .mirrorgate-page .code-box { background: #080a10; box-shadow: inset 0 0 0 1px var(--glass-edge); }
 .mirrorgate-page .code-box code,
 .vault-steps code { color: var(--silver); }
+.mirrorgate-page .copy-code { background: var(--brushed); }
 .vault-steps { background: rgb(10 13 19 / .55); }
 .tool-group-planned .tool-card { background: transparent; backdrop-filter: none; box-shadow: none; outline-color: color-mix(in srgb, var(--silver-lo) 25%, transparent); }
-.tool-icon { background: linear-gradient(150deg, color-mix(in srgb, var(--silver-hi) 18%, transparent), color-mix(in srgb, var(--amethyst) 22%, transparent)); }
+.tool-icon { color: var(--silver-hi); background: linear-gradient(150deg, color-mix(in srgb, var(--silver-hi) 22%, transparent), color-mix(in srgb, var(--silver-lo) 12%, transparent)); }
+.tool-link, .realm-license-link { color: var(--silver); }
 .journey-card::after,
-.tool-card::after { background: linear-gradient(115deg, transparent 35%, color-mix(in srgb, var(--silver-hi) 12%, transparent) 48%, color-mix(in srgb, var(--amethyst) 12%, transparent) 52%, transparent 65%); }
+.tool-card::after { background: linear-gradient(115deg, transparent 35%, color-mix(in srgb, var(--silver-hi) 14%, transparent) 48%, color-mix(in srgb, var(--silver) 8%, transparent) 52%, transparent 65%); }
 
-/* the mirror in the hero: slate frame, silver arch, amethyst glass */
-.mirrorgate-visual { background: radial-gradient(circle at 50% 35%, color-mix(in srgb, var(--amethyst) 16%, transparent), transparent 38%), linear-gradient(160deg, #10141d, #07090e); box-shadow: inset 0 0 0 1px var(--glass-edge), var(--shadow); }
-.mirror-arch-outer { border-color: color-mix(in srgb, var(--silver) 85%, transparent); box-shadow: 0 0 0 16px color-mix(in srgb, var(--silver) 4%, transparent), 0 0 40px color-mix(in srgb, var(--amethyst) 25%, transparent), 0 30px 80px rgb(0 0 0 / .45); }
-.mirror-arch-inner { border-color: color-mix(in srgb, var(--amethyst) 55%, transparent); }
-.mirror-surface { background: radial-gradient(circle at 42% 38%, color-mix(in srgb, var(--amethyst) 38%, transparent), rgb(8 9 20 / .96) 62%); box-shadow: inset 0 0 75px color-mix(in srgb, var(--amethyst) 18%, transparent); }
-.mirror-surface b { border-color: color-mix(in srgb, var(--silver) 50%, transparent); }
-.mirror-star { background: var(--silver-hi); box-shadow: 0 0 14px var(--amethyst); }
-.mirror-inscription text { fill: color-mix(in srgb, var(--silver) 40%, transparent); }
+/* ─── The mirror: a standing glass in a brushed-silver frame ──────────── */
+.mirrorgate-visual { background: radial-gradient(circle at 50% 36%, color-mix(in srgb, var(--silver) 12%, transparent), transparent 40%), radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--amethyst) 8%, transparent), transparent 30%), linear-gradient(160deg, #10141d, #07090e); box-shadow: inset 0 0 0 1px var(--glass-edge), var(--shadow); }
+/* the frame: a ring of brushed silver, lit from the upper left */
+.mirror-arch-outer {
+    border: 0;
+    padding: 11px;
+    background: conic-gradient(from 210deg, #f4f7fb, #8d99a9 12%, #e6ecf3 24%, #6f7b8b 38%, #dfe6ee 52%, #8995a5 66%, #f7f9fc 80%, #7f8b9b 90%, #f4f7fb);
+    -webkit-mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    filter: drop-shadow(0 0 18px color-mix(in srgb, var(--silver) 35%, transparent));
+    box-shadow: none;
+}
+.mirror-arch-inner { inset: 16px; border: 1px solid color-mix(in srgb, var(--silver-hi) 40%, transparent); box-shadow: inset 0 0 0 4px rgb(0 0 0 / .35); }
+.mirror-surface {
+    inset: 22px;
+    background:
+        radial-gradient(1px 1px at 22% 18%, #fff, transparent),
+        radial-gradient(1.4px 1.4px at 70% 26%, #fff, transparent),
+        radial-gradient(1px 1px at 38% 62%, rgb(255 255 255 / .8), transparent),
+        radial-gradient(1.2px 1.2px at 80% 72%, rgb(220 228 255 / .9), transparent),
+        radial-gradient(1px 1px at 56% 40%, rgb(255 255 255 / .7), transparent),
+        radial-gradient(1px 1px at 14% 80%, rgb(255 255 255 / .6), transparent),
+        radial-gradient(circle at 42% 34%, color-mix(in srgb, var(--silver) 26%, transparent), transparent 46%),
+        radial-gradient(circle at 60% 70%, color-mix(in srgb, var(--amethyst) 16%, transparent), transparent 50%),
+        linear-gradient(180deg, #0d111a, #05060b);
+    box-shadow: inset 0 0 60px rgb(0 0 0 / .7), inset 0 0 0 1px rgb(255 255 255 / .06);
+}
+/* an endless corridor of doors inside the glass */
+.mirror-depth { position: absolute; inset: 0; pointer-events: none; }
+.mirror-depth i {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: var(--d);
+    height: var(--d);
+    border: 1px solid color-mix(in srgb, var(--silver) 30%, transparent);
+    border-radius: 50% 50% 24% 24%;
+    opacity: var(--o);
+    animation: mirror-corridor 9s ease-in-out infinite alternate;
+}
+.mirror-depth i:nth-child(1) { --d: 78%; --o: .55; }
+.mirror-depth i:nth-child(2) { --d: 58%; --o: .38; animation-delay: -1s; }
+.mirror-depth i:nth-child(3) { --d: 40%; --o: .24; animation-delay: -2s; }
+.mirror-depth i:nth-child(4) { --d: 25%; --o: .14; animation-delay: -3s; }
+@keyframes mirror-corridor { to { scale: 1.06; } }
+/* the crown gem and two side studs */
+.mirror-crown {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    translate: -50% 0;
+    rotate: 45deg;
+    background: linear-gradient(135deg, #fff 0 30%, #c9d3e0 31% 50%, var(--amethyst) 51% 72%, #5f47a8 73%);
+    box-shadow: 0 0 0 2px #dfe6ee, 0 0 22px color-mix(in srgb, var(--amethyst) 60%, transparent), 0 0 40px color-mix(in srgb, var(--silver) 30%, transparent);
+    border-radius: 3px;
+}
+.mirror-stud { position: absolute; top: 52%; width: 12px; height: 12px; rotate: 45deg; background: linear-gradient(135deg, #fff 0 45%, #8d99a9 46%); box-shadow: 0 0 10px color-mix(in srgb, var(--silver) 60%, transparent); }
+.mirror-stud-left { left: -6px; }
+.mirror-stud-right { right: -6px; }
+.mirror-surface b { border-color: color-mix(in srgb, var(--silver-hi) 45%, transparent); }
+.mirror-surface i { background: linear-gradient(115deg, transparent 36%, rgb(255 255 255 / .16) 49%, transparent 57%); z-index: 1; }
+.mirror-star { background: var(--silver-hi); box-shadow: 0 0 14px var(--silver); }
+.mirror-inscription text { fill: color-mix(in srgb, var(--silver) 46%, transparent); }
 .mirrorgate-page .detail-visual-label { color: color-mix(in srgb, var(--silver) 55%, transparent); }
-.realm-d20 .d20-face { fill: color-mix(in srgb, var(--amethyst) 18%, #0d1018); }
-.realm-d20 .d20-edge { stroke: var(--silver); }
+.realm-d20 .d20-face { fill: color-mix(in srgb, var(--silver) 14%, #0d1018); }
+.realm-d20 .d20-edge { stroke: var(--silver-hi); }
 .realm-d20 text { fill: var(--silver-hi); }
-.mirrorgate-visual .realm-d20 { filter: drop-shadow(0 0 18px color-mix(in srgb, var(--amethyst) 45%, transparent)); }
+.mirrorgate-visual .realm-d20 { filter: drop-shadow(0 0 16px color-mix(in srgb, var(--silver) 45%, transparent)); }
+.mirror-quote { color: var(--silver); }
 .realm-map-frame { background: #080a10; }
 .realm-map-switch { background: rgb(12 15 22 / .82); }
+.realm-die3d.is-crit { filter: drop-shadow(0 0 28px var(--silver-hi)) drop-shadow(0 0 40px color-mix(in srgb, var(--amethyst) 60%, transparent)); }
+
+/* ─── The secret: knock three times ─────────────────────────────────────
+   The mirror is a door pretending to be furniture. Knock on it three times
+   and it cracks; behind the crack the Professor left a note in mirror
+   writing, and a way to step through to the other side of the page. */
+.mirror-portal { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.mirror-portal:focus-visible { outline: 2px solid var(--silver-hi); outline-offset: 10px; border-radius: 50% 50% 24% 24%; }
+.mirror-portal.is-knocked { animation: mirror-knock 380ms ease-out; }
+@keyframes mirror-knock {
+    0%, 100% { translate: 0 0; }
+    20% { translate: -3px 0; }
+    45% { translate: 3px 0; }
+    70% { translate: -1px 0; }
+}
+.mirror-portal.is-knocked .mirror-surface b { animation: mirror-ripple 1.4s ease-out 1; }
+.mirror-crack { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
+.mirror-crack path { fill: none; stroke: #f4f7fb; stroke-width: 1.2; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 3px rgb(255 255 255 / .8)); transition: stroke-dashoffset 900ms cubic-bezier(.2, .8, .2, 1); }
+.mirror-crack path:nth-child(n + 4) { stroke-width: .7; opacity: .8; transition-delay: 220ms; }
+.mirror-portal.remembers .mirror-crack path { stroke-dashoffset: 0; opacity: .14; filter: none; transition: none; }
+.mirror-portal.is-cracked .mirror-crack path { stroke-dashoffset: 0; opacity: 1; }
+.mirror-portal.is-cracked .mirror-surface { animation: mirror-flash 900ms ease-out; }
+@keyframes mirror-flash { 0% { filter: brightness(2.4); } 100% { filter: none; } }
+
+.mirror-secret {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 6;
+    width: min(88%, 420px);
+    padding: 24px 26px 20px;
+    translate: -50% -50%;
+    border-radius: 18px;
+    color: var(--silver-hi);
+    background: linear-gradient(160deg, rgb(24 29 40 / .9), rgb(8 10 16 / .94));
+    box-shadow: inset 0 0 0 1px rgb(244 247 251 / .22), inset 0 1px 0 rgb(255 255 255 / .1), 0 30px 70px rgb(0 0 0 / .7), 0 0 50px -10px color-mix(in srgb, var(--silver) 50%, transparent);
+    backdrop-filter: blur(14px);
+    text-align: center;
+    opacity: 0;
+    scale: .92;
+    transition: opacity 600ms ease 500ms, scale 700ms cubic-bezier(.2, .8, .2, 1) 500ms;
+}
+.mirror-secret.is-open { opacity: 1; scale: 1; }
+.mirror-secret[hidden] { display: none; }
+.mirror-secret-label { margin: 0 0 8px; color: var(--silver-lo); font-family: var(--caps); font-size: .7rem; font-weight: 700; letter-spacing: .16em; }
+/* written backwards: hover, focus or tap to read it the right way round */
+.mirror-secret-text { display: block; margin: 0; outline: none; transform: scaleX(-1); transition: transform 700ms cubic-bezier(.2, .8, .2, 1); cursor: help; }
+.mirror-secret-text:hover,
+.mirror-secret-text:focus { transform: none; }
+.mirror-secret-text strong { display: block; margin-bottom: 6px; font-family: var(--caps); font-size: 1.3rem; font-weight: 700; background: var(--brushed); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.mirror-secret-text span { display: block; color: var(--ink-soft); font-size: 1.02rem; font-style: italic; line-height: 1.5; }
+.mirror-secret-text em { display: block; margin-top: 8px; color: var(--silver-lo); font-family: var(--caps); font-size: .72rem; font-style: normal; letter-spacing: .12em; }
+.mirror-secret-hint { margin: 10px 0 14px; color: var(--muted); font-family: var(--font); font-size: .74rem; }
+.mirror-through { display: inline-flex; min-height: 38px; padding: 0 18px; align-items: center; border: 0; border-radius: var(--shape-full); color: var(--on-accent); background: var(--brushed); cursor: pointer; font-family: var(--caps); font-size: .8rem; font-weight: 700; letter-spacing: .05em; box-shadow: 0 0 0 1px rgb(255 255 255 / .35) inset, 0 8px 22px -8px color-mix(in srgb, var(--silver) 70%, transparent); }
+.mirror-through:focus-visible { outline: 2px solid var(--silver-hi); outline-offset: 3px; }
+.mirror-through .through-out { display: none; }
+html.is-through .mirror-through .through-in { display: none; }
+html.is-through .mirror-through .through-out { display: inline; }
+
+/* the other side: the whole page is its own reflection, tinted and cold */
+.mirrorgate-page main { transition: transform 1100ms cubic-bezier(.6, 0, .2, 1), filter 1100ms ease; }
+html.is-through .mirrorgate-page main { transform: scaleX(-1); filter: hue-rotate(-12deg) saturate(.6) brightness(.92); }
+html.is-through body.mirrorgate-page::before { transform: scaleX(-1); filter: hue-rotate(40deg) brightness(1.15); }
+html.is-through .realm-shards { animation-direction: reverse; }
+html.is-through .realm-shards i { animation-direction: reverse; }
+.mirror-return { position: fixed; left: 50%; bottom: 24px; z-index: 120; display: none; min-height: 44px; padding: 0 22px; translate: -50% 0; border: 0; border-radius: var(--shape-full); color: var(--on-accent); background: var(--brushed); cursor: pointer; font-family: var(--caps); font-size: .85rem; font-weight: 700; letter-spacing: .05em; box-shadow: 0 0 0 1px rgb(255 255 255 / .4) inset, 0 14px 40px -10px rgb(0 0 0 / .8), 0 0 30px -6px color-mix(in srgb, var(--silver) 70%, transparent); }
+html.is-through .mirror-return { display: inline-flex; align-items: center; animation: return-in 500ms cubic-bezier(.2, .8, .2, 1); }
+.mirror-return:focus-visible { outline: 2px solid var(--silver-hi); outline-offset: 3px; }
+@keyframes return-in { from { opacity: 0; translate: -50% 20px; } }
+/* the note itself stays readable from the other side */
+html.is-through .mirror-secret { transform: scaleX(-1); }
+
+@media (prefers-reduced-motion: reduce) {
+    .mirror-depth i,
+    .mirror-portal.is-knocked,
+    .mirror-portal.is-cracked .mirror-surface { animation: none; }
+    .mirror-crack path,
+    .mirror-secret,
+    .mirror-secret-text,
+    .mirrorgate-page main { transition: none; }
+}
 
 /* ─── Inside the vault: screenshots ─────────────────────────────────────── */
 .realm-gallery {
@@ -970,9 +1117,9 @@ body.mirrorgate-page::before {
 .realm-shot-full { grid-column: 1 / -1; }
 .realm-shot a { display: block; overflow: hidden; flex: 1; background: #06070b; }
 .realm-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: scale 900ms var(--effects); }
-.realm-shot:hover { translate: 0 -3px; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--amethyst) 45%, transparent), 0 28px 60px -24px rgb(0 0 0 / .9), 0 0 30px -10px var(--amethyst); }
+.realm-shot:hover { translate: 0 -3px; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--silver-hi) 40%, transparent), 0 28px 60px -24px rgb(0 0 0 / .9), 0 0 30px -10px color-mix(in srgb, var(--silver) 60%, transparent); }
 .realm-shot:hover img { scale: 1.03; }
-.realm-shot a:focus-visible { outline: 2px solid var(--amethyst); outline-offset: -2px; }
+.realm-shot a:focus-visible { outline: 2px solid var(--silver-hi); outline-offset: -2px; }
 .realm-shot figcaption { padding: 14px 18px 16px; color: var(--ink-soft); font-size: .98rem; line-height: 1.45; }
 .realm-shot figcaption strong { display: block; margin-bottom: 2px; color: var(--silver-hi); font-family: var(--caps); font-size: .78rem; font-weight: 700; letter-spacing: .1em; }
 .realm-shot-tall a { aspect-ratio: 4 / 5; }
@@ -1003,9 +1150,10 @@ body.mirrorgate-page::before {
     gap: 44px;
     border-radius: var(--shape-xxl);
     background:
-        radial-gradient(60% 80% at 0% 0%, color-mix(in srgb, var(--amethyst) 18%, transparent), transparent 70%),
+        radial-gradient(60% 80% at 0% 0%, color-mix(in srgb, var(--silver) 12%, transparent), transparent 70%),
+        radial-gradient(40% 60% at 10% 10%, color-mix(in srgb, var(--amethyst) 10%, transparent), transparent 70%),
         linear-gradient(160deg, #11141d, #07080d);
-    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--amethyst) 30%, transparent), inset 0 1px 0 var(--glass-shine), 0 30px 70px -30px rgb(0 0 0 / .9);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--silver) 26%, transparent), inset 0 1px 0 var(--glass-shine), 0 30px 70px -30px rgb(0 0 0 / .9);
 }
 .mp-promo::before {
     position: absolute;
@@ -1028,7 +1176,7 @@ body.mirrorgate-page::before {
 }
 .mp-seal svg { width: 56px; height: 56px; fill: none; stroke: #fff; stroke-width: 1.6; stroke-linejoin: round; }
 .mp-promo h2 { margin: 10px 0 14px; font-size: clamp(2.4rem, 4.6vw, 4rem); line-height: 1; }
-.mp-promo h2 span { color: var(--amethyst); -webkit-text-fill-color: var(--amethyst); }
+.mp-promo h2 b { color: var(--amethyst); -webkit-text-fill-color: var(--amethyst); font-weight: inherit; }
 .mp-promo-copy > p { margin: 0 0 18px; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
 .mp-features { display: flex; margin: 0 0 24px; padding: 0; flex-wrap: wrap; gap: 8px; list-style: none; }
 .mp-features li {
@@ -1042,7 +1190,7 @@ body.mirrorgate-page::before {
     font-size: .82rem;
     font-weight: 600;
 }
-.mp-features li::before { position: absolute; top: 50%; left: 11px; width: 6px; height: 6px; content: ""; background: var(--amethyst); transform: translateY(-50%) rotate(45deg); box-shadow: 0 0 6px var(--amethyst); }
+.mp-features li::before { position: absolute; top: 50%; left: 11px; width: 6px; height: 6px; content: ""; background: linear-gradient(135deg, #fff 0 45%, #9eaabb 46%); transform: translateY(-50%) rotate(45deg); box-shadow: 0 0 6px color-mix(in srgb, var(--silver) 70%, transparent); }
 .mp-promo .detail-actions { justify-content: flex-start; }
 .mp-promo-note { margin: 16px 0 0; color: var(--muted); font-family: var(--font); font-size: .85rem; }
 .mp-promo-shots { position: relative; height: 470px; }

@@ -105,10 +105,11 @@
     placeholder.replaceWith(canvas);
     const context = canvas.getContext('2d');
 
-    const GOLD = [232, 193, 115];
-    const DARK = [22, 17, 10];
+    // Brushed silver, like the vault's theme; a natural 20 flares white.
+    const SILVER = [201, 211, 224];
+    const DARK = [12, 14, 20];
     const EMBER = [196, 83, 58];
-    const BRIGHT = [255, 243, 207];
+    const BRIGHT = [250, 252, 255];
     const LIGHT = normalize([-0.45, 0.62, 0.66]);
     const CAMERA = 5.2; // Distance of the eye, in die radii: a gentle perspective.
     const mix = (from, to, amount) => from.map((channel, index) => Math.round(channel + (to[index] - channel) * amount));
@@ -130,7 +131,7 @@
         const radius = width * 0.34;
         const centreX = width / 2;
         const centreY = width / 2 + width * 0.04 - lift * ratio;
-        const tint = mood < 0 ? EMBER : mood > 0 ? BRIGHT : GOLD;
+        const tint = mood < 0 ? EMBER : mood > 0 ? BRIGHT : SILVER;
         const project = (point) => {
             const depth = CAMERA / (CAMERA - point[2]);
             return [centreX + point[0] * depth * radius, centreY - point[1] * depth * radius];
@@ -163,8 +164,8 @@
             context.lineTo(corners[1][0], corners[1][1]);
             context.lineTo(corners[2][0], corners[2][1]);
             context.closePath();
-            // Faces stay gold on a natural 20 (only brighter); edges and numbers take the tint.
-            context.fillStyle = rgb(mix(DARK, mood < 0 ? EMBER : GOLD, 0.1 + 0.46 * lit ** 1.3 + (mood > 0 ? 0.2 : 0)));
+            // Faces stay silver on a natural 20 (only brighter); edges and numbers take the tint.
+            context.fillStyle = rgb(mix(DARK, mood < 0 ? EMBER : SILVER, 0.12 + 0.52 * lit ** 1.3 + (mood > 0 ? 0.2 : 0)));
             context.fill();
             context.lineJoin = 'round';
             context.lineWidth = 1.3 * ratio;

@@ -175,7 +175,6 @@
     };
 
     const mirrorgate = {
-        '✦ What the mirror shows is not what stands before it ✦ Every door remembers who opened it ✦': '✦ Was der Spiegel zeigt, ist nicht, was vor ihm steht ✦ Jede Tür erinnert sich, wer sie geöffnet hat ✦',
         '8 doors still sealed': '8 Türen noch versiegelt',
         '2 doors still sealed': '2 Türen noch versiegelt',
         'SRD 5.2.1 rules': 'Regeln nach SRD 5.2.1',
@@ -304,9 +303,6 @@
         'Places': 'Orte',
         'The Forest of Thieves: a quote, an at-a-glance box, and the whole truth below.': 'Der Wald der Diebe: ein Zitat, ein Überblickskasten und darunter die ganze Wahrheit.',
         'The Forest of Thieves page with a quote, an at-a-glance box and the overview': 'Die Seite zum Wald der Diebe mit Zitat, Überblickskasten und Übersicht',
-        'Graph view': 'Graphansicht',
-        'Every note linked to its section, under the same cracked night sky.': 'Jede Notiz mit ihrem Bereich verbunden, unter demselben gesprungenen Nachthimmel.',
-        'The graph view over a dark night sky with a struck-glass crack, sections coloured': 'Die Graphansicht über einem dunklen Nachthimmel mit Glassprung, Bereiche farbig',
         'Characters': 'Figuren',
         'Sandra Mistic: her lore on the left, her statblock on the right, both on one page.': 'Sandra Mistic: links ihre Geschichte, rechts ihr Werteblock, beides auf einer Seite.',
         'Sandra Mistic\'s page with her lore on the left and her Atlas VTT statblock on the right': 'Sandra Mistics Seite mit ihrer Geschichte links und ihrem Atlas-VTT-Werteblock rechts',
@@ -314,8 +310,6 @@
         'Read-aloud text, handouts, rumours, loot and traps, each with its own look.': 'Vorlesetexte, Handouts, Gerüchte, Beute und Fallen, jedes mit eigenem Look.',
         'Callouts for read-aloud text, handouts, rumours, loot, lore, traps and rules': 'Callouts für Vorlesetexte, Handouts, Gerüchte, Beute, Lore, Fallen und Regeln',
         'Free Obsidian theme / MIT licence': 'Kostenloses Obsidian-Theme / MIT-Lizenz',
-        'Mirrored': 'Mirrored',
-        'Pages.': 'Pages.',
         'Like how the vault looks? It is a theme of its own, and it works in any vault: deep slate glass, brushed silver and serif headings with a reflected rule, in dark and light.': 'Gefällt dir, wie der Vault aussieht? Das ist ein eigenes Theme, und es funktioniert in jedem Vault: tiefes Schiefer-Glas, gebürstetes Silber und Serifen-Überschriften mit gespiegelter Linie, in Dunkel und Hell.',
         'Atlas VTT statblocks': 'Atlas-VTT-Werteblöcke',
         '30+ TTRPG callouts': '30+ TTRPG-Callouts',
@@ -326,6 +320,20 @@
         'Get Mirrored Pages ↗': 'Mirrored Pages holen ↗',
         'How to install ↗': 'So installierst du es ↗',
         'Made for The Mirrored Realms, free for every vault.': 'Gemacht für die Spiegelreiche, kostenlos für jeden Vault.',
+        '✦ What the mirror shows is not what stands before it ✦ Knock three times, and it may answer ✦': '✦ Was der Spiegel zeigt, ist nicht, was vor ihm steht ✦ Klopf dreimal, und vielleicht antwortet er ✦',
+        'The mirror': 'Der Spiegel',
+        'A note behind the glass': 'Eine Notiz hinter dem Glas',
+        'Behind the glass': 'Hinter dem Glas',
+        'You knocked.': 'Du hast geklopft.',
+        'Something on this side knocked back. If you can read this, you are already standing on the wrong side of the glass.': 'Etwas auf dieser Seite hat zurückgeklopft. Wenn du das lesen kannst, stehst du bereits auf der falschen Seite des Glases.',
+        'P. P. II': 'P. P. II',
+        'Mirror writing: hover or tap it to read.': 'Spiegelschrift: zum Lesen darüberfahren oder antippen.',
+        'Step through ↺': 'Hindurchtreten ↺',
+        'Step back ↺': 'Zurücktreten ↺',
+        'Bestiary': 'Bestiarium',
+        'The Kaleidoscope, one of the Shardkin born from broken mirrors.': 'Das Kaleidoskop, eines der Splitterwesen, die aus zerbrochenen Spiegeln geboren wurden.',
+        'The Kaleidoscope statblock with Creature and Aberration tags': 'Der Werteblock des Kaleidoskops mit Kreatur- und Aberrations-Markierung',
+        'Mirrored Pages': 'Mirrored Pages',
     };
 
     const lunaecho = {
